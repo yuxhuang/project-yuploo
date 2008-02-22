@@ -42,7 +42,10 @@
 {
     // do some intialization application begin
     self.controller = [YuplooController controller];
-    [controller begin];
+
+    NSAssert(nil != self.controller, @"YuplooApplicationDelegate>-applicationDidFinishLaunching: controller cannot be nil.");
+    
+    [self.controller begin];
 }
 
 @end

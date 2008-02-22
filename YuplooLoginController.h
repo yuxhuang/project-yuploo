@@ -17,9 +17,9 @@
     IBOutlet NSTextField *loginStatusField;
 }
 
-@property(readwrite,assign) NSWindow *loginSheet;
-@property(readwrite,assign) NSWindow *authenticationNeededSheet;
-@property(readwrite,assign) NSTextField *loginStatusField;
+@property(readwrite,retain) NSWindow *loginSheet;
+@property(readwrite,retain) NSWindow *authenticationNeededSheet;
+@property(readwrite,retain) NSTextField *loginStatusField;
 
 - (id)initWithMainWindowController:(YuplooMainWindowController *)controller;
 - (YuplooMainWindowController *)mainWindowController;
@@ -31,5 +31,8 @@
 - (IBAction)loginSheetOK:(id)sender;
 - (IBAction)authenticationNeededSheetCancel:(id)sender;
 - (IBAction)authenticationNeededSheetOK:(id)sender;
+
+- (void)login;
+- (void)check:(NSString *)token;
 
 @end

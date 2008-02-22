@@ -752,6 +752,11 @@
 
 - (void)mouseDragged:(NSEvent *)event
 {
+
+    // since some arithmetic error below, we are not going to handle photoCount == 0
+    if (0 == [self photoCount])
+        return;
+
     mouseCurrentPoint = [self convertPoint:[event locationInWindow] fromView:nil];
     
     // if the mouse has moved less than 5px in either direction, don't register the drag yet
@@ -916,7 +921,6 @@
         
 		[self setNeedsDisplayInRect:[self visibleRect]];
     }
-    
 }
 
 

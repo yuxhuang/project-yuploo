@@ -8,12 +8,13 @@
 
 #import "YuplooMainWindowController.h"
 #import "YuplooLoginController.h"
+#import "YuplooPhotoViewController.h"
 
 @implementation YuplooMainWindowController
 
-@synthesize loginController, uploadController,
-        windowTitle,
-        ownerObjectController;
+@synthesize loginController, uploadController, photoViewController,
+        windowTitle, photoStatus,
+        ownerObjectController, targetView;
 
 + (id)mainWindowController
 {
@@ -26,8 +27,15 @@
     
     if (nil != self) {
         loginController = [[YuplooLoginController alloc] initWithMainWindowController:self];
+        photoViewController = [[YuplooPhotoViewController alloc] initWithMainWindowController:self];
         windowTitle = [[[NSApp delegate] displayName] copy];
+        photoStatus = @"Click a photo to get status.";
     }
+    NSAssert(nil != windowTitle, @"YuplooMainWindowController>-init: windowTitle cannot be nil.");
+    NSAssert(nil != photoStatus, @"YuplooMainWindowController>-init: photoStatus cannot be nil.");
+    NSAssert(nil != loginController, @"YuplooMainWindowController>-init: loginController cannot be nil.");
+    NSAssert(nil != photoViewController, @"YuplooMainWindowController>-init: photoViewController cannot be nil.");
+    
     return self;
 }
 
@@ -35,8 +43,11 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
-    [loginController release];
-    [windowTitle release];
+    [self.loginController release];
+    [self.photoViewController release];
+    
+    [self.windowTitle release];
+    
     [super dealloc];
 }
 
@@ -44,13 +55,20 @@
 
 - (void)windowDidLoad
 {
+    // add the photo view
+    [self.photoViewController loadNib];
+    [self.targetView addSubview:[self.photoViewController view]];
+    
+    // make sure we have resized the photo view to match its superview
+    [[self.photoViewController view] setFrame:[self.targetView bounds]];
+    
 }
 
 #pragma mark Window Delegate Methods
 
 - (void)windowWillClose:(NSNotification *)notification
 {
-    [ownerObjectController setContent:nil];
+    [self.ownerObjectController setContent:nil];
     [NSApp terminate:self];
 }
 

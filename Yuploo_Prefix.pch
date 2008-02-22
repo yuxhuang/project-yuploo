@@ -2,13 +2,8 @@
 // Prefix header for all source files of the 'Yuploo' target in the 'Yuploo' project
 //
 
-#define YUPLOO_USER_AGENT @"Yuploo/1.0 (Mac OS X)"
-#define YUPLOO_API_KEY @"c164b4d221e29299d3f565b2ceb66226"
-#define YUPLOO_API_SECRET @"dqb6kf9up4uw1mdy"
-#define YUPLOO_API_REST @"http://www.yupoo.com/api/rest/"
-#define YUPLOO_API_UPLOAD @"http://www.yupoo.com/api/upload"
-
 #ifdef __OBJC__
+    #import "Yuploo.h"
     #import <Cocoa/Cocoa.h>
     #import <CoreFoundation/CoreFoundation.h>
     #import <ApplicationServices/ApplicationServices.h>

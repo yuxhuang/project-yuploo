@@ -9,24 +9,30 @@
 #import <Cocoa/Cocoa.h>
 
 @class YuplooLoginController;
+@class YuplooPhotoViewController;
 @class YuplooUploadController;
 
 @interface YuplooMainWindowController : NSWindowController {
     // properties to export
     YuplooLoginController *loginController;
     YuplooUploadController *uploadController;
+    YuplooPhotoViewController *photoViewController;
 
     NSString *windowTitle;
+    NSString *photoStatus;
     
     IBOutlet NSObjectController *ownerObjectController;
-    
+    IBOutlet NSView *targetView;    
 }
 
 // properties
-@property(readwrite,assign) YuplooLoginController *loginController;
-@property(readwrite,assign) YuplooUploadController *uploadController;
+@property(readwrite,retain) YuplooLoginController *loginController;
+@property(readwrite,retain) YuplooUploadController *uploadController;
+@property(readwrite,retain) YuplooPhotoViewController *photoViewController;
 @property(readwrite,copy) NSString *windowTitle;
-@property(readwrite,assign) NSObjectController *ownerObjectController;
+@property(readwrite,copy) NSString *photoStatus;
+@property(readwrite,retain) NSObjectController *ownerObjectController;
+@property(readwrite,assign) NSView *targetView;
 
 + (id)mainWindowController;
 
