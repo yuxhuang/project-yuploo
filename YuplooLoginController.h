@@ -1,0 +1,35 @@
+//
+//  YuplooLoginController.h
+//  Yuploo
+//
+//  Created by Felix Huang on 21/02/08.
+//  Copyright 2008 __MyCompanyName__. All rights reserved.
+//
+
+#import <Cocoa/Cocoa.h>
+
+@class YuplooMainWindowController;
+
+@interface YuplooLoginController : NSObject {
+    YuplooMainWindowController *mainWindowController;
+    IBOutlet NSWindow *loginSheet;
+    IBOutlet NSWindow *authenticationNeededSheet;
+    IBOutlet NSTextField *loginStatusField;
+}
+
+@property(readwrite,assign) NSWindow *loginSheet;
+@property(readwrite,assign) NSWindow *authenticationNeededSheet;
+@property(readwrite,assign) NSTextField *loginStatusField;
+
+- (id)initWithMainWindowController:(YuplooMainWindowController *)controller;
+- (YuplooMainWindowController *)mainWindowController;
+
+- (void)showLoginSheet;
+- (void)showAuthenticationNeededSheet;
+
+- (IBAction)loginSheetCancel:(id)sender;
+- (IBAction)loginSheetOK:(id)sender;
+- (IBAction)authenticationNeededSheetCancel:(id)sender;
+- (IBAction)authenticationNeededSheetOK:(id)sender;
+
+@end

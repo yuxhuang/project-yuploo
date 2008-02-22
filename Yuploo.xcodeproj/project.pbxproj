@@ -1,0 +1,403 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 44;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		DC4698890D6E2585003E66AD /* YuplooLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4698880D6E2585003E66AD /* YuplooLoginController.m */; };
+		DC4698A70D6E2975003E66AD /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4698A60D6E2975003E66AD /* Login.xib */; };
+		DC4698B30D6E2DE4003E66AD /* YuplooController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4698B20D6E2DE4003E66AD /* YuplooController.m */; };
+		DC4698F50D6E3271003E66AD /* YuplooMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4698440D6E193A003E66AD /* YuplooMainWindowController.m */; };
+		DC4699520D6E37DA003E66AD /* Yuploo.icns in Resources */ = {isa = PBXBuildFile; fileRef = DC4699510D6E37DA003E66AD /* Yuploo.icns */; };
+		DC4699F40D6E4F48003E66AD /* PhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4699F30D6E4F48003E66AD /* PhotoView.xib */; };
+		DC469A040D6E5023003E66AD /* Yupoo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC469A030D6E5023003E66AD /* Yupoo.m */; };
+		DC469A070D6E502E003E66AD /* YPTree.m in Sources */ = {isa = PBXBuildFile; fileRef = DC469A060D6E502E003E66AD /* YPTree.m */; };
+		DC469A0C0D6E503B003E66AD /* PhotoAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = DC469A090D6E503B003E66AD /* PhotoAttribute.m */; };
+		DC469A0D0D6E503B003E66AD /* MUPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC469A0B0D6E503B003E66AD /* MUPhotoView.m */; };
+		DC469A3F0D6E51B7003E66AD /* libcrypto.0.9.7.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC469A3E0D6E51B7003E66AD /* libcrypto.0.9.7.dylib */; };
+		DC56AC040D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC56AC030D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m */; };
+		DC56AC0F0D6DFC4700EB8FC8 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC56AC0E0D6DFC4700EB8FC8 /* MainWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* Yuploo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Yuploo_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* Yuploo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yuploo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC4698430D6E193A003E66AD /* YuplooMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuplooMainWindowController.h; sourceTree = "<group>"; };
+		DC4698440D6E193A003E66AD /* YuplooMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuplooMainWindowController.m; sourceTree = "<group>"; };
+		DC4698870D6E2585003E66AD /* YuplooLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuplooLoginController.h; sourceTree = "<group>"; };
+		DC4698880D6E2585003E66AD /* YuplooLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuplooLoginController.m; sourceTree = "<group>"; };
+		DC4698A40D6E2970003E66AD /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Login.xib; sourceTree = "<group>"; };
+		DC4698B10D6E2DE4003E66AD /* YuplooController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuplooController.h; sourceTree = "<group>"; };
+		DC4698B20D6E2DE4003E66AD /* YuplooController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuplooController.m; sourceTree = "<group>"; };
+		DC4699510D6E37DA003E66AD /* Yuploo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Yuploo.icns; sourceTree = "<group>"; };
+		DC4699EF0D6E4F3A003E66AD /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/PhotoView.xib; sourceTree = "<group>"; };
+		DC469A020D6E5023003E66AD /* Yupoo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Yupoo.h; sourceTree = "<group>"; };
+		DC469A030D6E5023003E66AD /* Yupoo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Yupoo.m; sourceTree = "<group>"; };
+		DC469A050D6E502E003E66AD /* YPTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPTree.h; sourceTree = "<group>"; };
+		DC469A060D6E502E003E66AD /* YPTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPTree.m; sourceTree = "<group>"; };
+		DC469A080D6E503B003E66AD /* PhotoAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAttribute.h; sourceTree = "<group>"; };
+		DC469A090D6E503B003E66AD /* PhotoAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAttribute.m; sourceTree = "<group>"; };
+		DC469A0A0D6E503B003E66AD /* MUPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUPhotoView.h; sourceTree = "<group>"; };
+		DC469A0B0D6E503B003E66AD /* MUPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUPhotoView.m; sourceTree = "<group>"; };
+		DC469A3E0D6E51B7003E66AD /* libcrypto.0.9.7.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.0.9.7.dylib; path = /usr/lib/libcrypto.0.9.7.dylib; sourceTree = "<absolute>"; };
+		DC56AC020D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuplooApplicationDelegate.h; sourceTree = "<group>"; };
+		DC56AC030D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuplooApplicationDelegate.m; sourceTree = "<group>"; };
+		DC56AC060D6DFBF500EB8FC8 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainWindow.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				DC469A3F0D6E51B7003E66AD /* libcrypto.0.9.7.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC469A3E0D6E51B7003E66AD /* libcrypto.0.9.7.dylib */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* Yuploo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* Yuploo */ = {
+			isa = PBXGroup;
+			children = (
+				DC469A0E0D6E5041003E66AD /* Base Classes */,
+				DC56ABFE0D6DFB4800EB8FC8 /* Yuploo */,
+				DC56ABFF0D6DFB5400EB8FC8 /* Sheets */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = Yuploo;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* Yuploo_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DC56AC010D6DFB7600EB8FC8 /* Images */,
+				DC56AC000D6DFB6000EB8FC8 /* Nibs */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC469A0E0D6E5041003E66AD /* Base Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DC469A080D6E503B003E66AD /* PhotoAttribute.h */,
+				DC469A090D6E503B003E66AD /* PhotoAttribute.m */,
+				DC469A0A0D6E503B003E66AD /* MUPhotoView.h */,
+				DC469A0B0D6E503B003E66AD /* MUPhotoView.m */,
+				DC469A050D6E502E003E66AD /* YPTree.h */,
+				DC469A060D6E502E003E66AD /* YPTree.m */,
+				DC469A020D6E5023003E66AD /* Yupoo.h */,
+				DC469A030D6E5023003E66AD /* Yupoo.m */,
+			);
+			name = "Base Classes";
+			sourceTree = "<group>";
+		};
+		DC56ABFE0D6DFB4800EB8FC8 /* Yuploo */ = {
+			isa = PBXGroup;
+			children = (
+				DC56AC020D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.h */,
+				DC56AC030D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m */,
+				DC4698430D6E193A003E66AD /* YuplooMainWindowController.h */,
+				DC4698440D6E193A003E66AD /* YuplooMainWindowController.m */,
+				DC4698870D6E2585003E66AD /* YuplooLoginController.h */,
+				DC4698880D6E2585003E66AD /* YuplooLoginController.m */,
+				DC4698B10D6E2DE4003E66AD /* YuplooController.h */,
+				DC4698B20D6E2DE4003E66AD /* YuplooController.m */,
+			);
+			name = Yuploo;
+			sourceTree = "<group>";
+		};
+		DC56ABFF0D6DFB5400EB8FC8 /* Sheets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Sheets;
+			sourceTree = "<group>";
+		};
+		DC56AC000D6DFB6000EB8FC8 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
+				DC56AC0E0D6DFC4700EB8FC8 /* MainWindow.xib */,
+				DC4698A60D6E2975003E66AD /* Login.xib */,
+				DC4699F30D6E4F48003E66AD /* PhotoView.xib */,
+			);
+			name = Nibs;
+			sourceTree = "<group>";
+		};
+		DC56AC010D6DFB7600EB8FC8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DC4699510D6E37DA003E66AD /* Yuploo.icns */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* Yuploo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Yuploo" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Yuploo;
+			productInstallPath = "$(HOME)/Applications";
+			productName = Yuploo;
+			productReference = 8D1107320486CEB800E47090 /* Yuploo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Yuploo" */;
+			compatibilityVersion = "Xcode 3.0";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Yuploo */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* Yuploo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				DC56AC0F0D6DFC4700EB8FC8 /* MainWindow.xib in Resources */,
+				DC4698A70D6E2975003E66AD /* Login.xib in Resources */,
+				DC4699520D6E37DA003E66AD /* Yuploo.icns in Resources */,
+				DC4699F40D6E4F48003E66AD /* PhotoView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				DC56AC040D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m in Sources */,
+				DC4698890D6E2585003E66AD /* YuplooLoginController.m in Sources */,
+				DC4698B30D6E2DE4003E66AD /* YuplooController.m in Sources */,
+				DC4698F50D6E3271003E66AD /* YuplooMainWindowController.m in Sources */,
+				DC469A040D6E5023003E66AD /* Yupoo.m in Sources */,
+				DC469A070D6E502E003E66AD /* YPTree.m in Sources */,
+				DC469A0C0D6E503B003E66AD /* PhotoAttribute.m in Sources */,
+				DC469A0D0D6E503B003E66AD /* MUPhotoView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		29B97318FDCFA39411CA2CEA /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29B97319FDCFA39411CA2CEA /* English */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		DC4698A60D6E2975003E66AD /* Login.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC4698A40D6E2970003E66AD /* English */,
+			);
+			name = Login.xib;
+			sourceTree = "<group>";
+		};
+		DC4699F30D6E4F48003E66AD /* PhotoView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC4699EF0D6E4F3A003E66AD /* English */,
+			);
+			name = PhotoView.xib;
+			sourceTree = "<group>";
+		};
+		DC56AC0E0D6DFC4700EB8FC8 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC56AC060D6DFBF500EB8FC8 /* English */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G4;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Yuploo_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PRODUCT_NAME = Yuploo;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G4;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Yuploo_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PRODUCT_NAME = Yuploo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Yuploo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Yuploo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

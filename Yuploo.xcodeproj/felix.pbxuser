@@ -1,0 +1,283 @@
+// !$*UTF8*$!
+{
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeArchitecture = i386;
+		activeBuildConfigurationName = Debug;
+		activeExecutable = DC56ABEF0D6DFAC900EB8FC8 /* Yuploo */;
+		activeTarget = 8D1107260486CEB800E47090 /* Yuploo */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* Yuploo */,
+		);
+		breakpoints = (
+			DC4699C40D6E455D003E66AD /* YuplooLoginController.m:52 */,
+		);
+		codeSenseManager = DC56ABFA0D6DFACF00EB8FC8 /* Code sense */;
+		executables = (
+			DC56ABEF0D6DFAC900EB8FC8 /* Yuploo */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					243,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					203,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 225334818;
+			PBXWorkspaceStateSaveDate = 225334818;
+		};
+		perUserProjectItems = {
+			DC469A7E0D6E5625003E66AD /* PBXBookmark */ = DC469A7E0D6E5625003E66AD /* PBXBookmark */;
+			DC469A8E0D6E568C003E66AD /* PBXTextBookmark */ = DC469A8E0D6E568C003E66AD /* PBXTextBookmark */;
+		};
+		sourceControlManager = DC56ABF90D6DFACF00EB8FC8 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	32CA4F630368D1EE00C91783 /* Yuploo_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1072, 634}}";
+			sepNavSelRange = "{271, 0}";
+			sepNavVisRange = "{0, 547}";
+			sepNavWindowFrame = "{{60, 11}, {1131, 762}}";
+		};
+	};
+	8D1107260486CEB800E47090 /* Yuploo */ = {
+		activeExec = 0;
+		executables = (
+			DC56ABEF0D6DFAC900EB8FC8 /* Yuploo */,
+		);
+	};
+	8D1107310486CEB800E47090 /* Info.plist */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1072, 634}}";
+			sepNavSelRange = "{365, 0}";
+			sepNavVisRange = "{0, 894}";
+			sepNavWindowFrame = "{{60, 11}, {1131, 762}}";
+		};
+	};
+	DC4698430D6E193A003E66AD /* YuplooMainWindowController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1072, 640}}";
+			sepNavSelRange = "{356, 0}";
+			sepNavVisRange = "{0, 935}";
+			sepNavWindowFrame = "{{508, -16}, {1131, 762}}";
+		};
+	};
+	DC4698440D6E193A003E66AD /* YuplooMainWindowController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1072, 1504}}";
+			sepNavSelRange = "{698, 0}";
+			sepNavVisRange = "{224, 767}";
+			sepNavWindowFrame = "{{178, 16}, {1131, 762}}";
+		};
+	};
+	DC4698870D6E2585003E66AD /* YuplooLoginController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1072, 634}}";
+			sepNavSelRange = "{662, 0}";
+			sepNavVisRange = "{0, 1004}";
+			sepNavWindowFrame = "{{142, 16}, {1131, 762}}";
+		};
+	};
+	DC4698880D6E2585003E66AD /* YuplooLoginController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {827, 1632}}";
+			sepNavSelRange = "{530, 0}";
+			sepNavVisRange = "{457, 315}";
+			sepNavWindowFrame = "{{142, 16}, {1131, 762}}";
+		};
+	};
+	DC4698B10D6E2DE4003E66AD /* YuplooController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1072, 634}}";
+			sepNavSelRange = "{465, 0}";
+			sepNavVisRange = "{0, 487}";
+			sepNavWindowFrame = "{{573, -1}, {1131, 762}}";
+		};
+	};
+	DC4698B20D6E2DE4003E66AD /* YuplooController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {791, 816}}";
+			sepNavSelRange = "{533, 0}";
+			sepNavVisRange = "{230, 704}";
+			sepNavWindowFrame = "{{109, 42}, {850, 736}}";
+		};
+	};
+	DC4699510D6E37DA003E66AD /* Yuploo.icns */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{60, 11}, {1131, 762}}";
+		};
+	};
+	DC4699C40D6E455D003E66AD /* YuplooLoginController.m:52 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = DC4698880D6E2585003E66AD /* YuplooLoginController.m */;
+		functionName = "-showLoginSheet";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 52;
+		location = Yuploo;
+		modificationTime = 225330541.149622;
+		state = 1;
+	};
+	DC469A020D6E5023003E66AD /* Yupoo.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1142, 832}}";
+			sepNavSelRange = "{149, 0}";
+			sepNavVisRange = "{0, 1488}";
+			sepNavWindowFrame = "{{60, 11}, {1131, 762}}";
+		};
+	};
+	DC469A030D6E5023003E66AD /* Yupoo.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1380, 5296}}";
+			sepNavSelRange = "{3427, 0}";
+			sepNavVisRange = "{2865, 1100}";
+			sepNavWindowFrame = "{{60, 11}, {1131, 762}}";
+		};
+	};
+	DC469A060D6E502E003E66AD /* YPTree.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1072, 1520}}";
+			sepNavSelRange = "{154, 0}";
+			sepNavVisRange = "{0, 894}";
+			sepNavWindowFrame = "{{60, 11}, {1131, 762}}";
+		};
+	};
+	DC469A080D6E503B003E66AD /* PhotoAttribute.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1072, 634}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 538}";
+			sepNavWindowFrame = "{{60, 11}, {1131, 762}}";
+		};
+	};
+	DC469A090D6E503B003E66AD /* PhotoAttribute.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1072, 634}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 551}";
+			sepNavWindowFrame = "{{60, 11}, {1131, 762}}";
+		};
+	};
+	DC469A0B0D6E503B003E66AD /* MUPhotoView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1072, 29920}}";
+			sepNavSelRange = "{1586, 0}";
+			sepNavVisRange = "{0, 2082}";
+			sepNavWindowFrame = "{{60, 11}, {1131, 762}}";
+		};
+	};
+	DC469A7E0D6E5625003E66AD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = DC4698B10D6E2DE4003E66AD /* YuplooController.h */;
+	};
+	DC469A8E0D6E568C003E66AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC4698B10D6E2DE4003E66AD /* YuplooController.h */;
+		name = "YuplooController.h: 23";
+		rLen = 0;
+		rLoc = 465;
+		rType = 0;
+		vrLen = 487;
+		vrLoc = 0;
+	};
+	DC56ABEF0D6DFAC900EB8FC8 /* Yuploo */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Yuploo;
+		savedGlobals = {
+		};
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	DC56ABF90D6DFACF00EB8FC8 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	DC56ABFA0D6DFACF00EB8FC8 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	DC56AC020D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1072, 634}}";
+			sepNavSelRange = "{309, 0}";
+			sepNavVisRange = "{0, 354}";
+			sepNavWindowFrame = "{{409, 9}, {1131, 762}}";
+		};
+	};
+	DC56AC030D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1072, 784}}";
+			sepNavSelRange = "{867, 0}";
+			sepNavVisRange = "{190, 686}";
+			sepNavWindowFrame = "{{118, 16}, {1131, 762}}";
+		};
+	};
+}
