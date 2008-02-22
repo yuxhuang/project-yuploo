@@ -20,6 +20,9 @@
 
     NSString *windowTitle;
     NSString *photoStatus;
+    NSString *loginStatus;
+    float loginProgressValue;
+    BOOL loginProgressHidden;
     
     IBOutlet NSObjectController *ownerObjectController;
     IBOutlet NSView *targetView;    
@@ -31,8 +34,11 @@
 @property(readwrite,retain) YuplooPhotoViewController *photoViewController;
 @property(readwrite,copy) NSString *windowTitle;
 @property(readwrite,copy) NSString *photoStatus;
+@property(readwrite,retain) NSString *loginStatus;
+@property(readwrite) float loginProgressValue;
+@property(readwrite) BOOL loginProgressHidden;
 @property(readwrite,retain) NSObjectController *ownerObjectController;
-@property(readwrite,assign) NSView *targetView;
+@property(readwrite,retain) NSView *targetView;
 
 + (id)mainWindowController;
 

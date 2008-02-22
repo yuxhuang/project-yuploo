@@ -22,5 +22,6 @@
 + (id)sharedController;
 
 - (void)begin;
+- (NSString *)savedAuthToken;
 
 @end

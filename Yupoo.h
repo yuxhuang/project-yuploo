@@ -23,10 +23,6 @@
  * initialize with apiKey and secret provided
  */
 -(id) initWithApiKey:(NSString*)anApiKey secret:(NSString*)aSecret serviceUrl:(NSString*)aUrl;
-/**
- * initialize, already with auth token
- */
--(id) initWithApiKey:(NSString*)anApiKey secret:(NSString*)aSecret serviceUrl:(NSString*)aUrl authToken:(NSString*)aToken;
 
 /**
  * call remote methods

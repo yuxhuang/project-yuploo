@@ -202,24 +202,24 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>DC8CAA480D6F0F8000FEE63E</string>
+				<string>DC8CAAAA0D6F1AC800FEE63E</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>YuplooLoginController.m</string>
+				<string>YuplooMainWindowController.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>DC8CAA490D6F0F8000FEE63E</string>
+						<string>DC8CAAAB0D6F1AC800FEE63E</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>YuplooLoginController.m</string>
+						<string>YuplooMainWindowController.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>DC8CAA4A0D6F0F8000FEE63E</string>
+						<string>DC8CAAAF0D6F1B3E00FEE63E</string>
 						<key>history</key>
 						<array>
-							<string>DC8CAA460D6F0F5200FEE63E</string>
+							<string>DC8CAAA80D6F1AAB00FEE63E</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -235,7 +235,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>142 72 1131 706 0 0 1280 778 </string>
+				<string>157 72 1131 706 0 0 1280 778 </string>
 			</dict>
 		</dict>
 	</array>
@@ -324,13 +324,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>16</integer>
-									<integer>10</integer>
+									<integer>31</integer>
+									<integer>29</integer>
+									<integer>26</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 149}, {186, 338}}</string>
+							<string>{{0, 285}, {186, 338}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -566,9 +567,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>DC8CAAA70D6F1AA700FEE63E</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>DC8CAA260D6F06EF00FEE63E</string>
-		<string>DC8CA9F20D6E9EC600FEE63E</string>
 		<string>DC8CA96C0D6E923900FEE63E</string>
 		<string>DC8CA90E0D6E8CD200FEE63E</string>
 		<string>DC8CA90F0D6E8CD200FEE63E</string>
@@ -576,8 +577,8 @@
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>DC56AC0B0D6DFC2100EB8FC8</string>
+		<string>DC8CAAAA0D6F1AC800FEE63E</string>
 		<string>/Users/felix/Code/XCode/Yuploo/Yuploo.xcodeproj</string>
-		<string>DC8CAA480D6F0F8000FEE63E</string>
 	</array>
 	<key>WindowString</key>
 	<string>548 134 690 397 0 0 1280 778 </string>
@@ -596,12 +597,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>&lt;No Editor&gt;</string>
+								<string>YuplooMainWindowController.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -618,8 +621,6 @@
 							<string>363pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -753,10 +754,10 @@
 									<key>Frame</key>
 									<string>{{395, 0}, {472, 288}}</string>
 									<key>RubberWindowFrame</key>
-									<string>222 170 867 589 0 0 1280 778 </string>
+									<string>217 122 867 589 0 0 1280 778 </string>
 								</dict>
 								<key>RubberWindowFrame</key>
-								<string>222 170 867 589 0 0 1280 778 </string>
+								<string>217 122 867 589 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugSessionModule</string>
@@ -790,7 +791,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
 			<key>WindowString</key>
-			<string>222 170 867 589 0 0 1280 778 </string>
+			<string>217 122 867 589 0 0 1280 778 </string>
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>

@@ -9,11 +9,12 @@
 #import "YuplooMainWindowController.h"
 #import "YuplooLoginController.h"
 #import "YuplooPhotoViewController.h"
+#import "YuplooController.h"
 
 @implementation YuplooMainWindowController
 
 @synthesize loginController, uploadController, photoViewController,
-        windowTitle, photoStatus,
+        windowTitle, photoStatus, loginStatus, loginProgressValue, loginProgressHidden,
         ownerObjectController, targetView;
 
 + (id)mainWindowController
@@ -29,10 +30,12 @@
         loginController = [[YuplooLoginController alloc] initWithMainWindowController:self];
         photoViewController = [[YuplooPhotoViewController alloc] initWithMainWindowController:self];
         windowTitle = [[[NSApp delegate] displayName] copy];
-        photoStatus = @"Click a photo to get status.";
+        photoStatus = nil;
+        loginStatus = nil;
+        loginProgressValue = 0.0;
+        loginProgressHidden = YES;
     }
     NSAssert(nil != windowTitle, @"YuplooMainWindowController>-init: windowTitle cannot be nil.");
-    NSAssert(nil != photoStatus, @"YuplooMainWindowController>-init: photoStatus cannot be nil.");
     NSAssert(nil != loginController, @"YuplooMainWindowController>-init: loginController cannot be nil.");
     NSAssert(nil != photoViewController, @"YuplooMainWindowController>-init: photoViewController cannot be nil.");
     
@@ -61,7 +64,6 @@
     
     // make sure we have resized the photo view to match its superview
     [[self.photoViewController view] setFrame:[self.targetView bounds]];
-    
 }
 
 #pragma mark Window Delegate Methods

@@ -29,12 +29,6 @@
     return self;
 }
 
--(id) initWithApiKey:(NSString*)aKey secret:(NSString*)aSecret serviceUrl:(NSString*)aUrl authToken:(NSString*)aToken {
-    self = [self initWithApiKey:aKey secret:aSecret serviceUrl:aUrl];
-    authToken = aToken;
-    return self;
-}
-
 -(NSDictionary*) encodeAndSign: (NSDictionary*) params {
     // the new params to return
     NSMutableDictionary *newParams = [NSMutableDictionary dictionary];

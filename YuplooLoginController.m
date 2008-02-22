@@ -7,6 +7,8 @@
 //
 
 #import "YuplooLoginController.h"
+#import "YuplooController.h"
+#import "Yupoo.h"
 
 @interface YuplooLoginController (PrivateAPI)
 
@@ -91,7 +93,17 @@
 
 - (void)check:(NSString *)token
 {
-
+    if (nil != token) {
+        Yupoo *yupoo = [[YuplooController sharedController] yupoo];
+        // if the authToken is invalid
+        if (![yupoo recheck:token]) {
+            // tell something about authentication needed
+            [self showAuthenticationNeededSheet];
+        }
+    }
+    else {
+        [self showAuthenticationNeededSheet];
+    }
 }
 
 @end

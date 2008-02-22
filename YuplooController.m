@@ -8,6 +8,7 @@
 
 #import "YuplooController.h"
 #import "YuplooMainWindowController.h"
+#import "YuplooLoginController.h"
 #import "Yupoo.h"
 
 @implementation YuplooController
@@ -88,7 +89,16 @@ static YuplooController *sharedController = nil;
 
 - (void)begin
 {
-    [[[self mainWindowController] window] makeKeyAndOrderFront:self];
+    [self.mainWindowController.window makeKeyAndOrderFront:self];
+    // try to login with stored authentication token
+    NSString *token = [[YuplooController sharedController] savedAuthToken];
+    [self.mainWindowController.loginController check:token];
+}
+
+- (NSString *)savedAuthToken
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [defaults stringForKey:@"authToken"];
 }
 
 @end
