@@ -8,7 +8,6 @@
 		addToTargets = (
 		);
 		breakpoints = (
-			DC8CA9DD0D6E9DD100FEE63E /* YuplooApplicationDelegate.m:48 */,
 		);
 		codeSenseManager = DC56ABFA0D6DFACF00EB8FC8 /* Code sense */;
 		executables = (
@@ -167,6 +166,16 @@
 			DC8CAA230D6F06EB00FEE63E /* PBXTextBookmark */ = DC8CAA230D6F06EB00FEE63E /* PBXTextBookmark */;
 			DC8CAA240D6F06EB00FEE63E /* PBXTextBookmark */ = DC8CAA240D6F06EB00FEE63E /* PBXTextBookmark */;
 			DC8CAA250D6F06EB00FEE63E /* PBXTextBookmark */ = DC8CAA250D6F06EB00FEE63E /* PBXTextBookmark */;
+			DC8CAA380D6F0D9E00FEE63E /* PBXTextBookmark */ = DC8CAA380D6F0D9E00FEE63E /* PBXTextBookmark */;
+			DC8CAA390D6F0D9E00FEE63E /* PBXTextBookmark */ = DC8CAA390D6F0D9E00FEE63E /* PBXTextBookmark */;
+			DC8CAA3A0D6F0DA100FEE63E /* PBXTextBookmark */ = DC8CAA3A0D6F0DA100FEE63E /* PBXTextBookmark */;
+			DC8CAA3B0D6F0DA100FEE63E /* PBXTextBookmark */ = DC8CAA3B0D6F0DA100FEE63E /* PBXTextBookmark */;
+			DC8CAA3E0D6F0ED600FEE63E /* PBXTextBookmark */ = DC8CAA3E0D6F0ED600FEE63E /* PBXTextBookmark */;
+			DC8CAA430D6F0EE600FEE63E /* PBXTextBookmark */ = DC8CAA430D6F0EE600FEE63E /* PBXTextBookmark */;
+			DC8CAA440D6F0F5000FEE63E /* PBXTextBookmark */ = DC8CAA440D6F0F5000FEE63E /* PBXTextBookmark */;
+			DC8CAA450D6F0F5000FEE63E /* PBXTextBookmark */ = DC8CAA450D6F0F5000FEE63E /* PBXTextBookmark */;
+			DC8CAA460D6F0F5200FEE63E /* PBXBookmark */ = DC8CAA460D6F0F5200FEE63E /* PBXBookmark */;
+			DC8CAA4A0D6F0F8000FEE63E /* PBXTextBookmark */ = DC8CAA4A0D6F0F8000FEE63E /* PBXTextBookmark */;
 		};
 		sourceControlManager = DC56ABF90D6DFACF00EB8FC8 /* Source Control */;
 		userBuildSettings = {
@@ -204,9 +213,9 @@
 	DC4698430D6E193A003E66AD /* YuplooMainWindowController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1072, 736}}";
-			sepNavSelRange = "{1084, 0}";
-			sepNavVisRange = "{149, 1104}";
-			sepNavWindowFrame = "{{508, -16}, {1131, 762}}";
+			sepNavSelRange = "{505, 0}";
+			sepNavVisRange = "{90, 1163}";
+			sepNavWindowFrame = "{{119, 16}, {1131, 762}}";
 		};
 	};
 	DC4698440D6E193A003E66AD /* YuplooMainWindowController.m */ = {
@@ -227,26 +236,26 @@
 	};
 	DC4698880D6E2585003E66AD /* YuplooLoginController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1072, 1632}}";
-			sepNavSelRange = "{181, 0}";
-			sepNavVisRange = "{0, 897}";
+			sepNavIntBoundsRect = "{{0, 0}, {1072, 1792}}";
+			sepNavSelRange = "{2106, 0}";
+			sepNavVisRange = "{1607, 810}";
 			sepNavWindowFrame = "{{142, 16}, {1131, 762}}";
 		};
 	};
 	DC4698B10D6E2DE4003E66AD /* YuplooController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {850, 551}}";
-			sepNavSelRange = "{465, 0}";
-			sepNavVisRange = "{0, 487}";
+			sepNavSelRange = "{460, 0}";
+			sepNavVisRange = "{0, 493}";
 			sepNavWindowFrame = "{{131, 99}, {909, 679}}";
 		};
 	};
 	DC4698B20D6E2DE4003E66AD /* YuplooController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {806, 816}}";
-			sepNavSelRange = "{805, 0}";
-			sepNavVisRange = "{526, 280}";
-			sepNavWindowFrame = "{{109, 42}, {850, 736}}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 1576}}";
+			sepNavSelRange = "{1542, 5}";
+			sepNavVisRange = "{1240, 307}";
+			sepNavWindowFrame = "{{353, 42}, {850, 736}}";
 		};
 	};
 	DC4699510D6E37DA003E66AD /* Yuploo.icns */ = {
@@ -311,7 +320,7 @@
 		fRef = DC4698B10D6E2DE4003E66AD /* YuplooController.h */;
 		name = "YuplooController.h: 23";
 		rLen = 0;
-		rLoc = 465;
+		rLoc = 471;
 		rType = 0;
 		vrLen = 487;
 		vrLoc = 0;
@@ -365,17 +374,17 @@
 	};
 	DC56AC030D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1072, 832}}";
-			sepNavSelRange = "{844, 0}";
-			sepNavVisRange = "{190, 817}";
+			sepNavIntBoundsRect = "{{0, 0}, {883, 832}}";
+			sepNavSelRange = "{838, 0}";
+			sepNavVisRange = "{464, 555}";
 			sepNavWindowFrame = "{{118, 16}, {1131, 762}}";
 		};
 	};
 	DC8CA8820D6E819000FEE63E /* YuplooPhotoViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {723, 512}}";
+			sepNavIntBoundsRect = "{{0, 0}, {850, 551}}";
 			sepNavSelRange = "{397, 0}";
-			sepNavVisRange = "{151, 727}";
+			sepNavVisRange = "{0, 901}";
 			sepNavWindowFrame = "{{60, 94}, {909, 679}}";
 		};
 	};
@@ -883,29 +892,12 @@
 		isa = PBXBookmark;
 		fRef = DC56AC030D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m */;
 	};
-	DC8CA9DD0D6E9DD100FEE63E /* YuplooApplicationDelegate.m:48 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = DC56AC030D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m */;
-		functionName = "-applicationDidFinishLaunching:";
-		hitCount = 1;
-		ignoreCount = 0;
-		lineNumber = 48;
-		location = Yuploo;
-		modificationTime = 225353314.135748;
-		state = 1;
-	};
 	DC8CA9E10D6E9DD800FEE63E /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = DC56AC030D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m */;
 		name = "YuplooApplicationDelegate.m: 45";
 		rLen = 0;
-		rLoc = 976;
+		rLoc = 982;
 		rType = 0;
 		vrLen = 691;
 		vrLoc = 190;
@@ -1039,7 +1031,7 @@
 		rLen = 0;
 		rLoc = 904;
 		rType = 0;
-		vrLen = 796;
+		vrLen = 794;
 		vrLoc = 668;
 	};
 	DC8CAA110D6EFE8A00FEE63E /* Yuploo.h */ = {
@@ -1059,7 +1051,7 @@
 		fRef = DC56AC030D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m */;
 		name = "YuplooApplicationDelegate.m: 46";
 		rLen = 0;
-		rLoc = 880;
+		rLoc = 886;
 		rType = 0;
 		vrLen = 798;
 		vrLoc = 190;
@@ -1101,5 +1093,91 @@
 		rType = 0;
 		vrLen = 613;
 		vrLoc = 440;
+	};
+	DC8CAA380D6F0D9E00FEE63E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: incomplete implementation of class 'YuplooController'";
+		fRef = DC4698B20D6E2DE4003E66AD /* YuplooController.m */;
+		rLen = 1;
+		rLoc = 93;
+		rType = 1;
+	};
+	DC8CAA390D6F0D9E00FEE63E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC4698B20D6E2DE4003E66AD /* YuplooController.m */;
+		name = "YuplooController.m: 91";
+		rLen = 0;
+		rLoc = 1538;
+		rType = 0;
+		vrLen = 262;
+		vrLoc = 1285;
+	};
+	DC8CAA3A0D6F0DA100FEE63E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: incomplete implementation of class 'YuplooController'";
+		fRef = DC4698B20D6E2DE4003E66AD /* YuplooController.m */;
+		rLen = 1;
+		rLoc = 93;
+		rType = 1;
+	};
+	DC8CAA3B0D6F0DA100FEE63E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC4698B20D6E2DE4003E66AD /* YuplooController.m */;
+		name = "YuplooController.m: 94";
+		rLen = 5;
+		rLoc = 1542;
+		rType = 0;
+		vrLen = 307;
+		vrLoc = 1240;
+	};
+	DC8CAA3E0D6F0ED600FEE63E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: 'YuplooController' may not respond to '+controller'";
+		fRef = DC56AC030D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m */;
+		rLen = 1;
+		rLoc = 43;
+		rType = 1;
+	};
+	DC8CAA430D6F0EE600FEE63E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC56AC030D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m */;
+		name = "YuplooApplicationDelegate.m: 35";
+		rLen = 0;
+		rLoc = 523;
+		rType = 0;
+		vrLen = 757;
+		vrLoc = 262;
+	};
+	DC8CAA440D6F0F5000FEE63E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: 'YuplooController' may not respond to '+controller'";
+		fRef = DC56AC030D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m */;
+		rLen = 1;
+		rLoc = 43;
+		rType = 1;
+	};
+	DC8CAA450D6F0F5000FEE63E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC56AC030D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m */;
+		name = "YuplooApplicationDelegate.m: 44";
+		rLen = 0;
+		rLoc = 838;
+		rType = 0;
+		vrLen = 555;
+		vrLoc = 464;
+	};
+	DC8CAA460D6F0F5200FEE63E /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = DC4698880D6E2585003E66AD /* YuplooLoginController.m */;
+	};
+	DC8CAA4A0D6F0F8000FEE63E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC4698880D6E2585003E66AD /* YuplooLoginController.m */;
+		name = "YuplooLoginController.m: 95";
+		rLen = 0;
+		rLoc = 2106;
+		rType = 0;
+		vrLen = 810;
+		vrLoc = 1607;
 	};
 }

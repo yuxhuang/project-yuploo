@@ -19,7 +19,7 @@
 @property(readwrite,assign) YuplooMainWindowController *mainWindowController;
 @property(readonly) Yupoo *yupoo;
 
-+ (id)controller;
++ (id)sharedController;
 
 - (void)begin;
 

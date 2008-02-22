@@ -14,9 +14,53 @@
 
 @synthesize mainWindowController, yupoo;
 
-+ (id)controller
+static YuplooController *sharedController = nil;
+
++ (id)sharedController
 {
-    return [[[self alloc] init] autorelease];
+    @synchronized(self) {
+        if (nil == sharedController) {
+            [[self alloc] init];
+        }
+    }
+    
+    return sharedController;
+}
+
++ (id)allocWithZone:(NSZone *)zone
+{
+    @synchronized(self) {
+        if (nil == sharedController) {
+            sharedController = [super allocWithZone:zone];
+            return sharedController;
+        }
+    }
+    return nil;
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    return self;
+}
+
+- (id)retain
+{
+    return self;
+}
+
+- (NSUInteger)retainCount
+{
+    return UINT_MAX;
+}
+
+- (void)release
+{
+    // do nothing
+}
+
+- (id)autorelease
+{
+    return self;
 }
 
 - (id)init

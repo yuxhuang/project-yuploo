@@ -84,6 +84,16 @@
 {
 }
 
+- (void)login
+{
+
+}
+
+- (void)check:(NSString *)token
+{
+
+}
+
 @end
 
 @implementation YuplooLoginController (PrivateAPI)
