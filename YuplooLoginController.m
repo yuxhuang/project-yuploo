@@ -19,7 +19,7 @@
 
 @implementation YuplooLoginController
 
-@synthesize loginSheet, authenticationNeededSheet, loginStatusField;
+@synthesize loginSheet, authenticationNeededSheet, loginStatus, mainWindowController;
 
 - (id)initWithMainWindowController:(YuplooMainWindowController *)controller
 {
@@ -70,25 +70,30 @@
 
 - (IBAction)loginSheetCancel:(id)sender
 {
-    [NSApp endSheet:loginSheet returnCode:0];
+    [NSApp endSheet:loginSheet];
 }
 
 - (IBAction)loginSheetOK:(id)sender
 {
+    [NSApp endSheet:loginSheet];
 }
 
 - (IBAction)authenticationNeededSheetCancel:(id)sender
 {
-    [NSApp endSheet:authenticationNeededSheet returnCode:0];
+    [NSApp endSheet:authenticationNeededSheet];
 }
 
 - (IBAction)authenticationNeededSheetOK:(id)sender
 {
+    [NSApp endSheet:authenticationNeededSheet];
+    // go on login sheet
+    [self login];
 }
 
 - (void)login
 {
-
+    [self showLoginSheet];
+    
 }
 
 - (void)check:(NSString *)token

@@ -23,5 +23,6 @@
 
 - (void)begin;
 - (NSString *)savedAuthToken;
+- (void)saveToken:(NSString *)token;
 
 @end

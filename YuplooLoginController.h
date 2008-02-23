@@ -14,12 +14,13 @@
     YuplooMainWindowController *mainWindowController;
     IBOutlet NSWindow *loginSheet;
     IBOutlet NSWindow *authenticationNeededSheet;
-    IBOutlet NSTextField *loginStatusField;
+    NSString *loginStatus;
 }
 
 @property(readwrite,retain) NSWindow *loginSheet;
 @property(readwrite,retain) NSWindow *authenticationNeededSheet;
-@property(readwrite,retain) NSTextField *loginStatusField;
+@property(readwrite,retain) NSString *loginStatus;
+@property(readonly) YuplooMainWindowController *mainWindowController;
 
 - (id)initWithMainWindowController:(YuplooMainWindowController *)controller;
 - (YuplooMainWindowController *)mainWindowController;

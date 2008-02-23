@@ -60,7 +60,6 @@
     float photoVerticalSpacing;
     float photoHorizontalSpacing;
     
-	
     NSSize gridSize;
     unsigned columns;
     unsigned rows;

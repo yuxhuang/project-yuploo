@@ -35,7 +35,6 @@
         loginProgressValue = 0.0;
         loginProgressHidden = YES;
     }
-    NSAssert(nil != windowTitle, @"YuplooMainWindowController>-init: windowTitle cannot be nil.");
     NSAssert(nil != loginController, @"YuplooMainWindowController>-init: loginController cannot be nil.");
     NSAssert(nil != photoViewController, @"YuplooMainWindowController>-init: photoViewController cannot be nil.");
     

@@ -101,4 +101,10 @@ static YuplooController *sharedController = nil;
     return [defaults stringForKey:@"authToken"];
 }
 
+- (void)saveToken:(NSString *)token
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:token forKey:@"authToken"];
+}
+
 @end

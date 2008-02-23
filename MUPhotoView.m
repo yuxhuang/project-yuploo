@@ -20,7 +20,7 @@
 // Version 1.2 - September 24, 2006 - Updated selection behavior, Changed to MIT license, Fixed issue where no images would show, fixed autoscroll
 
 #import "MUPhotoView.h"
-#import "PhotoAttribute.h"
+#import "Photo.h"
 
 @implementation MUPhotoView
 
@@ -1762,8 +1762,8 @@ unsigned row = index / columns;
         for (NSString *path in modifiedFiles) {
             NSImage *image = [[NSImage alloc] initWithContentsOfFile:path];
             [photosArray addObject:image];
-            PhotoAttribute *attr = [[PhotoAttribute alloc] init];
-            attr.localPath = path;
+            Photo *attr = [[Photo alloc] init];
+            attr.path = path;
             [photoAttributesArray addObject:attr];
             [attr release];
             [image release];

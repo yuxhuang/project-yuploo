@@ -8,12 +8,11 @@
 
 #import "YuplooPhotoViewController.h"
 #import "YuplooMainWindowController.h"
-#import "MUPhotoView.h"
-
+#import "Photo.h"
 
 @implementation YuplooPhotoViewController
 
-@synthesize photos, selectionIndexes, photoArrayController, mainWindowController, photoView;
+@synthesize photos, selectionIndexes, photoArrayController, photoView, mainWindowController;
 
 - (id)initWithMainWindowController:(YuplooMainWindowController *)controller;
 {
@@ -44,17 +43,24 @@
 {
     [self loadView];
     
-    // bindings
-    [photoView bind:@"photosArray" toObject:photoArrayController withKeyPath:@"arrangedObjects" options:nil];
-    [photoView bind:@"selectedPhotoIndexes" toObject:photoArrayController withKeyPath:@"selectionIndexes" options:nil];
+}
+
+- (void)addPhotoWithContentsOfFile:(NSString *)path
+{
+    NSAssert(nil != path, @"YuplooPhotoViewController>-addPhotoWithContentsOfFile: path cannot be nil.");
     
-    // set up default settings for photoview
-    [photoView setUseOutlineBorder:YES];
-    [photoView setUseBorderSelection:NO];
-    [photoView setUseShadowBorder:YES];
-    [photoView setUseShadowSelection:YES];
-    [photoView setBackgroundColor:[NSColor whiteColor]];
-    
+    Photo *photo = [[[Photo alloc] initWithContentsOfFile:[[path copy] autorelease]] retain];
+    [photos addObject:photo];
+}
+
+@end
+
+@implementation PhotoBox
+
+// do not allow any click against view parts
+- (NSView *)hitTest:(id)sender
+{
+    return nil;
 }
 
 @end

@@ -1,52 +1,33 @@
 //
-//  yupoo.h
-//  Yupload
+//  Yupoo.h
+//  Yuploo
 //
-//  Created by Felix Huang on 06/11/2007.
-//  Copyright 2007 __MyCompanyName__. All rights reserved.
+//  Created by Felix Huang on 22/02/08.
+//  Copyright 2008 __MyCompanyName__. All rights reserved.
 //
 
-@class YPTree;
+#import <Cocoa/Cocoa.h>
+
+@class YupooResult;
+@class Photo;
 
 @interface Yupoo : NSObject {
-    // variables
-@private
-    NSString *apiKey, *secret, *authToken, *username, *userId, *frob, *serviceUrl;
+    NSString *apiKey, *secret, *authToken, *username, *userId, *frob, *nickname;
+    NSURL *restURL, *uploadURL, *authenticationURL;
 }
 
-@property(readwrite,assign) NSString *apiKey, *secret, *authToken, *username, *userId, *frob, *serviceUrl;
+@property(readonly,copy) NSString *apiKey, *secret, *authToken, *username, *userId, *frob, *nickname;
+@property(readonly,copy) NSURL *restURL, *uplaodURL, *authenticationURL;
 
--(id) init;
--(void) dealloc;
++ (id)yupooWithApiKey:(NSString *)anApiKey andSecret:(NSString *)aSecret;
 
-/**
- * initialize with apiKey and secret provided
- */
--(id) initWithApiKey:(NSString*)anApiKey secret:(NSString*)aSecret serviceUrl:(NSString*)aUrl;
+- (id)initWithApiKey:(NSString *)anApiKey andSecret:(NSString *)aSecret;
+- (id)connectRest:(NSURL *)aRestURL andUpload:(NSURL *)anUploadURL andAuthentication:(NSURL *)anAuthURL;
 
-/**
- * call remote methods
- */
- -(NSURLRequest*) buildRequest:(NSString*)url withParams:(NSDictionary*)params;
- - (NSURLRequest *)buildRequest:(NSString *)url withParams:(NSDictionary *)params withName:(NSString *)name withData:(NSData *)data withFile:(NSString *)filename;
- - (id)sendRequest:(NSURLRequest *)request isSynchronous:(BOOL)isSync withDelegate:(id)delegate errorFor:(NSString **)reason;
--(id) call:(NSString*)method withParams:(NSDictionary*)callParams needToken:(BOOL)needToken;
--(id) call:(NSString*)method withParams:(NSDictionary*)params needToken:(BOOL)needToken isSynchronous:(BOOL)isSync delegate:(id)delegate
-        withData:(NSData*)data withFile:(NSString *)filename serviceUrl:(NSString*)url;
-/** sign a call */
--(NSDictionary*) encodeAndSign: (NSDictionary*) params;
-/** parse xml result */
--(YPTree*) parse:(NSXMLElement*) doc;
-
+- (YupooResult *)authenticateWithToken:(NSString *)token;
 - (NSURL *)authenticate;
-- (BOOL)confirm;
-- (void)upload:(NSArray *)files delegate:(id)delegate;
-- (BOOL)recheck:(NSString *)token;
+- (YupooResult *)confirm;
 
-@end
-
-@interface Yupoo (YupooDelegate)
-
-- (void)setCurrentURLConnection:(NSURLConnection *)connection;
+- (YupooResult *)uploadPhoto:(Photo *)photo;
 
 @end

@@ -9,23 +9,30 @@
 #import <Cocoa/Cocoa.h>
 
 @class YuplooMainWindowController;
-@class MUPhotoView;
+//@class MUPhotoView;
 
 @interface YuplooPhotoViewController : NSViewController {
     NSMutableArray *photos;
     NSMutableIndexSet *selectionIndexes;
-    IBOutlet MUPhotoView *photoView;
+    IBOutlet NSCollectionView *photoView;
     IBOutlet NSArrayController *photoArrayController;
     YuplooMainWindowController *mainWindowController;
 }
 
 @property(readonly) NSMutableArray *photos;
 @property(readonly) NSMutableIndexSet *selectionIndexes;
-@property(readwrite,assign) MUPhotoView *photoView;
-@property(readwrite,assign) NSArrayController *photoArrayController;
+@property(readwrite,retain) NSCollectionView *photoView;
+@property(readwrite,retain) NSArrayController *photoArrayController;
 @property(readonly) YuplooMainWindowController *mainWindowController;
 
 - (id)initWithMainWindowController:(YuplooMainWindowController *)controller;
 - (void)loadNib;
+- (void)addPhotoWithContentsOfFile:(NSString *)file;
+
+@end
+
+@interface PhotoBox : NSBox {
+
+}
 
 @end
