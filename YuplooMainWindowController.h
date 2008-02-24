@@ -29,16 +29,16 @@
 }
 
 // properties
-@property(readwrite,retain) YuplooLoginController *loginController;
-@property(readwrite,retain) YuplooUploadController *uploadController;
-@property(readwrite,retain) YuplooPhotoViewController *photoViewController;
+@property(readwrite,assign) YuplooLoginController *loginController;
+@property(readwrite,assign) YuplooUploadController *uploadController;
+@property(readwrite,assign) YuplooPhotoViewController *photoViewController;
 @property(readwrite,copy) NSString *windowTitle;
 @property(readwrite,copy) NSString *photoStatus;
-@property(readwrite,retain) NSString *loginStatus;
+@property(readwrite,assign) NSString *loginStatus;
 @property(readwrite) float loginProgressValue;
 @property(readwrite) BOOL loginProgressHidden;
-@property(readwrite,retain) NSObjectController *ownerObjectController;
-@property(readwrite,retain) NSView *targetView;
+@property(readwrite,assign) NSObjectController *ownerObjectController;
+@property(readwrite,assign) NSView *targetView;
 
 + (id)mainWindowController;
 

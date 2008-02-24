@@ -49,7 +49,7 @@
 {
     NSAssert(nil != path, @"YuplooPhotoViewController>-addPhotoWithContentsOfFile: path cannot be nil.");
     
-    Photo *photo = [[[Photo alloc] initWithContentsOfFile:[[path copy] autorelease]] retain];
+    Photo *photo = [[Photo alloc] initWithContentsOfFile:[path copy]];
     [photos addObject:photo];
 }
 

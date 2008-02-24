@@ -17,9 +17,9 @@
     NSString *loginStatus;
 }
 
-@property(readwrite,retain) NSWindow *loginSheet;
-@property(readwrite,retain) NSWindow *authenticationNeededSheet;
-@property(readwrite,retain) NSString *loginStatus;
+@property(readwrite,assign) NSWindow *loginSheet;
+@property(readwrite,assign) NSWindow *authenticationNeededSheet;
+@property(readwrite,assign) NSString *loginStatus;
 @property(readonly) YuplooMainWindowController *mainWindowController;
 
 - (id)initWithMainWindowController:(YuplooMainWindowController *)controller;

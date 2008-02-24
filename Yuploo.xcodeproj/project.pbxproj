@@ -21,11 +21,11 @@
 		DC4699F40D6E4F48003E66AD /* PhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4699F30D6E4F48003E66AD /* PhotoView.xib */; };
 		DC469A070D6E502E003E66AD /* YPTree.m in Sources */ = {isa = PBXBuildFile; fileRef = DC469A060D6E502E003E66AD /* YPTree.m */; };
 		DC469A0C0D6E503B003E66AD /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC469A090D6E503B003E66AD /* Photo.m */; };
-		DC469A0D0D6E503B003E66AD /* MUPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC469A0B0D6E503B003E66AD /* MUPhotoView.m */; };
 		DC469A3F0D6E51B7003E66AD /* libcrypto.0.9.7.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC469A3E0D6E51B7003E66AD /* libcrypto.0.9.7.dylib */; };
 		DC56AC040D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC56AC030D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m */; };
 		DC56AC0F0D6DFC4700EB8FC8 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC56AC0E0D6DFC4700EB8FC8 /* MainWindow.xib */; };
 		DC8CA8840D6E819000FEE63E /* YuplooPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8CA8830D6E819000FEE63E /* YuplooPhotoViewController.m */; };
+		DCB1B5780D70AF56007D43AF /* YupooResultNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB1B5770D70AF56007D43AF /* YupooResultNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +67,8 @@
 		DC8CA8820D6E819000FEE63E /* YuplooPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuplooPhotoViewController.h; sourceTree = "<group>"; };
 		DC8CA8830D6E819000FEE63E /* YuplooPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuplooPhotoViewController.m; sourceTree = "<group>"; };
 		DC8CAA110D6EFE8A00FEE63E /* Yuploo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Yuploo.h; sourceTree = "<group>"; };
+		DCB1B5760D70AF56007D43AF /* YupooResultNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YupooResultNode.h; sourceTree = "<group>"; };
+		DCB1B5770D70AF56007D43AF /* YupooResultNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YupooResultNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,8 @@
 				DC469A030D6E5023003E66AD /* YupooOld.m */,
 				DC154D710D6F8336004FDDC5 /* YupooResult.h */,
 				DC154D720D6F8336004FDDC5 /* YupooResult.m */,
+				DCB1B5760D70AF56007D43AF /* YupooResultNode.h */,
+				DCB1B5770D70AF56007D43AF /* YupooResultNode.m */,
 			);
 			name = "Base Classes";
 			sourceTree = "<group>";
@@ -281,10 +285,10 @@
 				DC4698F50D6E3271003E66AD /* YuplooMainWindowController.m in Sources */,
 				DC469A070D6E502E003E66AD /* YPTree.m in Sources */,
 				DC469A0C0D6E503B003E66AD /* Photo.m in Sources */,
-				DC469A0D0D6E503B003E66AD /* MUPhotoView.m in Sources */,
 				DC8CA8840D6E819000FEE63E /* YuplooPhotoViewController.m in Sources */,
 				DC154D570D6F7B6C004FDDC5 /* Yupoo.m in Sources */,
 				DC154D730D6F8336004FDDC5 /* YupooResult.m in Sources */,
+				DCB1B5780D70AF56007D43AF /* YupooResultNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

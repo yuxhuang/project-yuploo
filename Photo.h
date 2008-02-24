@@ -8,23 +8,36 @@
 
 #import <Cocoa/Cocoa.h>
 
+@protocol YuplooWorker;
+@class WIMultiPartInputStream;
 
 @interface Photo : NSObject {
     NSString *path;
+    NSString *nameForDownload;
     NSString *title;
     NSString *description;
     NSString *tags;
     NSImage *image;
+    BOOL useMultiPartStream;
     BOOL public;
     BOOL contact;
     BOOL friend;
     BOOL family;
 }
 
-@property(readwrite,copy) NSString *path, *title, *description, *tags;
+@property(readwrite,copy) NSString *title, *description, *tags;
+@property(readonly) NSString *path, *nameForDownload;
 @property(readonly) NSImage *image;
-@property(readwrite,assign) BOOL public, contact, friend, family;
+@property(readwrite) BOOL public, contact, friend, family;
+@property(readonly) BOOL useMultiPartStream;
 
 - (id)initWithContentsOfFile:(NSString *)file;
+
+// the data of image
+- (NSData *)data;
+
+// streaming input
+- (void)useMultiPartStreamWithWorker:(id<YuplooWorker>)aWorker;
+- (WIMultiPartInputStream *)multiPartInputStream;
 
 @end

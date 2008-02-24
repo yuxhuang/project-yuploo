@@ -7,6 +7,7 @@
 //
 
 #import "YupooResult.h"
+#import "YupooResultNode.h"
 
 @interface YupooResult (PrivateAPI)
 
@@ -21,7 +22,7 @@
 
 @implementation YupooResult
 
-@synthesize connection, expectedReceivedDataLength, receivedDataLength, _completed, _failed, _successful, status;
+@synthesize connection, expectedReceivedDataLength, receivedDataLength, _completed, _failed, _successful, status, rootNode;
 
 + (id)resultOfRequest:(NSURLRequest *)request inYupoo:(Yupoo *)aYupoo
 {
@@ -38,15 +39,7 @@
     [result bindConnection:connection];
     // start the connection then.
     [connection start];
-    return [result autorelease];
-}
-
-- (void)dealloc
-{
-    [xmlElement release];
-    [connection release];
-    [yupoo release];
-    [super dealloc];
+    return result;
 }
 
 #pragma mark Connection Methods
@@ -66,28 +59,17 @@
 // this result has stat=ok
 - (BOOL) isSuccessful
 {
-    // FIXME
     return _successful;
 }
 
-- (NSString *)$T:(NSString *)path
+- (NSString *)$:(NSString *)path
 {
-    return nil;
+    return [rootNode $:path];
 }
 
-- (NSArray *)$TT:(NSString *)path
+- (NSDictionary *)$A:(NSString *)path
 {
-    return nil;
-}
-
-- (NSString *)$A:(NSString *)path
-{
-    return nil;
-}
-
-- (NSArray *)$AA:(NSString *)path
-{
-    return nil;
+    return [rootNode $A:path];
 }
 
 #pragma mark NSURLConnection Delegate Methods
@@ -151,9 +133,9 @@
 {
     // gosh! we have a failed connection
     // release the connection
-    [conn release];
+    connection = nil;
     // release the received data
-    [_receivedData release];
+    _receivedData = nil;
     
     [self willChangeValueForKey:@"failed"];
     _failed = YES;
@@ -177,12 +159,13 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)conn
 {
     // release the connection
-    [conn release];
+    connection = nil;
     
     // transform received data into xml
     xmlElement = [self loadXMLElementWithData:_receivedData];
-    // it should be autoreleased.
-//    [_receivedData release];
+    rootNode = [[YupooResultNode alloc] initWithXMLElement:xmlElement];
+    // set it to nil. so let the garbage collector frees it.
+    _receivedData = nil;
 
     // failed to parse. Malformed XML?
     if (nil == xmlElement) {
@@ -193,8 +176,11 @@
     }
     
     // ok, go ahead with xml
-    NSString *stat = [self $A:@"/rsp:stat"];
-    if ([stat isEqual:@"ok"]) {
+    NSString *stat = [self $:@"/rsp:stat"];
+    if (nil == stat) {
+        // deal with error first
+    }
+    else if ([stat isEqual:@"ok"]) {
         [self willChangeValueForKey:@"status"];
         status = @"Done";
         [self didChangeValueForKey:@"status"];
@@ -206,7 +192,10 @@
     else {
         [self willChangeValueForKey:@"status"];
         status = [NSString stringWithFormat:@"Failed! %@",
-                [self $A:@"/rsp/err:msg"]];
+                [self $:@"/rsp/err:msg"]];
+        if (nil == status) {
+            status = @"XML Error";
+        }
         [self didChangeValueForKey:@"status"];
         
         [self willChangeValueForKey:@"successful"];
@@ -241,7 +230,7 @@
         status = @"Waiting";
         
         xmlElement = nil;
-        yupoo = [aYupoo retain];
+        yupoo = aYupoo;
         connection = nil;
     }
     
@@ -250,7 +239,7 @@
 
 - (void)bindConnection:(NSURLConnection *)conn
 {
-    connection = [conn retain];
+    connection = conn;
 }
 
 - (NSXMLElement *)loadXMLElementWithData:(NSData *)data
@@ -269,9 +258,9 @@
 
     // correct, then go ahead
     NSXMLElement *rootElement = [doc rootElement];
-    [doc release];
     
-    return [[rootElement retain] autorelease];
+    return rootElement;
 }
+
 
 @end

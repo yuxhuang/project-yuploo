@@ -13,16 +13,18 @@
 
 @interface Yupoo : NSObject {
     NSString *apiKey, *secret, *authToken, *username, *userId, *frob, *nickname;
-    NSURL *restURL, *uploadURL, *authenticationURL;
+    NSString *restURL, *uploadURL, *authenticationURL;
+    NSTimeInterval timeout;
 }
 
-@property(readonly,copy) NSString *apiKey, *secret, *authToken, *username, *userId, *frob, *nickname;
-@property(readonly,copy) NSURL *restURL, *uplaodURL, *authenticationURL;
+@property(readonly,copy) NSString *authToken, *username, *userId, *nickname;
+@property(readwrite) NSTimeInterval timeout;
+//@property(readonly,copy) NSURL *restURL, *uplaodURL, *authenticationURL;
 
-+ (id)yupooWithApiKey:(NSString *)anApiKey andSecret:(NSString *)aSecret;
++ (id)yupooWithApiKey:(NSString *)anApiKey secret:(NSString *)aSecret;
 
-- (id)initWithApiKey:(NSString *)anApiKey andSecret:(NSString *)aSecret;
-- (id)connectRest:(NSURL *)aRestURL andUpload:(NSURL *)anUploadURL andAuthentication:(NSURL *)anAuthURL;
+- (id)initWithApiKey:(NSString *)anApiKey secret:(NSString *)aSecret;
+- (id)connectRest:(NSString *)aRestURL upload:(NSString *)anUploadURL authentication:(NSString *)anAuthURL;
 
 - (YupooResult *)authenticateWithToken:(NSString *)token;
 - (NSURL *)authenticate;

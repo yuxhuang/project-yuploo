@@ -9,10 +9,12 @@
 #import <Cocoa/Cocoa.h>
 
 @class Yupoo;
+@class YupooResultNode;
 
 @interface YupooResult : NSObject {
     NSURLConnection *connection;
     NSXMLElement *xmlElement;
+    YupooResultNode *rootNode;
     Yupoo *yupoo;
     
     // use internally
@@ -31,6 +33,7 @@
 @property(readonly,getter=failed) BOOL _failed;
 @property(readonly,getter=successful) BOOL _successful;
 @property(readonly) NSString *status;
+@property(readonly) YupooResultNode *rootNode;
 
 + (id)resultOfRequest:(NSURLRequest *)request inYupoo:(Yupoo *)aYupoo;
 
@@ -42,14 +45,9 @@
 // result status
 - (BOOL)successful;
 // element parsing methods
-// the first matched text element
-- (NSString *)$T:(NSString *)path;
-// all matched text elements
-- (NSArray *)$TT:(NSString *)path;
-// the first matched attribute element
-- (NSString *)$A:(NSString *)path;
-// all matched attributes
-- (NSArray *)$AA:(NSString *)path;
-
+// first correspondence
+- (NSString *)$:(NSString *)path;
+// all attributes of the first correspondence
+- (NSDictionary *)$A:(NSString *)path;
 
 @end
