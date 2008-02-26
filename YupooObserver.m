@@ -39,6 +39,7 @@
     }
     
     // then cancel the observation
-    [observee overlook:keyPath withObject:self];
+//    [observee overlook:keyPath withObject:self];
+    [super observeValueForKeyPath:keyPath ofObject:observee change:change context:context];
 }
 @end

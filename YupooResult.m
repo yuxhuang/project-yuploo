@@ -115,19 +115,11 @@
 - (void)connection:(NSURLConnection *)conn didReceiveResponse:(NSURLResponse *)response
 {
     // deal with response information, initialize lengths
-    [self willChangeValueForKey:@"receivedDataLength"];
-    receivedDataLength = 0;
-    [self didChangeValueForKey:@"receivedDataLength"];
-    
-    [self willChangeValueForKey:@"expectedReceivedDataLength"];
-    expectedReceivedDataLength = [response expectedContentLength];
+    [self setValue:[NSNumber numberWithInt:[response expectedContentLength]] forKey:@"receivedDataLength"];
     if (NSURLResponseUnknownLength == expectedReceivedDataLength)
-        expectedReceivedDataLength = 0;
-    [self didChangeValueForKey:@"expectedReceivedDataLength"];
+        [self setValue:[NSNumber numberWithInt:0] forKey:@"receivedDataLength"];
     
-    [self willChangeValueForKey:@"status"];
-    status = @"Loading";
-    [self didChangeValueForKey:@"status"];
+    [self setValue:@"Loading" forKey:@"status"];
 
     // initiate data
     _receivedData = [NSMutableData data];
@@ -137,9 +129,7 @@
 - (void)connection:(NSURLConnection *)conn didReceiveData:(NSData *)data
 {
     // we have received more, add to the length
-    [self willChangeValueForKey:@"receivedDataLength"];
-    receivedDataLength += [data length];
-    [self didChangeValueForKey:@"receivedDataLength"];
+    [self setValue:[NSNumber numberWithInt:(receivedDataLength + [data length])] forKey:@"receivedDataLength"];
     
     // append data
     [_receivedData appendData:data];
@@ -153,23 +143,16 @@
     // release the received data
     _receivedData = nil;
     
-    [self willChangeValueForKey:@"failed"];
-    _failed = YES;
-    [self willChangeValueForKey:@"failed"];
+    [self setValue:[NSNumber numberWithBool:YES] forKey:@"failed"];
     
     // log the error
-    [self willChangeValueForKey:@"status"];
-    status = [NSString stringWithFormat:@"Connection failed! %@ %@", [error localizedDescription],
-            [[error userInfo] objectForKey:NSErrorFailingURLStringKey]];
-    [self didChangeValueForKey:@"status"];
+    [self setValue:[NSString stringWithFormat:@"Connection failed! %@ %@", [error localizedDescription],
+            [[error userInfo] objectForKey:NSErrorFailingURLStringKey]] forKey:@"status"];
 
     NSLog(status);
     
     // we have changed these values
-    [self willChangeValueForKey:@"completed"];
-    _completed = YES;
-    [self didChangeValueForKey:@"completed"];
-    
+    [self setValue:[NSNumber numberWithBool:YES] forKey:@"completed"];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)conn
@@ -185,9 +168,7 @@
 
     // failed to parse. Malformed XML?
     if (nil == xmlElement) {
-        [self willChangeValueForKey:@"failed"];
-        _failed = YES;
-        [self didChangeValueForKey:@"failed"];
+        [self setValue:[NSNumber numberWithBool:YES] forKey:@"failed"];
         return;
     }
     
@@ -197,13 +178,8 @@
         // deal with error first
     }
     else if ([stat isEqual:@"ok"]) {
-        [self willChangeValueForKey:@"status"];
-        status = @"Done";
-        [self didChangeValueForKey:@"status"];
-
-        [self willChangeValueForKey:@"successful"];
-        _successful = YES;
-        [self didChangeValueForKey:@"successful"];
+        [self setValue:@"Done" forKey:@"status"];
+        [self setValue:[NSNumber numberWithBool:YES] forKey:@"successful"];
     }
     else {
         [self willChangeValueForKey:@"status"];
@@ -214,16 +190,12 @@
         }
         [self didChangeValueForKey:@"status"];
         
-        [self willChangeValueForKey:@"successful"];
-        _successful = NO;
-        [self willChangeValueForKey:@"successful"];
+        [self setValue:[NSNumber numberWithBool:NO] forKey:@"successful"];
     }
 
     // we have changed these values.
     // make sure completed comes at the very last.
-    [self willChangeValueForKey:@"completed"];
-    _completed = YES;
-    [self didChangeValueForKey:@"completed"];
+    [self setValue:[NSNumber numberWithBool:YES] forKey:@"completed"];
     
 }
 

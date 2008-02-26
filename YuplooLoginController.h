@@ -10,6 +10,7 @@
 
 @class YuplooMainWindowController;
 @class YupooResult;
+@class Yupoo;
 
 @interface YuplooLoginController : NSObject {
     YuplooMainWindowController *mainWindowController;
@@ -17,6 +18,7 @@
     IBOutlet NSWindow *authenticationNeededSheet;
     NSString *loginStatus;
     YupooResult *result;
+    Yupoo *yupoo;
     NSString *_frob;
 }
 

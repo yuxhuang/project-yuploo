@@ -27,6 +27,7 @@
     self = [super init];
     
     if (nil != self) {
+        yupoo = nil;
         mainWindowController = controller;
     }
     
@@ -43,6 +44,12 @@
 - (void)loadNib
 {
     [NSBundle loadNibNamed:@"Login" owner:self];
+}
+
+- (void)loadYupoo
+{
+    if (nil == yupoo)
+        yupoo = [[YuplooController sharedController] yupoo];
 }
 
 - (YuplooMainWindowController *)mainWindowController
@@ -76,10 +83,9 @@
 
 - (IBAction)loginSheetOK:(id)sender
 {
-    Yupoo *yupoo = [[YuplooController sharedController] yupoo];
+    [self loadYupoo];
     [self setValue:[yupoo completeAuthentication:_frob] forKey:@"result"];
-    [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:@"initiateAuthentication"];  
-    [self showLoginSheet];    
+    [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:@"completeAuthentication"];  
 }
 
 - (IBAction)authenticationNeededSheetCancel:(id)sender
@@ -98,7 +104,7 @@
 
 - (void)login
 {
-    Yupoo *yupoo = [[YuplooController sharedController] yupoo];
+    [self loadYupoo];
     [self setValue:[yupoo initiateAuthentication] forKey:@"result"];
     _frob = nil;
     [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:@"initiateAuthentication"];  
@@ -108,7 +114,7 @@
 - (void)check:(NSString *)token
 {
     if (nil != token) {
-        Yupoo *yupoo = [[YuplooController sharedController] yupoo];
+        [self loadYupoo];
         [self setValue:[yupoo authenticateWithToken:token] forKey:@"result"];
         // add self as the observer and context
         [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:@"authenticateWithToken"];
@@ -154,6 +160,8 @@
             // if initiate fails, do that again.
             if (success) {
                 _frob = [result authFrob];
+                // open the url
+                [[NSWorkspace sharedWorkspace] openURL:[result webAuthenticationURL]];
             }
             else {
                 // close the sheet, then do again.

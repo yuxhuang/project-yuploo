@@ -70,26 +70,20 @@
     
     YupooResult *result = [self call:@"yupoo.auth.checkToken" params:params needToken:NO];
     
-    [result observe:@"completed" withObject:[YupooObserver observeWith:self keyPairs:[NSDictionary dictionaryWithObjectsAndKeys:
-            @"authToken", @"authToken",
-            @"userId", @"authUserId",
-            @"userName", @"authUserName",
-            @"nickName", @"authNickName",
-            @"frob", @"authFrob",
-            nil]]];
+    [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew)
+            context:@"authenticateWithToken"];
     
     [result begin];
     
     return result;
 }
-
+   
 - (YupooResult *)initiateAuthentication
 {
     YupooResult *result = [self call:@"yupoo.auth.getFrob" params:nil needToken:NO];
     
-    [result observe:@"completed" withObject:[YupooObserver observeWith:self keyPairs:[NSDictionary dictionaryWithObjectsAndKeys:
-            @"frob", @"authFrob",
-            nil]]];
+    [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew)
+            context:@"initiateAuthentication"];
     
     [result begin];
     
@@ -99,16 +93,14 @@
 - (YupooResult *)completeAuthentication:(NSString *)aFrob
 {
     frob = aFrob;
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"frob", frob, nil];
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+            frob, @"frob", nil];
     
     YupooResult *result = [self call:@"yupoo.auth.getToken" params:params needToken:NO];
     
-    [result observe:@"completed" withObject:[YupooObserver observeWith:self keyPairs:[NSDictionary dictionaryWithObjectsAndKeys:
-            @"authToken", @"authToken",
-            @"userId", @"authUserId",
-            @"userName", @"authUserName",
-            @"nickName", @"authNickName",
-            nil]]];
+    [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew)
+            context:@"completeAuthentication"];
+    
     
     [result begin];
     
@@ -133,7 +125,7 @@
     // let's build it
     for (NSString *key in [params allKeys]) {
         NSString *value = [params objectForKey:key];
-        [url appendFormat:@"%@=%@", key, value];
+        [url appendFormat:@"%@=%@&", key, value];
     }
     
     return [NSURL URLWithString:url];
@@ -169,15 +161,14 @@
     
     // transform the digest into hexidemical string
     const char *digest = [dataForDigest bytes];
-    NSString* signature = [NSString stringWithFormat: @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
-			digest[0], digest[1], 
-			digest[2], digest[3],
-			digest[4], digest[5],
-			digest[6], digest[7],
-			digest[8], digest[9],
-			digest[10], digest[11],
-			digest[12], digest[13],
-			digest[14], digest[15]];
+    NSMutableString *ms;
+    if (digest) {
+        ms = [NSMutableString string];
+        for (int i = 0; i < MD5_DIGEST_LENGTH; i++) {
+            [ms appendFormat: @"%02x", (unsigned char)(digest[i])];
+        }
+    }
+    NSString *signature = [NSString stringWithString:ms];
     
     // add it to the parameters list
     [newParams setObject:signature forKey:@"api_sig"];
@@ -325,6 +316,29 @@
 
 
 // convinience methods
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)aContext
+{
+    id context = (id)aContext;
+
+    if ([context isEqual:@"initiateAuthentication"]) {
+        [self setValue:[object authFrob] forKeyPath:@"frob"];
+    }
+    else if ([context isEqual:@"completeAuthentication"]) {
+        [self setValue:[object authToken] forKeyPath:@"authToken"];
+        [self setValue:[object authUserId] forKeyPath:@"userId"];
+        [self setValue:[object authUserName] forKeyPath:@"username"];
+        [self setValue:[object authNickName] forKeyPath:@"nickname"];
+    }
+    else if ([context isEqual:@"authenticateWithToken"]) {
+        [self setValue:[object authToken] forKeyPath:@"authToken"];
+        [self setValue:[object authUserId] forKeyPath:@"userId"];
+        [self setValue:[object authUserName] forKeyPath:@"username"];
+        [self setValue:[object authNickName] forKeyPath:@"nickname"];
+    }
+    else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
 
 
 @end
