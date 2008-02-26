@@ -9,8 +9,6 @@
 			8D1107260486CEB800E47090 /* Yuploo */,
 		);
 		breakpoints = (
-			DC692C6D0D74694100C84790 /* YuplooController.m:84 */,
-			DC692C7F0D746A8C00C84790 /* YuplooController.m:69 */,
 		);
 		codeSenseManager = DC56ABFA0D6DFACF00EB8FC8 /* Code sense */;
 		executables = (
@@ -169,17 +167,17 @@
 	};
 	DC4698430D6E193A003E66AD /* YuplooMainWindowController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1072, 832}}";
-			sepNavSelRange = "{1336, 0}";
-			sepNavVisRange = "{208, 1277}";
+			sepNavIntBoundsRect = "{{0, 0}, {1072, 880}}";
+			sepNavSelRange = "{678, 0}";
+			sepNavVisRange = "{0, 1204}";
 			sepNavWindowFrame = "{{429, 62}, {1131, 762}}";
 		};
 	};
 	DC4698440D6E193A003E66AD /* YuplooMainWindowController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {864, 1664}}";
-			sepNavSelRange = "{661, 0}";
-			sepNavVisRange = "{0, 1325}";
+			sepNavIntBoundsRect = "{{0, 0}, {864, 1712}}";
+			sepNavSelRange = "{1799, 0}";
+			sepNavVisRange = "{1013, 1113}";
 			sepNavWindowFrame = "{{162, 221}, {923, 755}}";
 		};
 	};
@@ -193,9 +191,9 @@
 	};
 	DC4698880D6E2585003E66AD /* YuplooLoginController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {892, 3052}}";
-			sepNavSelRange = "{2993, 0}";
-			sepNavVisRange = "{3909, 1489}";
+			sepNavIntBoundsRect = "{{0, 0}, {892, 3228}}";
+			sepNavSelRange = "{2588, 0}";
+			sepNavVisRange = "{2074, 1073}";
 			sepNavWindowFrame = "{{718, 314}, {951, 709}}";
 		};
 	};
@@ -209,9 +207,9 @@
 	};
 	DC4698B20D6E2DE4003E66AD /* YuplooController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {806, 1616}}";
-			sepNavSelRange = "{834, 0}";
-			sepNavVisRange = "{441, 333}";
+			sepNavIntBoundsRect = "{{0, 0}, {806, 1696}}";
+			sepNavSelRange = "{1663, 0}";
+			sepNavVisRange = "{1393, 460}";
 			sepNavWindowFrame = "{{353, 42}, {850, 736}}";
 		};
 	};
@@ -291,40 +289,6 @@
 			sepNavWindowFrame = "{{23, 43}, {985, 741}}";
 		};
 	};
-	DC692C6D0D74694100C84790 /* YuplooController.m:84 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = DC4698B20D6E2DE4003E66AD /* YuplooController.m */;
-		functionName = "-begin";
-		hitCount = 1;
-		ignoreCount = 0;
-		lineNumber = 84;
-		location = Yuploo;
-		modificationTime = 225735713.079587;
-		state = 1;
-	};
-	DC692C7F0D746A8C00C84790 /* YuplooController.m:69 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = DC4698B20D6E2DE4003E66AD /* YuplooController.m */;
-		functionName = "-init";
-		hitCount = 1;
-		ignoreCount = 0;
-		lineNumber = 69;
-		location = Yuploo;
-		modificationTime = 225735711.296616;
-		state = 1;
-	};
 	DC8CA8820D6E819000FEE63E /* YuplooPhotoViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {850, 608}}";
@@ -386,7 +350,7 @@
 		fRef = DC4698430D6E193A003E66AD /* YuplooMainWindowController.h */;
 		name = "YuplooMainWindowController.h: 16";
 		rLen = 8;
-		rLoc = 328;
+		rLoc = 342;
 		rType = 0;
 		vrLen = 370;
 		vrLoc = 177;
@@ -419,7 +383,7 @@
 		fRef = DC4698430D6E193A003E66AD /* YuplooMainWindowController.h */;
 		name = "YuplooMainWindowController.h: 16";
 		rLen = 8;
-		rLoc = 328;
+		rLoc = 342;
 		rType = 0;
 		vrLen = 370;
 		vrLoc = 177;
@@ -443,7 +407,7 @@
 		fRef = DC4698430D6E193A003E66AD /* YuplooMainWindowController.h */;
 		name = "YuplooMainWindowController.h: 22";
 		rLen = 0;
-		rLoc = 546;
+		rLoc = 560;
 		rType = 0;
 		vrLen = 1213;
 		vrLoc = 0;

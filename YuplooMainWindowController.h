@@ -11,6 +11,7 @@
 @class YuplooLoginController;
 @class YuplooPhotoViewController;
 @class YuplooUploadController;
+@class Yupoo;
 
 @interface YuplooMainWindowController : NSWindowController {
     // properties to export
@@ -23,6 +24,7 @@
     NSString *loginStatus;
     float loginProgressValue;
     BOOL loginProgressHidden;
+    Yupoo *yupoo;
     
     IBOutlet NSObjectController *ownerObjectController;
     IBOutlet NSView *targetView;    
@@ -39,6 +41,7 @@
 @property(readwrite) BOOL loginProgressHidden;
 @property(readwrite,assign) NSObjectController *ownerObjectController;
 @property(readwrite,assign) NSView *targetView;
+@property(readonly) Yupoo *yupoo;
 
 + (id)mainWindowController;
 

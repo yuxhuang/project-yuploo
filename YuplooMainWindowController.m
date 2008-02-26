@@ -15,7 +15,7 @@
 
 @synthesize loginController, uploadController, photoViewController,
         windowTitle, photoStatus, loginStatus, loginProgressValue, loginProgressHidden,
-        ownerObjectController, targetView;
+        ownerObjectController, targetView, yupoo;
 
 + (id)mainWindowController
 {
@@ -60,6 +60,7 @@
     // add the photo view
     [self.photoViewController loadNib];
     [self.targetView addSubview:[self.photoViewController view]];
+    yupoo = [[YuplooController sharedController] yupoo];
     
     // make sure we have resized the photo view to match its superview
     [[self.photoViewController view] setFrame:[self.targetView bounds]];

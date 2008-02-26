@@ -27,7 +27,7 @@
     self = [super init];
     
     if (nil != self) {
-        yupoo = nil;
+        yupoo = [[YuplooController sharedController] yupoo];
         mainWindowController = controller;
     }
     
@@ -50,6 +50,7 @@
 {
     if (nil == yupoo)
         yupoo = [[YuplooController sharedController] yupoo];
+        
 }
 
 - (YuplooMainWindowController *)mainWindowController
