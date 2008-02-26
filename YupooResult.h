@@ -38,16 +38,37 @@
 + (id)resultOfRequest:(NSURLRequest *)request inYupoo:(Yupoo *)aYupoo;
 
 // connection
-- (BOOL)completed;
-- (BOOL)failed;
+- (void)begin;
 - (void)cancel;
+- (void)observe:(NSString *)keyPath withObject:(id)anObject;
+- (void)overlook:(NSString *)keyPath withObject:(id)anObject;
 
-// result status
-- (BOOL)successful;
 // element parsing methods
 // first correspondence
 - (NSString *)$:(NSString *)path;
 // all attributes of the first correspondence
 - (NSDictionary *)$A:(NSString *)path;
+
+@end
+
+const static int YupooResultErrorCodeFailure = -1;
+
+@interface YupooResult (Error)
+
+- (NSInteger)errorCode;
+- (NSString *)errorMessage;
+- (NSString *)failureReason;
+
+@end
+
+@interface YupooResult (Authentication)
+
+- (NSURL *)webAuthenticationURL;
+- (NSString *)authFrob;
+- (NSString *)authToken;
+- (NSString *)authPerms;
+- (NSString *)authUserId;
+- (NSString *)authUserName;
+- (NSString *)authNickName;
 
 @end

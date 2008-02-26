@@ -8,12 +8,13 @@
 
 #import "Yupoo.h"
 #import "YupooResult.h"
+#import "YupooObserver.h"
 #import "Photo.h"
 #include <openssl/md5.h>
 
 @interface Yupoo (PrivateAPI)
 // build up URL and requests
-- (NSURL *)URLWith:(NSString *)aURL params:(NSDictionary *)params;
+
 - (NSURLRequest *)requestWithURL:(NSString *)aURL params:(NSDictionary *)params timeoutInterval:(NSTimeInterval)timeout;
 - (NSURLRequest *)photoUploadRequestWithURL:(NSString *)aURL params:(NSDictionary *)params photo:(Photo *)aPhoto timeoutInterval:(NSTimeInterval)timeout;
 
@@ -24,13 +25,13 @@
 - (YupooResult *)callRequest:(NSURLRequest *)aRequest;
 
 // convinience methods
-- (NSDictionary *)paramsEncodedAndSigned:(NSDictionary *)oldParams;
+
 
 @end
 
 @implementation Yupoo
 
-@synthesize authToken, username, userId, nickname, timeout;
+@synthesize apiKey, authToken, username, userId, nickname, timeout, authenticationURL, restURL, uploadURL;
 
 + (id)yupooWithApiKey:(NSString *)anApiKey secret:(NSString *)aSecret
 {
@@ -44,6 +45,7 @@
     if (nil != self) {
         apiKey = [anApiKey copy];
         secret = [aSecret copy];
+        frob = nil;
         timeout = 60.0; // default timeout
     }
     
@@ -66,18 +68,51 @@
             aToken, @"auth_token",
             nil];
     
-    return [self call:@"yupoo.auth.checkToken" params:params needToken:NO];
+    YupooResult *result = [self call:@"yupoo.auth.checkToken" params:params needToken:NO];
+    
+    [result observe:@"completed" withObject:[YupooObserver observeWith:self keyPairs:[NSDictionary dictionaryWithObjectsAndKeys:
+            @"authToken", @"authToken",
+            @"userId", @"authUserId",
+            @"userName", @"authUserName",
+            @"nickName", @"authNickName",
+            @"frob", @"authFrob",
+            nil]]];
+    
+    [result begin];
+    
+    return result;
 }
 
-- (NSURL *)authenticate
+- (YupooResult *)initiateAuthentication
 {
     YupooResult *result = [self call:@"yupoo.auth.getFrob" params:nil needToken:NO];
     
+    [result observe:@"completed" withObject:[YupooObserver observeWith:self keyPairs:[NSDictionary dictionaryWithObjectsAndKeys:
+            @"frob", @"authFrob",
+            nil]]];
+    
+    [result begin];
+    
+    return result;
 }
 
-- (YupooResult *)confirm
+- (YupooResult *)completeAuthentication:(NSString *)aFrob
 {
-
+    frob = aFrob;
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"frob", frob, nil];
+    
+    YupooResult *result = [self call:@"yupoo.auth.getToken" params:params needToken:NO];
+    
+    [result observe:@"completed" withObject:[YupooObserver observeWith:self keyPairs:[NSDictionary dictionaryWithObjectsAndKeys:
+            @"authToken", @"authToken",
+            @"userId", @"authUserId",
+            @"userName", @"authUserName",
+            @"nickName", @"authNickName",
+            nil]]];
+    
+    [result begin];
+    
+    return result;
 }
 
 - (YupooResult *)uploadPhoto:(Photo *)photo
@@ -85,12 +120,6 @@
 
 }
 
-
-
-@end
-
-
-@implementation Yupoo (PrivateAPI)
 
 // build up URL and requests
 - (NSURL *)URLWith:(NSString *)aURL params:(NSDictionary *)params
@@ -109,6 +138,58 @@
     
     return [NSURL URLWithString:url];
 }
+
+- (NSDictionary *)paramsEncodedAndSigned:(NSDictionary *)oldParams
+{
+    // params dictionary to hold them
+    NSMutableDictionary *newParams = [NSMutableDictionary dictionary];
+    // because of the signing algorithm, we have to sort out the keys
+    NSArray *sortedKeys = [[oldParams allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+    // the string for signing
+    NSMutableString *forHash = [NSMutableString stringWithString:secret];
+    
+    // go ahead to encode and build the string
+    for (NSString *key in sortedKeys) {
+        // escape the query parameter by percentage representation before hashing
+        NSString *value = [[oldParams objectForKey:key] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        // done
+        [newParams setObject:value forKey:key];
+        [forHash appendFormat:@"%@%@", key, value];
+    }
+    
+    // i do not hold oldParams any more
+    oldParams = nil;
+    
+    // sign it
+    NSData *dataForHash = [forHash dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+    NSMutableData *dataForDigest = [NSMutableData dataWithLength:MD5_DIGEST_LENGTH];
+    
+    // MD5!!
+    MD5([dataForHash bytes], [dataForHash length], [dataForDigest mutableBytes]);
+    
+    // transform the digest into hexidemical string
+    const char *digest = [dataForDigest bytes];
+    NSString* signature = [NSString stringWithFormat: @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
+			digest[0], digest[1], 
+			digest[2], digest[3],
+			digest[4], digest[5],
+			digest[6], digest[7],
+			digest[8], digest[9],
+			digest[10], digest[11],
+			digest[12], digest[13],
+			digest[14], digest[15]];
+    
+    // add it to the parameters list
+    [newParams setObject:signature forKey:@"api_sig"];
+    
+    return newParams;
+}
+
+@end
+
+
+@implementation Yupoo (PrivateAPI)
+
 
 - (NSURLRequest *)requestWithURL:(NSString *)aURL params:(NSDictionary *)params timeoutInterval:(NSTimeInterval)aTimeout
 {
@@ -241,51 +322,9 @@
     return [YupooResult resultOfRequest:request inYupoo:self];
 }
 
+
+
 // convinience methods
-- (NSDictionary *)paramsEncodedAndSigned:(NSDictionary *)oldParams
-{
-    // params dictionary to hold them
-    NSMutableDictionary *newParams = [NSMutableDictionary dictionary];
-    // because of the signing algorithm, we have to sort out the keys
-    NSArray *sortedKeys = [[oldParams allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
-    // the string for signing
-    NSMutableString *forHash = [NSString stringWithString:secret];
-    
-    // go ahead to encode and build the string
-    for (NSString *key in sortedKeys) {
-        // escape the query parameter by percentage representation before hashing
-        NSString *value = [[oldParams objectForKey:key] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        // done
-        [newParams setObject:value forKey:key];
-        [forHash appendFormat:@"%@%@", key, value];
-    }
-    
-    // i do not hold oldParams any more
-    oldParams = nil;
-    
-    // sign it
-    NSData *dataForHash = [forHash dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
-    NSMutableData *dataForDigest = [NSMutableData dataWithLength:MD5_DIGEST_LENGTH];
-    
-    // MD5!!
-    MD5([dataForHash bytes], [dataForHash length], [dataForDigest mutableBytes]);
-    
-    // transform the digest into hexidemical string
-    const char *digest = [dataForDigest bytes];
-    NSString* signature = [NSString stringWithFormat: @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
-			digest[0], digest[1], 
-			digest[2], digest[3],
-			digest[4], digest[5],
-			digest[6], digest[7],
-			digest[8], digest[9],
-			digest[10], digest[11],
-			digest[12], digest[13],
-			digest[14], digest[15]];
-    
-    // add it to the parameters list
-    [newParams setObject:signature forKey:@"api_sig"];
-    
-    return newParams;
-}
+
 
 @end

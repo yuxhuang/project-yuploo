@@ -41,16 +41,16 @@
     return self;
 }
 
-- (void)dealloc
+- (void)finalize
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
-    [self.loginController release];
-    [self.photoViewController release];
+    self.loginController = nil;
+    self.photoViewController = nil;
     
-    [self.windowTitle release];
+    self.windowTitle = nil;
     
-    [super dealloc];
+    [super finalize];
 }
 
 #pragma mark Window Loading Methods

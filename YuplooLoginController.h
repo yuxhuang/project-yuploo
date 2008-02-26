@@ -9,18 +9,22 @@
 #import <Cocoa/Cocoa.h>
 
 @class YuplooMainWindowController;
+@class YupooResult;
 
 @interface YuplooLoginController : NSObject {
     YuplooMainWindowController *mainWindowController;
     IBOutlet NSWindow *loginSheet;
     IBOutlet NSWindow *authenticationNeededSheet;
     NSString *loginStatus;
+    YupooResult *result;
+    NSString *_frob;
 }
 
 @property(readwrite,assign) NSWindow *loginSheet;
 @property(readwrite,assign) NSWindow *authenticationNeededSheet;
 @property(readwrite,assign) NSString *loginStatus;
 @property(readonly) YuplooMainWindowController *mainWindowController;
+@property(readonly) YupooResult *result;
 
 - (id)initWithMainWindowController:(YuplooMainWindowController *)controller;
 - (YuplooMainWindowController *)mainWindowController;

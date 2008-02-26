@@ -8,6 +8,7 @@
 
 #import "YupooResult.h"
 #import "YupooResultNode.h"
+#import "Yupoo.h"
 
 @interface YupooResult (PrivateAPI)
 
@@ -34,15 +35,19 @@
         return nil;
     
     // create the connection
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:result startImmediately:NO];
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:result startImmediately:YES];
     // binds back the connection
     [result bindConnection:connection];
-    // start the connection then.
-    [connection start];
+
     return result;
 }
 
 #pragma mark Connection Methods
+
+- (void)begin
+{
+//    [connection start];
+}
 
 // the connection is totally completed. (but it does not mean the transaction is successful.
 // connection is completed.
@@ -52,6 +57,17 @@
     @synchronized(self) {
         [connection cancel];
     }
+}
+
+- (void)observe:(NSString *)keyPath withObject:(id)anObject
+{
+    [self addObserver:anObject forKeyPath:keyPath
+            options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:nil];
+}
+
+- (void)overlook:(NSString *)keyPath withObject:(id)anObject
+{
+    [self removeObserver:anObject forKeyPath:keyPath];
 }
 
 #pragma mark Result Analyze Methods
@@ -264,3 +280,115 @@
 
 
 @end
+
+@implementation YupooResult (Error)
+
+- (NSInteger)errorCode
+{
+    NSString *error = [self $:@"/rsp/err:code"];
+    
+    if (nil == error) {
+        return YupooResultErrorCodeFailure;
+    }
+    
+    NSInteger code = 0xdeadbeef;
+    // deal with wrong representation with NSScanner
+    NSScanner *scanner = [NSScanner scannerWithString:error];
+    
+    if (![scanner scanInteger:&code])
+        return YupooResultErrorCodeFailure;
+    
+    return code;   
+}
+
+- (NSString *)errorMessage
+{
+    NSString *msg = [self $:@"/rsp/err:msg"];
+
+    return msg; // will be nil if msg is not found.
+}
+
+- (NSString *)failureReason
+{
+    NSString *reason = [self $:@"/rsp/err"];
+
+    if (nil == reason || [[reason stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqual:@""])
+        return nil;
+
+    return reason; // should be nil if err has no reason.
+}
+
+@end
+
+@implementation YupooResult (Authentication)
+
+- (NSURL *)webAuthenticationURL
+{
+    if (!self.successful)
+        return nil;
+        
+    NSString *frob = [self $:@"/rsp/frob"];
+    
+    if (nil == frob)
+        return nil;
+
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    [params setObject:frob forKey:@"frob"];
+    [params setObject:@"write" forKey:@"perms"];
+    [params setObject:yupoo.apiKey forKey:@"api_key"];
+    
+    NSDictionary *signedParams = [yupoo paramsEncodedAndSigned:params];
+    
+    return [yupoo URLWith:yupoo.authenticationURL params:signedParams];
+}
+
+- (NSString *)authFrob
+{
+    if (!self.successful)
+        return nil;
+    
+    return [self $:@"/rsp/frob"];
+}
+
+- (NSString *)authToken
+{
+    if (!self.successful)
+        return nil;
+    
+    return [self $:@"/rsp/auth/token"];
+}
+
+- (NSString *)authPerms
+{
+    if (!self.successful)
+        return nil;
+    
+    return [self $:@"/rsp/auth/perms"];
+}
+
+- (NSString *)authUserId
+{
+    if (!self.successful)
+        return nil;
+    
+    return [self $:@"/rsp/auth/user:id"];
+}
+
+- (NSString *)authUserName
+{
+    if (!self.successful)
+        return nil;
+    
+    return [self $:@"/rsp/auth/user:username"];
+}
+
+- (NSString *)authNickName
+{
+    if (!self.successful)
+        return nil;
+        
+    return [self $:@"/rsp/auth/user:nickname"];
+}
+
+@end 

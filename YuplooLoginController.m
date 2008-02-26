@@ -9,6 +9,7 @@
 #import "YuplooLoginController.h"
 #import "YuplooController.h"
 #import "Yupoo.h"
+#import "YupooResult.h"
 
 @interface YuplooLoginController (PrivateAPI)
 
@@ -19,7 +20,7 @@
 
 @implementation YuplooLoginController
 
-@synthesize loginSheet, authenticationNeededSheet, loginStatus, mainWindowController;
+@synthesize loginSheet, authenticationNeededSheet, loginStatus, mainWindowController, result;
 
 - (id)initWithMainWindowController:(YuplooMainWindowController *)controller
 {
@@ -32,11 +33,11 @@
     return self;
 }
 
-- (void)dealloc
+- (void)finalize
 {
-    [loginSheet release];
-    [authenticationNeededSheet release];
-    [super dealloc];
+    loginSheet = nil;
+    authenticationNeededSheet = nil;
+    [super finalize];
 }
 
 - (void)loadNib
@@ -75,38 +76,47 @@
 
 - (IBAction)loginSheetOK:(id)sender
 {
-    [NSApp endSheet:loginSheet];
+    Yupoo *yupoo = [[YuplooController sharedController] yupoo];
+    [self setValue:[yupoo completeAuthentication:_frob] forKey:@"result"];
+    [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:@"initiateAuthentication"];  
+    [self showLoginSheet];    
 }
 
 - (IBAction)authenticationNeededSheetCancel:(id)sender
 {
+    [self setValue:nil forKey:@"result"];
     [NSApp endSheet:authenticationNeededSheet];
 }
 
 - (IBAction)authenticationNeededSheetOK:(id)sender
 {
+    [self setValue:nil forKey:@"result"];
     [NSApp endSheet:authenticationNeededSheet];
-    // go on login sheet
+  // go on login sheet
     [self login];
 }
 
 - (void)login
 {
+    Yupoo *yupoo = [[YuplooController sharedController] yupoo];
+    [self setValue:[yupoo initiateAuthentication] forKey:@"result"];
+    _frob = nil;
+    [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:@"initiateAuthentication"];  
     [self showLoginSheet];
-    
 }
 
 - (void)check:(NSString *)token
 {
     if (nil != token) {
         Yupoo *yupoo = [[YuplooController sharedController] yupoo];
-        // if the authToken is invalid
-        if (![yupoo recheck:token]) {
-            // tell something about authentication needed
-            [self showAuthenticationNeededSheet];
-        }
+        [self setValue:[yupoo authenticateWithToken:token] forKey:@"result"];
+        // add self as the observer and context
+        [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:@"authenticateWithToken"];
+        // shows the authentication sheet
+        [self showAuthenticationNeededSheet];
     }
     else {
+        [self setValue:nil forKey:@"result"];
         [self showAuthenticationNeededSheet];
     }
 }
@@ -123,6 +133,47 @@
 - (void)authenticationNeededSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
 {
     [sheet orderOut:self];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)aContext
+{
+    id context = (id)aContext;
+    
+    if ([context isEqual:@"authenticateWithToken"]) {
+        if ([[change objectForKey:NSKeyValueChangeNewKey] isEqual:[NSNumber numberWithBool:YES]]) {
+            BOOL success = [object successful];
+            if (success) {
+                [NSApp endSheet:authenticationNeededSheet];
+            }
+        }
+    }
+    else if ([context isEqual:@"initiateAuthentication"]) {
+        // the login form's button should do enable/disable the done button.
+        if ([[change objectForKey:NSKeyValueChangeNewKey] isEqual:[NSNumber numberWithBool:YES]]) {
+            BOOL success = [object successful];
+            // if initiate fails, do that again.
+            if (success) {
+                _frob = [result authFrob];
+            }
+            else {
+                // close the sheet, then do again.
+                [NSApp endSheet:loginSheet];
+                [self login];
+            }
+        }
+    }
+    else if ([context isEqual:@"completeAuthentication"]) {
+        // here we should automatically close the sheet
+        if ([[change objectForKey:NSKeyValueChangeNewKey] isEqual:[NSNumber numberWithBool:YES]]) {
+            BOOL success = [object successful];
+            if (success) {
+                [NSApp endSheet:loginSheet];
+            }
+        }
+    }
+    else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
 }
 
 @end

@@ -70,19 +70,11 @@ static YuplooController *sharedController = nil;
     
     if (nil != self) {
        self.mainWindowController = [YuplooMainWindowController mainWindowController];
-       yupoo = [[Yupoo alloc] initWithApiKey:YUPLOO_API_KEY
-                secret:YUPLOO_API_SECRET
-                serviceUrl:YUPLOO_API_REST];
+       yupoo = [Yupoo yupooWithApiKey:YUPLOO_API_KEY secret:YUPLOO_API_SECRET];
+       [yupoo connectRest:YUPLOO_API_REST upload:YUPLOO_API_UPLOAD authentication:YUPLOO_API_AUTHENTICATION];
     }
     
     return self;
-}
-
-- (void)dealloc
-{
-    [self setMainWindowController:nil];
-    [yupoo release];
-    [super dealloc];
 }
 
 #pragma mark Convenience Methods
