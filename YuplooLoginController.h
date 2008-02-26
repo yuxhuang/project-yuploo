@@ -20,6 +20,7 @@
     YupooResult *result;
     Yupoo *yupoo;
     NSString *_frob;
+    BOOL authenticationNeeded;
 }
 
 @property(readwrite,assign) NSWindow *loginSheet;
@@ -27,6 +28,7 @@
 @property(readwrite,assign) NSString *loginStatus;
 @property(readonly) YuplooMainWindowController *mainWindowController;
 @property(readonly) YupooResult *result;
+@property(readonly) BOOL authenticationNeeded;
 
 - (id)initWithMainWindowController:(YuplooMainWindowController *)controller;
 - (YuplooMainWindowController *)mainWindowController;

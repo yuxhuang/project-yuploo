@@ -97,7 +97,7 @@
 
 - (IBAction)login:(id)sender
 {
-    [self showLoginSheet];
+    [self.loginController login];
 }
 
 - (IBAction)upload:(id)sender

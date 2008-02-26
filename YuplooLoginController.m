@@ -10,6 +10,7 @@
 #import "YuplooController.h"
 #import "Yupoo.h"
 #import "YupooResult.h"
+#import "YuplooMainWindowController.h"
 
 @interface YuplooLoginController (PrivateAPI)
 
@@ -20,13 +21,14 @@
 
 @implementation YuplooLoginController
 
-@synthesize loginSheet, authenticationNeededSheet, loginStatus, mainWindowController, result;
+@synthesize loginSheet, authenticationNeededSheet, loginStatus, mainWindowController, result, authenticationNeeded;
 
 - (id)initWithMainWindowController:(YuplooMainWindowController *)controller
 {
     self = [super init];
     
     if (nil != self) {
+        authenticationNeeded = YES;
         yupoo = [[YuplooController sharedController] yupoo];
         mainWindowController = controller;
     }
@@ -108,6 +110,8 @@
     [self loadYupoo];
     [self setValue:[yupoo initiateAuthentication] forKey:@"result"];
     _frob = nil;
+    mainWindowController.loginStatus = nil;
+    [[YuplooController sharedController] saveToken:nil];
     [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:@"initiateAuthentication"];  
     [self showLoginSheet];
 }
@@ -115,6 +119,7 @@
 - (void)check:(NSString *)token
 {
     if (nil != token) {
+        authenticationNeeded = NO;
         [self loadYupoo];
         [self setValue:[yupoo authenticateWithToken:token] forKey:@"result"];
         // add self as the observer and context
@@ -123,6 +128,7 @@
         [self showAuthenticationNeededSheet];
     }
     else {
+        authenticationNeeded = YES;
         [self setValue:nil forKey:@"result"];
         [self showAuthenticationNeededSheet];
     }
@@ -151,6 +157,7 @@
             BOOL success = [object successful];
             if (success) {
                 [NSApp endSheet:authenticationNeededSheet];
+                self.mainWindowController.loginStatus = [result authUserName];
             }
         }
     }
@@ -177,6 +184,8 @@
             BOOL success = [object successful];
             if (success) {
                 [NSApp endSheet:loginSheet];
+                self.mainWindowController.loginStatus = [result authUserName];
+                [[YuplooController sharedController] saveToken:[result authToken]];
             }
         }
     }
