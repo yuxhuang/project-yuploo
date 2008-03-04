@@ -29,8 +29,43 @@
         self.friend = NO;
         self.family = NO;
         
-        #warning FIXME this preview image should be resized!!!
-        image = [[NSImage alloc] initWithContentsOfFile:path];
+        NSGarbageCollector *gc = [NSGarbageCollector defaultCollector];
+        // generate the full size image in a zone
+        NSImage *fullSizeImage = [[NSImage alloc] initWithContentsOfFile:path];
+        
+        // calculate the new image size
+        NSSize fullSize;
+        NSImageRep *fullSizeRep = [fullSizeImage bestRepresentationForDevice:nil];
+        
+        fullSize.width = [fullSizeRep pixelsWide];
+        fullSize.height = [fullSizeRep pixelsHigh];
+        
+        // resize the image
+        [image setScalesWhenResized:YES];
+        [image setSize:fullSize];
+        
+        // resize to create a smaller photo
+        CGFloat smallPhotoSize = 100.0;
+        CGFloat longSide = [fullSizeRep pixelsWide] < [fullSizeRep pixelsHigh] ? [fullSizeRep pixelsHigh]
+                : [fullSizeRep pixelsWide];
+        CGFloat scale = smallPhotoSize / longSide;
+        
+        NSSize smallSize;
+        smallSize.width = [fullSizeRep pixelsWide] * scale;
+        smallSize.height = [fullSizeRep pixelsHigh] * scale;
+        
+        // draw a small size image
+        NSImage *smallImage = [[NSImage alloc] initWithSize:smallSize];
+        [smallImage lockFocus];
+        [fullSizeRep drawInRect:NSMakeRect(0.0, 0.0, smallSize.width, smallSize.height)];
+        [smallImage unlockFocus];
+        
+        // reset the image
+        image = smallImage;
+        
+        // tell the garbage collector to collect things
+        
+        [gc collectExhaustively];
         
         if (nil == image) {
             [self dealloc];

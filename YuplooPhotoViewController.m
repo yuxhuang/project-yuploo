@@ -49,8 +49,11 @@
 {
     NSAssert(nil != path, @"YuplooPhotoViewController>-addPhotoWithContentsOfFile: path cannot be nil.");
     
+    #warning A workaround to change value. It should be made KVO compliant!
+    NSMutableArray *newPhotos = [NSMutableArray arrayWithArray:photos];
     Photo *photo = [[Photo alloc] initWithContentsOfFile:[path copy]];
-    [photos addObject:photo];
+    [newPhotos addObject:photo];
+    [self setValue:newPhotos forKey:@"photos"];
 }
 
 @end
@@ -58,7 +61,7 @@
 @implementation PhotoBox
 
 // do not allow any click against view parts
-- (NSView *)hitTest:(id)sender
+- (NSView *)hitTest:(NSPoint *)aPoint
 {
     return nil;
 }

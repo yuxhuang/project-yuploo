@@ -29,6 +29,7 @@
     if (nil != self) {
         loginController = [[YuplooLoginController alloc] initWithMainWindowController:self];
         photoViewController = [[YuplooPhotoViewController alloc] initWithMainWindowController:self];
+
         windowTitle = [[[NSApp delegate] displayName] copy];
         photoStatus = nil;
         loginStatus = nil;
