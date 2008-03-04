@@ -29,9 +29,11 @@
         self.friend = NO;
         self.family = NO;
         
-        NSGarbageCollector *gc = [NSGarbageCollector defaultCollector];
+        #warning XXX deal with memory consuming problem of NSImage here!
+        
         // generate the full size image in a zone
         NSImage *fullSizeImage = [[NSImage alloc] initWithContentsOfFile:path];
+        [fullSizeImage setCacheMode:NSImageCacheNever];
         
         // calculate the new image size
         NSSize fullSize;
@@ -64,8 +66,9 @@
         image = smallImage;
         
         // tell the garbage collector to collect things
-        
-        [gc collectExhaustively];
+        [fullSizeImage removeRepresentation:fullSizeRep];
+        [fullSizeImage release];
+        fullSizeImage = nil;
         
         if (nil == image) {
             [self dealloc];

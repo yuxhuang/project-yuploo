@@ -36,7 +36,7 @@
 @property(readwrite,assign) YuplooPhotoViewController *photoViewController;
 @property(readwrite,copy) NSString *windowTitle;
 @property(readwrite,copy) NSString *photoStatus;
-@property(readwrite,assign) NSString *loginStatus;
+@property(readwrite,copy) NSString *loginStatus;
 @property(readwrite) float loginProgressValue;
 @property(readwrite) BOOL loginProgressHidden;
 @property(readwrite,assign) NSObjectController *ownerObjectController;

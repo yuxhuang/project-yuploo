@@ -14,6 +14,6 @@
     YuplooController *controller;
 }
 
-@property(readwrite,assign) YuplooController *controller;
+@property(readwrite,retain) YuplooController *controller;
 
 @end
