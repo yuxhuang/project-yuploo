@@ -126,9 +126,7 @@
 		29B97314FDCFA39411CA2CEA /* Yuploo */ = {
 			isa = PBXGroup;
 			children = (
-				DC469A0E0D6E5041003E66AD /* Base Classes */,
-				DC56ABFE0D6DFB4800EB8FC8 /* Yuploo */,
-				DC56ABFF0D6DFB5400EB8FC8 /* Sheets */,
+				DCEE50110DC1287600426DC0 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -170,6 +168,8 @@
 		DC469A0E0D6E5041003E66AD /* Base Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DC469A080D6E503B003E66AD /* Photo.h */,
+				DC469A090D6E503B003E66AD /* Photo.m */,
 				DC154D550D6F7B6C004FDDC5 /* Yupoo.h */,
 				DC154D560D6F7B6C004FDDC5 /* Yupoo.m */,
 				DC154D710D6F8336004FDDC5 /* YupooResult.h */,
@@ -185,8 +185,6 @@
 		DC56ABFE0D6DFB4800EB8FC8 /* Yuploo */ = {
 			isa = PBXGroup;
 			children = (
-				DC469A080D6E503B003E66AD /* Photo.h */,
-				DC469A090D6E503B003E66AD /* Photo.m */,
 				DC56AC020D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.h */,
 				DC56AC030D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m */,
 				DC4698430D6E193A003E66AD /* YuplooMainWindowController.h */,
@@ -203,13 +201,6 @@
 				DCEE4DFB0DC1078600426DC0 /* PhotoItem.m */,
 			);
 			name = Yuploo;
-			sourceTree = "<group>";
-		};
-		DC56ABFF0D6DFB5400EB8FC8 /* Sheets */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Sheets;
 			sourceTree = "<group>";
 		};
 		DC56AC000D6DFB6000EB8FC8 /* Nibs */ = {
@@ -230,6 +221,15 @@
 				DC4699510D6E37DA003E66AD /* Yuploo.icns */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		DCEE50110DC1287600426DC0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DC469A0E0D6E5041003E66AD /* Base Classes */,
+				DC56ABFE0D6DFB4800EB8FC8 /* Yuploo */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

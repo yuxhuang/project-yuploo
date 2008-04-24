@@ -59,6 +59,19 @@
 
 - (void)addAnImageWithPath:(NSString *)path
 {
+	// check the path conforms to an image first
+	NSError *error;
+	NSString *type = [[NSWorkspace sharedWorkspace] typeOfFile:path error:&error];
+	if (type == nil) {
+		// no uti is found for this file
+		return;
+	}
+	// we only support jpeg and png
+	if (![[NSWorkspace sharedWorkspace] type:type conformsToType:(NSString *)kUTTypeJPEG] &&
+		![[NSWorkspace sharedWorkspace] type:type conformsToType:(NSString *)kUTTypePNG]) {
+		return;
+	}
+					  
 	PhotoItem *item;
 	item = [[PhotoItem alloc] init];
 	item.path = path;

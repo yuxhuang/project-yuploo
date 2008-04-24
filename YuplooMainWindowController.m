@@ -62,8 +62,6 @@
 	[photoViewController loadNib];
     // add the photo view
 	[targetView setDocumentView:[photoViewController browserView]];
-//	[[targetView contentView] addSubview:[photoViewController browserView]];
-//	[targetView setContentView:[photoViewController browserView]];
 	
     yupoo = [[YuplooController sharedController] yupoo];
     

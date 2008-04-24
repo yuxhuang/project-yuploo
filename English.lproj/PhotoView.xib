@@ -154,8 +154,8 @@
 				<bool key="cellsHaveTitle">NO</bool>
 				<bool key="outlinesCells">NO</bool>
 				<bool key="shadowsCells">YES</bool>
-				<bool key="animates">NO</bool>
-				<bool key="allowsReordering">NO</bool>
+				<bool key="animates">YES</bool>
+				<bool key="allowsReordering">YES</bool>
 				<float key="cellWidth">1.000000e+02</float>
 				<float key="cellHeight">1.000000e+02</float>
 				<reference key="dataSource"/>
@@ -172,6 +172,30 @@
 						<reference key="destination" ref="498197508"/>
 					</object>
 					<int key="connectionID">87</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">dataSource</string>
+						<reference key="source" ref="498197508"/>
+						<reference key="destination" ref="1001"/>
+					</object>
+					<int key="connectionID">88</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="498197508"/>
+						<reference key="destination" ref="1001"/>
+					</object>
+					<int key="connectionID">89</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">dragDestinationDelegate</string>
+						<reference key="source" ref="498197508"/>
+						<reference key="destination" ref="1001"/>
+					</object>
+					<int key="connectionID">90</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -249,7 +273,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">87</int>
+			<int key="maxID">90</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
