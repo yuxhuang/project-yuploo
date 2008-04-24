@@ -7,17 +7,30 @@
 //
 
 #import "YuplooPhotoViewController.h"
+#import "YuplooMainWindowController.h"
 #import "PhotoItem.h"
 
 @implementation YuplooPhotoViewController
 
-@synthesize browserView, browserImages;
+@synthesize view, browserView, browserImages;
 
-- (void)awakeFromNib
+- (id)initWithMainWindowController:(YuplooMainWindowController *)mainWindowController
 {
-	// allocate some space for the data source
-	browserImages = [[NSMutableArray alloc] initWithCapacity:10];
-	importedImages = [[NSMutableArray alloc] initWithCapacity:10];
+	self = [super init];
+	
+	if (nil != self) {
+		// allocate some space for the data source
+		browserImages = [[NSMutableArray alloc] initWithCapacity:10];
+		importedImages = [[NSMutableArray alloc] initWithCapacity:10];
+
+	}
+	
+	return self;
+}
+
+- (void)loadNib
+{
+	[NSBundle loadNibNamed:@"PhotoView" owner:self];
 	
 	// fancy view
 	[browserView setAnimates:YES];

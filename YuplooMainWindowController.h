@@ -27,7 +27,7 @@
     Yupoo *yupoo;
     
     IBOutlet NSObjectController *ownerObjectController;
-    IBOutlet NSView *targetView;    
+    IBOutlet NSScrollView *targetView;    
 }
 
 // properties
@@ -40,7 +40,7 @@
 @property CGFloat loginProgressValue;
 @property BOOL loginProgressHidden;
 @property(retain) NSObjectController *ownerObjectController;
-@property(retain) NSView *targetView;
+@property(retain) NSScrollView *targetView;
 @property(readonly,retain) Yupoo *yupoo;
 
 + (id)mainWindowController;

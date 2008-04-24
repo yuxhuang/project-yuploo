@@ -27,7 +27,6 @@
 		DC56AC040D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC56AC030D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m */; };
 		DC56AC0F0D6DFC4700EB8FC8 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC56AC0E0D6DFC4700EB8FC8 /* MainWindow.xib */; };
 		DC6EACD00D7E004100E32A83 /* YuplooUploadController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */; };
-		DC87DD160D7CE6740023F292 /* YuplooPhotoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC87DD150D7CE6740023F292 /* YuplooPhotoScrollView.m */; };
 		DC8CA8840D6E819000FEE63E /* YuplooPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8CA8830D6E819000FEE63E /* YuplooPhotoViewController.m */; };
 		DCB1B5780D70AF56007D43AF /* YupooResultNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB1B5770D70AF56007D43AF /* YupooResultNode.m */; };
 		DCCB9E650D7361470019970D /* YupooObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCB9E640D7361470019970D /* YupooObserver.m */; };
@@ -69,8 +68,6 @@
 		DC6EACCE0D7E004100E32A83 /* YuplooUploadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuplooUploadController.h; sourceTree = "<group>"; };
 		DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuplooUploadController.m; sourceTree = "<group>"; wrapsLines = 1; };
 		DC6EACEB0D7E01DA00E32A83 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Upload.xib; sourceTree = "<group>"; };
-		DC87DD140D7CE6740023F292 /* YuplooPhotoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuplooPhotoScrollView.h; sourceTree = "<group>"; };
-		DC87DD150D7CE6740023F292 /* YuplooPhotoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuplooPhotoScrollView.m; sourceTree = "<group>"; };
 		DC8CA8820D6E819000FEE63E /* YuplooPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuplooPhotoViewController.h; sourceTree = "<group>"; };
 		DC8CA8830D6E819000FEE63E /* YuplooPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuplooPhotoViewController.m; sourceTree = "<group>"; };
 		DC8CAA110D6EFE8A00FEE63E /* Yuploo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Yuploo.h; sourceTree = "<group>"; };
@@ -200,8 +197,6 @@
 				DC4698B20D6E2DE4003E66AD /* YuplooController.m */,
 				DC8CA8820D6E819000FEE63E /* YuplooPhotoViewController.h */,
 				DC8CA8830D6E819000FEE63E /* YuplooPhotoViewController.m */,
-				DC87DD140D7CE6740023F292 /* YuplooPhotoScrollView.h */,
-				DC87DD150D7CE6740023F292 /* YuplooPhotoScrollView.m */,
 				DC6EACCE0D7E004100E32A83 /* YuplooUploadController.h */,
 				DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */,
 				DCEE4DFA0DC1078600426DC0 /* PhotoItem.h */,
@@ -308,7 +303,6 @@
 				DC154D730D6F8336004FDDC5 /* YupooResult.m in Sources */,
 				DCB1B5780D70AF56007D43AF /* YupooResultNode.m in Sources */,
 				DCCB9E650D7361470019970D /* YupooObserver.m in Sources */,
-				DC87DD160D7CE6740023F292 /* YuplooPhotoScrollView.m in Sources */,
 				DC6EACD00D7E004100E32A83 /* YuplooUploadController.m in Sources */,
 				DCEE4DFC0DC1078600426DC0 /* PhotoItem.m in Sources */,
 			);

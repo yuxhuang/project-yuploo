@@ -11,12 +11,16 @@
 
 
 @interface YuplooPhotoViewController : NSObject {
+	IBOutlet NSView *view;
 	IBOutlet IKImageBrowserView *browserView;
 	NSMutableArray *browserImages;
 	NSMutableArray *importedImages;
 }
 
+@property(retain) NSView *view;
 @property(retain) IKImageBrowserView *browserView;
 @property(retain) NSMutableArray *browserImages;
+
+- (void)loadNib;
 
 @end
