@@ -43,15 +43,6 @@
 	[browserView reloadData];
 }
 
-- (int)numberOfItemsInImageBrowser:(IKImageBrowserView *)view
-{
-	return [browserImages count];
-}
-
-- (id)imageBrowser:(IKImageBrowserView *)view itemAtIndex:(int) index
-{
-	return [browserImages objectAtIndex:index];
-}
 
 - (void)addAnImageWithPath:(NSString *)path
 {
@@ -92,6 +83,51 @@
 	}
 	
 	[paths release];
+}
+
+#pragma mark -
+#pragma mark IKImageBrowserDataSource
+
+- (int)numberOfItemsInImageBrowser:(IKImageBrowserView *)view
+{
+	return [browserImages count];
+}
+
+- (id)imageBrowser:(IKImageBrowserView *)view itemAtIndex:(int) index
+{
+	return [browserImages objectAtIndex:index];
+}
+
+- (void) imageBrowser:(IKImageBrowserView *) view removeItemsAtIndexes: (NSIndexSet *) indexes
+{
+    [browserImages removeObjectsAtIndexes:indexes];
+}
+
+- (BOOL) imageBrowser:(IKImageBrowserView *) view  moveItemsAtIndexes: (NSIndexSet *)indexes toIndex:(unsigned int)destinationIndex
+{
+	int index;
+	NSMutableArray *temporaryArray;
+	
+	temporaryArray = [[[NSMutableArray alloc] init] autorelease];
+	for(index=[indexes lastIndex]; index != NSNotFound;
+		index = [indexes indexLessThanIndex:index])
+	{
+		if (index < destinationIndex)
+			destinationIndex --;
+		
+		id obj = [browserImages objectAtIndex:index];
+		[temporaryArray addObject:obj];
+		[browserImages removeObjectAtIndex:index];
+	}
+	
+	// Insert at the new destination
+	int n = [temporaryArray count];
+	for(index=0; index < n; index++){
+		[browserImages insertObject:[temporaryArray objectAtIndex:index]
+					  atIndex:destinationIndex];
+	}
+	
+	return YES;
 }
 
 #pragma mark - 

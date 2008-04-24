@@ -41,7 +41,6 @@
     
 	[loginController release];
 	[uploadController release];
-	[photoViewController release];
 
     return self;
 }
