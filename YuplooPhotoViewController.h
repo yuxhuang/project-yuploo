@@ -1,38 +1,22 @@
 //
-//  YuplooPhotoViewController.h
+//  IKBController.h
 //  Yuploo
 //
-//  Created by Felix Huang on 22/02/08.
+//  Created by Felix Huang on 24/04/08.
 //  Copyright 2008 __MyCompanyName__. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Quartz/Quartz.h>
 
-@class YuplooMainWindowController;
-//@class MUPhotoView;
 
-@interface YuplooPhotoViewController : NSViewController {
-    NSMutableArray *photos;
-    NSMutableIndexSet *selectionIndexes;
-    IBOutlet NSCollectionView *photoView;
-    IBOutlet NSArrayController *photoArrayController;
-    YuplooMainWindowController *mainWindowController;
+@interface YuplooPhotoViewController : NSObject {
+	IBOutlet IKImageBrowserView *browserView;
+	NSMutableArray *browserImages;
+	NSMutableArray *importedImages;
 }
 
-@property(retain) NSMutableArray *photos;
-@property(readonly) NSMutableIndexSet *selectionIndexes;
-@property(nonatomic,retain) NSCollectionView *photoView;
-@property(nonatomic,retain) NSArrayController *photoArrayController;
-@property(readonly) YuplooMainWindowController *mainWindowController;
-
-- (id)initWithMainWindowController:(YuplooMainWindowController *)controller;
-- (void)loadNib;
-- (void)addPhotoWithContentsOfFile:(NSString *)file;
-
-@end
-
-@interface PhotoBox : NSBox {
-
-}
+@property(retain) IKImageBrowserView *browserView;
+@property(retain) NSMutableArray *browserImages;
 
 @end

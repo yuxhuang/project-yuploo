@@ -30,7 +30,6 @@
     if (nil != self) {
         self.loginController = [[YuplooLoginController alloc] initWithMainWindowController:self];
         self.uploadController = [[YuplooUploadController alloc] initWithMainWindowController:self];
-        self.photoViewController = [[YuplooPhotoViewController alloc] initWithMainWindowController:self];
 
         windowTitle = [[NSApp delegate] displayName];
         photoStatus = nil;
@@ -39,7 +38,6 @@
         loginProgressHidden = YES;
     }
     NSAssert(nil != loginController, @"YuplooMainWindowController>-init: loginController cannot be nil.");
-    NSAssert(nil != photoViewController, @"YuplooMainWindowController>-init: photoViewController cannot be nil.");
     
 	[loginController release];
 	[uploadController release];
@@ -60,12 +58,15 @@
 - (void)windowDidLoad
 {
     // add the photo view
-    [self.photoViewController loadNib];
-    [self.targetView addSubview:[self.photoViewController view]];
+//    [self.photoViewController loadNib];
+//    [self.targetView addSubview:[self.photoViewController view]];
+	
+	
+	
     yupoo = [[YuplooController sharedController] yupoo];
     
     // make sure we have resized the photo view to match its superview
-    [[self.photoViewController view] setFrame:[self.targetView bounds]];
+//    [[self.photoViewController view] setFrame:[self.targetView bounds]];
 }
 
 #pragma mark Window Delegate Methods
