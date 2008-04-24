@@ -9,10 +9,16 @@
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
 
+@class Photo;
+
 @interface PhotoItem : NSObject {
 	NSString *path;
+	Photo *photo;
 }
 
-@property(retain) NSString *path;
+@property(readonly) NSString *path;
+@property(readonly) Photo *photo;
+
+- (id)initWithPath:(NSString *)aPath;
 
 @end

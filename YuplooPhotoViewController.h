@@ -9,12 +9,14 @@
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
 
+@class YuplooMainWindowController;
 
 @interface YuplooPhotoViewController : NSObject {
 	IBOutlet NSView *view;
 	IBOutlet IKImageBrowserView *browserView;
 	NSMutableArray *browserImages;
 	NSMutableArray *importedImages;
+	YuplooMainWindowController *mainWindowController;
 }
 
 @property(retain) NSView *view;

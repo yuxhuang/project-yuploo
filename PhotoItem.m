@@ -7,15 +7,27 @@
 //
 
 #import "PhotoItem.h"
-
+#import "Photo.h"
 
 @implementation PhotoItem
 
-@synthesize path;
+@synthesize path, photo;
+
+- (id)initWithPath:(NSString *)aPath {
+	self = [super init];
+	
+	if (nil != self) {
+		path = [aPath copy];
+		photo = [[Photo alloc] initWithPath:path];
+	}
+	
+	return self;
+}
 
 - (void)dealloc
 {
 	[path release];
+	[photo release];
 	[super dealloc];
 }
 

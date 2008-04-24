@@ -14,11 +14,12 @@
 
 @synthesize view, browserView, browserImages;
 
-- (id)initWithMainWindowController:(YuplooMainWindowController *)mainWindowController
+- (id)initWithMainWindowController:(YuplooMainWindowController *)controller
 {
 	self = [super init];
 	
 	if (nil != self) {
+		mainWindowController = [controller retain];
 		// allocate some space for the data source
 		browserImages = [[NSMutableArray alloc] initWithCapacity:10];
 		importedImages = [[NSMutableArray alloc] initWithCapacity:10];
@@ -44,6 +45,7 @@
 
 - (void)dealloc
 {
+	[mainWindowController release];
 	[browserImages release];
 	[importedImages release];
 	[super dealloc];
@@ -73,8 +75,7 @@
 	}
 					  
 	PhotoItem *item;
-	item = [[PhotoItem alloc] init];
-	item.path = path;
+	item = [[PhotoItem alloc] initWithPath:path];
 	[importedImages addObject:item];
 	[item release];
 }
@@ -109,6 +110,27 @@
 	}
 	
 	[paths release];
+}
+
+#pragma mark -
+#pragma mark IKImageBrowserDeleate
+
+// change photo status
+- (void)imageBrowserSelectionDidChange:(IKImageBrowserView *)aBrowser
+{
+	NSIndexSet * selection = [[browserView selectionIndexes] retain];
+	if ([selection count] == 0) {
+		mainWindowController.photoStatus = nil;
+	}
+	else if ([selection count] == 1) {
+		NSUInteger index = [selection firstIndex];
+		PhotoItem *item = [[browserImages objectAtIndex:index] retain];
+		mainWindowController.photoStatus = item.path;
+		[item release];
+	}
+	else {
+		mainWindowController.photoStatus = @"Multiple photos";
+	}
 }
 
 #pragma mark -
