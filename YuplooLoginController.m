@@ -36,11 +36,9 @@
     return self;
 }
 
-- (void)finalize
+- (void)dealloc
 {
-    loginSheet = nil;
-    authenticationNeededSheet = nil;
-    [super finalize];
+    [super dealloc];
 }
 
 - (void)loadNib
@@ -104,6 +102,7 @@
 {
     [self loadYupoo];
     [self setValue:[yupoo initiateAuthentication] forKey:@"result"];
+	[_frob release];
     _frob = nil;
     mainWindowController.loginStatus = nil;
     [[YuplooController sharedController] saveToken:nil];
@@ -113,6 +112,7 @@
 
 - (void)check:(NSString *)token
 {
+	[token retain];
     if (nil != token) {
         authenticationNeeded = NO;
         [self loadYupoo];
@@ -127,6 +127,7 @@
         [self setValue:nil forKey:@"result"];
         [self showAuthenticationNeededSheet];
     }
+	[token release];
 }
 
 @end
@@ -162,7 +163,7 @@
             BOOL success = [object successful];
             // if initiate fails, do that again.
             if (success) {
-                _frob = [result authFrob];
+                _frob = [[result authFrob] copy];
                 // open the url
                 [[NSWorkspace sharedWorkspace] openURL:[result webAuthenticationURL]];
             }

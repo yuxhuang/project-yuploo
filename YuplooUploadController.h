@@ -28,7 +28,7 @@
 @property(readwrite,copy) NSString *uploadStatus;
 @property(readonly) YuplooMainWindowController *mainWindowController;
 @property(readonly) YupooResult *result;
-@property() BOOL thanksButtonEnabled;
+@property BOOL thanksButtonEnabled;
 
 - (void)upload;
 - (void)showUploadSheet;

@@ -19,8 +19,8 @@
     self = [super initWithNibName:@"PhotoView" bundle:nil];
     
     if (nil != self) {
-        photos = [NSMutableArray array];
-        selectionIndexes = [NSMutableIndexSet indexSet];
+        photos = [[NSMutableArray alloc] init];
+        selectionIndexes = [[NSMutableIndexSet alloc] init];
     }
     
     mainWindowController = controller;
@@ -49,10 +49,16 @@
     NSAssert(nil != path, @"YuplooPhotoViewController>-addPhotoWithContentsOfFile: path cannot be nil.");
     
     #warning A workaround to change value. It should be made KVO compliant!
-    NSMutableArray *newPhotos = [NSMutableArray arrayWithArray:photos];
-    Photo *photo = [[Photo alloc] initWithContentsOfFile:[path copy]];
-    [newPhotos addObject:photo];
-    [self setValue:newPhotos forKey:@"photos"];
+    NSMutableArray *newPhotos = [[NSMutableArray alloc] initWithArray:photos];
+
+    Photo *photo = [[Photo alloc] initWithContentsOfFile:[path retain]];
+	[newPhotos addObject:photo];
+	
+	self.photos = newPhotos;
+	
+	[newPhotos release];
+ 	[photo release];
+ 	[path release];
 }
 
 @end

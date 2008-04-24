@@ -28,7 +28,7 @@
 + (id)resultOfRequest:(NSURLRequest *)request inYupoo:(Yupoo *)aYupoo
 {
     // initiate the result first
-    YupooResult *result = [[YupooResult alloc] initWithYupoo:aYupoo];
+    YupooResult *result = [[[YupooResult alloc] initWithYupoo:aYupoo] autorelease];
     
     // sorry, i have no idea about it.
     if (nil == result)
@@ -114,6 +114,7 @@
 
 - (void)connection:(NSURLConnection *)conn didReceiveResponse:(NSURLResponse *)response
 {
+	[response retain];
     // deal with response information, initialize lengths
     [self setValue:[NSNumber numberWithInt:[response expectedContentLength]] forKey:@"receivedDataLength"];
     if (NSURLResponseUnknownLength == expectedReceivedDataLength)
@@ -122,26 +123,30 @@
     [self setValue:@"Loading" forKey:@"status"];
 
     // initiate data
-    _receivedData = [NSMutableData data];
+    _receivedData = [[NSMutableData alloc] init];
     [_receivedData setLength:0];
+	[response release];
 }
 
 - (void)connection:(NSURLConnection *)conn didReceiveData:(NSData *)data
 {
+	[data retain];
     // we have received more, add to the length
     [self setValue:[NSNumber numberWithInt:(receivedDataLength + [data length])] forKey:@"receivedDataLength"];
     
     // append data
     [_receivedData appendData:data];
+	
+	[data release];
 }
 
 - (void)connection:(NSURLConnection *)conn didFailWithError:(NSError *)error
 {
     // gosh! we have a failed connection
     // release the connection
-    connection = nil;
+    [connection release];
     // release the received data
-    _receivedData = nil;
+    [_receivedData release];
     
     [self setValue:[NSNumber numberWithBool:YES] forKey:@"failed"];
     
@@ -158,13 +163,13 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)conn
 {
     // release the connection
-    connection = nil;
+    [connection release];
     
     // transform received data into xml
     xmlElement = [self loadXMLElementWithData:_receivedData];
     rootNode = [[YupooResultNode alloc] initWithXMLElement:xmlElement];
     // set it to nil. so let the garbage collector frees it.
-    _receivedData = nil;
+    [_receivedData release];
 
     // failed to parse. Malformed XML?
     if (nil == xmlElement) {
@@ -173,7 +178,7 @@
     }
     
     // ok, go ahead with xml
-    NSString *stat = [self $:@"/rsp:stat"];
+    NSString *stat = [self $:@".:stat"];
     if (nil == stat) {
         // deal with error first
     }
@@ -184,7 +189,7 @@
     else {
         [self willChangeValueForKey:@"status"];
         status = [NSString stringWithFormat:@"Failed! %@",
-                [self $:@"/rsp/err:msg"]];
+                [self $:@"err:msg"]];
         if (nil == status) {
             status = @"XML Error";
         }
@@ -196,7 +201,14 @@
     // we have changed these values.
     // make sure completed comes at the very last.
     [self setValue:[NSNumber numberWithBool:YES] forKey:@"completed"];
-    
+	
+}
+
+- (void)dealloc {
+	// clear root node
+	[rootNode release];
+	[yupoo release];
+	[super dealloc];
 }
 
 @end
@@ -218,7 +230,7 @@
         status = @"Waiting";
         
         xmlElement = nil;
-        yupoo = aYupoo;
+        yupoo = [aYupoo retain];
         connection = nil;
     }
     
@@ -227,7 +239,7 @@
 
 - (void)bindConnection:(NSURLConnection *)conn
 {
-    connection = conn;
+    connection = [conn retain];
 }
 
 - (NSXMLElement *)loadXMLElementWithData:(NSData *)data
@@ -245,8 +257,9 @@
     }
 
     // correct, then go ahead
-    NSXMLElement *rootElement = [doc rootElement];
+    NSXMLElement *rootElement = [[[doc rootElement] retain] autorelease];
     
+	[doc release];
     return rootElement;
 }
 
@@ -257,7 +270,7 @@
 
 - (NSInteger)errorCode
 {
-    NSString *error = [self $:@"/rsp/err:code"];
+    NSString *error = [self $:@"err:code"];
     
     if (nil == error) {
         return YupooResultErrorCodeFailure;
@@ -275,14 +288,14 @@
 
 - (NSString *)errorMessage
 {
-    NSString *msg = [self $:@"/rsp/err:msg"];
+    NSString *msg = [self $:@"err:msg"];
 
     return msg; // will be nil if msg is not found.
 }
 
 - (NSString *)failureReason
 {
-    NSString *reason = [self $:@"/rsp/err"];
+    NSString *reason = [self $:@"err"];
 
     if (nil == reason || [[reason stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqual:@""])
         return nil;
@@ -299,7 +312,7 @@
     if (!self.successful)
         return nil;
         
-    NSString *frob = [self $:@"/rsp/frob"];
+    NSString *frob = [self $:@"frob"];
     
     if (nil == frob)
         return nil;
@@ -320,7 +333,7 @@
     if (!self.successful)
         return nil;
     
-    return [self $:@"/rsp/frob"];
+    return [self $:@"frob"];
 }
 
 - (NSString *)authToken
@@ -328,7 +341,7 @@
     if (!self.successful)
         return nil;
     
-    return [self $:@"/rsp/auth/token"];
+    return [self $:@"auth/token"];
 }
 
 - (NSString *)authPerms
@@ -336,7 +349,7 @@
     if (!self.successful)
         return nil;
     
-    return [self $:@"/rsp/auth/perms"];
+    return [self $:@"auth/perms"];
 }
 
 - (NSString *)authUserId
@@ -344,7 +357,7 @@
     if (!self.successful)
         return nil;
     
-    return [self $:@"/rsp/auth/user:id"];
+    return [self $:@"auth/user:id"];
 }
 
 - (NSString *)authUserName
@@ -352,7 +365,7 @@
     if (!self.successful)
         return nil;
     
-    return [self $:@"/rsp/auth/user:username"];
+    return [self $:@"auth/user:username"];
 }
 
 - (NSString *)authNickName
@@ -360,7 +373,7 @@
     if (!self.successful)
         return nil;
         
-    return [self $:@"/rsp/auth/user:nickname"];
+    return [self $:@"auth/user:nickname"];
 }
 
 @end 

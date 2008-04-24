@@ -19,7 +19,7 @@
     YuplooMainWindowController *mainWindowController;
 }
 
-@property(readonly) NSMutableArray *photos;
+@property(retain) NSMutableArray *photos;
 @property(readonly) NSMutableIndexSet *selectionIndexes;
 @property(nonatomic,retain) NSCollectionView *photoView;
 @property(nonatomic,retain) NSArrayController *photoArrayController;

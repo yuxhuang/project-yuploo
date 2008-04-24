@@ -112,7 +112,6 @@
     // add the photos
     for (NSString *file in files) {
         [photoViewController addPhotoWithContentsOfFile:file];
-        [[NSGarbageCollector defaultCollector] collectExhaustively];
     }
     
     [[photoViewController photoView] setNeedsDisplay:YES];

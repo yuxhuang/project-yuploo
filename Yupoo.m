@@ -52,6 +52,16 @@
     return self;
 }
 
+- (void)dealloc {
+	[apiKey release];
+	[secret release];
+	[frob release];
+	[restURL release];
+	[uploadURL release];
+	[authenticationURL release];
+	[super dealloc];
+}
+
 - (id)connectRest:(NSString *)aRestURL upload:(NSString *)anUploadURL authentication:(NSString *)anAuthenticationURL
 {
     
@@ -68,35 +78,35 @@
             aToken, @"auth_token",
             nil];
     
-    YupooResult *result = [self call:@"yupoo.auth.checkToken" params:params needToken:NO];
+    YupooResult *result = [[self call:@"yupoo.auth.checkToken" params:params needToken:NO] retain];
     
     [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew)
             context:@"authenticateWithToken"];
     
     [result begin];
     
-    return result;
+    return [result autorelease];
 }
    
 - (YupooResult *)initiateAuthentication
 {
-    YupooResult *result = [self call:@"yupoo.auth.getFrob" params:nil needToken:NO];
+    YupooResult *result = [[self call:@"yupoo.auth.getFrob" params:nil needToken:NO] retain];
     
     [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew)
             context:@"initiateAuthentication"];
     
     [result begin];
     
-    return result;
+    return [result autorelease];
 }
 
 - (YupooResult *)completeAuthentication:(NSString *)aFrob
 {
-    frob = aFrob;
+    frob = [aFrob copy];
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
             frob, @"frob", nil];
     
-    YupooResult *result = [self call:@"yupoo.auth.getToken" params:params needToken:NO];
+    YupooResult *result = [[self call:@"yupoo.auth.getToken" params:params needToken:NO] retain];
     
     [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew)
             context:@"completeAuthentication"];
@@ -104,7 +114,7 @@
     
     [result begin];
     
-    return result;
+    return [result autorelease];
 }
 
 - (YupooResult *)uploadPhoto:(Photo *)photo

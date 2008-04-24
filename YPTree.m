@@ -16,8 +16,7 @@
 
 -(id) initWithNode:(NSXMLElement*)aNode {
     self = [super init];
-    [aNode retain];
-    node = aNode;
+    node = [aNode retain];
     return self;
 }
 
@@ -28,6 +27,7 @@
 }
 
 -(NSArray*) findall: (NSString*)path {
+	[path retain];
     NSError *error;
     // return all nodes
     // TODO deal with error
@@ -39,10 +39,12 @@
     while (n = [enumerator nextObject]) {
         [trees addObject:[YPTree treeForNode:n]];
     }
+	[path release];
     return trees;
 }
 
 -(YPTree*) find: (NSString*)path {
+	[path retain];
     NSError *error;
     // return all nodes
     // TODO deal with error
@@ -51,6 +53,7 @@
     if ([nodes count] == 0)
         return nil;
     // get the first one
+	[path release];
     return [YPTree treeForNode:[nodes objectAtIndex:0]];
 }
 

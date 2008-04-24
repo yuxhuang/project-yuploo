@@ -20,7 +20,7 @@
 
 + (id)mainWindowController
 {
-    return [[self alloc] init];
+    return [[[self alloc] init] autorelease];
 }
 
 - (id)init
@@ -28,11 +28,11 @@
     self = [super initWithWindowNibName:@"MainWindow"];
     
     if (nil != self) {
-        loginController = [[YuplooLoginController alloc] initWithMainWindowController:self];
-        uploadController = [[YuplooUploadController alloc] initWithMainWindowController:self];
-        photoViewController = [[YuplooPhotoViewController alloc] initWithMainWindowController:self];
+        self.loginController = [[YuplooLoginController alloc] initWithMainWindowController:self];
+        self.uploadController = [[YuplooUploadController alloc] initWithMainWindowController:self];
+        self.photoViewController = [[YuplooPhotoViewController alloc] initWithMainWindowController:self];
 
-        windowTitle = [[[NSApp delegate] displayName] copy];
+        windowTitle = [[NSApp delegate] displayName];
         photoStatus = nil;
         loginStatus = nil;
         loginProgressValue = 0.0;
@@ -41,19 +41,18 @@
     NSAssert(nil != loginController, @"YuplooMainWindowController>-init: loginController cannot be nil.");
     NSAssert(nil != photoViewController, @"YuplooMainWindowController>-init: photoViewController cannot be nil.");
     
+	[loginController release];
+	[uploadController release];
+	[photoViewController release];
+
     return self;
 }
 
-- (void)finalize
+- (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
-    self.loginController = nil;
-    self.photoViewController = nil;
-    
-    self.windowTitle = nil;
-    
-    [super finalize];
+    [super dealloc];
 }
 
 #pragma mark Window Loading Methods

@@ -22,7 +22,7 @@
         self.title = nil;
         self.description = nil;
         self.tags = nil;
-        nameForDownload = [self.path lastPathComponent];
+        nameForDownload = [[self.path lastPathComponent] copy];;
         useMultiPartStream = NO;
         self.public = YES;
         self.contact = NO;
@@ -68,7 +68,6 @@
         // tell the garbage collector to collect things
         [fullSizeImage removeRepresentation:fullSizeRep];
         [fullSizeImage release];
-        fullSizeImage = nil;
         
         if (nil == image) {
             [self dealloc];
@@ -77,6 +76,12 @@
     }
 
     return self;
+}
+
+- (void)dealloc {
+	[nameForDownload release];
+	[image release];
+	[super dealloc];
 }
 
 - (NSData *)data

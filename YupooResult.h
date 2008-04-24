@@ -27,13 +27,13 @@
     NSString *status;
 }
 
-@property(readonly) NSURLConnection *connection;
+@property(retain) NSURLConnection *connection;
 @property(readonly) long long expectedReceivedDataLength, receivedDataLength;
 @property(readonly,getter=completed) BOOL _completed;
 @property(readonly,getter=failed) BOOL _failed;
 @property(readonly,getter=successful) BOOL _successful;
-@property(readonly) NSString *status;
-@property(readonly) YupooResultNode *rootNode;
+@property(retain) NSString *status;
+@property(retain) YupooResultNode *rootNode;
 
 + (id)resultOfRequest:(NSURLRequest *)request inYupoo:(Yupoo *)aYupoo;
 
