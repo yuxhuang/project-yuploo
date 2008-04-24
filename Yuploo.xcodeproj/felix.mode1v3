@@ -197,7 +197,48 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>DCEE4E6E0DC109A800426DC0</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>YuplooPhotoViewController.m</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>DCEE4E6F0DC109A800426DC0</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>YuplooPhotoViewController.m</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>DCEE4E860DC10A6A00426DC0</string>
+						<key>history</key>
+						<array>
+							<string>DCEE4E6C0DC1093D00426DC0</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {909, 582}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>683 273 909 623 0 0 1680 1028 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -335,7 +376,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>DCEE4E690DC1088100426DC0</string>
+										<string>DCEE4E850DC10A6A00426DC0</string>
 										<key>history</key>
 										<array>
 											<string>DC6D81CC0DC04F700049C401</string>
@@ -590,12 +631,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>DCEE4E6A0DC1088100426DC0</string>
-		<string>DCEE4E620DC1086100426DC0</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>DC56AC0B0D6DFC2100EB8FC8</string>
 		<string>/Users/felix/Code/XCode/Yuploo/Yuploo.xcodeproj</string>
+		<string>DCEE4E6E0DC109A800426DC0</string>
 	</array>
 	<key>WindowString</key>
 	<string>380 239 1174 752 0 0 1680 1028 </string>
