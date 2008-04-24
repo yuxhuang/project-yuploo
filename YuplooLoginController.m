@@ -55,11 +55,6 @@
         
 }
 
-- (YuplooMainWindowController *)mainWindowController
-{
-    return mainWindowController;
-}
-
 - (void)showLoginSheet
 {
     if (nil == loginSheet) [self loadNib];

@@ -13,6 +13,6 @@
     IBOutlet YuplooPhotoViewController *photoViewController;
 }
 
-@property(readwrite,assign) YuplooPhotoViewController *photoViewController;
+@property(nonatomic,retain) YuplooPhotoViewController *photoViewController;
 
 @end

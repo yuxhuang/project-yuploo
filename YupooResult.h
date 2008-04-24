@@ -72,3 +72,4 @@ const static int YupooResultErrorCodeFailure = -1;
 - (NSString *)authNickName;
 
 @end
+

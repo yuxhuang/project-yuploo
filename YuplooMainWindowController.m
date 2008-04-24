@@ -8,6 +8,7 @@
 
 #import "YuplooMainWindowController.h"
 #import "YuplooLoginController.h"
+#import "YuplooUploadController.h"
 #import "YuplooPhotoViewController.h"
 #import "YuplooController.h"
 
@@ -28,6 +29,7 @@
     
     if (nil != self) {
         loginController = [[YuplooLoginController alloc] initWithMainWindowController:self];
+        uploadController = [[YuplooUploadController alloc] initWithMainWindowController:self];
         photoViewController = [[YuplooPhotoViewController alloc] initWithMainWindowController:self];
 
         windowTitle = [[[NSApp delegate] displayName] copy];
@@ -103,7 +105,7 @@
 
 - (IBAction)upload:(id)sender
 {
-    [self showUploadSheet];
+    [self.uploadController upload];
 }
 
 - (void)showLoginSheet

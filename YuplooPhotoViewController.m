@@ -24,7 +24,6 @@
     }
     
     mainWindowController = controller;
-    self.view = nil;
 
     return self;
 }

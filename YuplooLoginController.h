@@ -23,9 +23,9 @@
     BOOL authenticationNeeded;
 }
 
-@property(readwrite,assign) NSWindow *loginSheet;
-@property(readwrite,assign) NSWindow *authenticationNeededSheet;
-@property(readwrite,assign) NSString *loginStatus;
+@property(retain) NSWindow *loginSheet;
+@property(retain) NSWindow *authenticationNeededSheet;
+@property(retain) NSString *loginStatus;
 @property(readonly) YuplooMainWindowController *mainWindowController;
 @property(readonly) YupooResult *result;
 @property(readonly) BOOL authenticationNeeded;

@@ -13,6 +13,7 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		DC154D570D6F7B6C004FDDC5 /* Yupoo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC154D560D6F7B6C004FDDC5 /* Yupoo.m */; };
 		DC154D730D6F8336004FDDC5 /* YupooResult.m in Sources */ = {isa = PBXBuildFile; fileRef = DC154D720D6F8336004FDDC5 /* YupooResult.m */; };
+		DC2D9F7C0D845EA40050518F /* Upload.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC2D9F7B0D845EA40050518F /* Upload.xib */; };
 		DC4698890D6E2585003E66AD /* YuplooLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4698880D6E2585003E66AD /* YuplooLoginController.m */; };
 		DC4698A70D6E2975003E66AD /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4698A60D6E2975003E66AD /* Login.xib */; };
 		DC4698B30D6E2DE4003E66AD /* YuplooController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4698B20D6E2DE4003E66AD /* YuplooController.m */; };
@@ -23,6 +24,7 @@
 		DC469A3F0D6E51B7003E66AD /* libcrypto.0.9.7.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC469A3E0D6E51B7003E66AD /* libcrypto.0.9.7.dylib */; };
 		DC56AC040D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC56AC030D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m */; };
 		DC56AC0F0D6DFC4700EB8FC8 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC56AC0E0D6DFC4700EB8FC8 /* MainWindow.xib */; };
+		DC6EACD00D7E004100E32A83 /* YuplooUploadController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */; };
 		DC87DD160D7CE6740023F292 /* YuplooPhotoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC87DD150D7CE6740023F292 /* YuplooPhotoScrollView.m */; };
 		DC8CA8840D6E819000FEE63E /* YuplooPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8CA8830D6E819000FEE63E /* YuplooPhotoViewController.m */; };
 		DCB1B5780D70AF56007D43AF /* YupooResultNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB1B5770D70AF56007D43AF /* YupooResultNode.m */; };
@@ -59,6 +61,9 @@
 		DC56AC020D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuplooApplicationDelegate.h; sourceTree = "<group>"; };
 		DC56AC030D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuplooApplicationDelegate.m; sourceTree = "<group>"; wrapsLines = 1; };
 		DC56AC060D6DFBF500EB8FC8 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		DC6EACCE0D7E004100E32A83 /* YuplooUploadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuplooUploadController.h; sourceTree = "<group>"; };
+		DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuplooUploadController.m; sourceTree = "<group>"; wrapsLines = 1; };
+		DC6EACEB0D7E01DA00E32A83 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Upload.xib; sourceTree = "<group>"; };
 		DC87DD140D7CE6740023F292 /* YuplooPhotoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuplooPhotoScrollView.h; sourceTree = "<group>"; };
 		DC87DD150D7CE6740023F292 /* YuplooPhotoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuplooPhotoScrollView.m; sourceTree = "<group>"; };
 		DC8CA8820D6E819000FEE63E /* YuplooPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuplooPhotoViewController.h; sourceTree = "<group>"; };
@@ -186,6 +191,8 @@
 				DC8CA8830D6E819000FEE63E /* YuplooPhotoViewController.m */,
 				DC87DD140D7CE6740023F292 /* YuplooPhotoScrollView.h */,
 				DC87DD150D7CE6740023F292 /* YuplooPhotoScrollView.m */,
+				DC6EACCE0D7E004100E32A83 /* YuplooUploadController.h */,
+				DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */,
 			);
 			name = Yuploo;
 			sourceTree = "<group>";
@@ -204,6 +211,7 @@
 				DC56AC0E0D6DFC4700EB8FC8 /* MainWindow.xib */,
 				DC4698A60D6E2975003E66AD /* Login.xib */,
 				DC4699F30D6E4F48003E66AD /* PhotoView.xib */,
+				DC2D9F7B0D845EA40050518F /* Upload.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -265,6 +273,7 @@
 				DC4698A70D6E2975003E66AD /* Login.xib in Resources */,
 				DC4699520D6E37DA003E66AD /* Yuploo.icns in Resources */,
 				DC4699F40D6E4F48003E66AD /* PhotoView.xib in Resources */,
+				DC2D9F7C0D845EA40050518F /* Upload.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +296,7 @@
 				DCB1B5780D70AF56007D43AF /* YupooResultNode.m in Sources */,
 				DCCB9E650D7361470019970D /* YupooObserver.m in Sources */,
 				DC87DD160D7CE6740023F292 /* YuplooPhotoScrollView.m in Sources */,
+				DC6EACD00D7E004100E32A83 /* YuplooUploadController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +317,14 @@
 				29B97319FDCFA39411CA2CEA /* English */,
 			);
 			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		DC2D9F7B0D845EA40050518F /* Upload.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC6EACEB0D7E01DA00E32A83 /* English */,
+			);
+			name = Upload.xib;
 			sourceTree = "<group>";
 		};
 		DC4698A60D6E2975003E66AD /* Login.xib */ = {
@@ -372,7 +390,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_ENABLE_OBJC_GC = supported;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.5;

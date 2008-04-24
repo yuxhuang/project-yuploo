@@ -21,8 +21,8 @@
 
 @property(readonly) NSMutableArray *photos;
 @property(readonly) NSMutableIndexSet *selectionIndexes;
-@property(readwrite,assign) NSCollectionView *photoView;
-@property(readwrite,assign) NSArrayController *photoArrayController;
+@property(nonatomic,retain) NSCollectionView *photoView;
+@property(nonatomic,retain) NSArrayController *photoArrayController;
 @property(readonly) YuplooMainWindowController *mainWindowController;
 
 - (id)initWithMainWindowController:(YuplooMainWindowController *)controller;
