@@ -25,5 +25,6 @@
 
 - (void)loadNib;
 - (void)removeAllPhotos;
+- (void)removePhotos:(NSArray *)photos;
 
 @end

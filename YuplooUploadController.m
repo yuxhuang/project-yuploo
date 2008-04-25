@@ -27,7 +27,7 @@
 @implementation YuplooUploadController
 
 @synthesize uploadSheet, uploadStatus, mainWindowController,
-        result, thanksButtonEnabled;
+        result, cancelButtonEnabled, thanksButtonEnabled;
 
 - (id)initWithMainWindowController:(YuplooMainWindowController *)controller
 {
@@ -58,12 +58,14 @@
 - (void)upload
 {
 	// set thanks button
+	self.cancelButtonEnabled = YES;
 	self.thanksButtonEnabled = NO;
     // fill the photos queue with photos (in the photo controller)
 	NSArray *photos = mainWindowController.photoViewController.browserImages;
 
 	photoQueue = [[NSMutableArray alloc] init];
 	resultStack = [[NSMutableArray alloc] init];
+	uploadedStack = [[NSMutableArray alloc] init];
 
 	for (PhotoItem *item in photos) {
 		[photoQueue addObject:item.photo];
@@ -94,7 +96,6 @@
 
 - (IBAction)uploadSheetThanks:(id)sender
 {
-	[mainWindowController.photoViewController removeAllPhotos];
     [NSApp endSheet:uploadSheet];
 }
 
@@ -105,13 +106,17 @@
 - (void)uploadSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
 {
 	// clear photo queue
-	[photoQueue release];
 	// clear observers
 	for (YupooResult *re in resultStack) {
 		[re removeObserver:self forKeyPath:@"completed"];
 	}
-	[resultStack release];
+	// remove uploaded photos in browser
+	[mainWindowController.photoViewController removePhotos:uploadedStack];
     [sheet orderOut:self];
+
+	[uploadedStack release];
+	[resultStack release];
+    [photoQueue release];
 }
 
 - (YupooResult *)uploadAndEjectFirstPhotoInQueue
@@ -128,6 +133,8 @@
     result = [yupoo uploadPhoto:photo];
 	[uploadStatus release];
     [photo release];
+	// insert it to done stack
+	[uploadedStack addObject:photo];
 	// eject it
 	[photoQueue removeObjectAtIndex:0];
     return result;
@@ -147,6 +154,7 @@
         // no photo left
         else {
 			self.uploadStatus = @"Done.";
+			self.cancelButtonEnabled = NO;
             self.thanksButtonEnabled = YES;
         }
     }

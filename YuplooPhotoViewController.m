@@ -64,6 +64,12 @@
 	[self updateDataSource];
 }
 
+- (void)removePhotos:(NSArray *)photos
+{
+	[browserImages removeObjectsInArray:photos];
+	[self updateDataSource];
+}
+
 
 - (void)addAnImageWithPath:(NSString *)path
 {

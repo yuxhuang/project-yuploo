@@ -3,8 +3,8 @@
 	089C165DFE840E0CC02AAC07 /* English */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1053, 669}}";
-			sepNavSelRange = "{87, 0}";
-			sepNavVisRange = "{0, 95}";
+			sepNavSelRange = "{134, 0}";
+			sepNavVisRange = "{0, 137}";
 			sepNavWindowFrame = "{{152, 142}, {1112, 797}}";
 		};
 	};
@@ -223,6 +223,11 @@
 			DCEE527B0DC160AF00426DC0 /* PBXTextBookmark */ = DCEE527B0DC160AF00426DC0 /* PBXTextBookmark */;
 			DCEE527C0DC160AF00426DC0 /* PBXBookmark */ = DCEE527C0DC160AF00426DC0 /* PBXBookmark */;
 			DCEE527D0DC160AF00426DC0 /* PBXTextBookmark */ = DCEE527D0DC160AF00426DC0 /* PBXTextBookmark */;
+			DCEE528E0DC1622300426DC0 /* PBXTextBookmark */ = DCEE528E0DC1622300426DC0 /* PBXTextBookmark */;
+			DCEE52910DC1622300426DC0 /* PBXTextBookmark */ = DCEE52910DC1622300426DC0 /* PBXTextBookmark */;
+			DCEE52920DC1622300426DC0 /* PBXTextBookmark */ = DCEE52920DC1622300426DC0 /* PBXTextBookmark */;
+			DCEE529C0DC1639300426DC0 /* PBXTextBookmark */ = DCEE529C0DC1639300426DC0 /* PBXTextBookmark */;
+			DCEE529D0DC1639300426DC0 /* PBXTextBookmark */ = DCEE529D0DC1639300426DC0 /* PBXTextBookmark */;
 		};
 		sourceControlManager = DC56ABF90D6DFACF00EB8FC8 /* Source Control */;
 		userBuildSettings = {
@@ -315,7 +320,7 @@
 		fRef = DC6EACCE0D7E004100E32A83 /* YuplooUploadController.h */;
 		name = "YuplooUploadController.h: 28";
 		rLen = 0;
-		rLoc = 786;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 884;
 		vrLoc = 0;
@@ -505,7 +510,7 @@
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		name = "YuplooUploadController.m: 36";
 		rLen = 0;
-		rLoc = 945;
+		rLoc = 966;
 		rType = 0;
 		vrLen = 1856;
 		vrLoc = 1664;
@@ -609,33 +614,33 @@
 	};
 	DC6EACCE0D7E004100E32A83 /* YuplooUploadController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {870, 656}}";
-			sepNavSelRange = "{553, 0}";
-			sepNavVisRange = "{32, 914}";
+			sepNavIntBoundsRect = "{{0, 0}, {870, 720}}";
+			sepNavSelRange = "{583, 0}";
+			sepNavVisRange = "{0, 1002}";
 			sepNavWindowFrame = "{{326, 216}, {929, 766}}";
 		};
 	};
 	DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1102, 1914}}";
-			sepNavSelRange = "{2871, 0}";
-			sepNavVisRange = "{2332, 404}";
-			sepNavWindowFrame = "{{339, 222}, {929, 766}}";
+			sepNavIntBoundsRect = "{{0, 0}, {870, 2732}}";
+			sepNavSelRange = "{3055, 0}";
+			sepNavVisRange = "{2590, 1067}";
+			sepNavWindowFrame = "{{583, 137}, {929, 766}}";
 		};
 	};
 	DC8CA8820D6E819000FEE63E /* YuplooPhotoViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {850, 551}}";
-			sepNavSelRange = "{637, 0}";
-			sepNavVisRange = "{0, 644}";
+			sepNavSelRange = "{677, 0}";
+			sepNavVisRange = "{0, 684}";
 			sepNavWindowFrame = "{{617, 92}, {909, 679}}";
 		};
 	};
 	DC8CA8830D6E819000FEE63E /* YuplooPhotoViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {850, 2618}}";
-			sepNavSelRange = "{965, 0}";
-			sepNavVisRange = "{1989, 767}";
+			sepNavIntBoundsRect = "{{0, 0}, {850, 2576}}";
+			sepNavSelRange = "{1496, 0}";
+			sepNavVisRange = "{1083, 895}";
 			sepNavWindowFrame = "{{367, 271}, {909, 679}}";
 		};
 	};
@@ -930,7 +935,7 @@
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		name = "YuplooUploadController.m: 37";
 		rLen = 0;
-		rLoc = 924;
+		rLoc = 945;
 		rType = 0;
 		vrLen = 188;
 		vrLoc = 858;
@@ -960,7 +965,7 @@
 		fRef = DC6EACCE0D7E004100E32A83 /* YuplooUploadController.h */;
 		name = "YuplooUploadController.h: 31";
 		rLen = 0;
-		rLoc = 786;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 120;
 		vrLoc = 386;
@@ -1054,7 +1059,7 @@
 		fRef = DC6EACCE0D7E004100E32A83 /* YuplooUploadController.h */;
 		name = "YuplooUploadController.h: 31";
 		rLen = 0;
-		rLoc = 786;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 120;
 		vrLoc = 386;
@@ -1064,7 +1069,7 @@
 		fRef = DC6EACCE0D7E004100E32A83 /* YuplooUploadController.h */;
 		name = "YuplooUploadController.h: 31";
 		rLen = 0;
-		rLoc = 786;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 120;
 		vrLoc = 386;
@@ -1104,7 +1109,7 @@
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		name = "YuplooUploadController.m: 141";
 		rLen = 0;
-		rLoc = 3970;
+		rLoc = 4213;
 		rType = 0;
 		vrLen = 1161;
 		vrLoc = 2811;
@@ -1113,7 +1118,7 @@
 		isa = PBXTextBookmark;
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		rLen = 1;
-		rLoc = 138;
+		rLoc = 145;
 		rType = 1;
 	};
 	DCEE51FA0DC158B500426DC0 /* PBXTextBookmark */ = {
@@ -1145,7 +1150,7 @@
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		name = "YuplooUploadController.m: 140";
 		rLen = 0;
-		rLoc = 3944;
+		rLoc = 4187;
 		rType = 0;
 		vrLen = 1243;
 		vrLoc = 2790;
@@ -1195,7 +1200,7 @@
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		name = "YuplooUploadController.m: 37";
 		rLen = 0;
-		rLoc = 924;
+		rLoc = 945;
 		rType = 0;
 		vrLen = 252;
 		vrLoc = 833;
@@ -1223,7 +1228,7 @@
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		name = "YuplooUploadController.m: 37";
 		rLen = 0;
-		rLoc = 924;
+		rLoc = 945;
 		rType = 0;
 		vrLen = 252;
 		vrLoc = 833;
@@ -1233,7 +1238,7 @@
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		name = "YuplooUploadController.m: 37";
 		rLen = 0;
-		rLoc = 924;
+		rLoc = 945;
 		rType = 0;
 		vrLen = 252;
 		vrLoc = 833;
@@ -1287,7 +1292,7 @@
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		name = "YuplooUploadController.m: 130";
 		rLen = 0;
-		rLoc = 3586;
+		rLoc = 3829;
 		rType = 0;
 		vrLen = 1289;
 		vrLoc = 2685;
@@ -1341,7 +1346,7 @@
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		name = "YuplooUploadController.m: 37";
 		rLen = 0;
-		rLoc = 924;
+		rLoc = 945;
 		rType = 0;
 		vrLen = 222;
 		vrLoc = 863;
@@ -1351,7 +1356,7 @@
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		name = "YuplooUploadController.m: 102";
 		rLen = 0;
-		rLoc = 2594;
+		rLoc = 2635;
 		rType = 0;
 		vrLen = 983;
 		vrLoc = 2315;
@@ -1361,7 +1366,7 @@
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		name = "YuplooUploadController.m: 37";
 		rLen = 0;
-		rLoc = 924;
+		rLoc = 945;
 		rType = 0;
 		vrLen = 222;
 		vrLoc = 863;
@@ -1391,7 +1396,7 @@
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		name = "YuplooUploadController.m: 37";
 		rLen = 0;
-		rLoc = 924;
+		rLoc = 945;
 		rType = 0;
 		vrLen = 230;
 		vrLoc = 863;
@@ -1415,7 +1420,7 @@
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		name = "YuplooUploadController.m: 37";
 		rLen = 0;
-		rLoc = 924;
+		rLoc = 945;
 		rType = 0;
 		vrLen = 233;
 		vrLoc = 863;
@@ -1425,7 +1430,7 @@
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		name = "YuplooUploadController.m: 109";
 		rLen = 0;
-		rLoc = 2841;
+		rLoc = 2859;
 		rType = 0;
 		vrLen = 1000;
 		vrLoc = 2151;
@@ -1435,7 +1440,7 @@
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		name = "YuplooUploadController.m: 37";
 		rLen = 0;
-		rLoc = 924;
+		rLoc = 945;
 		rType = 0;
 		vrLen = 233;
 		vrLoc = 863;
@@ -1445,7 +1450,7 @@
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		name = "YuplooUploadController.m: 108";
 		rLen = 0;
-		rLoc = 2778;
+		rLoc = 2796;
 		rType = 0;
 		vrLen = 1021;
 		vrLoc = 2314;
@@ -1475,7 +1480,7 @@
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		name = "YuplooUploadController.m: 138";
 		rLen = 28;
-		rLoc = 3558;
+		rLoc = 3801;
 		rType = 0;
 		vrLen = 260;
 		vrLoc = 3394;
@@ -1495,7 +1500,7 @@
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		name = "YuplooUploadController.m: 138";
 		rLen = 28;
-		rLoc = 3558;
+		rLoc = 3801;
 		rType = 0;
 		vrLen = 260;
 		vrLoc = 3394;
@@ -1505,7 +1510,7 @@
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
 		name = "YuplooUploadController.m: 138";
 		rLen = 28;
-		rLoc = 3558;
+		rLoc = 3801;
 		rType = 0;
 		vrLen = 260;
 		vrLoc = 3394;
@@ -1569,6 +1574,56 @@
 		fRef = DC4699510D6E37DA003E66AD /* Yuploo.icns */;
 	};
 	DCEE527D0DC160AF00426DC0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC4698870D6E2585003E66AD /* YuplooLoginController.h */;
+		name = "YuplooLoginController.h: 22";
+		rLen = 0;
+		rLoc = 513;
+		rType = 0;
+		vrLen = 95;
+		vrLoc = 455;
+	};
+	DCEE528E0DC1622300426DC0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC4698870D6E2585003E66AD /* YuplooLoginController.h */;
+		name = "YuplooLoginController.h: 22";
+		rLen = 0;
+		rLoc = 513;
+		rType = 0;
+		vrLen = 97;
+		vrLoc = 455;
+	};
+	DCEE52910DC1622300426DC0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
+		name = "YuplooUploadController.m: 60";
+		rLen = 0;
+		rLoc = 1381;
+		rType = 0;
+		vrLen = 969;
+		vrLoc = 1116;
+	};
+	DCEE52920DC1622300426DC0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
+		name = "YuplooUploadController.m: 60";
+		rLen = 0;
+		rLoc = 1381;
+		rType = 0;
+		vrLen = 1075;
+		vrLoc = 907;
+	};
+	DCEE529C0DC1639300426DC0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC4698870D6E2585003E66AD /* YuplooLoginController.h */;
+		name = "YuplooLoginController.h: 22";
+		rLen = 0;
+		rLoc = 513;
+		rType = 0;
+		vrLen = 97;
+		vrLoc = 455;
+	};
+	DCEE529D0DC1639300426DC0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = DC4698870D6E2585003E66AD /* YuplooLoginController.h */;
 		name = "YuplooLoginController.h: 22";

@@ -18,10 +18,13 @@
     
     NSString *uploadStatus;
     BOOL thanksButtonEnabled;
-    NSMutableArray *photoQueue;
+	BOOL cancelButtonEnabled;
     
     YupooResult *result;
     Yupoo *yupoo;
+
+    NSMutableArray *photoQueue;
+	NSMutableArray *uploadedStack;
 	NSMutableArray *resultStack;
 }
 
@@ -30,6 +33,7 @@
 @property(readonly) YuplooMainWindowController *mainWindowController;
 @property(readonly) YupooResult *result;
 @property(assign) BOOL thanksButtonEnabled;
+@property(assign) BOOL cancelButtonEnabled;
 
 - (void)upload;
 - (void)showUploadSheet;
