@@ -10,12 +10,13 @@
 
 
 @interface YupooObserver : NSObject {
-    NSDictionary *keyPairs;
+    NSString *keyPath;
     id observer;
 }
 
-+ (id)observeWith:(id)observer keyPairs:(NSDictionary *)keyPairs;
+@property(readonly) id observer;
+@property(readonly) NSString *keyPath;
 
-- (id)initWith:(id)observer keyPairs:(NSDictionary *)keyPairs;
+- (id)initWithObserver:(id)anObserver keyPath:(NSString *)aKeyPath;
 
 @end

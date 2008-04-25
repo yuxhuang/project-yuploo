@@ -9,6 +9,7 @@
 #import "YupooResult.h"
 #import "YupooResultNode.h"
 #import "Yupoo.h"
+#import "YupooObserver.h"
 
 @interface YupooResult (PrivateAPI)
 
@@ -59,15 +60,31 @@
     }
 }
 
-- (void)observe:(NSString *)keyPath withObject:(id)anObject
+- (void)observe:(NSObject *)anObserver forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(void *)context
 {
-    [self addObserver:anObject forKeyPath:keyPath
-            options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:nil];
+    [self addObserver:anObserver forKeyPath:keyPath options:options context:context];
+	YupooObserver *observer = [[YupooObserver alloc] initWithObserver:anObserver keyPath:keyPath];
+	[observers addObject:observer];
+	[observer release];
 }
 
 - (void)overlook:(NSString *)keyPath withObject:(id)anObject
 {
+	for (YupooObserver *observer in observers) {
+		if ([observer.observer isEqualTo:anObject] && [observer.keyPath isEqualToString:keyPath]) {
+			[observers removeObject:observer];
+			break;
+		}
+	}
     [self removeObserver:anObject forKeyPath:keyPath];
+}
+
+- (void)overlookAll
+{
+	for (YupooObserver *observer in observers) {
+		[self removeObserver:observer.observer forKeyPath:observer.keyPath];
+	}
+	[observers removeAllObjects];
 }
 
 #pragma mark Result Analyze Methods
@@ -203,6 +220,9 @@
 }
 
 - (void)dealloc {
+	// remove all observers
+	[self overlookAll];
+	[observers release];
 	// clear root node
 	[rootNode release];
 	[yupoo release];
@@ -230,6 +250,7 @@
         xmlElement = nil;
         yupoo = [aYupoo retain];
         connection = nil;
+		observers = [[NSMutableArray alloc] initWithCapacity:5];
     }
     
     return self;

@@ -68,7 +68,7 @@
 
     result = [self uploadAndEjectFirstPhotoInQueue];
     if (nil != result) {
-        [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:nil];
+        [result observe:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:nil];
 		[resultStack addObject: result];
     }
     [self showUploadSheet];
@@ -104,9 +104,9 @@
 	}
 	// clear photo queue
 	// clear observers
-	for (YupooResult *re in resultStack) {
-		[re removeObserver:self forKeyPath:@"completed"];
-	}
+//	for (YupooResult *re in resultStack) {
+//		[re removeObserver:self forKeyPath:@"completed"];
+//	}
 	// remove uploaded photos in browser
 	[mainWindowController.photoViewController removePhotos:uploadedStack];
     [sheet orderOut:self];
@@ -146,7 +146,7 @@
         // has next photo to upload
         if (nil != result) {
             // observe the new result
-            [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:nil];
+            [result observe:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:nil];
         }
         // no photo left
         else {

@@ -11,35 +11,25 @@
 
 @implementation YupooObserver
 
-+ (id)observeWith:(id)observer keyPairs:(NSDictionary *)keyPairs
+@synthesize observer, keyPath;
+
+- (id)initWithObserver:(id)anObserver keyPath:(NSString *)aKeyPath
 {
-    return [[[self class] alloc] initWith:observer keyPairs:keyPairs];
+	self = [super init];
+	
+	if (nil != self) {
+		observer = [anObserver retain];
+		keyPath = [aKeyPath copy];
+	}
+	
+	return self;
 }
 
-- (id)initWith:(id)anObserver keyPairs:(NSDictionary *)aKeyPairs
+- (void)dealloc
 {
-    self = [super init];
-    
-    if (nil != self) {
-        observer = anObserver;
-        keyPairs = aKeyPairs;
-    }
-    
-    return self;    
+	[observer release];
+	[keyPath release];
+	[super dealloc];
 }
 
-// observer
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)observee change:(NSDictionary *)change
-        context:(void *)context
-{
-    // observe the change, then trigger related changes
-    // here we can ignore the changes of keyPath/change
-    for(NSString *key in [keyPairs allKeys]) {
-        [observer setValue:[observee valueForKeyPath:key] forKeyPath:[keyPairs objectForKey:key]];
-    }
-    
-    // then cancel the observation
-//    [observee overlook:keyPath withObject:self];
-    [super observeValueForKeyPath:keyPath ofObject:observee change:change context:context];
-}
 @end

@@ -75,7 +75,7 @@
     
     YupooResult *result = [[self call:@"yupoo.auth.checkToken" params:params needToken:NO] retain];
     
-    [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew)
+    [result observe:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew)
             context:@"authenticateWithToken"];
     
     [result begin];
@@ -87,7 +87,7 @@
 {
     YupooResult *result = [[self call:@"yupoo.auth.getFrob" params:nil needToken:NO] retain];
     
-    [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew)
+    [result observe:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew)
             context:@"initiateAuthentication"];
     
     [result begin];
@@ -103,7 +103,7 @@
     
     YupooResult *result = [[self call:@"yupoo.auth.getToken" params:params needToken:NO] retain];
     
-    [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew)
+    [result observe:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew)
             context:@"completeAuthentication"];
     
     

@@ -25,6 +25,7 @@
     BOOL _failed;
     BOOL _successful;
     NSString *status;
+	NSMutableArray *observers;
 }
 
 @property(retain) NSURLConnection *connection;
@@ -40,7 +41,7 @@
 // connection
 - (void)begin;
 - (void)cancel;
-- (void)observe:(NSString *)keyPath withObject:(id)anObject;
+- (void)observe:(NSObject *)anObserver forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(void *)context;
 - (void)overlook:(NSString *)keyPath withObject:(id)anObject;
 
 // element parsing methods
