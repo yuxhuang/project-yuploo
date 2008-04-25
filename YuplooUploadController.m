@@ -99,6 +99,9 @@
 
 - (void)uploadSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
 {
+	if (!result.successful) {
+		[uploadedStack removeObjectAtIndex:([uploadedStack count] - 1)];
+	}
 	// clear photo queue
 	// clear observers
 	for (YupooResult *re in resultStack) {
@@ -126,8 +129,9 @@
     self.uploadStatus = [[[item path] lastPathComponent] copy];
     result = [yupoo uploadPhoto:item.photo];
 	// eject it
-	[photoQueue removeObjectAtIndex:0];
 
+	[uploadedStack addObject:item];
+	[photoQueue removeObjectAtIndex:0];
 	[uploadStatus release];
     [item release];
     return result;
@@ -137,8 +141,6 @@
 {
     // perfect!
     if(result.successful) {
-		// grab the last uploaded photo first
-		[uploadedStack addObject:[photoQueue objectAtIndex:0]];
         // get the next result
         result = [self uploadAndEjectFirstPhotoInQueue];
         // has next photo to upload
@@ -156,7 +158,6 @@
     // no, i haven't something wrong
     else {
         #warning XXX deal with this something
-        
     }
 }
 

@@ -11,6 +11,7 @@
 @class YuplooMainWindowController;
 @class YupooResult;
 @class Yupoo;
+@class PhotoItem;
 
 @interface YuplooUploadController : NSObject {
     YuplooMainWindowController *mainWindowController;
@@ -26,6 +27,7 @@
     NSMutableArray *photoQueue;
 	NSMutableArray *uploadedStack;
 	NSMutableArray *resultStack;
+	PhotoItem *uploadingPhoto;
 }
 
 @property(readwrite,retain) NSWindow *uploadSheet;
