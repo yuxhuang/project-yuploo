@@ -18,9 +18,9 @@
     
     if (nil != self) {
         path = [file copy];
-        self.title = nil;
-        self.description = nil;
-        self.tags = nil;
+        self.title = @"";
+        self.description = @"";
+        self.tags = @"";
         nameForDownload = [[self.path lastPathComponent] copy];;
         useMultiPartStream = NO;
         self.public = YES;

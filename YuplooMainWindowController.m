@@ -28,22 +28,13 @@
     self = [super initWithWindowNibName:@"MainWindow"];
     
     if (nil != self) {
-        self.loginController = [[YuplooLoginController alloc] initWithMainWindowController:self];
-        self.uploadController = [[YuplooUploadController alloc] initWithMainWindowController:self];
-		self.photoViewController = [[YuplooPhotoViewController alloc] initWithMainWindowController:self];
-
         windowTitle = [[NSApp delegate] displayName];
         photoStatus = nil;
         loginStatus = nil;
         loginProgressValue = 0.0;
         loginProgressHidden = YES;
     }
-    NSAssert(nil != loginController, @"YuplooMainWindowController>-init: loginController cannot be nil.");
-	NSAssert(nil != photoViewController, @"YuplooMainWindowController>-init: photoViewController cannot be nil.");
-    
-	[loginController release];
-	[uploadController release];
-	[photoViewController release];
+
 	
     return self;
 }
@@ -59,6 +50,17 @@
 
 - (void)windowDidLoad
 {
+	self.loginController = [[YuplooLoginController alloc] initWithMainWindowController:self];
+	self.uploadController = [[YuplooUploadController alloc] initWithMainWindowController:self];
+	self.photoViewController = [[YuplooPhotoViewController alloc] initWithMainWindowController:self];
+
+	NSAssert(nil != loginController, @"YuplooMainWindowController>-init: loginController cannot be nil.");
+	NSAssert(nil != photoViewController, @"YuplooMainWindowController>-init: photoViewController cannot be nil.");
+    
+	[loginController release];
+	[uploadController release];
+	[photoViewController release];
+	
 	[photoViewController loadNib];
     // add the photo view
 	[targetView setDocumentView:[photoViewController browserView]];

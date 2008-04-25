@@ -197,11 +197,9 @@
         
         [self setValue:[NSNumber numberWithBool:NO] forKey:@"successful"];
     }
-
     // we have changed these values.
     // make sure completed comes at the very last.
     [self setValue:[NSNumber numberWithBool:YES] forKey:@"completed"];
-	
 }
 
 - (void)dealloc {

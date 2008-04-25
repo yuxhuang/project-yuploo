@@ -13,6 +13,7 @@
 #import "YupooResult.h"
 #import "Photo.h"
 #import "Yupoo.h"
+#import "PhotoItem.h"
 
 @interface YuplooUploadController (PrivateAPI)
 
@@ -33,18 +34,20 @@
     self = [super init];
     
     if (nil != self) {
-        yupoo = [[YuplooController sharedController] yupoo];
-        mainWindowController = controller;
+        YuplooController *ypcontroller = [YuplooController sharedController];
+		yupoo = ypcontroller.yupoo;
+        mainWindowController = [controller retain];
         self.thanksButtonEnabled = NO;
     }
     
     return self;
 }
 
-- (void)finalize
+- (void)dealloc
 {
-    uploadSheet = nil;
-    [super finalize];
+	[mainWindowController release];
+    [uploadSheet release];
+    [super dealloc];
 }
 
 - (void)loadNib
@@ -54,13 +57,22 @@
 
 - (void)upload
 {
-    #warning XXX do upload things
+	// set thanks button
+	self.thanksButtonEnabled = NO;
     // fill the photos queue with photos (in the photo controller)
-    photoQueue = [[[mainWindowController photoViewController] photos] retain];
+	NSArray *photos = mainWindowController.photoViewController.browserImages;
+
+	photoQueue = [[NSMutableArray alloc] init];
+	resultStack = [[NSMutableArray alloc] init];
+
+	for (PhotoItem *item in photos) {
+		[photoQueue addObject:item.photo];
+	}
     
     result = [self uploadAndEjectFirstPhotoInQueue];
     if (nil != result) {
         [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:nil];
+		[resultStack addObject: result];
     }
     [self showUploadSheet];
 }
@@ -82,6 +94,7 @@
 
 - (IBAction)uploadSheetThanks:(id)sender
 {
+	[mainWindowController.photoViewController removeAllPhotos];
     [NSApp endSheet:uploadSheet];
 }
 
@@ -91,6 +104,13 @@
 
 - (void)uploadSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
 {
+	// clear photo queue
+	[photoQueue release];
+	// clear observers
+	for (YupooResult *re in resultStack) {
+		[re removeObserver:self forKeyPath:@"completed"];
+	}
+	[resultStack release];
     [sheet orderOut:self];
 }
 
@@ -106,7 +126,10 @@
     Photo *photo = [[photoQueue objectAtIndex:0] retain];
     self.uploadStatus = [[[photo path] lastPathComponent] copy];
     result = [yupoo uploadPhoto:photo];
+	[uploadStatus release];
     [photo release];
+	// eject it
+	[photoQueue removeObjectAtIndex:0];
     return result;
 }
 
@@ -114,8 +137,6 @@
 {
     // perfect!
     if(result.successful) {
-        // release the result first
-        [result release];
         // get the next result
         result = [self uploadAndEjectFirstPhotoInQueue];
         // has next photo to upload
@@ -125,6 +146,7 @@
         }
         // no photo left
         else {
+			self.uploadStatus = @"Done.";
             self.thanksButtonEnabled = YES;
         }
     }

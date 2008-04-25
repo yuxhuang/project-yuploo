@@ -22,13 +22,14 @@
     
     YupooResult *result;
     Yupoo *yupoo;
+	NSMutableArray *resultStack;
 }
 
 @property(readwrite,retain) NSWindow *uploadSheet;
 @property(readwrite,copy) NSString *uploadStatus;
 @property(readonly) YuplooMainWindowController *mainWindowController;
 @property(readonly) YupooResult *result;
-@property BOOL thanksButtonEnabled;
+@property(assign) BOOL thanksButtonEnabled;
 
 - (void)upload;
 - (void)showUploadSheet;

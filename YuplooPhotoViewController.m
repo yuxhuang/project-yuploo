@@ -29,6 +29,21 @@
 	return self;
 }
 
+- (void)dealloc
+{
+	[mainWindowController release];
+	[browserImages release];
+	[importedImages release];
+	[super dealloc];
+}
+
+- (void)updateDataSource
+{
+	[browserImages addObjectsFromArray:importedImages];
+	[importedImages removeAllObjects];
+	[browserView reloadData];
+}
+
 - (void)loadNib
 {
 	[NSBundle loadNibNamed:@"PhotoView" owner:self];
@@ -43,19 +58,10 @@
 	[browserView setDraggingDestinationDelegate:self];
 }
 
-- (void)dealloc
+- (void)removeAllPhotos
 {
-	[mainWindowController release];
-	[browserImages release];
-	[importedImages release];
-	[super dealloc];
-}
-
-- (void)updateDataSource
-{
-	[browserImages addObjectsFromArray:importedImages];
-	[importedImages removeAllObjects];
-	[browserView reloadData];
+	[browserImages removeAllObjects];
+	[self updateDataSource];
 }
 
 

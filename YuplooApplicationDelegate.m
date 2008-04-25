@@ -41,7 +41,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
     // do some intialization application begin
-    self.controller = [YuplooController sharedController];
+    self.controller = [[YuplooController sharedController] retain];
 
     NSAssert(nil != self.controller, @"YuplooApplicationDelegate>-applicationDidFinishLaunching: controller cannot be nil.");
     

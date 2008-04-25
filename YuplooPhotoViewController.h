@@ -24,5 +24,6 @@
 @property(retain) NSMutableArray *browserImages;
 
 - (void)loadNib;
+- (void)removeAllPhotos;
 
 @end

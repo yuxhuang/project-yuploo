@@ -16,8 +16,8 @@
     Yupoo *yupoo;
 }
 
-@property(nonatomic,retain) YuplooMainWindowController *mainWindowController;
-@property(readonly,retain) Yupoo *yupoo;
+@property(retain) YuplooMainWindowController *mainWindowController;
+@property(readonly) Yupoo *yupoo;
 
 + (id)sharedController;
 

@@ -33,11 +33,6 @@
 
 @synthesize apiKey, authToken, username, userId, nickname, timeout, authenticationURL, restURL, uploadURL;
 
-+ (id)yupooWithApiKey:(NSString *)anApiKey secret:(NSString *)aSecret
-{
-    return [[[self class] alloc] initWithApiKey:anApiKey secret:aSecret];
-}
-
 - (id)initWithApiKey:(NSString *)anApiKey secret:(NSString *)aSecret
 {
     self = [super init];
@@ -119,7 +114,10 @@
 
 - (YupooResult *)uploadPhoto:(Photo *)photo
 {
-
+	NSURLRequest *request = [[self photoUploadRequestWithURL:self.uploadURL params:nil photo:photo timeoutInterval:self.timeout] retain];
+	YupooResult *result = [[self callRequest:request] retain];
+	[request release];
+	return [result autorelease];
 }
 
 
@@ -213,7 +211,15 @@
         buildingParams = [NSMutableDictionary dictionaryWithDictionary:params];
     }
     
-    if (nil != photo.title) {
+    // api key
+    [buildingParams setObject:apiKey forKey:@"api_key"];
+    
+    // token
+    if (self.authToken) {
+        [buildingParams setObject:self.authToken forKey:@"auth_token"];
+    }
+    
+	if (nil != photo.title) {
         [buildingParams setObject:photo.title forKey:@"title"];
     }
     if (nil != photo.description) {
@@ -252,8 +258,8 @@
     NSURL *url = [self URLWith:aURL params:signedParams];
     // build the request
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
-            cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:aTimeout];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url
+            cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:aTimeout] ;
     
     // go ahead to put the photo
     // set content-type, user-agent and boundary
@@ -270,20 +276,28 @@
     else {
         NSError *error = nil;
         #warning FIXME deal with possible error here
-        NSString *mime = [[NSWorkspace sharedWorkspace] typeOfFile:photo.path error:&error];
+        NSString *uti = [[NSWorkspace sharedWorkspace] typeOfFile:photo.path error:&error];
+		NSString *mime;
+		if ([uti isEqualToString: (NSString *)kUTTypeJPEG]) {
+			mime = @"image/jpeg";
+		}
+		else if ([uti isEqualToString: (NSString *)kUTTypePNG]) {
+			mime = @"image/png";
+		}
         
         // adding the body
-        NSMutableData *postBody = [NSMutableData data];
+        NSMutableData *postBody = [[NSMutableData alloc] init];
         [postBody appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         [postBody appendData:[[NSString stringWithFormat:
                 @"Content-Disposition: form-data; name=\"photo\"; filename=\"%@\"\r\n", photo.nameForDownload] dataUsingEncoding:NSUTF8StringEncoding]];
-        [postBody appendData:[[NSString stringWithFormat:@"Content-Type: %@\r\n\r\n", (NSString *)mime] dataUsingEncoding:NSUTF8StringEncoding]];
+        [postBody appendData:[[NSString stringWithFormat:@"Content-Type: %@\r\n\r\n", mime] dataUsingEncoding:NSUTF8StringEncoding]];
         [postBody appendData:[photo data]];
         [postBody appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-        [request setHTTPBody:postBody];        
+        [request setHTTPBody:postBody];
+		[postBody release];
     }
     
-    return request;
+    return [request autorelease];
 }
 
 // send the request
