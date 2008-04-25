@@ -197,48 +197,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>DCEE52DF0DC168E600426DC0</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>YuplooUploadController.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>DCEE52E00DC168E600426DC0</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>YuplooUploadController.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>DCEE52E70DC16A1F00426DC0</string>
-						<key>history</key>
-						<array>
-							<string>DCEE52DA0DC168A000426DC0</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {929, 669}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>491 198 929 710 0 0 1680 1028 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -378,7 +337,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>DCEE52E60DC16A1F00426DC0</string>
+										<string>DCEE52F10DC16B7B00426DC0</string>
 										<key>history</key>
 										<array>
 											<string>DC6D83360DC06F860049C401</string>
@@ -647,7 +606,6 @@
 		<string>DC56AC0B0D6DFC2100EB8FC8</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/felix/Code/XCode/Yuploo/Yuploo.xcodeproj</string>
-		<string>DCEE52DF0DC168E600426DC0</string>
 	</array>
 	<key>WindowString</key>
 	<string>661 144 935 574 0 0 1680 1028 </string>

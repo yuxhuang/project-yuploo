@@ -77,7 +77,6 @@
 - (void)showUploadSheet
 {
     if (nil == uploadSheet) [self loadNib];
-    #warning XXX do some initialization here?
     
     [NSApp beginSheet:uploadSheet modalForWindow:[[self mainWindowController] window]
             modalDelegate:self didEndSelector:@selector(uploadSheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
@@ -99,7 +98,8 @@
 
 - (void)uploadSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
 {
-	if (!result.successful) {
+	
+	if (nil != result && !result.successful) {
 		[uploadedStack removeObjectAtIndex:([uploadedStack count] - 1)];
 	}
 	// clear photo queue
