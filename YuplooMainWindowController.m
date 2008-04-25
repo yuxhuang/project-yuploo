@@ -11,10 +11,11 @@
 #import "YuplooUploadController.h"
 #import "YuplooPhotoViewController.h"
 #import "YuplooController.h"
+#import "YuplooAttributeEditor.h"
 
 @implementation YuplooMainWindowController
 
-@synthesize loginController, uploadController, photoViewController,
+@synthesize loginController, uploadController, photoViewController, attributeEditor,
         windowTitle, photoStatus, loginStatus, loginProgressValue, loginProgressHidden,
         ownerObjectController, targetView, yupoo;
 

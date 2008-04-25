@@ -11,6 +11,7 @@
 @class YuplooLoginController;
 @class YuplooPhotoViewController;
 @class YuplooUploadController;
+@class YuplooAttributeEditor;
 @class Yupoo;
 
 @interface YuplooMainWindowController : NSWindowController {
@@ -18,6 +19,7 @@
     YuplooLoginController *loginController;
     YuplooUploadController *uploadController;
     YuplooPhotoViewController *photoViewController;
+	YuplooAttributeEditor *attributeEditor;
 
     NSString *windowTitle;
     NSString *photoStatus;
@@ -28,13 +30,13 @@
     
     IBOutlet NSObjectController *ownerObjectController;
     IBOutlet NSScrollView *targetView;
-	IBOutlet NSDrawer *drawer;
 }
 
 // properties
 @property(retain) YuplooLoginController *loginController;
 @property(retain) YuplooUploadController *uploadController;
 @property(retain) YuplooPhotoViewController *photoViewController;
+@property(retain) YuplooAttributeEditor *attributeEditor;
 @property(copy) NSString *windowTitle;
 @property(copy) NSString *photoStatus;
 @property(copy) NSString *loginStatus;

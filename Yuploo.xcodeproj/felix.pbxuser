@@ -268,9 +268,9 @@
 	};
 	DC4698430D6E193A003E66AD /* YuplooMainWindowController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1072, 880}}";
-			sepNavSelRange = "{376, 0}";
-			sepNavVisRange = "{288, 1180}";
+			sepNavIntBoundsRect = "{{0, 0}, {472, 842}}";
+			sepNavSelRange = "{630, 0}";
+			sepNavVisRange = "{519, 165}";
 			sepNavWindowFrame = "{{429, 16}, {1131, 762}}";
 		};
 	};
@@ -432,9 +432,9 @@
 	};
 	DC56AC020D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {837, 674}}";
+			sepNavIntBoundsRect = "{{0, 0}, {472, 320}}";
 			sepNavSelRange = "{354, 0}";
-			sepNavVisRange = "{0, 354}";
+			sepNavVisRange = "{203, 151}";
 			sepNavWindowFrame = "{{409, 9}, {1131, 762}}";
 		};
 	};
@@ -513,6 +513,13 @@
 		rType = 0;
 		vrLen = 284;
 		vrLoc = 1052;
+	};
+	DC5A5EB80DC289BD00B8D980 /* YuplooAttributeEditor.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {472, 272}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 147}";
+		};
 	};
 	DC6D81880DC04BB50049C401 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
