@@ -27,7 +27,8 @@
     Yupoo *yupoo;
     
     IBOutlet NSObjectController *ownerObjectController;
-    IBOutlet NSScrollView *targetView;    
+    IBOutlet NSScrollView *targetView;
+	IBOutlet NSDrawer *drawer;
 }
 
 // properties
