@@ -37,7 +37,6 @@
         YuplooController *ypcontroller = [YuplooController sharedController];
 		yupoo = ypcontroller.yupoo;
         mainWindowController = [controller retain];
-        self.thanksButtonEnabled = NO;
     }
     
     return self;
@@ -63,14 +62,10 @@
     // fill the photos queue with photos (in the photo controller)
 	NSArray *photos = mainWindowController.photoViewController.browserImages;
 
-	photoQueue = [[NSMutableArray alloc] init];
+	photoQueue = [[NSMutableArray alloc] initWithArray:photos];
 	resultStack = [[NSMutableArray alloc] init];
 	uploadedStack = [[NSMutableArray alloc] init];
 
-	for (PhotoItem *item in photos) {
-		[photoQueue addObject:item.photo];
-	}
-    
     result = [self uploadAndEjectFirstPhotoInQueue];
     if (nil != result) {
         [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:nil];
@@ -90,7 +85,6 @@
 
 - (IBAction)uploadSheetCancel:(id)sender
 {
-    #warning XXX clean up upload mess
     [NSApp endSheet:uploadSheet];
 }
 
@@ -128,15 +122,14 @@
     }
 
     // get the photo
-    Photo *photo = [[photoQueue objectAtIndex:0] retain];
-    self.uploadStatus = [[[photo path] lastPathComponent] copy];
-    result = [yupoo uploadPhoto:photo];
-	[uploadStatus release];
-    [photo release];
-	// insert it to done stack
-	[uploadedStack addObject:photo];
+    PhotoItem *item = [[photoQueue objectAtIndex:0] retain];
+    self.uploadStatus = [[[item path] lastPathComponent] copy];
+    result = [yupoo uploadPhoto:item.photo];
 	// eject it
 	[photoQueue removeObjectAtIndex:0];
+
+	[uploadStatus release];
+    [item release];
     return result;
 }
 
@@ -144,6 +137,8 @@
 {
     // perfect!
     if(result.successful) {
+		// grab the last uploaded photo first
+		[uploadedStack addObject:[photoQueue objectAtIndex:0]];
         // get the next result
         result = [self uploadAndEjectFirstPhotoInQueue];
         // has next photo to upload

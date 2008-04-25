@@ -66,8 +66,10 @@
 
 - (void)removePhotos:(NSArray *)photos
 {
+	[photos retain];
 	[browserImages removeObjectsInArray:photos];
 	[self updateDataSource];
+	[photos release];
 }
 
 
