@@ -114,9 +114,11 @@
 
 - (YupooResult *)uploadPhoto:(Photo *)photo
 {
+	[photo retain];
 	NSURLRequest *request = [[self photoUploadRequestWithURL:self.uploadURL params:nil photo:photo timeoutInterval:self.timeout] retain];
 	YupooResult *result = [[self callRequest:request] retain];
 	[request release];
+	[photo release];
 	return [result autorelease];
 }
 
@@ -124,6 +126,7 @@
 // build up URL and requests
 - (NSURL *)URLWith:(NSString *)aURL params:(NSDictionary *)params
 {
+	[params retain];
     // copy the url first
     NSMutableString *url = [NSMutableString stringWithString:aURL];
     
@@ -136,13 +139,15 @@
         [url appendFormat:@"%@=%@&", key, value];
     }
     
+	[params release];
     return [NSURL URLWithString:url];
 }
 
 - (NSDictionary *)paramsEncodedAndSigned:(NSDictionary *)oldParams
 {
+	[oldParams retain];
     // params dictionary to hold them
-    NSMutableDictionary *newParams = [NSMutableDictionary dictionary];
+    NSMutableDictionary *newParams = [[NSMutableDictionary alloc] init];
     // because of the signing algorithm, we have to sort out the keys
     NSArray *sortedKeys = [[oldParams allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
     // the string for signing
@@ -158,10 +163,10 @@
     }
     
     // i do not hold oldParams any more
-    oldParams = nil;
+    [oldParams release];
     
     // sign it
-    NSData *dataForHash = [forHash dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+    NSData *dataForHash = [forHash dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
     NSMutableData *dataForDigest = [NSMutableData dataWithLength:MD5_DIGEST_LENGTH];
     
     // MD5!!
@@ -181,7 +186,7 @@
     // add it to the parameters list
     [newParams setObject:signature forKey:@"api_sig"];
     
-    return newParams;
+    return [newParams autorelease];
 }
 
 @end
@@ -192,14 +197,17 @@
 
 - (NSURLRequest *)requestWithURL:(NSString *)aURL params:(NSDictionary *)params timeoutInterval:(NSTimeInterval)aTimeout
 {
-    NSDictionary *signedParams = [self paramsEncodedAndSigned:params];
+	[params retain];
+    NSDictionary *signedParams = [[self paramsEncodedAndSigned:params] retain];
     
-    return [NSURLRequest requestWithURL:[self URLWith:aURL params:signedParams]
+	[params release];
+    return [NSURLRequest requestWithURL:[self URLWith:aURL params:[signedParams autorelease]]
             cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:aTimeout];
 }
 
 - (NSURLRequest *)photoUploadRequestWithURL:(NSString *)aURL params:(NSDictionary *)params photo:(Photo *)photo timeoutInterval:(NSTimeInterval)aTimeout
 {
+	[params retain];
     NSAssert(nil != photo, @"photo cannot be nil.");
     
     // build up params with photo attributes
@@ -210,6 +218,7 @@
     else {
         buildingParams = [NSMutableDictionary dictionaryWithDictionary:params];
     }
+	[params release];
     
     // api key
     [buildingParams setObject:apiKey forKey:@"api_key"];
@@ -275,7 +284,6 @@
     }
     else {
         NSError *error = nil;
-        #warning FIXME deal with possible error here
         NSString *uti = [[NSWorkspace sharedWorkspace] typeOfFile:photo.path error:&error];
 		NSString *mime;
 		if ([uti isEqualToString: (NSString *)kUTTypeJPEG]) {
