@@ -46,7 +46,7 @@
 	return self.path;
 }
 
-@dynamic title, description, tags;
+@dynamic title, description, tags, public, contact, friend, family;
 
 - (void)setTitle:(NSString *)title
 {
@@ -76,6 +76,46 @@
 - (NSString *)tags
 {
 	return photo.tags;
+}
+
+- (void)setFamily:(BOOL)family
+{
+	photo.family = family;
+}
+
+- (BOOL)family
+{
+	return photo.family;
+}
+
+- (void)setPublic:(BOOL)public
+{
+	photo.public = public;
+}
+
+- (BOOL)public
+{
+	return photo.public;
+}
+
+- (void)setContact:(BOOL)contact
+{
+	photo.contact = contact;
+}
+
+- (BOOL)contact
+{
+	return photo.contact;
+}
+
+- (void)setFriend:(BOOL)friend
+{
+	photo.friend = friend;
+}
+
+- (BOOL)friend
+{
+	return photo.friend;
 }
 
 @end

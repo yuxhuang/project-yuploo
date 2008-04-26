@@ -21,6 +21,7 @@
 @property(assign) NSString *title;
 @property(assign) NSString *description;
 @property(assign) NSString *tags;
+@property(assign) BOOL public, contact, friend, family;
 
 - (id)initWithPath:(NSString *)aPath;
 

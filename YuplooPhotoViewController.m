@@ -8,6 +8,7 @@
 
 #import "YuplooPhotoViewController.h"
 #import "YuplooMainWindowController.h"
+#import "YuplooAttributeEditor.h"
 #import "PhotoItem.h"
 
 @implementation YuplooPhotoViewController
@@ -135,11 +136,13 @@
 	NSIndexSet * selection = [[browserView selectionIndexes] retain];
 	if ([selection count] == 0) {
 		mainWindowController.photoStatus = nil;
+		[mainWindowController.attributeEditor endEditing];
 	}
 	else if ([selection count] == 1) {
 		NSUInteger index = [selection firstIndex];
 		PhotoItem *item = [[browserImages objectAtIndex:index] retain];
 		mainWindowController.photoStatus = item.path;
+		[mainWindowController.attributeEditor editPhoto:item];
 		[item release];
 	}
 	else {

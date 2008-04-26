@@ -9,14 +9,21 @@
 #import <Cocoa/Cocoa.h>
 
 @class YuplooMainWindowController;
+@class PhotoItem;
 
-@interface YuplooAttributeEditor : NSObject {
+@interface YuplooAttributeEditor : NSViewController {
 	YuplooMainWindowController *mainWindowController;
+	NSDrawer *drawer;
+	PhotoItem *selectedPhoto;
 }
 
 @property(readonly) YuplooMainWindowController *mainWindowController;
 
+// initialization
 - (id)initWithMainWindowController:(YuplooMainWindowController *)aController;
 
-- (void)loadNib;
+// photo editing
+- (void)editPhoto:(PhotoItem *)photo;
+- (void)endEditing;
+
 @end

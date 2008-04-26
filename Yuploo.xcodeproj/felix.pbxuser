@@ -17,13 +17,13 @@
 			8D1107260486CEB800E47090 /* Yuploo */,
 		);
 		breakpoints = (
+			DC5A5FAB0DC2BBE100B8D980 /* YuplooAttributeEditor.m:37 */,
 		);
 		codeSenseManager = DC56ABFA0D6DFACF00EB8FC8 /* Code sense */;
 		executables = (
 			DC56ABEF0D6DFAC900EB8FC8 /* Yuploo */,
 		);
 		expressions = (
-			"(YupooResult *)observee",
 		);
 		perUserDictionary = {
 			"PBXConfiguration.PBXBreakpointsDataSource.v1:1CA1AED706398EBD00589147" = {
@@ -108,8 +108,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 230852610;
-			PBXWorkspaceStateSaveDate = 230852610;
+			PBXPerProjectTemplateStateSaveDate = 230865127;
+			PBXWorkspaceStateSaveDate = 230865127;
 		};
 		perUserProjectItems = {
 			DC2D9F4E0D845D3F0050518F = DC2D9F4E0D845D3F0050518F /* PBXTextBookmark */;
@@ -122,17 +122,76 @@
 			DC4A47200DC0FAC30005C29C = DC4A47200DC0FAC30005C29C /* PBXTextBookmark */;
 			DC5A5E920DC2845F00B8D980 = DC5A5E920DC2845F00B8D980 /* PBXTextBookmark */;
 			DC5A5E930DC2845F00B8D980 = DC5A5E930DC2845F00B8D980 /* PBXTextBookmark */;
-			DC5A5E940DC2845F00B8D980 = DC5A5E940DC2845F00B8D980 /* PBXTextBookmark */;
-			DC5A5E950DC2845F00B8D980 = DC5A5E950DC2845F00B8D980 /* PBXTextBookmark */;
-			DC5A5E960DC2845F00B8D980 = DC5A5E960DC2845F00B8D980 /* PBXTextBookmark */;
-			DC5A5EA70DC287FD00B8D980 = DC5A5EA70DC287FD00B8D980 /* PBXTextBookmark */;
-			DC5A5EAD0DC2880400B8D980 /* PBXTextBookmark */ = DC5A5EAD0DC2880400B8D980 /* PBXTextBookmark */;
-			DC5A5ED80DC2AD1E00B8D980 /* PBXTextBookmark */ = DC5A5ED80DC2AD1E00B8D980 /* PBXTextBookmark */;
-			DC5A5ED90DC2AD1E00B8D980 /* PBXTextBookmark */ = DC5A5ED90DC2AD1E00B8D980 /* PBXTextBookmark */;
-			DC5A5EF00DC2AD6A00B8D980 /* PBXTextBookmark */ = DC5A5EF00DC2AD6A00B8D980 /* PBXTextBookmark */;
-			DC5A5EF10DC2AD6A00B8D980 /* PBXTextBookmark */ = DC5A5EF10DC2AD6A00B8D980 /* PBXTextBookmark */;
-			DC5A5EF20DC2AD6A00B8D980 /* PBXTextBookmark */ = DC5A5EF20DC2AD6A00B8D980 /* PBXTextBookmark */;
-			DC5A5EF30DC2AD6A00B8D980 /* PBXTextBookmark */ = DC5A5EF30DC2AD6A00B8D980 /* PBXTextBookmark */;
+			DC5A5F070DC2AED000B8D980 = DC5A5F070DC2AED000B8D980 /* PBXTextBookmark */;
+			DC5A5F080DC2AED000B8D980 = DC5A5F080DC2AED000B8D980 /* PBXTextBookmark */;
+			DC5A5F090DC2AED000B8D980 = DC5A5F090DC2AED000B8D980 /* PBXTextBookmark */;
+			DC5A5F0A0DC2AED000B8D980 = DC5A5F0A0DC2AED000B8D980 /* PBXTextBookmark */;
+			DC5A5F0B0DC2AED000B8D980 = DC5A5F0B0DC2AED000B8D980 /* PBXTextBookmark */;
+			DC5A5F0C0DC2AED000B8D980 = DC5A5F0C0DC2AED000B8D980 /* PBXTextBookmark */;
+			DC5A5F0E0DC2AED000B8D980 = DC5A5F0E0DC2AED000B8D980 /* PBXTextBookmark */;
+			DC5A5F0F0DC2AED000B8D980 = DC5A5F0F0DC2AED000B8D980 /* PBXTextBookmark */;
+			DC5A5F100DC2AED000B8D980 = DC5A5F100DC2AED000B8D980 /* PBXTextBookmark */;
+			DC5A5F110DC2AED000B8D980 = DC5A5F110DC2AED000B8D980 /* PBXTextBookmark */;
+			DC5A5F120DC2AED000B8D980 = DC5A5F120DC2AED000B8D980 /* PBXTextBookmark */;
+			DC5A5F130DC2AED000B8D980 = DC5A5F130DC2AED000B8D980 /* PBXTextBookmark */;
+			DC5A5F140DC2AED000B8D980 = DC5A5F140DC2AED000B8D980 /* PBXTextBookmark */;
+			DC5A5F150DC2AED000B8D980 = DC5A5F150DC2AED000B8D980 /* PBXTextBookmark */;
+			DC5A5F310DC2B3B000B8D980 = DC5A5F310DC2B3B000B8D980 /* PBXTextBookmark */;
+			DC5A5F320DC2B3B000B8D980 = DC5A5F320DC2B3B000B8D980 /* PBXTextBookmark */;
+			DC5A5F330DC2B3B000B8D980 = DC5A5F330DC2B3B000B8D980 /* PBXTextBookmark */;
+			DC5A5F340DC2B3B000B8D980 = DC5A5F340DC2B3B000B8D980 /* PBXTextBookmark */;
+			DC5A5F350DC2B3B000B8D980 = DC5A5F350DC2B3B000B8D980 /* PBXTextBookmark */;
+			DC5A5F360DC2B3B000B8D980 = DC5A5F360DC2B3B000B8D980 /* PBXTextBookmark */;
+			DC5A5F560DC2B50800B8D980 = DC5A5F560DC2B50800B8D980 /* PBXTextBookmark */;
+			DC5A5F570DC2B50800B8D980 = DC5A5F570DC2B50800B8D980 /* PBXTextBookmark */;
+			DC5A5F680DC2B84600B8D980 = DC5A5F680DC2B84600B8D980 /* PBXTextBookmark */;
+			DC5A5F700DC2B8F500B8D980 /* PBXTextBookmark */ = DC5A5F700DC2B8F500B8D980 /* PBXTextBookmark */;
+			DC5A5F730DC2B93900B8D980 /* PBXBookmark */ = DC5A5F730DC2B93900B8D980 /* PBXBookmark */;
+			DC5A5F770DC2B94C00B8D980 /* PBXTextBookmark */ = DC5A5F770DC2B94C00B8D980 /* PBXTextBookmark */;
+			DC5A5F7A0DC2B94C00B8D980 /* PBXTextBookmark */ = DC5A5F7A0DC2B94C00B8D980 /* PBXTextBookmark */;
+			DC5A5F8A0DC2B9C800B8D980 /* PBXTextBookmark */ = DC5A5F8A0DC2B9C800B8D980 /* PBXTextBookmark */;
+			DC5A5F8B0DC2B9C800B8D980 /* PBXTextBookmark */ = DC5A5F8B0DC2B9C800B8D980 /* PBXTextBookmark */;
+			DC5A5F8F0DC2BA6500B8D980 /* PBXTextBookmark */ = DC5A5F8F0DC2BA6500B8D980 /* PBXTextBookmark */;
+			DC5A5F900DC2BA6500B8D980 /* PBXTextBookmark */ = DC5A5F900DC2BA6500B8D980 /* PBXTextBookmark */;
+			DC5A5F9B0DC2BB2600B8D980 /* PBXTextBookmark */ = DC5A5F9B0DC2BB2600B8D980 /* PBXTextBookmark */;
+			DC5A5F9C0DC2BB2600B8D980 /* PBXTextBookmark */ = DC5A5F9C0DC2BB2600B8D980 /* PBXTextBookmark */;
+			DC5A5F9D0DC2BB2600B8D980 /* PBXTextBookmark */ = DC5A5F9D0DC2BB2600B8D980 /* PBXTextBookmark */;
+			DC5A5FA20DC2BBC400B8D980 /* PBXTextBookmark */ = DC5A5FA20DC2BBC400B8D980 /* PBXTextBookmark */;
+			DC5A5FA60DC2BBD000B8D980 /* PBXTextBookmark */ = DC5A5FA60DC2BBD000B8D980 /* PBXTextBookmark */;
+			DC5A5FA70DC2BBD000B8D980 /* PBXTextBookmark */ = DC5A5FA70DC2BBD000B8D980 /* PBXTextBookmark */;
+			DC5A5FAE0DC2BBED00B8D980 /* PBXTextBookmark */ = DC5A5FAE0DC2BBED00B8D980 /* PBXTextBookmark */;
+			DC5A5FAF0DC2BBED00B8D980 /* PBXTextBookmark */ = DC5A5FAF0DC2BBED00B8D980 /* PBXTextBookmark */;
+			DC5A5FB00DC2BBED00B8D980 /* PBXTextBookmark */ = DC5A5FB00DC2BBED00B8D980 /* PBXTextBookmark */;
+			DC5A5FB30DC2BC0A00B8D980 /* PBXTextBookmark */ = DC5A5FB30DC2BC0A00B8D980 /* PBXTextBookmark */;
+			DC5A5FB40DC2BC0C00B8D980 /* PBXTextBookmark */ = DC5A5FB40DC2BC0C00B8D980 /* PBXTextBookmark */;
+			DC5A5FB70DC2BC5300B8D980 /* PBXTextBookmark */ = DC5A5FB70DC2BC5300B8D980 /* PBXTextBookmark */;
+			DC5A5FBC0DC2BC7800B8D980 /* PBXTextBookmark */ = DC5A5FBC0DC2BC7800B8D980 /* PBXTextBookmark */;
+			DC5A5FBE0DC2BD6B00B8D980 /* PBXTextBookmark */ = DC5A5FBE0DC2BD6B00B8D980 /* PBXTextBookmark */;
+			DC5A5FBF0DC2BDC100B8D980 /* PBXTextBookmark */ = DC5A5FBF0DC2BDC100B8D980 /* PBXTextBookmark */;
+			DC5A5FC20DC2BE2C00B8D980 /* PBXTextBookmark */ = DC5A5FC20DC2BE2C00B8D980 /* PBXTextBookmark */;
+			DC5A5FC90DC2BED900B8D980 /* PBXTextBookmark */ = DC5A5FC90DC2BED900B8D980 /* PBXTextBookmark */;
+			DC5A5FCC0DC2BF2600B8D980 /* PBXTextBookmark */ = DC5A5FCC0DC2BF2600B8D980 /* PBXTextBookmark */;
+			DC5A5FCE0DC2BF2D00B8D980 /* PBXTextBookmark */ = DC5A5FCE0DC2BF2D00B8D980 /* PBXTextBookmark */;
+			DC5A5FCF0DC2BF3300B8D980 /* PBXTextBookmark */ = DC5A5FCF0DC2BF3300B8D980 /* PBXTextBookmark */;
+			DC5A5FD00DC2BF3D00B8D980 /* PBXBookmark */ = DC5A5FD00DC2BF3D00B8D980 /* PBXBookmark */;
+			DC5A5FD50DC2BFF400B8D980 /* PBXTextBookmark */ = DC5A5FD50DC2BFF400B8D980 /* PBXTextBookmark */;
+			DC5A5FD60DC2BFF400B8D980 /* PBXTextBookmark */ = DC5A5FD60DC2BFF400B8D980 /* PBXTextBookmark */;
+			DC5A5FD90DC2BFF400B8D980 /* PBXTextBookmark */ = DC5A5FD90DC2BFF400B8D980 /* PBXTextBookmark */;
+			DC5A5FDA0DC2C02000B8D980 /* PBXTextBookmark */ = DC5A5FDA0DC2C02000B8D980 /* PBXTextBookmark */;
+			DC5A5FDD0DC2C06500B8D980 /* PBXTextBookmark */ = DC5A5FDD0DC2C06500B8D980 /* PBXTextBookmark */;
+			DC5A5FDE0DC2C06500B8D980 /* PBXTextBookmark */ = DC5A5FDE0DC2C06500B8D980 /* PBXTextBookmark */;
+			DC5A5FE10DC2C0EF00B8D980 /* PBXTextBookmark */ = DC5A5FE10DC2C0EF00B8D980 /* PBXTextBookmark */;
+			DC5A5FE20DC2C0EF00B8D980 /* PBXTextBookmark */ = DC5A5FE20DC2C0EF00B8D980 /* PBXTextBookmark */;
+			DC5A5FE50DC2C0FE00B8D980 /* PBXTextBookmark */ = DC5A5FE50DC2C0FE00B8D980 /* PBXTextBookmark */;
+			DC5A5FE60DC2C0FE00B8D980 /* PBXTextBookmark */ = DC5A5FE60DC2C0FE00B8D980 /* PBXTextBookmark */;
+			DC5A5FE90DC2C10F00B8D980 /* PBXTextBookmark */ = DC5A5FE90DC2C10F00B8D980 /* PBXTextBookmark */;
+			DC5A5FEA0DC2C10F00B8D980 /* PBXTextBookmark */ = DC5A5FEA0DC2C10F00B8D980 /* PBXTextBookmark */;
+			DC5A5FEF0DC2C16300B8D980 /* PBXBookmark */ = DC5A5FEF0DC2C16300B8D980 /* PBXBookmark */;
+			DC5A5FF20DC2C17400B8D980 /* PBXTextBookmark */ = DC5A5FF20DC2C17400B8D980 /* PBXTextBookmark */;
+			DC5A5FF50DC2C17400B8D980 /* PBXTextBookmark */ = DC5A5FF50DC2C17400B8D980 /* PBXTextBookmark */;
+			DC5A5FFA0DC2C1BB00B8D980 /* PBXTextBookmark */ = DC5A5FFA0DC2C1BB00B8D980 /* PBXTextBookmark */;
+			DC5A5FFB0DC2C1BB00B8D980 /* PBXTextBookmark */ = DC5A5FFB0DC2C1BB00B8D980 /* PBXTextBookmark */;
+			DC5A5FFC0DC2C1CD00B8D980 /* PBXTextBookmark */ = DC5A5FFC0DC2C1CD00B8D980 /* PBXTextBookmark */;
 			DC6D81880DC04BB50049C401 = DC6D81880DC04BB50049C401 /* PBXTextBookmark */;
 			DC6D81890DC04BB50049C401 = DC6D81890DC04BB50049C401 /* PBXTextBookmark */;
 			DC6D81CE0DC04F700049C401 = DC6D81CE0DC04F700049C401 /* PBXTextBookmark */;
@@ -144,7 +203,6 @@
 			DC6D83240DC06D430049C401 = DC6D83240DC06D430049C401 /* PBXTextBookmark */;
 			DC6D83360DC06F860049C401 = DC6D83360DC06F860049C401 /* PBXTextBookmark */;
 			DCEE4BE40DC1032C00426DC0 = DCEE4BE40DC1032C00426DC0 /* PBXTextBookmark */;
-			DCEE4DFE0DC1079800426DC0 = DCEE4DFE0DC1079800426DC0 /* PBXTextBookmark */;
 			DCEE4E080DC1079800426DC0 = DCEE4E080DC1079800426DC0 /* PBXTextBookmark */;
 			DCEE4E0B0DC1079800426DC0 = DCEE4E0B0DC1079800426DC0 /* PBXTextBookmark */;
 			DCEE4E400DC1082100426DC0 = DCEE4E400DC1082100426DC0 /* PBXTextBookmark */;
@@ -152,13 +210,11 @@
 			DCEE4E450DC1082100426DC0 = DCEE4E450DC1082100426DC0 /* PBXTextBookmark */;
 			DCEE4E480DC1082100426DC0 = DCEE4E480DC1082100426DC0 /* PBXTextBookmark */;
 			DCEE4EE60DC11C7400426DC0 = DCEE4EE60DC11C7400426DC0 /* PBXTextBookmark */;
-			DCEE4F4D0DC11E6400426DC0 = DCEE4F4D0DC11E6400426DC0 /* PBXTextBookmark */;
 			DCEE4FE30DC1272000426DC0 = DCEE4FE30DC1272000426DC0 /* PBXTextBookmark */;
 			DCEE50180DC128AD00426DC0 = DCEE50180DC128AD00426DC0 /* PBXTextBookmark */;
 			DCEE503D0DC12DC100426DC0 = DCEE503D0DC12DC100426DC0 /* PBXTextBookmark */;
 			DCEE50630DC1313200426DC0 = DCEE50630DC1313200426DC0 /* PBXTextBookmark */;
 			DCEE50D00DC14C2100426DC0 = DCEE50D00DC14C2100426DC0 /* PBXTextBookmark */;
-			DCEE50F60DC14D9500426DC0 = DCEE50F60DC14D9500426DC0 /* PBXTextBookmark */;
 			DCEE50F80DC14D9500426DC0 = DCEE50F80DC14D9500426DC0 /* PBXTextBookmark */;
 			DCEE50F90DC14D9500426DC0 = DCEE50F90DC14D9500426DC0 /* PBXTextBookmark */;
 			DCEE50FA0DC14D9500426DC0 = DCEE50FA0DC14D9500426DC0 /* PBXTextBookmark */;
@@ -166,15 +222,11 @@
 			DCEE51660DC1523D00426DC0 = DCEE51660DC1523D00426DC0 /* PBXTextBookmark */;
 			DCEE51880DC1556200426DC0 = DCEE51880DC1556200426DC0 /* PBXTextBookmark */;
 			DCEE51890DC1556200426DC0 = DCEE51890DC1556200426DC0 /* PBXTextBookmark */;
-			DCEE51D40DC157E300426DC0 = DCEE51D40DC157E300426DC0 /* PBXTextBookmark */;
-			DCEE51ED0DC158AB00426DC0 = DCEE51ED0DC158AB00426DC0 /* PBXTextBookmark */;
 			DCEE52140DC15A2100426DC0 = DCEE52140DC15A2100426DC0 /* PBXTextBookmark */;
 			DCEE52410DC15D7100426DC0 = DCEE52410DC15D7100426DC0 /* PBXTextBookmark */;
 			DCEE52790DC160AF00426DC0 = DCEE52790DC160AF00426DC0 /* PBXTextBookmark */;
 			DCEE527A0DC160AF00426DC0 = DCEE527A0DC160AF00426DC0 /* PBXBookmark */;
 			DCEE527C0DC160AF00426DC0 = DCEE527C0DC160AF00426DC0 /* PBXBookmark */;
-			DCEE52A60DC1648200426DC0 = DCEE52A60DC1648200426DC0 /* PBXTextBookmark */;
-			DCEE52DC0DC168E600426DC0 = DCEE52DC0DC168E600426DC0 /* PBXTextBookmark */;
 		};
 		sourceControlManager = DC56ABF90D6DFACF00EB8FC8 /* Source Control */;
 		userBuildSettings = {
@@ -276,23 +328,23 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1072, 928}}";
 			sepNavSelRange = "{1096, 0}";
-			sepNavVisRange = "{407, 1186}";
+			sepNavVisRange = "{0, 1148}";
 			sepNavWindowFrame = "{{429, 16}, {1131, 762}}";
 		};
 	};
 	DC4698440D6E193A003E66AD /* YuplooMainWindowController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {864, 1850}}";
-			sepNavSelRange = "{2015, 0}";
-			sepNavVisRange = "{990, 1291}";
+			sepNavIntBoundsRect = "{{0, 0}, {864, 2096}}";
+			sepNavSelRange = "{2146, 0}";
+			sepNavVisRange = "{224, 1007}";
 			sepNavWindowFrame = "{{112, 23}, {923, 755}}";
 		};
 	};
 	DC4698870D6E2585003E66AD /* YuplooLoginController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {598, 768}}";
+			sepNavIntBoundsRect = "{{0, 0}, {495, 606}}";
 			sepNavSelRange = "{513, 0}";
-			sepNavVisRange = "{455, 97}";
+			sepNavVisRange = "{428, 125}";
 			sepNavWindowFrame = "{{552, 12}, {927, 766}}";
 		};
 	};
@@ -306,7 +358,7 @@
 	};
 	DC4698B10D6E2DE4003E66AD /* YuplooController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {850, 528}}";
+			sepNavIntBoundsRect = "{{0, 0}, {850, 551}}";
 			sepNavSelRange = "{435, 0}";
 			sepNavVisRange = "{0, 550}";
 			sepNavWindowFrame = "{{131, 99}, {909, 679}}";
@@ -314,9 +366,9 @@
 	};
 	DC4698B20D6E2DE4003E66AD /* YuplooController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1102, 1484}}";
+			sepNavIntBoundsRect = "{{0, 0}, {791, 1728}}";
 			sepNavSelRange = "{1173, 0}";
-			sepNavVisRange = "{1001, 436}";
+			sepNavVisRange = "{918, 846}";
 			sepNavWindowFrame = "{{592, 147}, {850, 736}}";
 		};
 	};
@@ -327,17 +379,17 @@
 	};
 	DC469A080D6E503B003E66AD /* Photo.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {598, 638}}";
+			sepNavIntBoundsRect = "{{0, 0}, {472, 638}}";
 			sepNavSelRange = "{435, 0}";
-			sepNavVisRange = "{696, 78}";
+			sepNavVisRange = "{650, 124}";
 			sepNavWindowFrame = "{{223, 132}, {1131, 762}}";
 		};
 	};
 	DC469A090D6E503B003E66AD /* Photo.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {870, 924}}";
+			sepNavIntBoundsRect = "{{0, 0}, {870, 992}}";
 			sepNavSelRange = "{598, 0}";
-			sepNavVisRange = "{142, 823}";
+			sepNavVisRange = "{476, 664}";
 			sepNavWindowFrame = "{{129, 240}, {929, 766}}";
 		};
 	};
@@ -472,125 +524,718 @@
 		vrLen = 156;
 		vrLoc = 6656;
 	};
-	DC5A5E940DC2845F00B8D980 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		comments = "error: syntax error before '-' token";
-		fRef = DC154D710D6F8336004FDDC5 /* YupooResult.h */;
-		rLen = 1;
-		rLoc = 44;
-		rType = 1;
-	};
-	DC5A5E950DC2845F00B8D980 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = DC6EACCE0D7E004100E32A83 /* YuplooUploadController.h */;
-		name = "YuplooUploadController.h: 37";
-		rLen = 0;
-		rLoc = 892;
-		rType = 0;
-		vrLen = 143;
-		vrLoc = 489;
-	};
-	DC5A5E960DC2845F00B8D980 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = DC154D720D6F8336004FDDC5 /* YupooResult.m */;
-		name = "YupooResult.m: 226";
-		rLen = 0;
-		rLoc = 6492;
-		rType = 0;
-		vrLen = 156;
-		vrLoc = 6656;
-	};
-	DC5A5EA70DC287FD00B8D980 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = DC154D710D6F8336004FDDC5 /* YupooResult.h */;
-		name = "YupooResult.h: 45";
-		rLen = 62;
-		rLoc = 1222;
-		rType = 0;
-		vrLen = 284;
-		vrLoc = 1052;
-	};
-	DC5A5EAD0DC2880400B8D980 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = DC154D710D6F8336004FDDC5 /* YupooResult.h */;
-		name = "YupooResult.h: 45";
-		rLen = 62;
-		rLoc = 1222;
-		rType = 0;
-		vrLen = 284;
-		vrLoc = 1052;
-	};
 	DC5A5EB80DC289BD00B8D980 /* YuplooAttributeEditor.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {551, 334}}";
-			sepNavSelRange = "{307, 0}";
-			sepNavVisRange = "{172, 137}";
+			sepNavIntBoundsRect = "{{0, 0}, {1053, 669}}";
+			sepNavSelRange = "{377, 0}";
+			sepNavVisRange = "{0, 630}";
 			sepNavWindowFrame = "{{60, 226}, {1112, 797}}";
 		};
 	};
 	DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1053, 669}}";
-			sepNavSelRange = "{559, 0}";
-			sepNavVisRange = "{0, 566}";
-			sepNavWindowFrame = "{{83, 205}, {1112, 797}}";
+			sepNavIntBoundsRect = "{{0, 0}, {726, 940}}";
+			sepNavSelRange = "{1404, 5}";
+			sepNavVisRange = "{1093, 204}";
+			sepNavWindowFrame = "{{156, 150}, {1112, 797}}";
 		};
 	};
-	DC5A5ED80DC2AD1E00B8D980 /* PBXTextBookmark */ = {
+	DC5A5F070DC2AED000B8D980 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		comments = "error: syntax error before 'YuplooMainWindowController'";
-		fRef = DC5A5EB80DC289BD00B8D980 /* YuplooAttributeEditor.h */;
-		rLen = 1;
-		rLoc = 13;
-		rType = 1;
-	};
-	DC5A5ED90DC2AD1E00B8D980 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = DC5A5EB80DC289BD00B8D980 /* YuplooAttributeEditor.h */;
-		name = "YuplooAttributeEditor.h: 11";
-		rLen = 0;
-		rLoc = 207;
+		fRef = DC154D710D6F8336004FDDC5 /* YupooResult.h */;
+		name = "YupooResult.h: 45";
+		rLen = 62;
+		rLoc = 1222;
 		rType = 0;
-		vrLen = 464;
-		vrLoc = 0;
+		vrLen = 284;
+		vrLoc = 1052;
 	};
-	DC5A5EF00DC2AD6A00B8D980 /* PBXTextBookmark */ = {
+	DC5A5F080DC2AED000B8D980 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = DC5A5EB80DC289BD00B8D980 /* YuplooAttributeEditor.h */;
-		name = "YuplooAttributeEditor.h: 11";
+		fRef = DC4698430D6E193A003E66AD /* YuplooMainWindowController.h */;
+		name = "YuplooMainWindowController.h: 25";
 		rLen = 0;
-		rLoc = 207;
+		rLoc = 701;
 		rType = 0;
-		vrLen = 464;
-		vrLoc = 0;
+		vrLen = 165;
+		vrLoc = 519;
 	};
-	DC5A5EF10DC2AD6A00B8D980 /* PBXTextBookmark */ = {
+	DC5A5F090DC2AED000B8D980 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		comments = "warning: #warning XXX deal with this something";
-		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
-		rLen = 1;
-		rLoc = 159;
-		rType = 1;
-	};
-	DC5A5EF20DC2AD6A00B8D980 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = DC5A5EB80DC289BD00B8D980 /* YuplooAttributeEditor.h */;
-		name = "YuplooAttributeEditor.h: 11";
+		fRef = DC56AC020D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.h */;
+		name = "YuplooApplicationDelegate.h: 20";
 		rLen = 0;
-		rLoc = 207;
+		rLoc = 354;
 		rType = 0;
-		vrLen = 464;
-		vrLoc = 0;
+		vrLen = 151;
+		vrLoc = 203;
 	};
-	DC5A5EF30DC2AD6A00B8D980 /* PBXTextBookmark */ = {
+	DC5A5F0A0DC2AED000B8D980 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
-		name = "YuplooUploadController.m: 160";
-		rLen = 46;
-		rLoc = 4293;
+		name = "YuplooUploadController.m: 144";
+		rLen = 0;
+		rLoc = 3738;
 		rType = 0;
-		vrLen = 491;
-		vrLoc = 3862;
+		vrLen = 202;
+		vrLoc = 3429;
+	};
+	DC5A5F0B0DC2AED000B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DCEE4DFA0DC1078600426DC0 /* PhotoItem.h */;
+		name = "PhotoItem.h: 28";
+		rLen = 0;
+		rLoc = 552;
+		rType = 0;
+		vrLen = 110;
+		vrLoc = 160;
+	};
+	DC5A5F0C0DC2AED000B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB80DC289BD00B8D980 /* YuplooAttributeEditor.h */;
+		name = "YuplooAttributeEditor.h: 15";
+		rLen = 0;
+		rLoc = 379;
+		rType = 0;
+		vrLen = 137;
+		vrLoc = 172;
+	};
+	DC5A5F0E0DC2AED000B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC154D710D6F8336004FDDC5 /* YupooResult.h */;
+		name = "YupooResult.h: 45";
+		rLen = 62;
+		rLoc = 1222;
+		rType = 0;
+		vrLen = 284;
+		vrLoc = 1052;
+	};
+	DC5A5F0F0DC2AED000B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC4698430D6E193A003E66AD /* YuplooMainWindowController.h */;
+		name = "YuplooMainWindowController.h: 25";
+		rLen = 0;
+		rLoc = 701;
+		rType = 0;
+		vrLen = 165;
+		vrLoc = 519;
+	};
+	DC5A5F100DC2AED000B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB80DC289BD00B8D980 /* YuplooAttributeEditor.h */;
+		name = "YuplooAttributeEditor.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 147;
+		vrLoc = 0;
+	};
+	DC5A5F110DC2AED000B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC56AC020D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.h */;
+		name = "YuplooApplicationDelegate.h: 20";
+		rLen = 0;
+		rLoc = 354;
+		rType = 0;
+		vrLen = 151;
+		vrLoc = 203;
+	};
+	DC5A5F120DC2AED000B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB80DC289BD00B8D980 /* YuplooAttributeEditor.h */;
+		name = "YuplooAttributeEditor.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 147;
+		vrLoc = 0;
+	};
+	DC5A5F130DC2AED000B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
+		name = "YuplooUploadController.m: 144";
+		rLen = 0;
+		rLoc = 3738;
+		rType = 0;
+		vrLen = 202;
+		vrLoc = 3429;
+	};
+	DC5A5F140DC2AED000B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DCEE4DFA0DC1078600426DC0 /* PhotoItem.h */;
+		name = "PhotoItem.h: 28";
+		rLen = 0;
+		rLoc = 552;
+		rType = 0;
+		vrLen = 110;
+		vrLoc = 160;
+	};
+	DC5A5F150DC2AED000B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB80DC289BD00B8D980 /* YuplooAttributeEditor.h */;
+		name = "YuplooAttributeEditor.h: 15";
+		rLen = 0;
+		rLoc = 379;
+		rType = 0;
+		vrLen = 137;
+		vrLoc = 172;
+	};
+	DC5A5F310DC2B3B000B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 40";
+		rLen = 0;
+		rLoc = 1314;
+		rType = 0;
+		vrLen = 88;
+		vrLoc = 489;
+	};
+	DC5A5F320DC2B3B000B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC469A080D6E503B003E66AD /* Photo.h */;
+		name = "Photo.h: 22";
+		rLen = 0;
+		rLoc = 435;
+		rType = 0;
+		vrLen = 124;
+		vrLoc = 650;
+	};
+	DC5A5F330DC2B3B000B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC4698870D6E2585003E66AD /* YuplooLoginController.h */;
+		name = "YuplooLoginController.h: 22";
+		rLen = 0;
+		rLoc = 513;
+		rType = 0;
+		vrLen = 125;
+		vrLoc = 428;
+	};
+	DC5A5F340DC2B3B000B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 40";
+		rLen = 0;
+		rLoc = 1314;
+		rType = 0;
+		vrLen = 88;
+		vrLoc = 489;
+	};
+	DC5A5F350DC2B3B000B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC469A080D6E503B003E66AD /* Photo.h */;
+		name = "Photo.h: 22";
+		rLen = 0;
+		rLoc = 435;
+		rType = 0;
+		vrLen = 124;
+		vrLoc = 650;
+	};
+	DC5A5F360DC2B3B000B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC4698870D6E2585003E66AD /* YuplooLoginController.h */;
+		name = "YuplooLoginController.h: 22";
+		rLen = 0;
+		rLoc = 513;
+		rType = 0;
+		vrLen = 125;
+		vrLoc = 428;
+	};
+	DC5A5F560DC2B50800B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC8CA8820D6E819000FEE63E /* YuplooPhotoViewController.h */;
+		name = "YuplooPhotoViewController.h: 14";
+		rLen = 0;
+		rLoc = 238;
+		rType = 0;
+		vrLen = 212;
+		vrLoc = 164;
+	};
+	DC5A5F570DC2B50800B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC8CA8820D6E819000FEE63E /* YuplooPhotoViewController.h */;
+		name = "YuplooPhotoViewController.h: 14";
+		rLen = 0;
+		rLoc = 238;
+		rType = 0;
+		vrLen = 212;
+		vrLoc = 164;
+	};
+	DC5A5F680DC2B84600B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 50";
+		rLen = 0;
+		rLoc = 1314;
+		rType = 0;
+		vrLen = 40;
+		vrLoc = 488;
+	};
+	DC5A5F700DC2B8F500B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 50";
+		rLen = 0;
+		rLoc = 1314;
+		rType = 0;
+		vrLen = 40;
+		vrLoc = 488;
+	};
+	DC5A5F730DC2B93900B8D980 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+	};
+	DC5A5F770DC2B94C00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 50";
+		rLen = 0;
+		rLoc = 1314;
+		rType = 0;
+		vrLen = 38;
+		vrLoc = 488;
+	};
+	DC5A5F7A0DC2B94C00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 50";
+		rLen = 0;
+		rLoc = 1314;
+		rType = 0;
+		vrLen = 650;
+		vrLoc = 317;
+	};
+	DC5A5F8A0DC2B9C800B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 51";
+		rLen = 0;
+		rLoc = 1314;
+		rType = 0;
+		vrLen = 38;
+		vrLoc = 488;
+	};
+	DC5A5F8B0DC2B9C800B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 51";
+		rLen = 0;
+		rLoc = 1314;
+		rType = 0;
+		vrLen = 656;
+		vrLoc = 317;
+	};
+	DC5A5F8F0DC2BA6500B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 51";
+		rLen = 0;
+		rLoc = 1314;
+		rType = 0;
+		vrLen = 38;
+		vrLoc = 488;
+	};
+	DC5A5F900DC2BA6500B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 51";
+		rLen = 0;
+		rLoc = 1314;
+		rType = 0;
+		vrLen = 745;
+		vrLoc = 317;
+	};
+	DC5A5F9B0DC2BB2600B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 51";
+		rLen = 0;
+		rLoc = 1314;
+		rType = 0;
+		vrLen = 74;
+		vrLoc = 703;
+	};
+	DC5A5F9C0DC2BB2600B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 51";
+		rLen = 0;
+		rLoc = 1314;
+		rType = 0;
+		vrLen = 74;
+		vrLoc = 703;
+	};
+	DC5A5F9D0DC2BB2600B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC4698440D6E193A003E66AD /* YuplooMainWindowController.m */;
+		name = "YuplooMainWindowController.m: 69";
+		rLen = 0;
+		rLoc = 2033;
+		rType = 0;
+		vrLen = 320;
+		vrLoc = 1650;
+	};
+	DC5A5FA20DC2BBC400B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC4698440D6E193A003E66AD /* YuplooMainWindowController.m */;
+		name = "YuplooMainWindowController.m: 69";
+		rLen = 0;
+		rLoc = 2033;
+		rType = 0;
+		vrLen = 320;
+		vrLoc = 1650;
+	};
+	DC5A5FA60DC2BBD000B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: incomplete implementation of class 'YuplooAttributeEditor'";
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		rLen = 1;
+		rLoc = 61;
+		rType = 1;
+	};
+	DC5A5FA70DC2BBD000B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 54";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 293;
+		vrLoc = 715;
+	};
+	DC5A5FAB0DC2BBE100B8D980 /* YuplooAttributeEditor.m:37 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		functionName = "-loadView";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 37;
+		location = Yuploo;
+		modificationTime = 230866926.590726;
+		state = 2;
+	};
+	DC5A5FAE0DC2BBED00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC4698440D6E193A003E66AD /* YuplooMainWindowController.m */;
+		name = "YuplooMainWindowController.m: 69";
+		rLen = 0;
+		rLoc = 2033;
+		rType = 0;
+		vrLen = 325;
+		vrLoc = 1650;
+	};
+	DC5A5FAF0DC2BBED00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC4698440D6E193A003E66AD /* YuplooMainWindowController.m */;
+		name = "YuplooMainWindowController.m: 69";
+		rLen = 0;
+		rLoc = 2033;
+		rType = 0;
+		vrLen = 325;
+		vrLoc = 1650;
+	};
+	DC5A5FB00DC2BBED00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 54";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 46;
+		vrLoc = 962;
+	};
+	DC5A5FB30DC2BC0A00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 54";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 367;
+		vrLoc = 641;
+	};
+	DC5A5FB40DC2BC0C00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 54";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 46;
+		vrLoc = 962;
+	};
+	DC5A5FB70DC2BC5300B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 55";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 61;
+		vrLoc = 973;
+	};
+	DC5A5FBC0DC2BC7800B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 55";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 44;
+		vrLoc = 976;
+	};
+	DC5A5FBE0DC2BD6B00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 55";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 61;
+		vrLoc = 976;
+	};
+	DC5A5FBF0DC2BDC100B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 55";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 61;
+		vrLoc = 978;
+	};
+	DC5A5FC20DC2BE2C00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 55";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 403;
+		vrLoc = 641;
+	};
+	DC5A5FC90DC2BED900B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 57";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 59;
+		vrLoc = 1094;
+	};
+	DC5A5FCC0DC2BF2600B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 57";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 59;
+		vrLoc = 1094;
+	};
+	DC5A5FCE0DC2BF2D00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 57";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 506;
+		vrLoc = 529;
+	};
+	DC5A5FCF0DC2BF3300B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 57";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 61;
+		vrLoc = 1094;
+	};
+	DC5A5FD00DC2BF3D00B8D980 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+	};
+	DC5A5FD50DC2BFF400B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 57";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 61;
+		vrLoc = 1094;
+	};
+	DC5A5FD60DC2BFF400B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 60";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 44;
+		vrLoc = 1248;
+	};
+	DC5A5FD90DC2BFF400B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 40";
+		rLen = 0;
+		rLoc = 938;
+		rType = 0;
+		vrLen = 974;
+		vrLoc = 318;
+	};
+	DC5A5FDA0DC2C02000B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 60";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 596;
+		vrLoc = 529;
+	};
+	DC5A5FDD0DC2C06500B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 63";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 168;
+		vrLoc = 1092;
+	};
+	DC5A5FDE0DC2C06500B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 41";
+		rLen = 0;
+		rLoc = 907;
+		rType = 0;
+		vrLen = 1021;
+		vrLoc = 318;
+	};
+	DC5A5FE10DC2C0EF00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 63";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 235;
+		vrLoc = 1027;
+	};
+	DC5A5FE20DC2C0EF00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 42";
+		rLen = 0;
+		rLoc = 938;
+		rType = 0;
+		vrLen = 1023;
+		vrLoc = 318;
+	};
+	DC5A5FE50DC2C0FE00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 63";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 235;
+		vrLoc = 1027;
+	};
+	DC5A5FE60DC2C0FE00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 45";
+		rLen = 0;
+		rLoc = 1064;
+		rType = 0;
+		vrLen = 1023;
+		vrLoc = 318;
+	};
+	DC5A5FE90DC2C10F00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 63";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 235;
+		vrLoc = 1027;
+	};
+	DC5A5FEA0DC2C10F00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 45";
+		rLen = 0;
+		rLoc = 1064;
+		rType = 0;
+		vrLen = 1023;
+		vrLoc = 318;
+	};
+	DC5A5FEF0DC2C16300B8D980 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+	};
+	DC5A5FF20DC2C17400B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 61";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 170;
+		vrLoc = 1093;
+	};
+	DC5A5FF50DC2C17400B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 53";
+		rLen = 0;
+		rLoc = 1312;
+		rType = 0;
+		vrLen = 920;
+		vrLoc = 462;
+	};
+	DC5A5FFA0DC2C1BB00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 62";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 170;
+		vrLoc = 1093;
+	};
+	DC5A5FFB0DC2C1BB00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 43";
+		rLen = 0;
+		rLoc = 972;
+		rType = 0;
+		vrLen = 942;
+		vrLoc = 462;
+	};
+	DC5A5FFC0DC2C1CD00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */;
+		name = "YuplooAttributeEditor.m: 62";
+		rLen = 5;
+		rLoc = 1404;
+		rType = 0;
+		vrLen = 204;
+		vrLoc = 1093;
 	};
 	DC6D81880DC04BB50049C401 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -709,25 +1354,25 @@
 	};
 	DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {723, 2538}}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 2510}}";
 			sepNavSelRange = "{4293, 46}";
-			sepNavVisRange = "{3862, 491}";
+			sepNavVisRange = "{3769, 584}";
 			sepNavWindowFrame = "{{100, 210}, {929, 766}}";
 		};
 	};
 	DC8CA8820D6E819000FEE63E /* YuplooPhotoViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {850, 551}}";
-			sepNavSelRange = "{677, 0}";
-			sepNavVisRange = "{0, 684}";
+			sepNavIntBoundsRect = "{{0, 0}, {472, 496}}";
+			sepNavSelRange = "{238, 0}";
+			sepNavVisRange = "{164, 212}";
 			sepNavWindowFrame = "{{617, 92}, {909, 679}}";
 		};
 	};
 	DC8CA8830D6E819000FEE63E /* YuplooPhotoViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {850, 2542}}";
-			sepNavSelRange = "{1535, 0}";
-			sepNavVisRange = "{1125, 877}";
+			sepNavIntBoundsRect = "{{0, 0}, {1102, 3104}}";
+			sepNavSelRange = "{2965, 0}";
+			sepNavVisRange = "{2430, 357}";
 			sepNavWindowFrame = "{{367, 271}, {909, 679}}";
 		};
 	};
@@ -784,28 +1429,18 @@
 	DCEE4DFA0DC1078600426DC0 /* PhotoItem.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {944, 618}}";
-			sepNavSelRange = "{434, 0}";
-			sepNavVisRange = "{0, 496}";
+			sepNavSelRange = "{506, 0}";
+			sepNavVisRange = "{0, 552}";
 			sepNavWindowFrame = "{{129, 214}, {1003, 746}}";
 		};
 	};
 	DCEE4DFB0DC1078600426DC0 /* PhotoItem.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {944, 1312}}";
-			sepNavSelRange = "{1051, 0}";
-			sepNavVisRange = "{158, 540}";
+			sepNavIntBoundsRect = "{{0, 0}, {944, 1952}}";
+			sepNavSelRange = "{1498, 0}";
+			sepNavVisRange = "{1143, 362}";
 			sepNavWindowFrame = "{{106, 235}, {1003, 746}}";
 		};
-	};
-	DCEE4DFE0DC1079800426DC0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = DC56AC020D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.h */;
-		name = "YuplooApplicationDelegate.h: 20";
-		rLen = 0;
-		rLoc = 354;
-		rType = 0;
-		vrLen = 354;
-		vrLoc = 0;
 	};
 	DCEE4E080DC1079800426DC0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -842,7 +1477,7 @@
 		fRef = DCEE4DFA0DC1078600426DC0 /* PhotoItem.h */;
 		name = "PhotoItem.h: 19";
 		rLen = 0;
-		rLoc = 496;
+		rLoc = 552;
 		rType = 0;
 		vrLen = 256;
 		vrLoc = 0;
@@ -852,7 +1487,7 @@
 		fRef = DCEE4DFB0DC1078600426DC0 /* PhotoItem.m */;
 		name = "PhotoItem.m: 14";
 		rLen = 0;
-		rLoc = 1051;
+		rLoc = 1498;
 		rType = 0;
 		vrLen = 159;
 		vrLoc = 0;
@@ -876,16 +1511,6 @@
 		rType = 0;
 		vrLen = 140;
 		vrLoc = 313;
-	};
-	DCEE4F4D0DC11E6400426DC0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = DC8CA8820D6E819000FEE63E /* YuplooPhotoViewController.h */;
-		name = "YuplooPhotoViewController.h: 13";
-		rLen = 0;
-		rLoc = 238;
-		rType = 0;
-		vrLen = 127;
-		vrLoc = 190;
 	};
 	DCEE4FE30DC1272000426DC0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -922,7 +1547,7 @@
 		fRef = DC8CA8830D6E819000FEE63E /* YuplooPhotoViewController.m */;
 		name = "YuplooPhotoViewController.m: 23";
 		rLen = 0;
-		rLoc = 498;
+		rLoc = 532;
 		rType = 0;
 		vrLen = 168;
 		vrLoc = 330;
@@ -936,16 +1561,6 @@
 		rType = 0;
 		vrLen = 251;
 		vrLoc = 596;
-	};
-	DCEE50F60DC14D9500426DC0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = DC4698430D6E193A003E66AD /* YuplooMainWindowController.h */;
-		name = "YuplooMainWindowController.h: 25";
-		rLen = 0;
-		rLoc = 701;
-		rType = 0;
-		vrLen = 114;
-		vrLoc = 547;
 	};
 	DCEE50F80DC14D9500426DC0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1017,32 +1632,12 @@
 		vrLen = 208;
 		vrLoc = 314;
 	};
-	DCEE51D40DC157E300426DC0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = DC469A080D6E503B003E66AD /* Photo.h */;
-		name = "Photo.h: 22";
-		rLen = 0;
-		rLoc = 435;
-		rType = 0;
-		vrLen = 78;
-		vrLoc = 696;
-	};
-	DCEE51ED0DC158AB00426DC0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = DCEE4DFA0DC1078600426DC0 /* PhotoItem.h */;
-		name = "PhotoItem.h: 25";
-		rLen = 0;
-		rLoc = 496;
-		rType = 0;
-		vrLen = 81;
-		vrLoc = 187;
-	};
 	DCEE52140DC15A2100426DC0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = DC4698440D6E193A003E66AD /* YuplooMainWindowController.m */;
 		name = "YuplooMainWindowController.m: 65";
 		rLen = 0;
-		rLoc = 1929;
+		rLoc = 2033;
 		rType = 0;
 		vrLen = 159;
 		vrLoc = 1689;
@@ -1074,25 +1669,5 @@
 	DCEE527C0DC160AF00426DC0 /* PBXBookmark */ = {
 		isa = PBXBookmark;
 		fRef = DC4699510D6E37DA003E66AD /* Yuploo.icns */;
-	};
-	DCEE52A60DC1648200426DC0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = DC4698870D6E2585003E66AD /* YuplooLoginController.h */;
-		name = "YuplooLoginController.h: 22";
-		rLen = 0;
-		rLoc = 513;
-		rType = 0;
-		vrLen = 97;
-		vrLoc = 455;
-	};
-	DCEE52DC0DC168E600426DC0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
-		name = "YuplooUploadController.m: 141";
-		rLen = 0;
-		rLoc = 3738;
-		rType = 0;
-		vrLen = 147;
-		vrLoc = 3458;
 	};
 }

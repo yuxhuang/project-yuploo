@@ -62,13 +62,14 @@
 
 	NSAssert(nil != loginController, @"YuplooMainWindowController>-init: loginController cannot be nil.");
 	NSAssert(nil != photoViewController, @"YuplooMainWindowController>-init: photoViewController cannot be nil.");
+	NSAssert(nil != attributeEditor, @"YuplooMainWindowController>-init: attributeEditor cannot be nil.");
     
     // add the photo view
 	[photoViewController loadNib];
 	[targetView setDocumentView:[photoViewController browserView]];
 
 	// attribute editor
-	[attributeEditor loadNib];
+	[attributeEditor loadView];
 	
     yupoo = [[YuplooController sharedController] yupoo];
     
