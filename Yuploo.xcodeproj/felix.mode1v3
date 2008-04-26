@@ -286,14 +286,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>29</integer>
-									<integer>13</integer>
-									<integer>1</integer>
-									<integer>0</integer>
+									<integer>59</integer>
+									<integer>58</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {254, 422}}</string>
+							<string>{{0, 662}, {254, 422}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -328,7 +326,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Info.plist</string>
+								<string>Yuploo_vers.c</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -336,11 +334,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Info.plist</string>
+										<string>Yuploo_vers.c</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>DC941EEB0DC3BDDB00A508FD</string>
+										<string>DC941F420DC3C20900A508FD</string>
 										<key>history</key>
 										<array>
 											<string>DC6D83360DC06F860049C401</string>
@@ -357,7 +355,6 @@
 											<string>DC5A5E920DC2845F00B8D980</string>
 											<string>DC5A5E930DC2845F00B8D980</string>
 											<string>DC5A5F070DC2AED000B8D980</string>
-											<string>DC5A5F080DC2AED000B8D980</string>
 											<string>DC5A5F0B0DC2AED000B8D980</string>
 											<string>DC5A5F320DC2B3B000B8D980</string>
 											<string>DC5A5F330DC2B3B000B8D980</string>
@@ -372,7 +369,9 @@
 											<string>DC5A60EC0DC2E2BC00B8D980</string>
 											<string>DC5A61380DC2EF2100B8D980</string>
 											<string>DC5A61530DC2EFE900B8D980</string>
-											<string>DC237F6B0DC3BDCA005518D9</string>
+											<string>DC941F0E0DC3BFF400A508FD</string>
+											<string>DC941F0F0DC3BFF400A508FD</string>
+											<string>DC941F3B0DC3C1FB00A508FD</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -404,6 +403,7 @@
 											<string>DCEE527C0DC160AF00426DC0</string>
 											<string>DC5A5F100DC2AED000B8D980</string>
 											<string>DC5A5F340DC2B3B000B8D980</string>
+											<string>DC941F100DC3BFF400A508FD</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -461,9 +461,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>DC941EEC0DC3BDDB00A508FD</string>
+				<string>DC941F3E0DC3C1FB00A508FD</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>DC941EED0DC3BDDB00A508FD</string>
+				<string>DC941F3F0DC3C1FB00A508FD</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -597,9 +597,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>DC56AC0B0D6DFC2100EB8FC8</string>
 		<string>/Users/felix/Code/XCode/Yuploo/Yuploo.xcodeproj</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 	</array>
 	<key>WindowString</key>
 	<string>808 429 809 481 0 0 1680 1028 </string>
@@ -618,12 +619,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>Yuploo_vers.c</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -679,7 +682,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>DC56AC0B0D6DFC2100EB8FC8</string>
-				<string>DC941EEE0DC3BDDB00A508FD</string>
+				<string>DC941F380DC3C1DD00A508FD</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -799,13 +802,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>DC941EEF0DC3BDDB00A508FD</string>
+				<string>DC941F430DC3C20900A508FD</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>DC941EF00DC3BDDB00A508FD</string>
-				<string>DC941EF10DC3BDDB00A508FD</string>
-				<string>DC941EF20DC3BDDB00A508FD</string>
-				<string>DC941EF30DC3BDDB00A508FD</string>
-				<string>DC941EF40DC3BDDB00A508FD</string>
+				<string>DC941F440DC3C20900A508FD</string>
+				<string>DC941F450DC3C20900A508FD</string>
+				<string>DC941F460DC3C20900A508FD</string>
+				<string>DC941F470DC3C20900A508FD</string>
+				<string>DC941F480DC3C20900A508FD</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -814,7 +817,7 @@
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -924,8 +927,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -961,7 +962,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>DC237F670DC3BD54005518D9</string>
+				<string>DC941F490DC3C20900A508FD</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -971,7 +972,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

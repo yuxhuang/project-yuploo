@@ -20,8 +20,10 @@
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
 	<string>WBIT</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.8</string>
 	<key>CFBundleVersion</key>
-	<string>0.7</string>
+	<string>41</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
