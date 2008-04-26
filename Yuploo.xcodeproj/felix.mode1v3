@@ -269,15 +269,8 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>DCEE50110DC1287600426DC0</string>
-								<string>DC469A0E0D6E5041003E66AD</string>
-								<string>DC56ABFE0D6DFB4800EB8FC8</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
-								<string>DC56AC010D6DFB7600EB8FC8</string>
-								<string>DC56AC000D6DFB6000EB8FC8</string>
-								<string>29B97323FDCFA39411CA2CEA</string>
-								<string>1058C7A0FEA54F0111CA2CBB</string>
-								<string>1058C7A2FEA54F0111CA2CBB</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FAAC04509CD000000102</string>
@@ -286,12 +279,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>59</integer>
-									<integer>58</integer>
+									<integer>17</integer>
+									<integer>16</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 662}, {254, 422}}</string>
+							<string>{{0, 0}, {254, 422}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -310,7 +303,7 @@
 							<real>254</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>808 429 809 481 0 0 1680 1028 </string>
+						<string>825 525 809 481 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -335,10 +328,6 @@
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
 										<string>Yuploo_vers.c</string>
-										<key>_historyCapacity</key>
-										<integer>0</integer>
-										<key>bookmark</key>
-										<string>DC941F420DC3C20900A508FD</string>
 										<key>history</key>
 										<array>
 											<string>DC6D83360DC06F860049C401</string>
@@ -371,7 +360,7 @@
 											<string>DC5A61530DC2EFE900B8D980</string>
 											<string>DC941F0E0DC3BFF400A508FD</string>
 											<string>DC941F0F0DC3BFF400A508FD</string>
-											<string>DC941F3B0DC3C1FB00A508FD</string>
+											<string>DCE0919E0DC3C55700BFF900</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -417,7 +406,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {533, 131}}</string>
 								<key>RubberWindowFrame</key>
-								<string>808 429 809 481 0 0 1680 1028 </string>
+								<string>825 525 809 481 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -437,7 +426,7 @@
 								<key>Frame</key>
 								<string>{{0, 136}, {533, 304}}</string>
 								<key>RubberWindowFrame</key>
-								<string>808 429 809 481 0 0 1680 1028 </string>
+								<string>825 525 809 481 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -461,9 +450,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>DC941F3E0DC3C1FB00A508FD</string>
+				<string>DCE091B50DC3C70800BFF900</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>DC941F3F0DC3C1FB00A508FD</string>
+				<string>DCE091B60DC3C70800BFF900</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -603,7 +592,7 @@
 		<string>/Users/felix/Code/XCode/Yuploo/Yuploo.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>808 429 809 481 0 0 1680 1028 </string>
+	<string>825 525 809 481 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -619,14 +608,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Yuploo_vers.c</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -682,7 +669,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>DC56AC0B0D6DFC2100EB8FC8</string>
-				<string>DC941F380DC3C1DD00A508FD</string>
+				<string>DCE091B70DC3C70800BFF900</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -802,13 +789,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>DC941F430DC3C20900A508FD</string>
+				<string>DCE091B80DC3C70800BFF900</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>DC941F440DC3C20900A508FD</string>
-				<string>DC941F450DC3C20900A508FD</string>
-				<string>DC941F460DC3C20900A508FD</string>
-				<string>DC941F470DC3C20900A508FD</string>
-				<string>DC941F480DC3C20900A508FD</string>
+				<string>DCE091B90DC3C70800BFF900</string>
+				<string>DCE091BA0DC3C70800BFF900</string>
+				<string>DCE091BB0DC3C70800BFF900</string>
+				<string>DCE091BC0DC3C70800BFF900</string>
+				<string>DCE091BD0DC3C70800BFF900</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -962,7 +949,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>DC941F490DC3C20900A508FD</string>
+				<string>DCE091BE0DC3C70800BFF900</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
