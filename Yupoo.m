@@ -156,7 +156,8 @@
     // go ahead to encode and build the string
     for (NSString *key in sortedKeys) {
         // escape the query parameter by percentage representation before hashing
-        NSString *value = [[oldParams objectForKey:key] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//        NSString *value = [[oldParams objectForKey:key] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+		NSString *value = [oldParams objectForKey:key];
         // done
         [newParams setObject:value forKey:key];
         [forHash appendFormat:@"%@%@", key, value];
@@ -263,8 +264,8 @@
     }
     
     // build the request url
-    NSDictionary *signedParams = [self paramsEncodedAndSigned:buildingParams];
-    NSURL *url = [self URLWith:aURL params:signedParams];
+    NSDictionary *signedParams = [[self paramsEncodedAndSigned:buildingParams] retain];
+    NSURL *url = [NSURL URLWithString:YUPLOO_API_UPLOAD];
     // build the request
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url
@@ -283,6 +284,16 @@
         #warning FIXME use multipart stream
     }
     else {
+        NSMutableData *postBody = [[NSMutableData alloc] init];
+		// add parameters
+		for (NSString *key in [signedParams allKeys]) {
+			NSString *value = [signedParams objectForKey:key];
+			[postBody appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+			[postBody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", key] dataUsingEncoding:NSUTF8StringEncoding]];
+			[postBody appendData:[[NSString stringWithFormat:@"%@\r\n", value] dataUsingEncoding:NSUTF8StringEncoding]];
+		}
+		
+        // adding the body
         NSError *error = nil;
         NSString *uti = [[NSWorkspace sharedWorkspace] typeOfFile:photo.path error:&error];
 		NSString *mime;
@@ -292,9 +303,7 @@
 		else if ([uti isEqualToString: (NSString *)kUTTypePNG]) {
 			mime = @"image/png";
 		}
-        
-        // adding the body
-        NSMutableData *postBody = [[NSMutableData alloc] init];
+
         [postBody appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         [postBody appendData:[[NSString stringWithFormat:
                 @"Content-Disposition: form-data; name=\"photo\"; filename=\"%@\"\r\n", photo.nameForDownload] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -305,6 +314,7 @@
 		[postBody release];
     }
     
+	[signedParams release];
     return [request autorelease];
 }
 
