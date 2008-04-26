@@ -142,10 +142,11 @@
 		NSUInteger index = [selection firstIndex];
 		PhotoItem *item = [[browserImages objectAtIndex:index] retain];
 		mainWindowController.photoStatus = item.path;
-		[mainWindowController.attributeEditor editPhoto:item];
+		[mainWindowController.attributeEditor startEditing];
 		[item release];
 	}
 	else {
+		[mainWindowController.attributeEditor startEditing];
 		mainWindowController.photoStatus = @"Multiple photos";
 	}
 }

@@ -21,8 +21,6 @@
 @property(readwrite) NSTimeInterval timeout;
 @property(readonly,copy) NSString *restURL, *uploadURL, *authenticationURL;
 
-+ (id)yupooWithApiKey:(NSString *)anApiKey secret:(NSString *)aSecret;
-
 - (id)initWithApiKey:(NSString *)anApiKey secret:(NSString *)aSecret;
 - (id)connectRest:(NSString *)aRestURL upload:(NSString *)anUploadURL authentication:(NSString *)anAuthURL;
 

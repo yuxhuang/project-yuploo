@@ -14,7 +14,6 @@
 @interface YuplooAttributeEditor : NSViewController {
 	YuplooMainWindowController *mainWindowController;
 	NSDrawer *drawer;
-	PhotoItem *selectedPhoto;
 }
 
 @property(readonly) YuplooMainWindowController *mainWindowController;
@@ -23,7 +22,7 @@
 - (id)initWithMainWindowController:(YuplooMainWindowController *)aController;
 
 // photo editing
-- (void)editPhoto:(PhotoItem *)photo;
+- (void)startEditing;
 - (void)endEditing;
 
 @end

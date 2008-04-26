@@ -27,7 +27,7 @@
 
 - (void)dealloc
 {
-	[drawer dealloc];
+	[drawer release];
 	[mainWindowController release];
 	[super dealloc];
 }
@@ -38,25 +38,25 @@
 	[drawer setParentWindow:mainWindowController.window];
 
 	NSSize size = [self.view bounds].size;
+	[drawer setPreferredEdge:NSMaxXEdge];
 	[drawer setContentView:self.view];
 	[drawer setContentSize:size];
 	[drawer setMinContentSize:size];
 	[drawer setMaxContentSize:[self.view bounds].size];
-	[self.view setFrame:NSMakeRect(0, 150, size.width, size.height)];
+	[self.view setFrame:NSMakeRect(0, 90, size.width, size.height)];
 	NSLog(@"%d %d %d", [drawer contentView], [drawer contentSize].width, [drawer contentSize].height);
 }
 
 #pragma mark Photo Editing
-- (void)editPhoto:(PhotoItem *)aPhoto
+- (void)startEditing
 {
-	selectedPhoto = [aPhoto retain];
 	[drawer open];
 }
 
+
+
 - (void)endEditing
 {
-	[selectedPhoto release];
-	selectedPhoto = nil;
 	[drawer close];
 }
 @end

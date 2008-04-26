@@ -223,7 +223,7 @@
         [buildingParams setObject:photo.title forKey:@"title"];
     }
     if (nil != photo.description) {
-        [buildingParams setObject:photo.description forKey:@"title"];
+        [buildingParams setObject:photo.description forKey:@"description"];
     }
     if (nil != photo.tags) {
         [buildingParams setObject:photo.tags forKey:@"tags"];
