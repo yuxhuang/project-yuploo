@@ -17,7 +17,6 @@
 			8D1107260486CEB800E47090 /* Yuploo */,
 		);
 		breakpoints = (
-			DC5A60BE0DC2DF5700B8D980 /* Yupoo.m:212 */,
 		);
 		codeSenseManager = DC56ABFA0D6DFACF00EB8FC8 /* Code sense */;
 		executables = (
@@ -189,6 +188,8 @@
 			DC5A611D0DC2E9ED00B8D980 /* PBXTextBookmark */ = DC5A611D0DC2E9ED00B8D980 /* PBXTextBookmark */;
 			DC5A611E0DC2E9ED00B8D980 /* PBXTextBookmark */ = DC5A611E0DC2E9ED00B8D980 /* PBXTextBookmark */;
 			DC5A61220DC2EA9800B8D980 /* PBXTextBookmark */ = DC5A61220DC2EA9800B8D980 /* PBXTextBookmark */;
+			DC5A61250DC2EB6A00B8D980 /* PBXTextBookmark */ = DC5A61250DC2EB6A00B8D980 /* PBXTextBookmark */;
+			DC5A61260DC2EB6F00B8D980 /* PBXTextBookmark */ = DC5A61260DC2EB6F00B8D980 /* PBXTextBookmark */;
 			DC6D81880DC04BB50049C401 = DC6D81880DC04BB50049C401 /* PBXTextBookmark */;
 			DC6D81890DC04BB50049C401 = DC6D81890DC04BB50049C401 /* PBXTextBookmark */;
 			DC6D81CE0DC04F700049C401 = DC6D81CE0DC04F700049C401 /* PBXTextBookmark */;
@@ -265,9 +266,9 @@
 	};
 	DC154D560D6F7B6C004FDDC5 /* Yupoo.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1153, 6050}}";
-			sepNavSelRange = "{6428, 0}";
-			sepNavVisRange = "{6048, 1338}";
+			sepNavIntBoundsRect = "{{0, 0}, {1076, 3702}}";
+			sepNavSelRange = "{8884, 44}";
+			sepNavVisRange = "{7738, 870}";
 			sepNavWindowFrame = "{{151, 101}, {1112, 778}}";
 		};
 	};
@@ -807,23 +808,6 @@
 		isa = PBXBookmark;
 		fRef = DC154D560D6F7B6C004FDDC5 /* Yupoo.m */;
 	};
-	DC5A60BE0DC2DF5700B8D980 /* Yupoo.m:212 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = DC154D560D6F7B6C004FDDC5 /* Yupoo.m */;
-		functionName = "-photoUploadRequestWithURL:params:photo:timeoutInterval:";
-		hitCount = 0;
-		ignoreCount = 0;
-		lineNumber = 212;
-		location = Yuploo;
-		modificationTime = 230877831.058028;
-		state = 1;
-	};
 	DC5A60C00DC2DF5F00B8D980 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = DCCB9E640D7361470019970D /* YupooObserver.m */;
@@ -1206,6 +1190,26 @@
 		vrLen = 103;
 		vrLoc = 1297;
 	};
+	DC5A61250DC2EB6A00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DC154D560D6F7B6C004FDDC5 /* Yupoo.m */;
+		name = "Yupoo.m: 284";
+		rLen = 44;
+		rLoc = 8884;
+		rType = 0;
+		vrLen = 870;
+		vrLoc = 7738;
+	};
+	DC5A61260DC2EB6F00B8D980 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DCB1B5770D70AF56007D43AF /* YupooResultNode.m */;
+		name = "YupooResultNode.m: 71";
+		rLen = 0;
+		rLoc = 1344;
+		rType = 0;
+		vrLen = 119;
+		vrLoc = 1297;
+	};
 	DC6D81880DC04BB50049C401 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */;
@@ -1365,7 +1369,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {502, 1784}}";
 			sepNavSelRange = "{1344, 0}";
-			sepNavVisRange = "{1297, 103}";
+			sepNavVisRange = "{1297, 119}";
 			sepNavWindowFrame = "{{636, 237}, {909, 679}}";
 		};
 	};

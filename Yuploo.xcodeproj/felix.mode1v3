@@ -337,7 +337,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>DC5A61220DC2EA9800B8D980</string>
+										<string>DC5A61260DC2EB6F00B8D980</string>
 										<key>history</key>
 										<array>
 											<string>DC6D83360DC06F860049C401</string>
@@ -598,14 +598,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>DC5A61230DC2EA9800B8D980</string>
-		<string>DC5A61160DC2E96300B8D980</string>
 		<string>DC5A60D90DC2DF6A00B8D980</string>
 		<string>DC5A60DA0DC2DF6A00B8D980</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>DC56AC0B0D6DFC2100EB8FC8</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/felix/Code/XCode/Yuploo/Yuploo.xcodeproj</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 	</array>
 	<key>WindowString</key>
 	<string>810 526 809 481 0 0 1680 1028 </string>
@@ -824,7 +822,7 @@
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

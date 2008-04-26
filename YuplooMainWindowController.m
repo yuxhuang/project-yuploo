@@ -113,6 +113,9 @@
 
 - (IBAction)upload:(id)sender
 {
+	// disable editing
+	[attributeEditor endEditing];
+	// start uploading
     [self.uploadController upload];
 }
 

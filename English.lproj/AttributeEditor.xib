@@ -398,47 +398,37 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<int key="NSPeriodicInterval">25</int>
 						</object>
 					</object>
-					<object class="NSTokenField" id="403132902">
-						<reference key="NSNextResponder" ref="1005"/>
-						<int key="NSvFlags">268</int>
-						<object class="NSMutableSet" key="NSDragTypes">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="NSArray" key="set.sortedObjects">
-								<bool key="EncodedWithXMLCoder">YES</bool>
-								<string>NSStringPboardType</string>
-							</object>
-						</object>
-						<string key="NSFrame">{{108, 134}, {179, 22}}</string>
-						<reference key="NSSuperview" ref="1005"/>
-						<bool key="NSEnabled">YES</bool>
-						<object class="NSTokenFieldCell" key="NSCell" id="27999096">
-							<int key="NSCellFlags">341966336</int>
-							<int key="NSCellFlags2">0</int>
-							<reference key="NSSupport" ref="631734017"/>
-							<reference key="NSControlView" ref="403132902"/>
-							<bool key="NSDrawsBackground">YES</bool>
-							<reference key="NSBackgroundColor" ref="230907065"/>
-							<reference key="NSTextColor" ref="1048395793"/>
-							<reference key="NSDelegate" ref="403132902"/>
-							<double key="NSCompletionDelay">0.000000e+00</double>
-							<int key="NSTokenStyle">0</int>
-						</object>
-						<int key="NSTokenFieldVersion">2</int>
-					</object>
-					<object class="NSTextField" id="845421867">
+					<object class="NSTextField" id="1066944882">
 						<reference key="NSNextResponder" ref="1005"/>
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{57, 136}, {37, 17}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<bool key="NSEnabled">YES</bool>
-						<object class="NSTextFieldCell" key="NSCell" id="79820648">
+						<object class="NSTextFieldCell" key="NSCell" id="739517038">
 							<int key="NSCellFlags">68288064</int>
 							<int key="NSCellFlags2">272630784</int>
 							<string key="NSContents">Tags</string>
 							<reference key="NSSupport" ref="631734017"/>
-							<reference key="NSControlView" ref="845421867"/>
+							<reference key="NSControlView" ref="1066944882"/>
 							<reference key="NSBackgroundColor" ref="454737724"/>
 							<reference key="NSTextColor" ref="1048395793"/>
+						</object>
+					</object>
+					<object class="NSTextField" id="444303812">
+						<reference key="NSNextResponder" ref="1005"/>
+						<int key="NSvFlags">268</int>
+						<string key="NSFrame">{{108, 134}, {179, 22}}</string>
+						<reference key="NSSuperview" ref="1005"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSTextFieldCell" key="NSCell" id="116724862">
+							<int key="NSCellFlags">-1804468671</int>
+							<int key="NSCellFlags2">272630784</int>
+							<string key="NSContents"/>
+							<reference key="NSSupport" ref="631734017"/>
+							<reference key="NSControlView" ref="444303812"/>
+							<bool key="NSDrawsBackground">YES</bool>
+							<reference key="NSBackgroundColor" ref="230907065"/>
+							<reference key="NSTextColor" ref="959430049"/>
 						</object>
 					</object>
 				</object>
@@ -446,7 +436,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				<reference key="NSSuperview"/>
 				<string key="NSClassName">NSView</string>
 			</object>
-			<object class="NSArrayController" id="191587326">
+			<object class="NSArrayController" id="858743016">
 				<object class="NSMutableArray" key="NSDeclaredKeys">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>photo.title</string>
@@ -480,10 +470,10 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">contentArray: mainWindowController.photoViewController.browserImages</string>
-						<reference key="source" ref="191587326"/>
+						<reference key="source" ref="858743016"/>
 						<reference key="destination" ref="1001"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="191587326"/>
+							<reference key="NSSource" ref="858743016"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">contentArray: mainWindowController.photoViewController.browserImages</string>
 							<string key="NSBinding">contentArray</string>
@@ -496,10 +486,10 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">selectionIndexes: mainWindowController.photoViewController.browserView.selectionIndexes</string>
-						<reference key="source" ref="191587326"/>
+						<reference key="source" ref="858743016"/>
 						<reference key="destination" ref="1001"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="191587326"/>
+							<reference key="NSSource" ref="858743016"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">selectionIndexes: mainWindowController.photoViewController.browserView.selectionIndexes</string>
 							<string key="NSBinding">selectionIndexes</string>
@@ -513,10 +503,10 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: selection.photo.title</string>
 						<reference key="source" ref="744096334"/>
-						<reference key="destination" ref="191587326"/>
+						<reference key="destination" ref="858743016"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="744096334"/>
-							<reference key="NSDestination" ref="191587326"/>
+							<reference key="NSDestination" ref="858743016"/>
 							<string key="NSLabel">value: selection.photo.title</string>
 							<string key="NSBinding">value</string>
 							<string key="NSKeyPath">selection.photo.title</string>
@@ -529,10 +519,10 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: selection.photo.description</string>
 						<reference key="source" ref="982285659"/>
-						<reference key="destination" ref="191587326"/>
+						<reference key="destination" ref="858743016"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="982285659"/>
-							<reference key="NSDestination" ref="191587326"/>
+							<reference key="NSDestination" ref="858743016"/>
 							<string key="NSLabel">value: selection.photo.description</string>
 							<string key="NSBinding">value</string>
 							<string key="NSKeyPath">selection.photo.description</string>
@@ -545,10 +535,10 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: selection.photo.contact</string>
 						<reference key="source" ref="1024095930"/>
-						<reference key="destination" ref="191587326"/>
+						<reference key="destination" ref="858743016"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="1024095930"/>
-							<reference key="NSDestination" ref="191587326"/>
+							<reference key="NSDestination" ref="858743016"/>
 							<string key="NSLabel">value: selection.photo.contact</string>
 							<string key="NSBinding">value</string>
 							<string key="NSKeyPath">selection.photo.contact</string>
@@ -561,10 +551,10 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: selection.photo.friend</string>
 						<reference key="source" ref="255744885"/>
-						<reference key="destination" ref="191587326"/>
+						<reference key="destination" ref="858743016"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="255744885"/>
-							<reference key="NSDestination" ref="191587326"/>
+							<reference key="NSDestination" ref="858743016"/>
 							<string key="NSLabel">value: selection.photo.friend</string>
 							<string key="NSBinding">value</string>
 							<string key="NSKeyPath">selection.photo.friend</string>
@@ -577,10 +567,10 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: selection.photo.family</string>
 						<reference key="source" ref="752451850"/>
-						<reference key="destination" ref="191587326"/>
+						<reference key="destination" ref="858743016"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="752451850"/>
-							<reference key="NSDestination" ref="191587326"/>
+							<reference key="NSDestination" ref="858743016"/>
 							<string key="NSLabel">value: selection.photo.family</string>
 							<string key="NSBinding">value</string>
 							<string key="NSKeyPath">selection.photo.family</string>
@@ -593,10 +583,10 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">selectedIndex: selection.photo.public</string>
 						<reference key="source" ref="188287590"/>
-						<reference key="destination" ref="191587326"/>
+						<reference key="destination" ref="858743016"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="188287590"/>
-							<reference key="NSDestination" ref="191587326"/>
+							<reference key="NSDestination" ref="858743016"/>
 							<string key="NSLabel">selectedIndex: selection.photo.public</string>
 							<string key="NSBinding">selectedIndex</string>
 							<string key="NSKeyPath">selection.photo.public</string>
@@ -613,10 +603,10 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">enabled: selection.photo.public</string>
 						<reference key="source" ref="1024095930"/>
-						<reference key="destination" ref="191587326"/>
+						<reference key="destination" ref="858743016"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="1024095930"/>
-							<reference key="NSDestination" ref="191587326"/>
+							<reference key="NSDestination" ref="858743016"/>
 							<string key="NSLabel">enabled: selection.photo.public</string>
 							<string key="NSBinding">enabled</string>
 							<string key="NSKeyPath">selection.photo.public</string>
@@ -633,10 +623,10 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">enabled: selection.photo.public</string>
 						<reference key="source" ref="255744885"/>
-						<reference key="destination" ref="191587326"/>
+						<reference key="destination" ref="858743016"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="255744885"/>
-							<reference key="NSDestination" ref="191587326"/>
+							<reference key="NSDestination" ref="858743016"/>
 							<string key="NSLabel">enabled: selection.photo.public</string>
 							<string key="NSBinding">enabled</string>
 							<string key="NSKeyPath">selection.photo.public</string>
@@ -653,10 +643,10 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">enabled: selection.photo.public</string>
 						<reference key="source" ref="752451850"/>
-						<reference key="destination" ref="191587326"/>
+						<reference key="destination" ref="858743016"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="752451850"/>
-							<reference key="NSDestination" ref="191587326"/>
+							<reference key="NSDestination" ref="858743016"/>
 							<string key="NSLabel">enabled: selection.photo.public</string>
 							<string key="NSBinding">enabled</string>
 							<string key="NSKeyPath">selection.photo.public</string>
@@ -668,6 +658,22 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 						</object>
 					</object>
 					<int key="connectionID">86</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: selection.photo.tags</string>
+						<reference key="source" ref="444303812"/>
+						<reference key="destination" ref="858743016"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="444303812"/>
+							<reference key="NSDestination" ref="858743016"/>
+							<string key="NSLabel">value: selection.photo.tags</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">selection.photo.tags</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">92</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -711,9 +717,9 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<reference ref="1024095930"/>
 							<reference ref="255744885"/>
 							<reference ref="752451850"/>
-							<reference ref="403132902"/>
-							<reference ref="845421867"/>
+							<reference ref="1066944882"/>
 							<reference ref="188287590"/>
+							<reference ref="444303812"/>
 						</object>
 						<reference key="parent" ref="1002"/>
 					</object>
@@ -844,37 +850,37 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">48</int>
-						<reference key="object" ref="191587326"/>
+						<reference key="object" ref="858743016"/>
 						<reference key="parent" ref="1002"/>
 						<string key="objectName">Photo Array Controller</string>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">63</int>
-						<reference key="object" ref="403132902"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="27999096"/>
-						</object>
-						<reference key="parent" ref="1005"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">64</int>
-						<reference key="object" ref="27999096"/>
-						<reference key="parent" ref="403132902"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">65</int>
-						<reference key="object" ref="845421867"/>
+						<reference key="object" ref="1066944882"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="79820648"/>
+							<reference ref="739517038"/>
 						</object>
 						<reference key="parent" ref="1005"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">66</int>
-						<reference key="object" ref="79820648"/>
-						<reference key="parent" ref="845421867"/>
+						<reference key="object" ref="739517038"/>
+						<reference key="parent" ref="1066944882"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">89</int>
+						<reference key="object" ref="444303812"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="116724862"/>
+						</object>
+						<reference key="parent" ref="1005"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">90</int>
+						<reference key="object" ref="116724862"/>
+						<reference key="parent" ref="444303812"/>
 					</object>
 				</object>
 			</object>
@@ -905,20 +911,20 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<string>48.IBPluginDependency</string>
 					<string>5.IBPluginDependency</string>
 					<string>6.IBPluginDependency</string>
-					<string>63.IBPluginDependency</string>
-					<string>64.IBPluginDependency</string>
 					<string>65.IBPluginDependency</string>
 					<string>66.IBPluginDependency</string>
 					<string>7.IBPluginDependency</string>
 					<string>8.IBPluginDependency</string>
+					<string>89.IBPluginDependency</string>
 					<string>9.IBPluginDependency</string>
+					<string>90.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilderKit</string>
 					<string>com.apple.InterfaceBuilderKit</string>
-					<string>{{701, 519}, {307, 344}}</string>
+					<string>{{692, 546}, {307, 344}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{628, 654}</string>
 					<string>{{217, 442}, {480, 272}}</string>
@@ -967,7 +973,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">86</int>
+			<int key="maxID">92</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
