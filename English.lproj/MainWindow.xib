@@ -8,6 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">352.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="1" id="9"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -26,9 +27,9 @@
 				<string key="NSClassName">NSApplication</string>
 			</object>
 			<object class="NSWindowTemplate" id="1005">
-				<int key="NSWindowStyleMask">4103</int>
+				<int key="NSWindowStyleMask">4111</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{196, 66}, {573, 444}}</string>
+				<string key="NSWindowRect">{{196, 377}, {573, 444}}</string>
 				<int key="NSWTFlags">805307392</int>
 				<string key="NSWindowTitle">Window</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -328,13 +329,13 @@
 				</object>
 				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
 				<object class="NSView" key="NSWindowView" id="1006">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSTextField" id="940984209">
 							<reference key="NSNextResponder" ref="1006"/>
-							<int key="NSvFlags">268</int>
+							<int key="NSvFlags">266</int>
 							<string key="NSFrame">{{20, 4}, {533, 14}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<bool key="NSEnabled">YES</bool>
@@ -355,7 +356,7 @@
 						</object>
 						<object class="NSScrollView" id="312293776">
 							<reference key="NSNextResponder" ref="1006"/>
-							<int key="NSvFlags">268</int>
+							<int key="NSvFlags">274</int>
 							<object class="NSMutableArray" key="NSSubviews">
 								<bool key="EncodedWithXMLCoder">YES</bool>
 								<object class="NSClipView" id="383732645">
@@ -373,6 +374,7 @@
 									</object>
 									<string key="NSFrame">{{1, 1}, {558, 423}}</string>
 									<reference key="NSSuperview" ref="312293776"/>
+									<reference key="NSNextKeyView" ref="796836111"/>
 									<reference key="NSDocView" ref="796836111"/>
 									<reference key="NSBGColor" ref="715146160"/>
 									<int key="NScvFlags">4</int>
@@ -400,6 +402,7 @@
 							</object>
 							<string key="NSFrame">{{-1, 20}, {575, 425}}</string>
 							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSNextKeyView" ref="383732645"/>
 							<int key="NSsFlags">18</int>
 							<reference key="NSVScroller" ref="898061151"/>
 							<reference key="NSHScroller" ref="697948655"/>
@@ -407,9 +410,11 @@
 						</object>
 					</object>
 					<string key="NSFrameSize">{573, 444}</string>
+					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
 				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
+				<string key="NSFrameAutosaveName">YuplooMainWindow</string>
 			</object>
 			<object class="NSObjectController" id="692393798">
 				<object class="NSMutableArray" key="NSDeclaredKeys">
@@ -490,7 +495,7 @@
 									<string/>
 									<string/>
 									<string>Yuploo</string>
-									<integer value="1" id="9"/>
+									<reference ref="9"/>
 								</object>
 							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
@@ -934,9 +939,9 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilderKit</string>
 					<string>com.apple.InterfaceBuilderKit</string>
-					<string>{{159, 277}, {573, 444}}</string>
+					<string>{{196, 377}, {573, 444}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{159, 277}, {573, 444}}</string>
+					<string>{{196, 377}, {573, 444}}</string>
 					<reference ref="8"/>
 					<string>{196, 240}</string>
 					<string>{{191, 429}, {573, 444}}</string>
@@ -1009,13 +1014,11 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>drawer</string>
 							<string>ownerObjectController</string>
 							<string>targetView</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>NSDrawer</string>
 							<string>NSObjectController</string>
 							<string>NSScrollView</string>
 						</object>
