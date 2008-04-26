@@ -8,9 +8,15 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class YuplooMainWindowController;
 
 @interface YuplooAttributeEditor : NSObject {
-
+	YuplooMainWindowController *mainWindowController;
 }
 
+@property(readonly) YuplooMainWindowController *mainWindowController;
+
+- (id)initWithMainWindowController:(YuplooMainWindowController *)aController;
+
+- (void)loadNib;
 @end

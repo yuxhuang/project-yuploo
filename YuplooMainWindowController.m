@@ -44,6 +44,10 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
+	[loginController release];
+	[uploadController release];
+	[photoViewController release];
+	[attributeEditor release];
     [super dealloc];
 }
 
@@ -51,20 +55,20 @@
 
 - (void)windowDidLoad
 {
-	self.loginController = [[YuplooLoginController alloc] initWithMainWindowController:self];
-	self.uploadController = [[YuplooUploadController alloc] initWithMainWindowController:self];
-	self.photoViewController = [[YuplooPhotoViewController alloc] initWithMainWindowController:self];
+	loginController = [[YuplooLoginController alloc] initWithMainWindowController:self];
+	uploadController = [[YuplooUploadController alloc] initWithMainWindowController:self];
+	photoViewController = [[YuplooPhotoViewController alloc] initWithMainWindowController:self];
+	attributeEditor = [[YuplooAttributeEditor alloc] initWithMainWindowController:self];
 
 	NSAssert(nil != loginController, @"YuplooMainWindowController>-init: loginController cannot be nil.");
 	NSAssert(nil != photoViewController, @"YuplooMainWindowController>-init: photoViewController cannot be nil.");
     
-	[loginController release];
-	[uploadController release];
-	[photoViewController release];
-	
-	[photoViewController loadNib];
     // add the photo view
+	[photoViewController loadNib];
 	[targetView setDocumentView:[photoViewController browserView]];
+
+	// attribute editor
+	[attributeEditor loadNib];
 	
     yupoo = [[YuplooController sharedController] yupoo];
     

@@ -46,4 +46,36 @@
 	return self.path;
 }
 
+@dynamic title, description, tags;
+
+- (void)setTitle:(NSString *)title
+{
+	photo.title = title;
+}
+
+- (NSString *)title
+{
+	return photo.title;
+}
+
+- (void)setDescription:(NSString *)description
+{
+	photo.description = description;
+}
+
+- (NSString *)description
+{
+	return photo.description;
+}
+
+- (void)setTags:(NSString *)tags
+{
+	photo.tags = tags;
+}
+
+- (NSString *)tags
+{
+	return photo.tags;
+}
+
 @end

@@ -18,6 +18,9 @@
 
 @property(readonly) NSString *path;
 @property(readonly) Photo *photo;
+@property(assign) NSString *title;
+@property(assign) NSString *description;
+@property(assign) NSString *tags;
 
 - (id)initWithPath:(NSString *)aPath;
 

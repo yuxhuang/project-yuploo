@@ -7,8 +7,33 @@
 //
 
 #import "YuplooAttributeEditor.h"
+#import "YuplooMainWindowController.h"
 
 
 @implementation YuplooAttributeEditor
+
+@synthesize mainWindowController;
+
+- (id)initWithMainWindowController:(YuplooMainWindowController *)aController
+{
+	self = [super init];
+	
+	if (nil != self) {
+		mainWindowController = [aController retain];
+	}
+	
+	return self;
+}
+
+- (void)dealloc
+{
+	[mainWindowController release];
+	[super dealloc];
+}
+
+- (void)loadNib
+{
+	[NSBundle loadNibNamed:@"AttributeEditor" owner:self];
+}
 
 @end
