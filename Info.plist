@@ -11,17 +11,17 @@
 	<key>CFBundleIconFile</key>
 	<string>Yuploo</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.webinit.Yuploo</string>
+	<string>com.twofathomsdeep.Yuploo</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
-	<key>CFBundleSignature</key>
-	<string>WBIT</string>
 	<key>CFBundleShortVersionString</key>
 	<string>0.8</string>
+	<key>CFBundleSignature</key>
+	<string>WBIT</string>
 	<key>CFBundleVersion</key>
 	<string>1691.1803</string>
 	<key>NSMainNibFile</key>
