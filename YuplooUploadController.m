@@ -104,14 +104,15 @@
 	}
 	// clear photo queue
 	// clear observers
-//	for (YupooResult *re in resultStack) {
-//		[re removeObserver:self forKeyPath:@"completed"];
-//	}
 	// remove uploaded photos in browser
 	[mainWindowController.photoViewController removePhotos:uploadedStack];
     [sheet orderOut:self];
 
 	[uploadedStack release];
+	// overlook all observers
+	for (YupooResult *r in resultStack) {
+		[r overlookAll];
+	}
 	[resultStack release];
     [photoQueue release];
 }

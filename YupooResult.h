@@ -43,6 +43,7 @@
 - (void)cancel;
 - (void)observe:(NSObject *)anObserver forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(void *)context;
 - (void)overlook:(NSString *)keyPath withObject:(id)anObject;
+- (void)overlookAll;
 
 // element parsing methods
 // first correspondence

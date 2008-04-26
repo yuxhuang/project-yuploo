@@ -81,7 +81,7 @@
 {
     [self loadYupoo];
     [self setValue:[yupoo completeAuthentication:_frob] forKey:@"result"];
-    [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:@"completeAuthentication"];  
+    [result observe:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:@"completeAuthentication"];  
 }
 
 - (IBAction)authenticationNeededSheetCancel:(id)sender
@@ -106,7 +106,7 @@
     _frob = nil;
     mainWindowController.loginStatus = nil;
     [[YuplooController sharedController] saveToken:nil];
-    [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:@"initiateAuthentication"];  
+    [result observe:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:@"initiateAuthentication"];  
     [self showLoginSheet];
 }
 
@@ -118,7 +118,7 @@
         [self loadYupoo];
         [self setValue:[yupoo authenticateWithToken:token] forKey:@"result"];
         // add self as the observer and context
-        [result addObserver:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:@"authenticateWithToken"];
+        [result observe:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:@"authenticateWithToken"];
         // shows the authentication sheet
         [self showAuthenticationNeededSheet];
     }
