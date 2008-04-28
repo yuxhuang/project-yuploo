@@ -100,6 +100,12 @@
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Yuploo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yuploo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1516740DC569150083D7BE /* GData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GData.xcodeproj; path = "../gdata-objectivec-client-1.4.0/Source/GData.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		DC15175A0DC5708D0083D7BE /* GDataHTTPFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataHTTPFetcher.h; sourceTree = "<group>"; };
+		DC15175B0DC570960083D7BE /* GDataDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataDefines.h; sourceTree = "<group>"; };
+		DC15175C0DC570AE0083D7BE /* GDataHTTPFetcherLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataHTTPFetcherLogging.h; sourceTree = "<group>"; };
+		DC15175D0DC570AE0083D7BE /* GDataProgressMonitorInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataProgressMonitorInputStream.h; sourceTree = "<group>"; };
+		DC15175E0DC570AE0083D7BE /* GDataGatherInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataGatherInputStream.h; sourceTree = "<group>"; };
+		DC15175F0DC570AE0083D7BE /* GDataMIMEDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataMIMEDocument.h; sourceTree = "<group>"; };
 		DC154D550D6F7B6C004FDDC5 /* Yupoo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Yupoo.h; sourceTree = "<group>"; };
 		DC154D560D6F7B6C004FDDC5 /* Yupoo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Yupoo.m; sourceTree = "<group>"; };
 		DC154D710D6F8336004FDDC5 /* YupooResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YupooResult.h; sourceTree = "<group>"; };
@@ -230,6 +236,12 @@
 		DC15165B0DC568730083D7BE /* GData */ = {
 			isa = PBXGroup;
 			children = (
+				DC15175C0DC570AE0083D7BE /* GDataHTTPFetcherLogging.h */,
+				DC15175D0DC570AE0083D7BE /* GDataProgressMonitorInputStream.h */,
+				DC15175E0DC570AE0083D7BE /* GDataGatherInputStream.h */,
+				DC15175F0DC570AE0083D7BE /* GDataMIMEDocument.h */,
+				DC15175B0DC570960083D7BE /* GDataDefines.h */,
+				DC15175A0DC5708D0083D7BE /* GDataHTTPFetcher.h */,
 			);
 			name = GData;
 			sourceTree = "<group>";
@@ -514,10 +526,6 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1691.1803;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../gdata-objectivec-client-1.4.0/Source/build/Release\"",
-				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G4;
@@ -527,7 +535,6 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Yuploo;
-				USER_HEADER_SEARCH_PATHS = "../gdata-objectivec-client-1.4.0/Source/**";
 				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -541,17 +548,12 @@
 				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				CURRENT_PROJECT_VERSION = 1691.1803;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../gdata-objectivec-client-1.4.0/Source/build/Release\"",
-				);
 				GCC_MODEL_TUNING = G4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Yuploo_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Yuploo;
-				USER_HEADER_SEARCH_PATHS = "../gdata-objectivec-client-1.4.0/Source/**";
 				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = app;
 			};
@@ -567,6 +569,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PREBINDING = NO;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -584,6 +587,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PREBINDING = NO;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
