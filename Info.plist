@@ -19,11 +19,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.8</string>
+	<string>0.9</string>
 	<key>CFBundleSignature</key>
 	<string>WBIT</string>
 	<key>CFBundleVersion</key>
-	<string>1691.1803</string>
+	<string>67.1694</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
