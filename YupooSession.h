@@ -30,6 +30,9 @@
 	unsigned long long deliveredBytes; // for KVC
 	unsigned long long totalBytes; // for KVC
 	
+	// monitor
+	id monitorDelegate_;
+	SEL monitorSelector_;
 }
 
 @property(readonly,getter=completed) BOOL _completed;
@@ -37,6 +40,8 @@
 @property(readonly,getter=successful) BOOL _successful;
 @property(retain) NSString *status;
 @property(retain) YupooResultNode *rootNode;
+
+@property(readonly) unsigned long long deliveredBytes, totalBytes;
 
 + (id)resultOfRequest:(NSURLRequest *)request inYupoo:(Yupoo *)aYupoo;
 
@@ -52,6 +57,8 @@
 // session oriented
 - (BOOL)begin;
 - (void)cancel;
+// the selector should have a deliveredBytes:(unsigned long long)delivered ofTotalBytes:(unsigned long long)totalBytes
+- (void)setMonitor:(id)delegate selector:(SEL)selector; // not retained
 
 // observer related
 - (void)observe:(NSObject *)anObserver forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(void *)context;

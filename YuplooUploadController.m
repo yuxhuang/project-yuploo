@@ -132,7 +132,11 @@
     PhotoItem *item = [[photoQueue objectAtIndex:0] retain];
     self.uploadStatus = [[[item path] lastPathComponent] copy];
     result = [yupoo uploadPhoto:item.photo];
+	// set delelgate and selector
+	[result setMonitor:self selector:@selector(delivered:ofTotal:)];
+	
 	[result begin];
+	[progressIndicator startAnimation:self];
 	// eject it
 
 	[uploadedStack addObject:item];
@@ -142,10 +146,18 @@
     return result;
 }
 
+- (void) delivered:(unsigned long long)deliveredBytes ofTotal:(unsigned long long)totalBytes
+{
+	[progressIndicator setMinValue:0];
+	[progressIndicator setDoubleValue:deliveredBytes];
+	[progressIndicator setMaxValue:totalBytes];
+}
+
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     // perfect!
     if(result.successful) {
+		[progressIndicator stopAnimation:self];
         // get the next result
         result = [self uploadAndEjectFirstPhotoInQueue];
         // has next photo to upload
@@ -163,6 +175,7 @@
     // no, i haven't something wrong
     else {
         #warning XXX deal with this something
+		[progressIndicator stopAnimation:self];
     }
 }
 

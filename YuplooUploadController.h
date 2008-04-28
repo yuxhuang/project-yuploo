@@ -16,6 +16,7 @@
 @interface YuplooUploadController : NSObject {
     YuplooMainWindowController *mainWindowController;
     IBOutlet NSWindow *uploadSheet;
+	IBOutlet NSProgressIndicator *progressIndicator;
     
     NSString *uploadStatus;
     BOOL thanksButtonEnabled;

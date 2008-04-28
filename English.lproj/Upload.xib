@@ -123,7 +123,7 @@
 							<object class="NSPSMatrix" key="NSDrawMatrix"/>
 							<string key="NSFrame">{{18, 47}, {289, 20}}</string>
 							<reference key="NSSuperview" ref="1006"/>
-							<int key="NSpiFlags">24586</int>
+							<int key="NSpiFlags">16392</int>
 							<double key="NSMaxValue">1.000000e+02</double>
 						</object>
 					</object>
@@ -136,9 +136,6 @@
 			<object class="NSObjectController" id="179770241">
 				<object class="NSMutableArray" key="NSDeclaredKeys">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>uploadStatus</string>
-					<string>thanksButtonEnabled</string>
-					<string>cancelButtonEnabled</string>
 					<string>result.totalBytes</string>
 					<string>result.deliveredBytes</string>
 				</object>
@@ -261,6 +258,46 @@
 						</object>
 					</object>
 					<int key="connectionID">23</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">progressIndicator</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="72397490"/>
+					</object>
+					<int key="connectionID">35</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">contentObject: self</string>
+						<reference key="source" ref="179770241"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="179770241"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">contentObject: self</string>
+							<string key="NSBinding">contentObject</string>
+							<string key="NSKeyPath">self</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">41</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: selection.result.deliveredBytes</string>
+						<reference key="source" ref="72397490"/>
+						<reference key="destination" ref="179770241"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="72397490"/>
+							<reference key="NSDestination" ref="179770241"/>
+							<string key="NSLabel">value: selection.result.deliveredBytes</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">selection.result.deliveredBytes</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">45</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -436,7 +473,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">29</int>
+			<int key="maxID">45</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -458,8 +495,17 @@
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">uploadSheet</string>
-						<string key="NS.object.0">NSWindow</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSMutableArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>progressIndicator</string>
+							<string>uploadSheet</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>NSProgressIndicator</string>
+							<string>NSWindow</string>
+						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>

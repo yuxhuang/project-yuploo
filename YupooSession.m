@@ -22,7 +22,7 @@
 
 @implementation YupooSession
 
-@synthesize _completed, _failed, _successful, status, rootNode;
+@synthesize _completed, _failed, _successful, status, rootNode, deliveredBytes, totalBytes;
 
 + (id)resultOfRequest:(NSURLRequest *)request inYupoo:(Yupoo *)aYupoo
 {
@@ -58,8 +58,9 @@
 	
 	if (nil != self) {
 		GDataProgressMonitorInputStream *stream = [[GDataProgressMonitorInputStream alloc] initWithStream:input length:length];
-//		[stream setMonitorDelegate:self];
-//		[stream setMonitorSelector:@selector(stream:hasDeliveredBytes:ofTotalBytes:)];
+		[stream setDelegate:nil];
+		[stream setMonitorDelegate:[[self retain] autorelease]];
+		[stream setMonitorSelector:@selector(inputStream:hasDeliveredBytes:ofTotalBytes:)];
 		[fetcher_ setPostStream:stream];
 		[stream release];
 	}
@@ -79,6 +80,12 @@
 	[fetcher_ release];
 	[yupoo release];
 	[super dealloc];
+}
+
+- (void)setMonitor:(id)delegate selector:(SEL)selector
+{
+	monitorDelegate_ = delegate;
+	monitorSelector_ = selector;
 }
 
 
@@ -224,6 +231,17 @@
 {
 	[self setValue:[NSNumber numberWithLongLong:numReadSoFar] forKey:@"deliveredBytes"];
 	[self setValue:[NSNumber numberWithLongLong:total] forKey:@"totalBytes"];
+	
+	if (monitorDelegate_ && monitorSelector_) {
+		NSMethodSignature *signature = [monitorDelegate_ methodSignatureForSelector:monitorSelector_];
+		NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+		[invocation setSelector:monitorSelector_];
+		[invocation setTarget:monitorDelegate_];
+		[invocation setArgument:&numReadSoFar atIndex:2];
+		[invocation setArgument:&total atIndex:3];
+		[invocation invoke];
+    }
+	
 }
 
 @end

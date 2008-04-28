@@ -273,6 +273,7 @@
 								<string>DC469A0E0D6E5041003E66AD</string>
 								<string>DC56ABFE0D6DFB4800EB8FC8</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
+								<string>DC56AC000D6DFB6000EB8FC8</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
@@ -281,14 +282,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>32</integer>
-									<integer>20</integer>
+									<integer>10</integer>
+									<integer>9</integer>
 									<integer>8</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 187}, {269, 452}}</string>
+							<string>{{0, 0}, {269, 618}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -300,14 +301,14 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {286, 470}}</string>
+						<string>{{0, 0}, {286, 636}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
 							<real>269</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>619 410 924 511 0 0 1680 1028 </string>
+						<string>529 304 1002 677 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -323,7 +324,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>YuplooUploadController.m</string>
+								<string>YupooSession.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +332,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>YuplooUploadController.m</string>
+										<string>YupooSession.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>DC138D280DC5C3D10063D6EE</string>
+										<string>DC59D4010DC6570600CFCEA9</string>
 										<key>history</key>
 										<array>
 											<string>DC6D83360DC06F860049C401</string>
@@ -366,15 +367,15 @@
 											<string>DC7F0CE60DC58497007FD355</string>
 											<string>DC138BF80DC5B0700063D6EE</string>
 											<string>DC138C780DC5BCCA0063D6EE</string>
-											<string>DC138C7C0DC5BCCA0063D6EE</string>
 											<string>DC138CA90DC5BE3C0063D6EE</string>
 											<string>DC138CC90DC5BFBF0063D6EE</string>
 											<string>DC138CF80DC5C1590063D6EE</string>
 											<string>DC138CF90DC5C1590063D6EE</string>
 											<string>DC138D1D0DC5C3AC0063D6EE</string>
-											<string>DC138D1E0DC5C3AC0063D6EE</string>
 											<string>DC138D1F0DC5C3AC0063D6EE</string>
-											<string>DC138CE10DC5C0C10063D6EE</string>
+											<string>DC59D3740DC651DB00CFCEA9</string>
+											<string>DC59D3F10DC656FF00CFCEA9</string>
+											<string>DC59D4000DC6570600CFCEA9</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -411,23 +412,7 @@
 											<string>DC138BFF0DC5B0700063D6EE</string>
 											<string>DC138C010DC5B0700063D6EE</string>
 											<string>DC138C7D0DC5BCCA0063D6EE</string>
-											<string>DC138C7E0DC5BCCA0063D6EE</string>
-											<string>DC138C7F0DC5BCCA0063D6EE</string>
-											<string>DC138C800DC5BCCA0063D6EE</string>
-											<string>DC138C810DC5BCCA0063D6EE</string>
-											<string>DC138C820DC5BCCA0063D6EE</string>
-											<string>DC138C9A0DC5BD0B0063D6EE</string>
-											<string>DC138CAA0DC5BE3C0063D6EE</string>
-											<string>DC138CCB0DC5BFBF0063D6EE</string>
-											<string>DC138CE30DC5C0C10063D6EE</string>
-											<string>DC138CE40DC5C0C10063D6EE</string>
-											<string>DC138CE50DC5C0C10063D6EE</string>
-											<string>DC138CFA0DC5C1590063D6EE</string>
-											<string>DC138CFB0DC5C1590063D6EE</string>
-											<string>DC138D090DC5C2400063D6EE</string>
 											<string>DC138D200DC5C3AC0063D6EE</string>
-											<string>DC138D210DC5C3AC0063D6EE</string>
-											<string>DC138D220DC5C3AC0063D6EE</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -439,14 +424,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {633, 153}}</string>
+								<string>{{0, 0}, {711, 319}}</string>
 								<key>RubberWindowFrame</key>
-								<string>619 410 924 511 0 0 1680 1028 </string>
+								<string>529 304 1002 677 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>153pt</string>
+							<string>319pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -459,9 +444,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 158}, {633, 312}}</string>
+								<string>{{0, 324}, {711, 312}}</string>
 								<key>RubberWindowFrame</key>
-								<string>619 410 924 511 0 0 1680 1028 </string>
+								<string>529 304 1002 677 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -470,7 +455,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>633pt</string>
+					<string>711pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -485,9 +470,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>DC138C840DC5BCCA0063D6EE</string>
+				<string>DC59D4020DC6570600CFCEA9</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>DC138C850DC5BCCA0063D6EE</string>
+				<string>DC59D4030DC6570600CFCEA9</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -621,15 +606,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>DC138C9D0DC5BD0B0063D6EE</string>
-		<string>DC138C9E0DC5BD0B0063D6EE</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>DC56AC0B0D6DFC2100EB8FC8</string>
 		<string>/Users/felix/Code/XCode/Yuploo/Yuploo.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>619 410 924 511 0 0 1680 1028 </string>
+	<string>529 304 1002 677 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -650,7 +630,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Yupoo.m</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -667,8 +647,6 @@
 							<string>363pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -708,7 +686,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>DC56AC0B0D6DFC2100EB8FC8</string>
-				<string>DC138C3B0DC5B65C0063D6EE</string>
+				<string>DC59D3A40DC6528000CFCEA9</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -802,10 +780,10 @@
 									<key>Frame</key>
 									<string>{{530, 0}, {633, 349}}</string>
 									<key>RubberWindowFrame</key>
-									<string>452 230 1163 700 0 0 1680 1028 </string>
+									<string>369 232 1163 700 0 0 1680 1028 </string>
 								</dict>
 								<key>RubberWindowFrame</key>
-								<string>452 230 1163 700 0 0 1680 1028 </string>
+								<string>369 232 1163 700 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugSessionModule</string>
@@ -828,18 +806,18 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>DC138C3C0DC5B65C0063D6EE</string>
+				<string>DC59D3A50DC6528000CFCEA9</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>DC138C3D0DC5B65C0063D6EE</string>
-				<string>DC138C3E0DC5B65C0063D6EE</string>
-				<string>DC138C3F0DC5B65C0063D6EE</string>
-				<string>DC138C400DC5B65C0063D6EE</string>
-				<string>DC138C410DC5B65C0063D6EE</string>
+				<string>DC59D3A60DC6528000CFCEA9</string>
+				<string>DC59D3A70DC6528000CFCEA9</string>
+				<string>DC59D3A80DC6528000CFCEA9</string>
+				<string>DC59D3A90DC6528000CFCEA9</string>
+				<string>DC59D3AA0DC6528000CFCEA9</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
 			<key>WindowString</key>
-			<string>452 230 1163 700 0 0 1680 1028 </string>
+			<string>369 232 1163 700 0 0 1680 1028 </string>
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
@@ -990,7 +968,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>DC138C420DC5B65C0063D6EE</string>
+				<string>DC59D3AB0DC6528000CFCEA9</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
