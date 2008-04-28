@@ -12,8 +12,6 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		DC138BA20DC5A4670063D6EE /* YupooSession.m in Sources */ = {isa = PBXBuildFile; fileRef = DC138BA10DC5A4670063D6EE /* YupooSession.m */; };
-		DC15171F0DC56CA00083D7BE /* GDataNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1517020DC56BD60083D7BE /* GDataNetworking.framework */; };
-		DC1517200DC56CA40083D7BE /* GDataNetworking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC1517020DC56BD60083D7BE /* GDataNetworking.framework */; };
 		DC154D570D6F7B6C004FDDC5 /* Yupoo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC154D560D6F7B6C004FDDC5 /* Yupoo.m */; };
 		DC2D9F7C0D845EA40050518F /* Upload.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC2D9F7B0D845EA40050518F /* Upload.xib */; };
 		DC4698890D6E2585003E66AD /* YuplooLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4698880D6E2585003E66AD /* YuplooLoginController.m */; };
@@ -32,48 +30,16 @@
 		DC5A5EBE0DC289DD00B8D980 /* AttributeEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC5A5EBD0DC289DD00B8D980 /* AttributeEditor.xib */; };
 		DC6EACD00D7E004100E32A83 /* YuplooUploadController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EACCF0D7E004100E32A83 /* YuplooUploadController.m */; };
 		DC8CA8840D6E819000FEE63E /* YuplooPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8CA8830D6E819000FEE63E /* YuplooPhotoViewController.m */; };
+		DC9798060DC65AAE0059AC54 /* GDataFramework.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9798000DC65AAD0059AC54 /* GDataFramework.m */; };
+		DC9798070DC65AAE0059AC54 /* GDataGatherInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9798010DC65AAD0059AC54 /* GDataGatherInputStream.m */; };
+		DC9798080DC65AAE0059AC54 /* GDataHTTPFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9798020DC65AAD0059AC54 /* GDataHTTPFetcher.m */; };
+		DC9798090DC65AAE0059AC54 /* GDataHTTPFetcherLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9798030DC65AAD0059AC54 /* GDataHTTPFetcherLogging.m */; };
+		DC97980A0DC65AAE0059AC54 /* GDataMIMEDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9798040DC65AAD0059AC54 /* GDataMIMEDocument.m */; };
+		DC97980B0DC65AAE0059AC54 /* GDataProgressMonitorInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9798050DC65AAE0059AC54 /* GDataProgressMonitorInputStream.m */; };
 		DCB1B5780D70AF56007D43AF /* YupooResultNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB1B5770D70AF56007D43AF /* YupooResultNode.m */; };
 		DCCB9E650D7361470019970D /* YupooObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCB9E640D7361470019970D /* YupooObserver.m */; };
 		DCEE4DFC0DC1078600426DC0 /* PhotoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEE4DFB0DC1078600426DC0 /* PhotoItem.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		DC15167B0DC569150083D7BE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC1516740DC569150083D7BE /* GData.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4F38F6A60B66E91D00B24B81;
-			remoteInfo = GDataFramework;
-		};
-		DC15167D0DC569150083D7BE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC1516740DC569150083D7BE /* GData.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4F14A9DD0B1276B70072EBB8;
-			remoteInfo = GDataUnitTests;
-		};
-		DC15167F0DC569150083D7BE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC1516740DC569150083D7BE /* GData.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4F1AD9020B71603F00DC0485;
-			remoteInfo = DevelopmentTestTool;
-		};
-		DC1516810DC569150083D7BE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC1516740DC569150083D7BE /* GData.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DC1514B90DC562660083D7BE;
-			remoteInfo = GDataCommons;
-		};
-		DC1517010DC56BD60083D7BE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC1516740DC569150083D7BE /* GData.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DC1516FE0DC56BD50083D7BE;
-			remoteInfo = GDataNetworking;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		DC1516530DC568160083D7BE /* CopyFiles */ = {
@@ -82,7 +48,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DC1517200DC56CA40083D7BE /* GDataNetworking.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +66,6 @@
 		8D1107320486CEB800E47090 /* Yuploo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yuploo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC138BA00DC5A4670063D6EE /* YupooSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YupooSession.h; sourceTree = "<group>"; };
 		DC138BA10DC5A4670063D6EE /* YupooSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YupooSession.m; sourceTree = "<group>"; };
-		DC1516740DC569150083D7BE /* GData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GData.xcodeproj; path = "../gdata-objectivec-client-1.4.0/Source/GData.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		DC15175A0DC5708D0083D7BE /* GDataHTTPFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataHTTPFetcher.h; sourceTree = "<group>"; };
 		DC15175B0DC570960083D7BE /* GDataDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataDefines.h; sourceTree = "<group>"; };
 		DC15175C0DC570AE0083D7BE /* GDataHTTPFetcherLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataHTTPFetcherLogging.h; sourceTree = "<group>"; };
@@ -136,6 +100,14 @@
 		DC8CA8820D6E819000FEE63E /* YuplooPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuplooPhotoViewController.h; sourceTree = "<group>"; };
 		DC8CA8830D6E819000FEE63E /* YuplooPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuplooPhotoViewController.m; sourceTree = "<group>"; };
 		DC8CAA110D6EFE8A00FEE63E /* Yuploo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Yuploo.h; sourceTree = "<group>"; };
+		DC9797FF0DC65A9B0059AC54 /* GData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GData.h; sourceTree = "<group>"; };
+		DC9798000DC65AAD0059AC54 /* GDataFramework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataFramework.m; sourceTree = "<group>"; };
+		DC9798010DC65AAD0059AC54 /* GDataGatherInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataGatherInputStream.m; sourceTree = "<group>"; };
+		DC9798020DC65AAD0059AC54 /* GDataHTTPFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataHTTPFetcher.m; sourceTree = "<group>"; };
+		DC9798030DC65AAD0059AC54 /* GDataHTTPFetcherLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataHTTPFetcherLogging.m; sourceTree = "<group>"; };
+		DC9798040DC65AAD0059AC54 /* GDataMIMEDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataMIMEDocument.m; sourceTree = "<group>"; };
+		DC9798050DC65AAE0059AC54 /* GDataProgressMonitorInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataProgressMonitorInputStream.m; sourceTree = "<group>"; };
+		DC9798110DC65AC50059AC54 /* GDataFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDataFramework.h; sourceTree = "<group>"; };
 		DCB1B5760D70AF56007D43AF /* YupooResultNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YupooResultNode.h; sourceTree = "<group>"; };
 		DCB1B5770D70AF56007D43AF /* YupooResultNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YupooResultNode.m; sourceTree = "<group>"; };
 		DCCB9E630D7361470019970D /* YupooObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YupooObserver.h; sourceTree = "<group>"; };
@@ -153,7 +125,6 @@
 				DC469A3F0D6E51B7003E66AD /* libcrypto.0.9.7.dylib in Frameworks */,
 				DC4A46CF0DC0E8AC0005C29C /* Quartz.framework in Frameworks */,
 				DC4A46D00DC0E8AC0005C29C /* QuartzCore.framework in Frameworks */,
-				DC15171F0DC56CA00083D7BE /* GDataNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +197,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DC1516740DC569150083D7BE /* GData.xcodeproj */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -236,6 +206,14 @@
 		DC15165B0DC568730083D7BE /* GData */ = {
 			isa = PBXGroup;
 			children = (
+				DC9798110DC65AC50059AC54 /* GDataFramework.h */,
+				DC9797FF0DC65A9B0059AC54 /* GData.h */,
+				DC9798000DC65AAD0059AC54 /* GDataFramework.m */,
+				DC9798010DC65AAD0059AC54 /* GDataGatherInputStream.m */,
+				DC9798020DC65AAD0059AC54 /* GDataHTTPFetcher.m */,
+				DC9798030DC65AAD0059AC54 /* GDataHTTPFetcherLogging.m */,
+				DC9798040DC65AAD0059AC54 /* GDataMIMEDocument.m */,
+				DC9798050DC65AAE0059AC54 /* GDataProgressMonitorInputStream.m */,
 				DC15175C0DC570AE0083D7BE /* GDataHTTPFetcherLogging.h */,
 				DC15175D0DC570AE0083D7BE /* GDataProgressMonitorInputStream.h */,
 				DC15175E0DC570AE0083D7BE /* GDataGatherInputStream.h */,
@@ -244,18 +222,6 @@
 				DC15175A0DC5708D0083D7BE /* GDataHTTPFetcher.h */,
 			);
 			name = GData;
-			sourceTree = "<group>";
-		};
-		DC1516750DC569150083D7BE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DC15167C0DC569150083D7BE /* GData.framework */,
-				DC15167E0DC569150083D7BE /* GDataUnitTests.octest */,
-				DC1516800DC569150083D7BE /* DevelopmentTestTool */,
-				DC1516820DC569150083D7BE /* GDataCommons.framework */,
-				DC1517020DC56BD60083D7BE /* GDataNetworking.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		DC469A0E0D6E5041003E66AD /* Base Classes */ = {
@@ -367,56 +333,12 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Yuploo */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = DC1516750DC569150083D7BE /* Products */;
-					ProjectRef = DC1516740DC569150083D7BE /* GData.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* Yuploo */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		DC15167C0DC569150083D7BE /* GData.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GData.framework;
-			remoteRef = DC15167B0DC569150083D7BE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DC15167E0DC569150083D7BE /* GDataUnitTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = GDataUnitTests.octest;
-			remoteRef = DC15167D0DC569150083D7BE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DC1516800DC569150083D7BE /* DevelopmentTestTool */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = DevelopmentTestTool;
-			remoteRef = DC15167F0DC569150083D7BE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DC1516820DC569150083D7BE /* GDataCommons.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GDataCommons.framework;
-			remoteRef = DC1516810DC569150083D7BE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DC1517020DC56BD60083D7BE /* GDataNetworking.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GDataNetworking.framework;
-			remoteRef = DC1517010DC56BD60083D7BE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D1107290486CEB800E47090 /* Resources */ = {
@@ -455,6 +377,12 @@
 				DCEE4DFC0DC1078600426DC0 /* PhotoItem.m in Sources */,
 				DC5A5EBA0DC289BD00B8D980 /* YuplooAttributeEditor.m in Sources */,
 				DC138BA20DC5A4670063D6EE /* YupooSession.m in Sources */,
+				DC9798060DC65AAE0059AC54 /* GDataFramework.m in Sources */,
+				DC9798070DC65AAE0059AC54 /* GDataGatherInputStream.m in Sources */,
+				DC9798080DC65AAE0059AC54 /* GDataHTTPFetcher.m in Sources */,
+				DC9798090DC65AAE0059AC54 /* GDataHTTPFetcherLogging.m in Sources */,
+				DC97980A0DC65AAE0059AC54 /* GDataMIMEDocument.m in Sources */,
+				DC97980B0DC65AAE0059AC54 /* GDataProgressMonitorInputStream.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +489,7 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = ".git *.nib *.lproj *.framework *.gch *.xcode* (*) CVS .svn";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -579,6 +508,7 @@
 					ppc,
 					i386,
 				);
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = ".git *.nib *.lproj *.framework *.gch *.xcode* (*) CVS .svn";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
