@@ -10,6 +10,9 @@
 #import "YupooResult.h"
 #import "YupooObserver.h"
 #import "Photo.h"
+#import "GDataHTTPFetcher.h"
+#import "GDataProgressMonitorInputStream.h"
+#import "GDataMIMEDocument.h"
 #include <openssl/md5.h>
 
 @interface Yupoo (PrivateAPI)

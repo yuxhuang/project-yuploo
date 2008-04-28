@@ -7,9 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "GDataHTTPFetcher.h"
-#import "GDataProgressMonitorInputStream.h"
-#import "GDataMIMEDocument.h"
+
 
 @class YupooResult;
 @class Photo;

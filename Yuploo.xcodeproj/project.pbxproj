@@ -42,35 +42,35 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = DC1516740DC569150083D7BE /* GData.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 4F38F6A60B66E91D00B24B81 /* GData.framework */;
+			remoteGlobalIDString = 4F38F6A60B66E91D00B24B81;
 			remoteInfo = GDataFramework;
 		};
 		DC15167D0DC569150083D7BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC1516740DC569150083D7BE /* GData.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 4F14A9DD0B1276B70072EBB8 /* GDataUnitTests.octest */;
+			remoteGlobalIDString = 4F14A9DD0B1276B70072EBB8;
 			remoteInfo = GDataUnitTests;
 		};
 		DC15167F0DC569150083D7BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC1516740DC569150083D7BE /* GData.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 4F1AD9020B71603F00DC0485 /* DevelopmentTestTool */;
+			remoteGlobalIDString = 4F1AD9020B71603F00DC0485;
 			remoteInfo = DevelopmentTestTool;
 		};
 		DC1516810DC569150083D7BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC1516740DC569150083D7BE /* GData.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = DC1514B90DC562660083D7BE /* GDataCommons.framework */;
+			remoteGlobalIDString = DC1514B90DC562660083D7BE;
 			remoteInfo = GDataCommons;
 		};
 		DC1517010DC56BD60083D7BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC1516740DC569150083D7BE /* GData.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = DC1516FE0DC56BD50083D7BE /* GDataNetworking.framework */;
+			remoteGlobalIDString = DC1516FE0DC56BD50083D7BE;
 			remoteInfo = GDataNetworking;
 		};
 /* End PBXContainerItemProxy section */
@@ -412,8 +412,7 @@
 		DC1517020DC56BD60083D7BE /* GDataNetworking.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			name = GDataNetworking.framework;
-			path = ../../../../../../../Yuploo/build/Debug/GDataNetworking.framework;
+			path = GDataNetworking.framework;
 			remoteRef = DC1517010DC56BD60083D7BE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
