@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 @class YuplooMainWindowController;
-@class YupooResult;
+@class YupooSession;
 @class Yupoo;
 @class PhotoItem;
 
@@ -21,7 +21,7 @@
     BOOL thanksButtonEnabled;
 	BOOL cancelButtonEnabled;
     
-    YupooResult *result;
+    YupooSession *result;
     Yupoo *yupoo;
 
     NSMutableArray *photoQueue;
@@ -33,7 +33,7 @@
 @property(readwrite,retain) NSWindow *uploadSheet;
 @property(readwrite,copy) NSString *uploadStatus;
 @property(readonly) YuplooMainWindowController *mainWindowController;
-@property(readonly) YupooResult *result;
+@property(readonly) YupooSession *result;
 @property(assign) BOOL thanksButtonEnabled;
 @property(assign) BOOL cancelButtonEnabled;
 

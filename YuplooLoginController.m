@@ -9,7 +9,7 @@
 #import "YuplooLoginController.h"
 #import "YuplooController.h"
 #import "Yupoo.h"
-#import "YupooResult.h"
+#import "YupooSession.h"
 #import "YuplooMainWindowController.h"
 
 @interface YuplooLoginController (PrivateAPI)
@@ -82,6 +82,7 @@
     [self loadYupoo];
     [self setValue:[yupoo completeAuthentication:_frob] forKey:@"result"];
     [result observe:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:@"completeAuthentication"];  
+	[result begin];
 }
 
 - (IBAction)authenticationNeededSheetCancel:(id)sender
@@ -106,8 +107,9 @@
     _frob = nil;
     mainWindowController.loginStatus = nil;
     [[YuplooController sharedController] saveToken:nil];
-    [result observe:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:@"initiateAuthentication"];  
+    [result observe:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:@"initiateAuthentication"];
     [self showLoginSheet];
+	[result begin];
 }
 
 - (void)check:(NSString *)token
@@ -121,11 +123,13 @@
         [result observe:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:@"authenticateWithToken"];
         // shows the authentication sheet
         [self showAuthenticationNeededSheet];
+		[result begin];
     }
     else {
         authenticationNeeded = YES;
         [self setValue:nil forKey:@"result"];
         [self showAuthenticationNeededSheet];
+		[result begin];
     }
 	[token release];
 }

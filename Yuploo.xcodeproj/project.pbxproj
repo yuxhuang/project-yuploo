@@ -11,10 +11,10 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		DC138BA20DC5A4670063D6EE /* YupooSession.m in Sources */ = {isa = PBXBuildFile; fileRef = DC138BA10DC5A4670063D6EE /* YupooSession.m */; };
 		DC15171F0DC56CA00083D7BE /* GDataNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1517020DC56BD60083D7BE /* GDataNetworking.framework */; };
 		DC1517200DC56CA40083D7BE /* GDataNetworking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC1517020DC56BD60083D7BE /* GDataNetworking.framework */; };
 		DC154D570D6F7B6C004FDDC5 /* Yupoo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC154D560D6F7B6C004FDDC5 /* Yupoo.m */; };
-		DC154D730D6F8336004FDDC5 /* YupooResult.m in Sources */ = {isa = PBXBuildFile; fileRef = DC154D720D6F8336004FDDC5 /* YupooResult.m */; };
 		DC2D9F7C0D845EA40050518F /* Upload.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC2D9F7B0D845EA40050518F /* Upload.xib */; };
 		DC4698890D6E2585003E66AD /* YuplooLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4698880D6E2585003E66AD /* YuplooLoginController.m */; };
 		DC4698A70D6E2975003E66AD /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4698A60D6E2975003E66AD /* Login.xib */; };
@@ -99,6 +99,8 @@
 		32CA4F630368D1EE00C91783 /* Yuploo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Yuploo_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Yuploo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yuploo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC138BA00DC5A4670063D6EE /* YupooSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YupooSession.h; sourceTree = "<group>"; };
+		DC138BA10DC5A4670063D6EE /* YupooSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YupooSession.m; sourceTree = "<group>"; };
 		DC1516740DC569150083D7BE /* GData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GData.xcodeproj; path = "../gdata-objectivec-client-1.4.0/Source/GData.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		DC15175A0DC5708D0083D7BE /* GDataHTTPFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataHTTPFetcher.h; sourceTree = "<group>"; };
 		DC15175B0DC570960083D7BE /* GDataDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataDefines.h; sourceTree = "<group>"; };
@@ -108,8 +110,6 @@
 		DC15175F0DC570AE0083D7BE /* GDataMIMEDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataMIMEDocument.h; sourceTree = "<group>"; };
 		DC154D550D6F7B6C004FDDC5 /* Yupoo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Yupoo.h; sourceTree = "<group>"; };
 		DC154D560D6F7B6C004FDDC5 /* Yupoo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Yupoo.m; sourceTree = "<group>"; };
-		DC154D710D6F8336004FDDC5 /* YupooResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YupooResult.h; sourceTree = "<group>"; };
-		DC154D720D6F8336004FDDC5 /* YupooResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YupooResult.m; sourceTree = "<group>"; };
 		DC4698430D6E193A003E66AD /* YuplooMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuplooMainWindowController.h; sourceTree = "<group>"; };
 		DC4698440D6E193A003E66AD /* YuplooMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuplooMainWindowController.m; sourceTree = "<group>"; wrapsLines = 1; };
 		DC4698870D6E2585003E66AD /* YuplooLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuplooLoginController.h; sourceTree = "<group>"; };
@@ -261,12 +261,12 @@
 		DC469A0E0D6E5041003E66AD /* Base Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DC138BA00DC5A4670063D6EE /* YupooSession.h */,
+				DC138BA10DC5A4670063D6EE /* YupooSession.m */,
 				DC469A080D6E503B003E66AD /* Photo.h */,
 				DC469A090D6E503B003E66AD /* Photo.m */,
 				DC154D550D6F7B6C004FDDC5 /* Yupoo.h */,
 				DC154D560D6F7B6C004FDDC5 /* Yupoo.m */,
-				DC154D710D6F8336004FDDC5 /* YupooResult.h */,
-				DC154D720D6F8336004FDDC5 /* YupooResult.m */,
 				DCB1B5760D70AF56007D43AF /* YupooResultNode.h */,
 				DCB1B5770D70AF56007D43AF /* YupooResultNode.m */,
 				DCCB9E630D7361470019970D /* YupooObserver.h */,
@@ -449,12 +449,12 @@
 				DC469A0C0D6E503B003E66AD /* Photo.m in Sources */,
 				DC8CA8840D6E819000FEE63E /* YuplooPhotoViewController.m in Sources */,
 				DC154D570D6F7B6C004FDDC5 /* Yupoo.m in Sources */,
-				DC154D730D6F8336004FDDC5 /* YupooResult.m in Sources */,
 				DCB1B5780D70AF56007D43AF /* YupooResultNode.m in Sources */,
 				DCCB9E650D7361470019970D /* YupooObserver.m in Sources */,
 				DC6EACD00D7E004100E32A83 /* YuplooUploadController.m in Sources */,
 				DCEE4DFC0DC1078600426DC0 /* PhotoItem.m in Sources */,
 				DC5A5EBA0DC289BD00B8D980 /* YuplooAttributeEditor.m in Sources */,
+				DC138BA20DC5A4670063D6EE /* YupooSession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

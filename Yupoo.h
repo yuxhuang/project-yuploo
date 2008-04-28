@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@class YupooResult;
+@class YupooSession;
 @class Photo;
 
 @interface Yupoo : NSObject {
@@ -29,10 +29,10 @@
 - (NSDictionary *)paramsEncodedAndSigned:(NSDictionary *)oldParams;
 
 // authentication
-- (YupooResult *)authenticateWithToken:(NSString *)token;
-- (YupooResult *)initiateAuthentication; // to get frob
-- (YupooResult *)completeAuthentication:(NSString *)frob;
+- (YupooSession *)authenticateWithToken:(NSString *)token;
+- (YupooSession *)initiateAuthentication; // to get frob
+- (YupooSession *)completeAuthentication:(NSString *)frob;
 
-- (YupooResult *)uploadPhoto:(Photo *)photo;
+- (YupooSession *)uploadPhoto:(Photo *)photo;
 
 @end

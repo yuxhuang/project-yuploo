@@ -7,7 +7,7 @@
 //
 
 #import "YupooObserver.h"
-#import "YupooResult.h"
+#import "YupooSession.h"
 
 @implementation YupooObserver
 

@@ -1,5 +1,5 @@
 //
-//  YupooResult.h
+//  YupooSession.h
 //  Yuploo
 //
 //  Created by Felix Huang on 22/02/08.
@@ -10,26 +10,28 @@
 
 @class Yupoo;
 @class YupooResultNode;
+@class GDataHTTPFetcher;
 
-@interface YupooResult : NSObject {
+@interface YupooSession : NSObject {
     NSURLConnection *connection;
     NSXMLElement *xmlElement;
     YupooResultNode *rootNode;
     Yupoo *yupoo;
     
     // use internally
-    NSMutableData *_receivedData;
-    long long expectedReceivedDataLength;
-    long long receivedDataLength;
     BOOL _completed;
     BOOL _failed;
     BOOL _successful;
     NSString *status;
 	NSMutableArray *observers;
+	
+	// GData related
+	GDataHTTPFetcher *fetcher_;
+	unsigned long long deliveredBytes; // for KVC
+	unsigned long long totalBytes; // for KVC
+	
 }
 
-@property(retain) NSURLConnection *connection;
-@property(readonly) long long expectedReceivedDataLength, receivedDataLength;
 @property(readonly,getter=completed) BOOL _completed;
 @property(readonly,getter=failed) BOOL _failed;
 @property(readonly,getter=successful) BOOL _successful;
@@ -38,9 +40,20 @@
 
 + (id)resultOfRequest:(NSURLRequest *)request inYupoo:(Yupoo *)aYupoo;
 
-// connection
-- (void)begin;
+// new fetcher connection
+- (id)initWithRequest:(NSURLRequest *)request
+				yupoo:(Yupoo *)aYupoo;
+
+- (id)initWithRequest:(NSURLRequest *)request
+				yupoo:(Yupoo *)aYupoo
+		 uploadStream:(NSInputStream *)input
+			   length:(unsigned long long)length;
+
+// session oriented
+- (BOOL)begin;
 - (void)cancel;
+
+// observer related
 - (void)observe:(NSObject *)anObserver forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(void *)context;
 - (void)overlook:(NSString *)keyPath withObject:(id)anObject;
 - (void)overlookAll;
@@ -53,9 +66,9 @@
 
 @end
 
-const static int YupooResultErrorCodeFailure = -1;
+const static int YupooSessionErrorCodeFailure = -1;
 
-@interface YupooResult (Error)
+@interface YupooSession(Error)
 
 - (NSInteger)errorCode;
 - (NSString *)errorMessage;
@@ -63,7 +76,7 @@ const static int YupooResultErrorCodeFailure = -1;
 
 @end
 
-@interface YupooResult (Authentication)
+@interface YupooSession(Authentication)
 
 - (NSURL *)webAuthenticationURL;
 - (NSString *)authFrob;

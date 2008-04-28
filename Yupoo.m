@@ -7,7 +7,7 @@
 //
 
 #import "Yupoo.h"
-#import "YupooResult.h"
+#import "YupooSession.h"
 #import "YupooObserver.h"
 #import "Photo.h"
 #import "GDataHTTPFetcher.h"
@@ -19,13 +19,9 @@
 // build up URL and requests
 
 - (NSURLRequest *)requestWithURL:(NSString *)aURL params:(NSDictionary *)params timeoutInterval:(NSTimeInterval)timeout;
-- (NSURLRequest *)photoUploadRequestWithURL:(NSString *)aURL params:(NSDictionary *)params photo:(Photo *)aPhoto timeoutInterval:(NSTimeInterval)timeout;
 
 // call
-- (YupooResult *)call:(NSString *)method params:(NSDictionary *)params needToken:(BOOL)needToken;
-
-// send the request
-- (YupooResult *)callRequest:(NSURLRequest *)aRequest;
+- (YupooSession *)call:(NSString *)method params:(NSDictionary *)params needToken:(BOOL)needToken;
 
 // convinience methods
 
@@ -70,59 +66,145 @@
     return self;
 }
 
-- (YupooResult *)authenticateWithToken:(NSString *)aToken
+- (YupooSession *)authenticateWithToken:(NSString *)aToken
 {
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
             aToken, @"auth_token",
             nil];
     
-    YupooResult *result = [[self call:@"yupoo.auth.checkToken" params:params needToken:NO] retain];
+    YupooSession *result = [[self call:@"yupoo.auth.checkToken" params:params needToken:NO] retain];
     
     [result observe:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew)
             context:@"authenticateWithToken"];
-    
-    [result begin];
-    
+	
     return [result autorelease];
 }
    
-- (YupooResult *)initiateAuthentication
+- (YupooSession *)initiateAuthentication
 {
-    YupooResult *result = [[self call:@"yupoo.auth.getFrob" params:nil needToken:NO] retain];
+    YupooSession *result = [[self call:@"yupoo.auth.getFrob" params:nil needToken:NO] retain];
     
     [result observe:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew)
             context:@"initiateAuthentication"];
-    
-    [result begin];
-    
+	
     return [result autorelease];
 }
 
-- (YupooResult *)completeAuthentication:(NSString *)aFrob
+- (YupooSession *)completeAuthentication:(NSString *)aFrob
 {
     frob = [aFrob copy];
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
             frob, @"frob", nil];
     
-    YupooResult *result = [[self call:@"yupoo.auth.getToken" params:params needToken:NO] retain];
+    YupooSession *result = [[self call:@"yupoo.auth.getToken" params:params needToken:NO] retain];
     
     [result observe:self forKeyPath:@"completed" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew)
             context:@"completeAuthentication"];
-    
-    
-    [result begin];
-    
+	
     return [result autorelease];
 }
 
-- (YupooResult *)uploadPhoto:(Photo *)photo
+- (YupooSession *)uploadPhoto:(Photo *)photo
 {
 	[photo retain];
-	NSURLRequest *request = [[self photoUploadRequestWithURL:self.uploadURL params:nil photo:photo timeoutInterval:self.timeout] retain];
-	YupooResult *result = [[self callRequest:request] retain];
-	[request release];
+
+	// generate the params
+    NSMutableDictionary *buildingParams = [[NSMutableDictionary alloc] init];
+    
+    // api key
+    [buildingParams setObject:apiKey forKey:@"api_key"];
+    
+    // token
+    if (self.authToken) {
+        [buildingParams setObject:self.authToken forKey:@"auth_token"];
+    }
+    
+	// photo attributes
+	if (nil != photo.title) {
+        [buildingParams setObject:photo.title forKey:@"title"];
+    }
+    if (nil != photo.description) {
+        [buildingParams setObject:photo.description forKey:@"description"];
+    }
+    if (nil != photo.tags) {
+        [buildingParams setObject:photo.tags forKey:@"tags"];
+    }
+    if (photo.public) {
+        [buildingParams setObject:@"1" forKey:@"is_public"];
+    }
+    else {
+        [buildingParams setObject:@"0" forKey:@"is_public"];
+    }
+    if (photo.contact) {
+        [buildingParams setObject:@"1" forKey:@"is_contact"];
+    }
+    else {
+        [buildingParams setObject:@"0" forKey:@"is_contact"];
+    }
+    if (photo.friend) {
+        [buildingParams setObject:@"1" forKey:@"is_friend"];
+    }
+    else {
+        [buildingParams setObject:@"0" forKey:@"is_friend"];
+    }
+    if (photo.family) {
+        [buildingParams setObject:@"1" forKey:@"is_family"];
+    }
+    else {
+        [buildingParams setObject:@"0" forKey:@"is_family"];
+    }
+    
+	NSDictionary *signedParams = [[self paramsEncodedAndSigned:buildingParams] retain];
+	
+	// use mime document to send the request
+	GDataMIMEDocument *document = [GDataMIMEDocument MIMEDocument];
+	
+	// add parameters
+	for (NSString *key in [signedParams allKeys]) {
+		NSString *value = [signedParams objectForKey:key];
+		[document addPartWithHeaders:[NSDictionary dictionaryWithObjectsAndKeys:
+									  [NSString stringWithFormat:@"form-data; name=\"%@\"", key], @"Content-Disposition",
+									  nil]
+								body:[value dataUsingEncoding:NSUTF8StringEncoding]];
+	}
+	
+	// add the file
+	// adding the body
+	NSError *error = nil;
+	NSString *uti = [[NSWorkspace sharedWorkspace] typeOfFile:photo.path error:&error];
+	NSString *mime;
+	if ([uti isEqualToString: (NSString *)kUTTypeJPEG]) {
+		mime = @"image/jpeg";
+	}
+	else if ([uti isEqualToString: (NSString *)kUTTypePNG]) {
+		mime = @"image/png";
+	}
+	
+	[document addPartWithHeaders:[NSDictionary dictionaryWithObjectsAndKeys:
+								  [NSString stringWithFormat:@"form-data; name=\"photo\"; filename=\"%@\"", photo.nameForDownload], @"Content-Disposition",
+								  mime, @"Content-Type",
+								  nil]
+							body:[photo data]];
+	
+	NSInputStream *input;
+	unsigned long long length;
+	NSString *boundary;
+	// generate the stream
+	[document generateInputStream:&input length:&length boundary:&boundary];
+	// generate the request
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:uploadURL]];
+	[request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary] forHTTPHeaderField:@"Content-Type"];
+	[request setValue:[NSString stringWithFormat:@"%d", length] forHTTPHeaderField:@"Content-Length"];
+	[request setValue:YUPLOO_USER_AGENT forHTTPHeaderField:@"User-Agent"];
+	
+	// initiate the session
+	YupooSession *session = [[YupooSession alloc] initWithRequest:request
+															yupoo:self
+													 uploadStream:input
+														   length:length];
+	
 	[photo release];
-	return [result autorelease];
+	return [session autorelease];
 }
 
 
@@ -203,132 +285,15 @@
 {
 	[params retain];
     NSDictionary *signedParams = [[self paramsEncodedAndSigned:params] retain];
-    
 	[params release];
-    return [NSURLRequest requestWithURL:[self URLWith:aURL params:[signedParams autorelease]]
-            cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:aTimeout];
-}
-
-- (NSURLRequest *)photoUploadRequestWithURL:(NSString *)aURL params:(NSDictionary *)params photo:(Photo *)photo timeoutInterval:(NSTimeInterval)aTimeout
-{
-	[params retain];
-    NSAssert(nil != photo, @"photo cannot be nil.");
-    
-    // build up params with photo attributes
-    NSMutableDictionary *buildingParams;
-    if (nil == params) {
-        buildingParams = [NSMutableDictionary dictionary];
-    }
-    else {
-        buildingParams = [NSMutableDictionary dictionaryWithDictionary:params];
-    }
-	[params release];
-    
-    // api key
-    [buildingParams setObject:apiKey forKey:@"api_key"];
-    
-    // token
-    if (self.authToken) {
-        [buildingParams setObject:self.authToken forKey:@"auth_token"];
-    }
-    
-	if (nil != photo.title) {
-        [buildingParams setObject:photo.title forKey:@"title"];
-    }
-    if (nil != photo.description) {
-        [buildingParams setObject:photo.description forKey:@"description"];
-    }
-    if (nil != photo.tags) {
-        [buildingParams setObject:photo.tags forKey:@"tags"];
-    }
-    if (photo.public) {
-        [buildingParams setObject:@"1" forKey:@"is_public"];
-    }
-    else {
-        [buildingParams setObject:@"0" forKey:@"is_public"];
-    }
-    if (photo.contact) {
-        [buildingParams setObject:@"1" forKey:@"is_contact"];
-    }
-    else {
-        [buildingParams setObject:@"0" forKey:@"is_contact"];
-    }
-    if (photo.friend) {
-        [buildingParams setObject:@"1" forKey:@"is_friend"];
-    }
-    else {
-        [buildingParams setObject:@"0" forKey:@"is_friend"];
-    }
-    if (photo.family) {
-        [buildingParams setObject:@"1" forKey:@"is_family"];
-    }
-    else {
-        [buildingParams setObject:@"0" forKey:@"is_family"];
-    }
-    
-    // build the request url
-    NSDictionary *signedParams = [[self paramsEncodedAndSigned:buildingParams] retain];
-    NSURL *url = [NSURL URLWithString:YUPLOO_API_UPLOAD];
-    // build the request
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url
-            cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:aTimeout] ;
-    
-    // go ahead to put the photo
-    // set content-type, user-agent and boundary
-    NSString *boundary = @"pY9ELWSAe8XCSjTjVAyFRMd2HSrhmwoYWxPV";
-    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
-    [request setValue:contentType forHTTPHeaderField:@"Content-Type"];
-    [request setValue:YUPLOO_USER_AGENT forHTTPHeaderField:@"User-Agent"];
-    [request setHTTPMethod:@"POST"];
-
-    // test if we use our native WIMultiPartInputStream
-    if (photo.useMultiPartStream) {
-        #warning FIXME use multipart stream
-    }
-    else {
-        NSMutableData *postBody = [[NSMutableData alloc] init];
-		// add parameters
-		for (NSString *key in [signedParams allKeys]) {
-			NSString *value = [signedParams objectForKey:key];
-			[postBody appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-			[postBody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", key] dataUsingEncoding:NSUTF8StringEncoding]];
-			[postBody appendData:[[NSString stringWithFormat:@"%@\r\n", value] dataUsingEncoding:NSUTF8StringEncoding]];
-		}
-		
-        // adding the body
-        NSError *error = nil;
-        NSString *uti = [[NSWorkspace sharedWorkspace] typeOfFile:photo.path error:&error];
-		NSString *mime;
-		if ([uti isEqualToString: (NSString *)kUTTypeJPEG]) {
-			mime = @"image/jpeg";
-		}
-		else if ([uti isEqualToString: (NSString *)kUTTypePNG]) {
-			mime = @"image/png";
-		}
-
-        [postBody appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-        [postBody appendData:[[NSString stringWithFormat:
-                @"Content-Disposition: form-data; name=\"photo\"; filename=\"%@\"\r\n", photo.nameForDownload] dataUsingEncoding:NSUTF8StringEncoding]];
-        [postBody appendData:[[NSString stringWithFormat:@"Content-Type: %@\r\n\r\n", mime] dataUsingEncoding:NSUTF8StringEncoding]];
-        [postBody appendData:[photo data]];
-        [postBody appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-        [request setHTTPBody:postBody];
-		[postBody release];
-    }
-    
-	[signedParams release];
+	
+	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[self URLWith:aURL params:[signedParams autorelease]]];
+	[request setValue:YUPLOO_USER_AGENT forHTTPHeaderField:@"User-Agent"];
+	
     return [request autorelease];
 }
 
-// send the request
-- (YupooResult *)callRequest:(NSURLRequest *)aRequest
-{
-    YupooResult *result = [YupooResult resultOfRequest:aRequest inYupoo:self];
-    return result;
-}
-
-- (YupooResult *)call:(NSString *)method params:(NSDictionary *)params needToken:(BOOL)needToken
+- (YupooSession *)call:(NSString *)method params:(NSDictionary *)params needToken:(BOOL)needToken
 {
     NSMutableDictionary *buildingParams = nil;
     
@@ -355,7 +320,7 @@
     // request
     NSURLRequest *request = [self requestWithURL:restURL params:buildingParams timeoutInterval:self.timeout];
     
-    return [YupooResult resultOfRequest:request inYupoo:self];
+    return [YupooSession resultOfRequest:request inYupoo:self];
 }
 
 

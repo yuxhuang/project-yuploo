@@ -10,7 +10,7 @@
 #import "YuplooController.h"
 #import "YuplooMainWindowController.h"
 #import "YuplooPhotoViewController.h"
-#import "YupooResult.h"
+#import "YupooSession.h"
 #import "Photo.h"
 #import "Yupoo.h"
 #import "PhotoItem.h"
@@ -20,7 +20,7 @@
 - (void)uploadSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo;
 
 // returns nil if queue is empty
-- (YupooResult *)uploadAndEjectFirstPhotoInQueue;
+- (YupooSession *)uploadAndEjectFirstPhotoInQueue;
 
 @end
 
@@ -84,6 +84,9 @@
 
 - (IBAction)uploadSheetCancel:(id)sender
 {
+	if (result != nil) {
+		[result cancel];
+	}
     [NSApp endSheet:uploadSheet];
 }
 
@@ -110,14 +113,14 @@
 
 	[uploadedStack release];
 	// overlook all observers
-	for (YupooResult *r in resultStack) {
+	for (YupooSession *r in resultStack) {
 		[r overlookAll];
 	}
 	[resultStack release];
     [photoQueue release];
 }
 
-- (YupooResult *)uploadAndEjectFirstPhotoInQueue
+- (YupooSession *)uploadAndEjectFirstPhotoInQueue
 {
     // photo queue is empty
     if ([photoQueue count] == 0) {
@@ -128,7 +131,8 @@
     // get the photo
     PhotoItem *item = [[photoQueue objectAtIndex:0] retain];
     self.uploadStatus = [[[item path] lastPathComponent] copy];
-    result = [yupoo uploadPhoto:item.photo];
+    result = [yupoo uploadPhotoA:item.photo];
+	[result begin];
 	// eject it
 
 	[uploadedStack addObject:item];

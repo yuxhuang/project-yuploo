@@ -1,53 +1,94 @@
 //
-//  YupooResult.m
+//  YupooSession.m
 //  Yuploo
 //
 //  Created by Felix Huang on 22/02/08.
 //  Copyright 2008 Two Fathoms Deep. All rights reserved.
 //
 
-#import "YupooResult.h"
+#import "YupooSession.h"
 #import "YupooResultNode.h"
 #import "Yupoo.h"
 #import "YupooObserver.h"
+#import "GDataHTTPFetcher.h"
+#import "GDataProgressMonitorInputStream.h"
 
-@interface YupooResult (PrivateAPI)
-
-// private initialization
-- (id)initWithYupoo:(Yupoo *)aYupoo;
-- (void)bindConnection:(NSURLConnection *)aConnection;
+@interface YupooSession (PrivateAPI)
 
 // xml loading
 - (NSXMLElement *)loadXMLElementWithData:(NSData *)data;
 
 @end
 
-@implementation YupooResult
+@implementation YupooSession
 
-@synthesize connection, expectedReceivedDataLength, receivedDataLength, _completed, _failed, _successful, status, rootNode;
+@synthesize _completed, _failed, _successful, status, rootNode;
 
 + (id)resultOfRequest:(NSURLRequest *)request inYupoo:(Yupoo *)aYupoo
 {
-    // initiate the result first
-    YupooResult *result = [[[YupooResult alloc] initWithYupoo:aYupoo] autorelease];
-    
-    // sorry, i have no idea about it.
-    if (nil == result)
-        return nil;
-    
-    // create the connection
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:result startImmediately:YES];
-    // binds back the connection
-    [result bindConnection:connection];
-
-    return result;
+    return [[[YupooSession alloc] initWithRequest:request yupoo:aYupoo] autorelease];
 }
+
+- (id)initWithRequest:(NSURLRequest *)request yupoo:(Yupoo *)aYupoo
+{
+	self = [super init];
+	
+	if (nil != self) {
+        _completed = NO;
+        _failed = NO;
+        _successful = NO;
+        
+        status = @"Waiting";
+        
+        xmlElement = nil;
+		observers = [[NSMutableArray alloc] initWithCapacity:5];
+		
+		fetcher_ = [[GDataHTTPFetcher alloc] initWithRequest:request];
+		yupoo = [aYupoo retain];
+	}
+	
+	return self;
+}
+
+- (id)initWithRequest:(NSURLRequest *)request yupoo:(Yupoo *)aYupoo uploadStream:(NSInputStream *)input length:(unsigned long long)length
+{
+	[input retain];
+
+	self = [self initWithRequest:request yupoo:yupoo];
+	
+	if (nil != self) {
+		GDataProgressMonitorInputStream *stream = [[GDataProgressMonitorInputStream alloc] initWithStream:input length:length];
+		[stream setMonitorDelegate:self];
+		[fetcher_ setPostStream:stream];
+		[stream release];
+	}
+
+	[input release];
+	
+	return self;
+}
+
+- (void)dealloc
+{
+	// remove all observers
+	[self overlookAll];
+	[observers release];
+	// clear root node
+	[rootNode release];
+	[fetcher_ release];
+	[yupoo release];
+	[super dealloc];
+}
+
 
 #pragma mark Connection Methods
 
-- (void)begin
+- (BOOL)begin
 {
-//    [connection start];
+	return [fetcher_ beginFetchWithDelegate:self
+						  didFinishSelector:@selector(fetcher:finishedWithData:)
+				  didFailWithStatusSelector:@selector(fetcher:failedWithStatus:data:)
+				   didFailWithErrorSelector:@selector(fetcher:failedWithError:)];
 }
 
 // the connection is totally completed. (but it does not mean the transaction is successful.
@@ -55,10 +96,10 @@
 // to determine whether the result is useful, first test completed, then failed, finally successful
 - (void)cancel
 {
-    @synchronized(self) {
-        [connection cancel];
-    }
+	[fetcher_ stopFetching];
 }
+
+#pragma mark Observation related
 
 - (void)observe:(NSObject *)anObserver forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(void *)context
 {
@@ -105,89 +146,17 @@
     return [rootNode $A:path];
 }
 
-#pragma mark NSURLConnection Delegate Methods
+#pragma mark GDataHTTPFetcher Delegate Methods
 
-- (void)connection:(NSURLConnection *)conn didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+- (void)fetcher:(GDataHTTPFetcher *)fetcher finishedWithData:(NSData *)retrievedData
 {
-    // just go straight to delegate
-}
-
-- (void)connection:(NSURLConnection *)conn didReceiveAuthentcationChallenge:(NSURLAuthenticationChallenge *)challenge
-{
-    // just go straight to delegate
-}
-
-- (NSCachedURLResponse *)connection:(NSURLConnection *)conn willCacheResponse:(NSCachedURLResponse *)cachedResponse
-{
-    // just go straight to delegate
-    return cachedResponse;
-}
-
-- (NSURLRequest *)connection:(NSURLConnection *)conn willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)redirectResponse
-{
-    // just go straight to delegate
-    return request;
-}
-
-- (void)connection:(NSURLConnection *)conn didReceiveResponse:(NSURLResponse *)response
-{
-	[response retain];
-    // deal with response information, initialize lengths
-    [self setValue:[NSNumber numberWithInt:[response expectedContentLength]] forKey:@"receivedDataLength"];
-    if (NSURLResponseUnknownLength == expectedReceivedDataLength)
-        [self setValue:[NSNumber numberWithInt:0] forKey:@"receivedDataLength"];
-    
-    [self setValue:@"Loading" forKey:@"status"];
-
-    // initiate data
-    _receivedData = [[NSMutableData alloc] init];
-    [_receivedData setLength:0];
-	[response release];
-}
-
-- (void)connection:(NSURLConnection *)conn didReceiveData:(NSData *)data
-{
-	[data retain];
-    // we have received more, add to the length
-    [self setValue:[NSNumber numberWithInt:(receivedDataLength + [data length])] forKey:@"receivedDataLength"];
-    
-    // append data
-    [_receivedData appendData:data];
-	
-	[data release];
-}
-
-- (void)connection:(NSURLConnection *)conn didFailWithError:(NSError *)error
-{
-    // gosh! we have a failed connection
-    // release the connection
-    [connection release];
-    // release the received data
-    [_receivedData release];
-    
-    [self setValue:[NSNumber numberWithBool:YES] forKey:@"failed"];
-    
-    // log the error
-    [self setValue:[NSString stringWithFormat:@"Connection failed! %@ %@", [error localizedDescription],
-            [[error userInfo] objectForKey:NSErrorFailingURLStringKey]] forKey:@"status"];
-
-    NSLog(status);
-    
-    // we have changed these values
-    [self setValue:[NSNumber numberWithBool:YES] forKey:@"completed"];
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)conn
-{
-    // release the connection
-    [connection release];
-    
+	[retrievedData retain];
     // transform received data into xml
-    xmlElement = [self loadXMLElementWithData:_receivedData];
+    xmlElement = [self loadXMLElementWithData:retrievedData];
     rootNode = [[YupooResultNode alloc] initWithXMLElement:xmlElement];
     // set it to nil. so let the garbage collector frees it.
-    [_receivedData release];
-
+    [retrievedData release];
+	
     // failed to parse. Malformed XML?
     if (nil == xmlElement) {
         [self setValue:[NSNumber numberWithBool:YES] forKey:@"failed"];
@@ -206,7 +175,7 @@
     else {
         [self willChangeValueForKey:@"status"];
         status = [NSString stringWithFormat:@"Failed! %@",
-                [self $:@"err:msg"]];
+				  [self $:@"err:msg"]];
         if (nil == status) {
             status = @"XML Error";
         }
@@ -219,47 +188,47 @@
     [self setValue:[NSNumber numberWithBool:YES] forKey:@"completed"];
 }
 
-- (void)dealloc {
-	// remove all observers
-	[self overlookAll];
-	[observers release];
-	// clear root node
-	[rootNode release];
-	[yupoo release];
-	[super dealloc];
+- (void)fetcher:(GDataHTTPFetcher *)fetcher failedWithStatus:(int)statusCode data:(NSData *)data
+{
+    // gosh! we have a failed connection
+
+    [self setValue:[NSNumber numberWithBool:YES] forKey:@"failed"];
+    
+    // log the error
+    [self setValue:[NSString stringWithFormat:@"Connection failed! %d", statusCode] forKey:@"status"];
+	
+    NSLog(status);
+    
+    // we have changed these values
+    [self setValue:[NSNumber numberWithBool:YES] forKey:@"completed"];
 }
+
+- (void)fetcher:(GDataHTTPFetcher *)fetcher failedWithError:(NSError *)error
+{
+    // gosh! we have a failed connection
+    
+    [self setValue:[NSNumber numberWithBool:YES] forKey:@"failed"];
+    
+    // log the error
+    [self setValue:[NSString stringWithFormat:@"Connection failed! %@ %@", [error localizedDescription],
+					[[error userInfo] objectForKey:NSErrorFailingURLStringKey]] forKey:@"status"];
+	
+    NSLog(status);
+    
+    // we have changed these values
+    [self setValue:[NSNumber numberWithBool:YES] forKey:@"completed"];
+}
+
+- (void)inputStream:(GDataProgressMonitorInputStream *)stream hasDeliveredBytes:(unsigned long long)numReadSoFar ofTotalBytes:(unsigned long long)total
+{
+	deliveredBytes = numReadSoFar;
+	totalBytes = total;
+}
+
 
 @end
 
-@implementation YupooResult (PrivateAPI)
-
-- (id)initWithYupoo:(Yupoo *)aYupoo
-{
-    self = [super init];
-    
-    if (nil != self) {
-        _receivedData = nil;
-        expectedReceivedDataLength = 0;
-        receivedDataLength = 0;
-        _completed = NO;
-        _failed = NO;
-        _successful = NO;
-        
-        status = @"Waiting";
-        
-        xmlElement = nil;
-        yupoo = [aYupoo retain];
-        connection = nil;
-		observers = [[NSMutableArray alloc] initWithCapacity:5];
-    }
-    
-    return self;
-}
-
-- (void)bindConnection:(NSURLConnection *)conn
-{
-    connection = [conn retain];
-}
+@implementation YupooSession (PrivateAPI)
 
 - (NSXMLElement *)loadXMLElementWithData:(NSData *)data
 {
@@ -285,14 +254,14 @@
 
 @end
 
-@implementation YupooResult (Error)
+@implementation YupooSession (Error)
 
 - (NSInteger)errorCode
 {
     NSString *error = [self $:@"err:code"];
     
     if (nil == error) {
-        return YupooResultErrorCodeFailure;
+        return YupooSessionErrorCodeFailure;
     }
     
     NSInteger code = 0xdeadbeef;
@@ -300,7 +269,7 @@
     NSScanner *scanner = [NSScanner scannerWithString:error];
     
     if (![scanner scanInteger:&code])
-        return YupooResultErrorCodeFailure;
+        return YupooSessionErrorCodeFailure;
     
     return code;   
 }
@@ -324,7 +293,7 @@
 
 @end
 
-@implementation YupooResult (Authentication)
+@implementation YupooSession (Authentication)
 
 - (NSURL *)webAuthenticationURL
 {
