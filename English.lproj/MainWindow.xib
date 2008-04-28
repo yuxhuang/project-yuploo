@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">352.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="1" id="9"/>
+			<integer value="2"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -335,7 +335,7 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSTextField" id="940984209">
 							<reference key="NSNextResponder" ref="1006"/>
-							<int key="NSvFlags">266</int>
+							<int key="NSvFlags">258</int>
 							<string key="NSFrame">{{20, 4}, {533, 14}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<bool key="NSEnabled">YES</bool>
@@ -495,7 +495,7 @@
 									<string/>
 									<string/>
 									<string>Yuploo</string>
-									<reference ref="9"/>
+									<integer value="1" id="9"/>
 								</object>
 							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
