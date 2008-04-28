@@ -11,6 +11,8 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		DC15171F0DC56CA00083D7BE /* GDataNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1517020DC56BD60083D7BE /* GDataNetworking.framework */; };
+		DC1517200DC56CA40083D7BE /* GDataNetworking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC1517020DC56BD60083D7BE /* GDataNetworking.framework */; };
 		DC154D570D6F7B6C004FDDC5 /* Yupoo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC154D560D6F7B6C004FDDC5 /* Yupoo.m */; };
 		DC154D730D6F8336004FDDC5 /* YupooResult.m in Sources */ = {isa = PBXBuildFile; fileRef = DC154D720D6F8336004FDDC5 /* YupooResult.m */; };
 		DC2D9F7C0D845EA40050518F /* Upload.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC2D9F7B0D845EA40050518F /* Upload.xib */; };
@@ -35,6 +37,57 @@
 		DCEE4DFC0DC1078600426DC0 /* PhotoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEE4DFB0DC1078600426DC0 /* PhotoItem.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DC15167B0DC569150083D7BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC1516740DC569150083D7BE /* GData.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F38F6A60B66E91D00B24B81 /* GData.framework */;
+			remoteInfo = GDataFramework;
+		};
+		DC15167D0DC569150083D7BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC1516740DC569150083D7BE /* GData.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F14A9DD0B1276B70072EBB8 /* GDataUnitTests.octest */;
+			remoteInfo = GDataUnitTests;
+		};
+		DC15167F0DC569150083D7BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC1516740DC569150083D7BE /* GData.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F1AD9020B71603F00DC0485 /* DevelopmentTestTool */;
+			remoteInfo = DevelopmentTestTool;
+		};
+		DC1516810DC569150083D7BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC1516740DC569150083D7BE /* GData.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC1514B90DC562660083D7BE /* GDataCommons.framework */;
+			remoteInfo = GDataCommons;
+		};
+		DC1517010DC56BD60083D7BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC1516740DC569150083D7BE /* GData.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC1516FE0DC56BD50083D7BE /* GDataNetworking.framework */;
+			remoteInfo = GDataNetworking;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DC1516530DC568160083D7BE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DC1517200DC56CA40083D7BE /* GDataNetworking.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
@@ -46,6 +99,7 @@
 		32CA4F630368D1EE00C91783 /* Yuploo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Yuploo_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Yuploo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yuploo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC1516740DC569150083D7BE /* GData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GData.xcodeproj; path = "../gdata-objectivec-client-1.4.0/Source/GData.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		DC154D550D6F7B6C004FDDC5 /* Yupoo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Yupoo.h; sourceTree = "<group>"; };
 		DC154D560D6F7B6C004FDDC5 /* Yupoo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Yupoo.m; sourceTree = "<group>"; };
 		DC154D710D6F8336004FDDC5 /* YupooResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YupooResult.h; sourceTree = "<group>"; };
@@ -93,6 +147,7 @@
 				DC469A3F0D6E51B7003E66AD /* libcrypto.0.9.7.dylib in Frameworks */,
 				DC4A46CF0DC0E8AC0005C29C /* Quartz.framework in Frameworks */,
 				DC4A46D00DC0E8AC0005C29C /* QuartzCore.framework in Frameworks */,
+				DC15171F0DC56CA00083D7BE /* GDataNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +186,7 @@
 		29B97314FDCFA39411CA2CEA /* Yuploo */ = {
 			isa = PBXGroup;
 			children = (
+				DC15165B0DC568730083D7BE /* GData */,
 				DCEE50110DC1287600426DC0 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -164,10 +220,30 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DC1516740DC569150083D7BE /* GData.xcodeproj */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC15165B0DC568730083D7BE /* GData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GData;
+			sourceTree = "<group>";
+		};
+		DC1516750DC569150083D7BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC15167C0DC569150083D7BE /* GData.framework */,
+				DC15167E0DC569150083D7BE /* GDataUnitTests.octest */,
+				DC1516800DC569150083D7BE /* DevelopmentTestTool */,
+				DC1516820DC569150083D7BE /* GDataCommons.framework */,
+				DC1517020DC56BD60083D7BE /* GDataNetworking.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		DC469A0E0D6E5041003E66AD /* Base Classes */ = {
@@ -250,6 +326,7 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				DC1516530DC568160083D7BE /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -278,12 +355,57 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Yuploo */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DC1516750DC569150083D7BE /* Products */;
+					ProjectRef = DC1516740DC569150083D7BE /* GData.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* Yuploo */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		DC15167C0DC569150083D7BE /* GData.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GData.framework;
+			remoteRef = DC15167B0DC569150083D7BE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DC15167E0DC569150083D7BE /* GDataUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GDataUnitTests.octest;
+			remoteRef = DC15167D0DC569150083D7BE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DC1516800DC569150083D7BE /* DevelopmentTestTool */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = DevelopmentTestTool;
+			remoteRef = DC15167F0DC569150083D7BE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DC1516820DC569150083D7BE /* GDataCommons.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GDataCommons.framework;
+			remoteRef = DC1516810DC569150083D7BE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DC1517020DC56BD60083D7BE /* GDataNetworking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = GDataNetworking.framework;
+			path = ../../../../../../../Yuploo/build/Debug/GDataNetworking.framework;
+			remoteRef = DC1517010DC56BD60083D7BE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D1107290486CEB800E47090 /* Resources */ = {
@@ -392,6 +514,10 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1691.1803;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../gdata-objectivec-client-1.4.0/Source/build/Release\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G4;
@@ -401,6 +527,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Yuploo;
+				USER_HEADER_SEARCH_PATHS = "../gdata-objectivec-client-1.4.0/Source/**";
 				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -410,14 +537,21 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				CURRENT_PROJECT_VERSION = 1691.1803;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../gdata-objectivec-client-1.4.0/Source/build/Release\"",
+				);
 				GCC_MODEL_TUNING = G4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Yuploo_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Yuploo;
+				USER_HEADER_SEARCH_PATHS = "../gdata-objectivec-client-1.4.0/Source/**";
 				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = app;
 			};

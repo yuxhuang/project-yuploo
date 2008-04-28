@@ -3,7 +3,7 @@
 //  Yuploo
 //
 //  Created by Felix Huang on 21/02/08.
-//  Copyright __MyCompanyName__ 2008. All rights reserved.
+//  Copyright Two Fathoms Deep 2008. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>

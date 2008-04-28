@@ -3,10 +3,13 @@
 //  Yuploo
 //
 //  Created by Felix Huang on 22/02/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
+//  Copyright 2008 Two Fathoms Deep. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
+#import "GDataHTTPFetcher.h"
+#import "GDataProgressMonitorInputStream.h"
+#import "GDataMIMEDocument.h"
 
 @class YupooResult;
 @class Photo;

@@ -3,7 +3,7 @@
 //  Yuploo
 //
 //  Created by Felix Huang on 04/03/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
+//  Copyright 2008 Two Fathoms Deep. All rights reserved.
 //
 
 #import "YuplooUploadController.h"
