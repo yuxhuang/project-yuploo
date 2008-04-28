@@ -29,7 +29,7 @@
 			<object class="NSWindowTemplate" id="1005">
 				<int key="NSWindowStyleMask">263</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{196, 422}, {325, 88}}</string>
+				<string key="NSWindowRect">{{196, 398}, {325, 112}}</string>
 				<int key="NSWTFlags">536870912</int>
 				<string key="NSWindowTitle">Upload Sheet</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -87,7 +87,7 @@
 						<object class="NSTextField" id="279598616">
 							<reference key="NSNextResponder" ref="1006"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{17, 51}, {291, 17}}</string>
+							<string key="NSFrame">{{17, 75}, {291, 17}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="523214503">
@@ -117,8 +117,17 @@
 								</object>
 							</object>
 						</object>
+						<object class="NSProgressIndicator" id="72397490">
+							<reference key="NSNextResponder" ref="1006"/>
+							<int key="NSvFlags">1292</int>
+							<object class="NSPSMatrix" key="NSDrawMatrix"/>
+							<string key="NSFrame">{{18, 47}, {289, 20}}</string>
+							<reference key="NSSuperview" ref="1006"/>
+							<int key="NSpiFlags">24586</int>
+							<double key="NSMaxValue">1.000000e+02</double>
+						</object>
 					</object>
-					<string key="NSFrameSize">{325, 88}</string>
+					<string key="NSFrameSize">{325, 112}</string>
 					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
@@ -130,6 +139,8 @@
 					<string>uploadStatus</string>
 					<string>thanksButtonEnabled</string>
 					<string>cancelButtonEnabled</string>
+					<string>result.totalBytes</string>
+					<string>result.deliveredBytes</string>
 				</object>
 				<bool key="NSEditable">YES</bool>
 				<object class="_NSManagedProxy" key="_NSManagedProxy"/>
@@ -296,9 +307,10 @@
 						<reference key="object" ref="1006"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="279598616"/>
+							<reference ref="72397490"/>
 							<reference ref="682725610"/>
 							<reference ref="993158106"/>
-							<reference ref="279598616"/>
 						</object>
 						<reference key="parent" ref="1005"/>
 					</object>
@@ -352,6 +364,11 @@
 						<reference key="object" ref="117551950"/>
 						<reference key="parent" ref="993158106"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">24</int>
+						<reference key="object" ref="72397490"/>
+						<reference key="parent" ref="1006"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -372,6 +389,7 @@
 					<string>12.IBPluginDependency</string>
 					<string>13.IBPluginDependency</string>
 					<string>2.IBPluginDependency</string>
+					<string>24.IBPluginDependency</string>
 					<string>4.IBPluginDependency</string>
 					<string>6.IBPluginDependency</string>
 					<string>7.IBPluginDependency</string>
@@ -381,12 +399,13 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilderKit</string>
 					<string>com.apple.InterfaceBuilderKit</string>
-					<string>{{390, 761}, {325, 88}}</string>
+					<string>{{329, 648}, {325, 112}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{390, 761}, {325, 88}}</string>
+					<string>{{329, 648}, {325, 112}}</string>
 					<reference ref="6"/>
 					<string>{196, 240}</string>
 					<string>{{202, 428}, {480, 270}}</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -417,7 +436,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">23</int>
+			<int key="maxID">29</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

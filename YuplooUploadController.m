@@ -131,7 +131,7 @@
     // get the photo
     PhotoItem *item = [[photoQueue objectAtIndex:0] retain];
     self.uploadStatus = [[[item path] lastPathComponent] copy];
-    result = [yupoo uploadPhotoA:item.photo];
+    result = [yupoo uploadPhoto:item.photo];
 	[result begin];
 	// eject it
 

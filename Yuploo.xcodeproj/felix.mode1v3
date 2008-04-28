@@ -271,6 +271,8 @@
 								<string>DC15165B0DC568730083D7BE</string>
 								<string>DCEE50110DC1287600426DC0</string>
 								<string>DC469A0E0D6E5041003E66AD</string>
+								<string>DC56ABFE0D6DFB4800EB8FC8</string>
+								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
@@ -279,14 +281,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>10</integer>
-									<integer>9</integer>
+									<integer>32</integer>
+									<integer>20</integer>
 									<integer>8</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 7}, {269, 452}}</string>
+							<string>{{0, 187}, {269, 452}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -305,7 +307,7 @@
 							<real>269</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>466 415 924 511 0 0 1680 1028 </string>
+						<string>619 410 924 511 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -321,7 +323,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>YuplooLoginController.m</string>
+								<string>YuplooUploadController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +331,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>YuplooLoginController.m</string>
+										<string>YuplooUploadController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>DC138CC30DC5BEBC0063D6EE</string>
+										<string>DC138D280DC5C3D10063D6EE</string>
 										<key>history</key>
 										<array>
 											<string>DC6D83360DC06F860049C401</string>
@@ -352,9 +354,7 @@
 											<string>DC5A5FAE0DC2BBED00B8D980</string>
 											<string>DC5A601B0DC2C94600B8D980</string>
 											<string>DC5A606E0DC2DB3100B8D980</string>
-											<string>DC5A606F0DC2DB3100B8D980</string>
 											<string>DC5A60C00DC2DF5F00B8D980</string>
-											<string>DC5A61380DC2EF2100B8D980</string>
 											<string>DC5A61530DC2EFE900B8D980</string>
 											<string>DC941F0E0DC3BFF400A508FD</string>
 											<string>DC941F0F0DC3BFF400A508FD</string>
@@ -366,12 +366,15 @@
 											<string>DC7F0CE60DC58497007FD355</string>
 											<string>DC138BF80DC5B0700063D6EE</string>
 											<string>DC138C780DC5BCCA0063D6EE</string>
-											<string>DC138C790DC5BCCA0063D6EE</string>
-											<string>DC138C7B0DC5BCCA0063D6EE</string>
 											<string>DC138C7C0DC5BCCA0063D6EE</string>
-											<string>DC138C990DC5BD0B0063D6EE</string>
 											<string>DC138CA90DC5BE3C0063D6EE</string>
-											<string>DC138BFA0DC5B0700063D6EE</string>
+											<string>DC138CC90DC5BFBF0063D6EE</string>
+											<string>DC138CF80DC5C1590063D6EE</string>
+											<string>DC138CF90DC5C1590063D6EE</string>
+											<string>DC138D1D0DC5C3AC0063D6EE</string>
+											<string>DC138D1E0DC5C3AC0063D6EE</string>
+											<string>DC138D1F0DC5C3AC0063D6EE</string>
+											<string>DC138CE10DC5C0C10063D6EE</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -415,6 +418,16 @@
 											<string>DC138C820DC5BCCA0063D6EE</string>
 											<string>DC138C9A0DC5BD0B0063D6EE</string>
 											<string>DC138CAA0DC5BE3C0063D6EE</string>
+											<string>DC138CCB0DC5BFBF0063D6EE</string>
+											<string>DC138CE30DC5C0C10063D6EE</string>
+											<string>DC138CE40DC5C0C10063D6EE</string>
+											<string>DC138CE50DC5C0C10063D6EE</string>
+											<string>DC138CFA0DC5C1590063D6EE</string>
+											<string>DC138CFB0DC5C1590063D6EE</string>
+											<string>DC138D090DC5C2400063D6EE</string>
+											<string>DC138D200DC5C3AC0063D6EE</string>
+											<string>DC138D210DC5C3AC0063D6EE</string>
+											<string>DC138D220DC5C3AC0063D6EE</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -428,7 +441,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {633, 153}}</string>
 								<key>RubberWindowFrame</key>
-								<string>466 415 924 511 0 0 1680 1028 </string>
+								<string>619 410 924 511 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -448,7 +461,7 @@
 								<key>Frame</key>
 								<string>{{0, 158}, {633, 312}}</string>
 								<key>RubberWindowFrame</key>
-								<string>466 415 924 511 0 0 1680 1028 </string>
+								<string>619 410 924 511 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -608,8 +621,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>DC138CC40DC5BEBC0063D6EE</string>
-		<string>DC138CC50DC5BEBC0063D6EE</string>
 		<string>DC138C9D0DC5BD0B0063D6EE</string>
 		<string>DC138C9E0DC5BD0B0063D6EE</string>
 		<string>1C78EAAD065D492600B07095</string>
@@ -618,7 +629,7 @@
 		<string>/Users/felix/Code/XCode/Yuploo/Yuploo.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>466 415 924 511 0 0 1680 1028 </string>
+	<string>619 410 924 511 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

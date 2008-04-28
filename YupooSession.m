@@ -58,7 +58,8 @@
 	
 	if (nil != self) {
 		GDataProgressMonitorInputStream *stream = [[GDataProgressMonitorInputStream alloc] initWithStream:input length:length];
-		[stream setMonitorDelegate:self];
+//		[stream setMonitorDelegate:self];
+//		[stream setMonitorSelector:@selector(stream:hasDeliveredBytes:ofTotalBytes:)];
 		[fetcher_ setPostStream:stream];
 		[stream release];
 	}
@@ -221,10 +222,9 @@
 
 - (void)inputStream:(GDataProgressMonitorInputStream *)stream hasDeliveredBytes:(unsigned long long)numReadSoFar ofTotalBytes:(unsigned long long)total
 {
-	deliveredBytes = numReadSoFar;
-	totalBytes = total;
+	[self setValue:[NSNumber numberWithLongLong:numReadSoFar] forKey:@"deliveredBytes"];
+	[self setValue:[NSNumber numberWithLongLong:total] forKey:@"totalBytes"];
 }
-
 
 @end
 
