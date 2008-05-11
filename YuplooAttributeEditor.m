@@ -43,7 +43,6 @@
 	[drawer setContentSize:size];
 	[drawer setMinContentSize:size];
 	[drawer setMaxContentSize:[self.view bounds].size];
-//	[self.view setFrame:NSMakeRect(0, 90, size.width, size.height)];
 }
 
 #pragma mark Photo Editing

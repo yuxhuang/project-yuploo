@@ -8,6 +8,8 @@
 
 #import "YuplooApplicationDelegate.h"
 #import "YuplooController.h"
+#import "YuplooMainWindowController.h"
+#import "YuplooPreferencePanelController.h"
 
 @implementation YuplooApplicationDelegate
 
@@ -47,5 +49,14 @@
     
     [self.controller begin];
 }
+
+#pragma mark Actions
+
+
+- (IBAction)showPreferences:(id)sender
+{
+	[self.controller.mainWindowController.preferenceController showWindow:sender];
+}
+
 
 @end

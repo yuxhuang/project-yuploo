@@ -12,14 +12,16 @@
 @class YuplooPhotoViewController;
 @class YuplooUploadController;
 @class YuplooAttributeEditor;
+@class YuplooPreferencePanelController;
 @class Yupoo;
 
 @interface YuplooMainWindowController : NSWindowController {
     // properties to export
-    YuplooLoginController *loginController;
-    YuplooUploadController *uploadController;
-    YuplooPhotoViewController *photoViewController;
-	YuplooAttributeEditor *attributeEditor;
+    YuplooLoginController *loginController_;
+    YuplooUploadController *uploadController_;
+    YuplooPhotoViewController *photoViewController_;
+	YuplooAttributeEditor *attributeEditor_;
+	YuplooPreferencePanelController *preferenceController_;
 
     NSString *windowTitle;
     NSString *photoStatus;
@@ -33,10 +35,12 @@
 }
 
 // properties
-@property(retain) YuplooLoginController *loginController;
-@property(retain) YuplooUploadController *uploadController;
-@property(retain) YuplooPhotoViewController *photoViewController;
-@property(retain) YuplooAttributeEditor *attributeEditor;
+@property(readonly,nonatomic) YuplooLoginController *loginController;
+@property(readonly,nonatomic) YuplooUploadController *uploadController;
+@property(readonly,nonatomic) YuplooPhotoViewController *photoViewController;
+@property(readonly,nonatomic) YuplooAttributeEditor *attributeEditor;
+@property(readonly,nonatomic) YuplooPreferencePanelController *preferenceController;
+
 @property(copy) NSString *windowTitle;
 @property(copy) NSString *photoStatus;
 @property(copy) NSString *loginStatus;

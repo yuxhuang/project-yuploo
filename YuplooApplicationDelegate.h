@@ -16,4 +16,6 @@
 
 @property(readwrite,retain) YuplooController *controller;
 
+- (IBAction)showPreferences:(id)sender;
+
 @end

@@ -21,12 +21,14 @@
 	<key>CFBundleShortVersionString</key>
 	<string>0.9</string>
 	<key>CFBundleSignature</key>
-	<string>TFD</string>
+	<string>TFDC</string>
 	<key>CFBundleVersion</key>
 	<string>67.1694</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUFeedURL</key>
+	<string>http://s3.amazonaws.com/twofathomsdeep/appcast.xml</string>
 </dict>
 </plist>

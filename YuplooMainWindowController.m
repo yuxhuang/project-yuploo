@@ -12,12 +12,14 @@
 #import "YuplooPhotoViewController.h"
 #import "YuplooController.h"
 #import "YuplooAttributeEditor.h"
+#import "YuplooPreferencePanelController.h"
 
 @implementation YuplooMainWindowController
 
-@synthesize loginController, uploadController, photoViewController, attributeEditor,
-        windowTitle, photoStatus, loginStatus, loginProgressValue, loginProgressHidden,
+@synthesize windowTitle, photoStatus, loginStatus, loginProgressValue, loginProgressHidden,
         ownerObjectController, targetView, yupoo;
+
+@dynamic loginController, uploadController, photoViewController, attributeEditor, preferenceController;
 
 + (id)mainWindowController
 {
@@ -34,6 +36,12 @@
         loginStatus = nil;
         loginProgressValue = 0.0;
         loginProgressHidden = YES;
+		
+		loginController_ = nil;
+		uploadController_ = nil;
+		photoViewController_ = nil;
+		attributeEditor_ = nil;
+		preferenceController_ = nil;
     }
 
 	
@@ -44,40 +52,23 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
-	[loginController release];
-	[uploadController release];
-	[photoViewController release];
-	[attributeEditor release];
+	[loginController_ autorelease];
+	[uploadController_ autorelease];
+	[photoViewController_ autorelease];
+	[attributeEditor_ autorelease];
+	[preferenceController_ autorelease];
     [super dealloc];
 }
 
-#pragma mark Window Loading Methods
+#pragma mark Window Delegate Methods
 
 - (void)windowDidLoad
 {
-	loginController = [[YuplooLoginController alloc] initWithMainWindowController:self];
-	uploadController = [[YuplooUploadController alloc] initWithMainWindowController:self];
-	photoViewController = [[YuplooPhotoViewController alloc] initWithMainWindowController:self];
-	attributeEditor = [[YuplooAttributeEditor alloc] initWithMainWindowController:self];
-
-	NSAssert(nil != loginController, @"YuplooMainWindowController>-init: loginController cannot be nil.");
-	NSAssert(nil != photoViewController, @"YuplooMainWindowController>-init: photoViewController cannot be nil.");
-	NSAssert(nil != attributeEditor, @"YuplooMainWindowController>-init: attributeEditor cannot be nil.");
-    
-    // add the photo view
-	[photoViewController loadNib];
-	[targetView setDocumentView:[photoViewController browserView]];
-
-	// attribute editor
-	[attributeEditor loadView];
+	// load photo view
+	self.photoViewController;
 	
     yupoo = [[YuplooController sharedController] yupoo];
-    
-    // make sure we have resized the photo view to match its 
-    [[photoViewController browserView] setFrame:[targetView bounds]];
 }
-
-#pragma mark Window Delegate Methods
 
 - (void)windowWillClose:(NSNotification *)notification
 {
@@ -86,6 +77,66 @@
 }
 
 #pragma mark Accessor Methods
+
+- (YuplooLoginController *)loginController
+{
+	if (nil == loginController_) {
+		loginController_ = [[YuplooLoginController alloc] initWithMainWindowController:self];
+	}
+	
+	NSAssert(nil != loginController_, @"YuplooMainWindowController>-init: loginController cannot be nil.");
+	
+	return loginController_;
+		
+}
+
+- (YuplooUploadController *)uploadController
+{
+	if (nil == uploadController_) {
+		uploadController_ = [[YuplooUploadController alloc] initWithMainWindowController:self];
+	}
+	
+	return uploadController_;
+}
+
+- (YuplooPhotoViewController *)photoViewController
+{
+	if (nil == photoViewController_) {
+		photoViewController_ = [[YuplooPhotoViewController alloc] initWithMainWindowController:self];
+		
+		// add the photo view
+		[photoViewController_ loadNib];
+		[targetView setDocumentView:[photoViewController_ browserView]];
+		
+		// make sure we have resized the photo view to match its 
+		[photoViewController_.browserView setFrame:[targetView bounds]];
+	}
+	
+	NSAssert(nil != photoViewController_, @"YuplooMainWindowController>-init: photoViewController cannot be nil.");
+	
+	return photoViewController_;
+}
+
+- (YuplooAttributeEditor *)attributeEditor
+{
+	if (nil == attributeEditor_) {
+		attributeEditor_ = [[YuplooAttributeEditor alloc] initWithMainWindowController:self];
+		// attribute editor
+		[attributeEditor_ loadView];
+	}
+	
+	NSAssert(nil != attributeEditor_, @"YuplooMainWindowController>-init: attributeEditor cannot be nil.");
+	
+	return attributeEditor_;
+}
+
+- (YuplooPreferencePanelController *)preferenceController
+{
+	if (nil == preferenceController_) {
+		preferenceController_ = [[YuplooPreferencePanelController alloc] initWithMainWindowController:self];
+	}
+	return preferenceController_;
+}
 
 #pragma mark UI Actions
 
@@ -114,7 +165,7 @@
 - (IBAction)upload:(id)sender
 {
 	// disable editing
-	[attributeEditor endEditing];
+	[self.attributeEditor endEditing];
 	// start uploading
     [self.uploadController upload];
 }
