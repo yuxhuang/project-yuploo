@@ -25,7 +25,6 @@
 		DC4699520D6E37DA003E66AD /* Yuploo.icns in Resources */ = {isa = PBXBuildFile; fileRef = DC4699510D6E37DA003E66AD /* Yuploo.icns */; };
 		DC4699F40D6E4F48003E66AD /* PhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4699F30D6E4F48003E66AD /* PhotoView.xib */; };
 		DC469A0C0D6E503B003E66AD /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC469A090D6E503B003E66AD /* Photo.m */; };
-		DC469A3F0D6E51B7003E66AD /* libcrypto.0.9.7.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC469A3E0D6E51B7003E66AD /* libcrypto.0.9.7.dylib */; };
 		DC4A46CF0DC0E8AC0005C29C /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC4A46CD0DC0E8AC0005C29C /* Quartz.framework */; };
 		DC4A46D00DC0E8AC0005C29C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC4A46CE0DC0E8AC0005C29C /* QuartzCore.framework */; };
 		DC56AC040D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC56AC030D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.m */; };
@@ -43,6 +42,7 @@
 		DCB1B5780D70AF56007D43AF /* YupooResultNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB1B5770D70AF56007D43AF /* YupooResultNode.m */; };
 		DCCB9E650D7361470019970D /* YupooObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCB9E640D7361470019970D /* YupooObserver.m */; };
 		DCEE4DFC0DC1078600426DC0 /* PhotoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEE4DFB0DC1078600426DC0 /* PhotoItem.m */; };
+		E6A576B013FDF6CA0006146D /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A576AF13FDF6CA0006146D /* libcrypto.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -94,7 +94,6 @@
 		DC4699EF0D6E4F3A003E66AD /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/PhotoView.xib; sourceTree = "<group>"; };
 		DC469A080D6E503B003E66AD /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		DC469A090D6E503B003E66AD /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
-		DC469A3E0D6E51B7003E66AD /* libcrypto.0.9.7.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.0.9.7.dylib; path = /usr/lib/libcrypto.0.9.7.dylib; sourceTree = "<absolute>"; };
 		DC4A46CD0DC0E8AC0005C29C /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
 		DC4A46CE0DC0E8AC0005C29C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 		DC56AC020D6DFBAC00EB8FC8 /* YuplooApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuplooApplicationDelegate.h; sourceTree = "<group>"; };
@@ -123,6 +122,7 @@
 		DCCB9E640D7361470019970D /* YupooObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YupooObserver.m; sourceTree = "<group>"; };
 		DCEE4DFA0DC1078600426DC0 /* PhotoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoItem.h; sourceTree = "<group>"; };
 		DCEE4DFB0DC1078600426DC0 /* PhotoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoItem.m; sourceTree = "<group>"; };
+		E6A576AF13FDF6CA0006146D /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +130,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6A576B013FDF6CA0006146D /* libcrypto.dylib in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				DC469A3F0D6E51B7003E66AD /* libcrypto.0.9.7.dylib in Frameworks */,
 				DC4A46CF0DC0E8AC0005C29C /* Quartz.framework in Frameworks */,
 				DC4A46D00DC0E8AC0005C29C /* QuartzCore.framework in Frameworks */,
 				DC31AC800DD62A4A004E7A4B /* Sparkle.framework in Frameworks */,
@@ -146,7 +146,6 @@
 			children = (
 				DC4A46CD0DC0E8AC0005C29C /* Quartz.framework */,
 				DC4A46CE0DC0E8AC0005C29C /* QuartzCore.framework */,
-				DC469A3E0D6E51B7003E66AD /* libcrypto.0.9.7.dylib */,
 				DC31AC7F0DD62A4A004E7A4B /* Sparkle.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
@@ -174,6 +173,7 @@
 		29B97314FDCFA39411CA2CEA /* Yuploo */ = {
 			isa = PBXGroup;
 			children = (
+				E6A576AF13FDF6CA0006146D /* libcrypto.dylib */,
 				DC15165B0DC568730083D7BE /* GData */,
 				DCEE50110DC1287600426DC0 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -337,6 +337,7 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Yuploo" */;
 			compatibilityVersion = "Xcode 3.0";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -475,6 +476,8 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 67.1694;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -489,6 +492,10 @@
 				GCC_PREFIX_HEADER = Yuploo_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
 				PRODUCT_NAME = Yuploo;
 				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = app;
@@ -499,8 +506,8 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				CURRENT_PROJECT_VERSION = 67.1694;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -512,6 +519,10 @@
 				GCC_PREFIX_HEADER = Yuploo_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
 				PRODUCT_NAME = Yuploo;
 				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = app;
@@ -528,7 +539,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
@@ -536,10 +547,8 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = ".git *.nib *.lproj *.framework *.gch *.xcode* (*) CVS .svn";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_OBJC_GC = unsupported;
@@ -547,7 +556,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;

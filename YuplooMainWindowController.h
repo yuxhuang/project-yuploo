@@ -26,7 +26,7 @@
     NSString *windowTitle;
     NSString *photoStatus;
     NSString *loginStatus;
-    float loginProgressValue;
+    CGFloat loginProgressValue;
     BOOL loginProgressHidden;
     Yupoo *yupoo;
     
