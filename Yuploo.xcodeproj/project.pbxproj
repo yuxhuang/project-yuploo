@@ -539,7 +539,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PREBINDING = NO;
-				SDKROOT = macosx;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
@@ -556,7 +556,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PREBINDING = NO;
-				SDKROOT = macosx;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
