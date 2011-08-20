@@ -154,12 +154,12 @@
 #pragma mark -
 #pragma mark IKImageBrowserDataSource
 
-- (int)numberOfItemsInImageBrowser:(IKImageBrowserView *)view
+- (NSUInteger)numberOfItemsInImageBrowser:(IKImageBrowserView *)view
 {
 	return [browserImages count];
 }
 
-- (id)imageBrowser:(IKImageBrowserView *)view itemAtIndex:(int) index
+- (id)imageBrowser:(IKImageBrowserView *)view itemAtIndex:(NSUInteger) index
 {
 	return [browserImages objectAtIndex:index];
 }
@@ -169,9 +169,9 @@
     [browserImages removeObjectsAtIndexes:indexes];
 }
 
-- (BOOL) imageBrowser:(IKImageBrowserView *) view  moveItemsAtIndexes: (NSIndexSet *)indexes toIndex:(unsigned int)destinationIndex
+- (BOOL) imageBrowser:(IKImageBrowserView *) view  moveItemsAtIndexes: (NSIndexSet *)indexes toIndex:(NSUInteger)destinationIndex
 {
-	int index;
+	NSUInteger index;
 	NSMutableArray *temporaryArray;
 	
 	temporaryArray = [[[NSMutableArray alloc] init] autorelease];
@@ -203,7 +203,7 @@
     return NSDragOperationCopy;
 }
 
-- (unsigned int)draggingUpdated:(id <NSDraggingInfo>)sender
+- (NSUInteger)draggingUpdated:(id <NSDraggingInfo>)sender
 {
 	return NSDragOperationEvery;
 }

@@ -143,6 +143,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E6A576AF13FDF6CA0006146D /* libcrypto.dylib */,
 				DC4A46CD0DC0E8AC0005C29C /* Quartz.framework */,
 				DC4A46CE0DC0E8AC0005C29C /* QuartzCore.framework */,
 				DC31AC7F0DD62A4A004E7A4B /* Sparkle.framework */,
@@ -173,7 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				E6BF2CE513FE116500945908 /* Yuploo.entitlements */,
-				E6A576AF13FDF6CA0006146D /* libcrypto.dylib */,
 				DC15165B0DC568730083D7BE /* GData */,
 				DCEE50110DC1287600426DC0 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
