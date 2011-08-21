@@ -13,7 +13,7 @@
 
 @implementation YuplooPhotoViewController
 
-@synthesize view, browserView, browserImages;
+@synthesize view, browserView, browserImages, dndLabel;
 
 - (id)initWithMainWindowController:(YuplooMainWindowController *)controller
 {
@@ -24,7 +24,6 @@
 		// allocate some space for the data source
 		browserImages = [[NSMutableArray alloc] initWithCapacity:10];
 		importedImages = [[NSMutableArray alloc] initWithCapacity:10];
-
 	}
 	
 	return self;
@@ -50,13 +49,19 @@
 	[NSBundle loadNibNamed:@"PhotoView" owner:self];
 	
 	// fancy view
-	[browserView setAnimates:YES];
-	[browserView setAllowsReordering:YES];
+    browserView.animates = YES;
+    browserView.allowsReordering = YES;
+    browserView.canControlQuickLookPanel = YES;
 	
 	//Browser UI setup (can also be set in IB)
-	[browserView setDelegate:self];
-	[browserView setDataSource:self];
-	[browserView setDraggingDestinationDelegate:self];
+    browserView.delegate = self;
+    browserView.dataSource = self;
+    browserView.draggingDestinationDelegate = self;
+    
+    // change background
+    [browserView setValue:[NSColor colorWithDeviceRed:0 green:0 blue:0 alpha:0] forKey:IKImageBrowserBackgroundColorKey];
+//    NSColor *black = [NSColor redColor];
+//    browserView.backgroundLayer.backgroundColor = CGColorCreateGenericRGB([black redComponent], [black greenComponent], [black blueComponent], [black alphaComponent]);
 }
 
 - (void)removeAllPhotos
@@ -128,7 +133,7 @@
 }
 
 #pragma mark -
-#pragma mark IKImageBrowserDeleate
+#pragma mark IKImageBrowserDelegate
 
 // change photo status
 - (void)imageBrowserSelectionDidChange:(IKImageBrowserView *)aBrowser
@@ -174,7 +179,7 @@
 	NSUInteger index;
 	NSMutableArray *temporaryArray;
 	
-	temporaryArray = [[[NSMutableArray alloc] init] autorelease];
+	temporaryArray = [[NSMutableArray alloc] init];
 	for(index=[indexes lastIndex]; index != NSNotFound;
 		index = [indexes indexLessThanIndex:index])
 	{
@@ -192,6 +197,8 @@
 		[browserImages insertObject:[temporaryArray objectAtIndex:index]
 					  atIndex:destinationIndex];
 	}
+    
+    [temporaryArray release];
 	
 	return YES;
 }

@@ -64,7 +64,7 @@
 
 - (void)windowDidLoad
 {
-	// load photo view
+	// trigger the property to load the photo view
 	self.photoViewController;
 	
     yupoo = [[YuplooController sharedController] yupoo];

@@ -8,12 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
+#import <AppKit/AppKit.h>
 
 @class YuplooMainWindowController;
 
 @interface YuplooPhotoViewController : NSObject {
 	IBOutlet NSView *view;
 	IBOutlet IKImageBrowserView *browserView;
+    IBOutlet NSView *dndLabel;
 	NSMutableArray *browserImages;
 	NSMutableArray *importedImages;
 	YuplooMainWindowController *mainWindowController;
@@ -22,6 +24,7 @@
 @property(retain) NSView *view;
 @property(retain) IKImageBrowserView *browserView;
 @property(retain) NSMutableArray *browserImages;
+@property(retain) NSView *dndLabel;
 
 - (void)loadNib;
 - (void)removeAllPhotos;
