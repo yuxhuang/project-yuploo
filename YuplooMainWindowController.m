@@ -18,7 +18,7 @@
 @implementation YuplooMainWindowController
 
 @synthesize windowTitle, photoStatus, loginStatus, loginProgressValue, loginProgressHidden,
-        ownerObjectController, targetView, yupoo;
+        ownerObjectController, targetScrollView, yupoo;
 
 @dynamic loginController, uploadController, photoViewController, attributeEditor, preferenceController;
 
@@ -68,27 +68,45 @@
 {
 	// trigger the property to load the photo view
 	self.photoViewController;
-    
-    targetView.drawsBackground = NO;
+        
+    yupoo = [[YuplooController sharedController] yupoo];
 
+    targetScrollView.drawsBackground = NO;
+    targetScrollView.hasVerticalScroller = YES;
+    
     // register observer
-    [[NSNotificationCenter defaultCenter] addObserverForName:YUPLOO_NOTIFICATION_ADD_IMAGE
+    [[NSNotificationCenter defaultCenter] addObserverForName:YUPLOO_NOTIFICATION_UPDATE_DATA_SOURCE
                                                       object:nil
                                                        queue:nil
                                                   usingBlock:^(NSNotification *notification)
      {
-         backgroundView.drawsBackground = NO;
-         backgroundView.needsDisplay = YES;
+         NSDictionary *userInfo = notification.userInfo;
+         if (nil != userInfo) {
+             NSNumber *count = (NSNumber*) [userInfo objectForKey:@"count"];
+             if ([count unsignedIntegerValue] > 0) {
+                 backgroundView.drawsBackground = NO;
+                 backgroundView.needsDisplay = YES;
+             }
+             else {
+                 backgroundView.drawsBackground = YES;
+                 backgroundView.needsDisplay = YES;
+             }
+         }
+         
      }];
-
     
-    yupoo = [[YuplooController sharedController] yupoo];
 }
 
 - (void)windowWillClose:(NSNotification *)notification
 {
     [self.ownerObjectController setContent:nil];
     [NSApp terminate:self];
+}
+
+#pragma mark NIB-related Methods
+- (void) awakeFromNib
+{
+
 }
 
 #pragma mark Accessor Methods
@@ -121,10 +139,10 @@
 		
 		// add the photo view
 		[photoViewController_ loadNib];
-		[targetView setDocumentView: photoViewController_.browserView];
+		[targetScrollView setDocumentView: photoViewController_.browserView];
 		
 		// make sure we have resized the photo view to match its 
-		[photoViewController_.browserView setFrame:targetView.bounds];
+		[photoViewController_.browserView setFrame:targetScrollView.bounds];
 	}
 	
 	NSAssert(nil != photoViewController_, @"YuplooMainWindowController>-init: photoViewController cannot be nil.");

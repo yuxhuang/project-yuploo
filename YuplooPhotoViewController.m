@@ -37,11 +37,22 @@
 	[super dealloc];
 }
 
+- (void)postUpdateNotification
+{
+    // post notificaiton
+    [[NSNotificationCenter defaultCenter] postNotificationName:YUPLOO_NOTIFICATION_UPDATE_DATA_SOURCE
+                                                        object:self
+                                                      userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                [NSNumber numberWithUnsignedInteger:browserImages.count], @"count"
+                                                                , nil]];
+}
+
 - (void)updateDataSource
 {
 	[browserImages addObjectsFromArray:importedImages];
 	[importedImages removeAllObjects];
 	[browserView reloadData];
+    [self postUpdateNotification];
 }
 
 - (void)loadNib
@@ -99,8 +110,6 @@
 	[importedImages addObject:item];
 	[item release];
     
-    // post notificaiton
-    [[NSNotificationCenter defaultCenter] postNotificationName:YUPLOO_NOTIFICATION_ADD_IMAGE object:self];
 }
 
 - (void)addImagesWithPath:(NSString *)path recursive:(BOOL)recursive
@@ -175,6 +184,7 @@
 - (void) imageBrowser:(IKImageBrowserView *) view removeItemsAtIndexes: (NSIndexSet *) indexes
 {
     [browserImages removeObjectsAtIndexes:indexes];
+    [self postUpdateNotification];
 }
 
 - (BOOL) imageBrowser:(IKImageBrowserView *) view  moveItemsAtIndexes: (NSIndexSet *)indexes toIndex:(NSUInteger)destinationIndex
@@ -203,6 +213,8 @@
     
     [temporaryArray release];
 	
+    [self postUpdateNotification];
+
 	return YES;
 }
 

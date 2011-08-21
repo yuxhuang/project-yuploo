@@ -37,6 +37,9 @@
 
 - (void)drawRect:(NSRect)dirtyRect
 {
+//    [[NSColor windowBackgroundColor] setFill];
+//    NSRectFill(dirtyRect);
+    
     // Fill in background Color
     CGContextRef context = (CGContextRef) [[NSGraphicsContext currentContext] graphicsPort];
     CGContextSetRGBFillColor(context, 0.227,0.251,0.337,0.8); // some mysterious colour

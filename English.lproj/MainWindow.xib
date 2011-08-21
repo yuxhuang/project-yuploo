@@ -46,7 +46,7 @@
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{196, 476}, {488, 345}}</string>
 				<int key="NSWTFlags">805307392</int>
-				<string key="NSWindowTitle">Window</string>
+				<string key="NSWindowTitle">Yuploo</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<object class="NSToolbar" key="NSViewClass" id="1013014315">
 					<object class="NSMutableString" key="NSToolbarIdentifier">
@@ -68,10 +68,9 @@
 							<string key="NSToolbarItemPaletteLabel">Login Status</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSTextField" key="NSToolbarItemView" id="577039034">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {176, 16}}</string>
-								<reference key="NSSuperview"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSTextFieldCell" key="NSCell" id="1051629006">
 									<int key="NSCellFlags">67239488</int>
@@ -123,10 +122,9 @@
 							<string key="NSToolbarItemPaletteLabel">Authenticate</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSButton" key="NSToolbarItemView" id="688503985">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {106, 25}}</string>
-								<reference key="NSSuperview"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="514463312">
 									<int key="NSCellFlags">-2080244224</int>
@@ -165,10 +163,9 @@
 							<string key="NSToolbarItemPaletteLabel">Upload</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSButton" key="NSToolbarItemView" id="227300979">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {80, 25}}</string>
-								<reference key="NSSuperview"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="181815658">
 									<int key="NSCellFlags">67239424</int>
@@ -203,11 +200,10 @@
 							<string key="NSToolbarItemPaletteLabel">Login Progress</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSProgressIndicator" key="NSToolbarItemView" id="519371059">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">1292</int>
 								<object class="NSPSMatrix" key="NSDrawMatrix"/>
 								<string key="NSFrame">{{36, 14}, {16, 16}}</string>
-								<reference key="NSSuperview"/>
 								<int key="NSpiFlags">20746</int>
 								<double key="NSMaxValue">100</double>
 							</object>
@@ -319,7 +315,7 @@
 						<reference ref="91914686"/>
 						<reference ref="119405546"/>
 					</array>
-					<array key="NSToolbarIBDefaultItems">
+					<array class="NSMutableArray" key="NSToolbarIBDefaultItems">
 						<reference ref="804856896"/>
 						<reference ref="91914686"/>
 						<reference ref="898031908"/>
@@ -585,19 +581,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">targetView</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="785075761"/>
-					</object>
-					<int key="connectionID">101</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">backgroundView</string>
 						<reference key="source" ref="1001"/>
 						<reference key="destination" ref="1006"/>
 					</object>
 					<int key="connectionID">103</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">targetScrollView</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="785075761"/>
+					</object>
+					<int key="connectionID">104</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -829,7 +825,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">103</int>
+			<int key="maxID">104</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -897,7 +893,7 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="backgroundView">YuplooBackgroundView</string>
 						<string key="ownerObjectController">NSObjectController</string>
-						<string key="targetView">NSScrollView</string>
+						<string key="targetScrollView">NSScrollView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="backgroundView">
@@ -908,8 +904,8 @@
 							<string key="name">ownerObjectController</string>
 							<string key="candidateClassName">NSObjectController</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="targetView">
-							<string key="name">targetView</string>
+						<object class="IBToOneOutletInfo" key="targetScrollView">
+							<string key="name">targetScrollView</string>
 							<string key="candidateClassName">NSScrollView</string>
 						</object>
 					</dictionary>
