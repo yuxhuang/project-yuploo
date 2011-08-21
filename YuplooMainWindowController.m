@@ -13,6 +13,7 @@
 #import "YuplooController.h"
 #import "YuplooAttributeEditor.h"
 #import "YuplooPreferencePanelController.h"
+#import "YuplooBackgroundView.h"
 
 @implementation YuplooMainWindowController
 
@@ -42,6 +43,7 @@
 		photoViewController_ = nil;
 		attributeEditor_ = nil;
 		preferenceController_ = nil;
+        
     }
 
 	
@@ -66,7 +68,20 @@
 {
 	// trigger the property to load the photo view
 	self.photoViewController;
-	
+    
+    targetView.drawsBackground = NO;
+
+    // register observer
+    [[NSNotificationCenter defaultCenter] addObserverForName:YUPLOO_NOTIFICATION_ADD_IMAGE
+                                                      object:nil
+                                                       queue:nil
+                                                  usingBlock:^(NSNotification *notification)
+     {
+         backgroundView.drawsBackground = NO;
+         backgroundView.needsDisplay = YES;
+     }];
+
+    
     yupoo = [[YuplooController sharedController] yupoo];
 }
 
@@ -106,10 +121,10 @@
 		
 		// add the photo view
 		[photoViewController_ loadNib];
-		[targetView setDocumentView:[photoViewController_ browserView]];
+		[targetView setDocumentView: photoViewController_.browserView];
 		
 		// make sure we have resized the photo view to match its 
-		[photoViewController_.browserView setFrame:[targetView bounds]];
+		[photoViewController_.browserView setFrame:targetView.bounds];
 	}
 	
 	NSAssert(nil != photoViewController_, @"YuplooMainWindowController>-init: photoViewController cannot be nil.");

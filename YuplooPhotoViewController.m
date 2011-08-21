@@ -98,6 +98,9 @@
 	item = [[PhotoItem alloc] initWithPath:path];
 	[importedImages addObject:item];
 	[item release];
+    
+    // post notificaiton
+    [[NSNotificationCenter defaultCenter] postNotificationName:YUPLOO_NOTIFICATION_ADD_IMAGE object:self];
 }
 
 - (void)addImagesWithPath:(NSString *)path recursive:(BOOL)recursive

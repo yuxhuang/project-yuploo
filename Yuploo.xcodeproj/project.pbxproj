@@ -40,6 +40,8 @@
 		DCB1B5780D70AF56007D43AF /* YupooResultNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB1B5770D70AF56007D43AF /* YupooResultNode.m */; };
 		DCCB9E650D7361470019970D /* YupooObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCB9E640D7361470019970D /* YupooObserver.m */; };
 		DCEE4DFC0DC1078600426DC0 /* PhotoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEE4DFB0DC1078600426DC0 /* PhotoItem.m */; };
+		E63AE1B71400ABA30035E112 /* YuplooBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = E63AE1B61400ABA30035E112 /* YuplooBackgroundView.m */; };
+		E63AE1B91400EE0B0035E112 /* DropHere.png in Resources */ = {isa = PBXBuildFile; fileRef = E63AE1B81400EE0B0035E112 /* DropHere.png */; };
 		E6A576B013FDF6CA0006146D /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A576AF13FDF6CA0006146D /* libcrypto.dylib */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +122,9 @@
 		DCCB9E640D7361470019970D /* YupooObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YupooObserver.m; sourceTree = "<group>"; };
 		DCEE4DFA0DC1078600426DC0 /* PhotoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoItem.h; sourceTree = "<group>"; };
 		DCEE4DFB0DC1078600426DC0 /* PhotoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoItem.m; sourceTree = "<group>"; };
+		E63AE1B51400ABA30035E112 /* YuplooBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuplooBackgroundView.h; sourceTree = "<group>"; };
+		E63AE1B61400ABA30035E112 /* YuplooBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuplooBackgroundView.m; sourceTree = "<group>"; };
+		E63AE1B81400EE0B0035E112 /* DropHere.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DropHere.png; sourceTree = "<group>"; };
 		E6A576AF13FDF6CA0006146D /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
 		E6BF2CE513FE116500945908 /* Yuploo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Yuploo.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -272,6 +277,8 @@
 				DC5A5EB90DC289BD00B8D980 /* YuplooAttributeEditor.m */,
 				DC1335120DD7A17600027D74 /* YuplooPreferencePanelController.h */,
 				DC1335130DD7A17600027D74 /* YuplooPreferencePanelController.m */,
+				E63AE1B51400ABA30035E112 /* YuplooBackgroundView.h */,
+				E63AE1B61400ABA30035E112 /* YuplooBackgroundView.m */,
 			);
 			name = Yuploo;
 			sourceTree = "<group>";
@@ -293,6 +300,7 @@
 		DC56AC010D6DFB7600EB8FC8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E63AE1B81400EE0B0035E112 /* DropHere.png */,
 				DC4699510D6E37DA003E66AD /* Yuploo.icns */,
 			);
 			name = Images;
@@ -371,6 +379,7 @@
 				DC4699F40D6E4F48003E66AD /* PhotoView.xib in Resources */,
 				DC2D9F7C0D845EA40050518F /* Upload.xib in Resources */,
 				DC5A5EBE0DC289DD00B8D980 /* AttributeEditor.xib in Resources */,
+				E63AE1B91400EE0B0035E112 /* DropHere.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +411,7 @@
 				DC97980A0DC65AAE0059AC54 /* GDataMIMEDocument.m in Sources */,
 				DC97980B0DC65AAE0059AC54 /* GDataProgressMonitorInputStream.m in Sources */,
 				DC1335140DD7A17600027D74 /* YuplooPreferencePanelController.m in Sources */,
+				E63AE1B71400ABA30035E112 /* YuplooBackgroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

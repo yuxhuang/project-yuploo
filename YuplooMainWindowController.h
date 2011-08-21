@@ -14,6 +14,7 @@
 @class YuplooAttributeEditor;
 @class YuplooPreferencePanelController;
 @class Yupoo;
+@class YuplooBackgroundView;
 
 @interface YuplooMainWindowController : NSWindowController {
     // properties to export
@@ -32,6 +33,7 @@
     
     IBOutlet NSObjectController *ownerObjectController;
     IBOutlet NSScrollView *targetView;
+    IBOutlet YuplooBackgroundView *backgroundView;
 }
 
 // properties

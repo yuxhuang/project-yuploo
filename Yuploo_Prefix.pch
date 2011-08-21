@@ -10,3 +10,5 @@
 #endif
 
 #include <openssl/md5.h>
+
+#define YUPLOO_NOTIFICATION_ADD_IMAGE (@"YuplooImageBrowserAddImage")
