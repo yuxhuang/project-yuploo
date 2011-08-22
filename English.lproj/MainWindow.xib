@@ -335,8 +335,6 @@
 							<int key="NSvFlags">258</int>
 							<string key="NSFrame">{{20, -95}, {533, 14}}</string>
 							<reference key="NSSuperview" ref="1006"/>
-							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="855904720">
@@ -359,7 +357,6 @@
 							<int key="NSvFlags">274</int>
 							<string key="NSFrame">{{1, 0}, {488, 345}}</string>
 							<reference key="NSSuperview" ref="1006"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="940984209"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<string key="NSReuseIdentifierKey">_NS:499</string>
@@ -368,7 +365,6 @@
 					</array>
 					<string key="NSFrameSize">{488, 345}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="785075761"/>
 					<bool key="NSViewIsLayerTreeHost">YES</bool>
 					<int key="NSViewLayerContentsRedrawPolicy">2</int>

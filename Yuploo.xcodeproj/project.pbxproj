@@ -43,6 +43,7 @@
 		E63AE1B71400ABA30035E112 /* YuplooBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = E63AE1B61400ABA30035E112 /* YuplooBackgroundView.m */; };
 		E63AE1B91400EE0B0035E112 /* DropHere.png in Resources */ = {isa = PBXBuildFile; fileRef = E63AE1B81400EE0B0035E112 /* DropHere.png */; };
 		E65BDD671401A0F100C77E4B /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = E65BDD661401A0F100C77E4B /* Credits.html */; };
+		E6948BC91401F4D000EC5974 /* YuplooPhotoBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6948BC81401F4D000EC5974 /* YuplooPhotoBrowserView.m */; };
 		E6A576B013FDF6CA0006146D /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A576AF13FDF6CA0006146D /* libcrypto.dylib */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +128,8 @@
 		E63AE1B61400ABA30035E112 /* YuplooBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuplooBackgroundView.m; sourceTree = "<group>"; };
 		E63AE1B81400EE0B0035E112 /* DropHere.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DropHere.png; sourceTree = "<group>"; };
 		E65BDD661401A0F100C77E4B /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		E6948BC71401F4D000EC5974 /* YuplooPhotoBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuplooPhotoBrowserView.h; sourceTree = "<group>"; };
+		E6948BC81401F4D000EC5974 /* YuplooPhotoBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuplooPhotoBrowserView.m; sourceTree = "<group>"; };
 		E6A576AF13FDF6CA0006146D /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
 		E6BF2CE513FE116500945908 /* Yuploo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Yuploo.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -282,6 +285,8 @@
 				DC1335130DD7A17600027D74 /* YuplooPreferencePanelController.m */,
 				E63AE1B51400ABA30035E112 /* YuplooBackgroundView.h */,
 				E63AE1B61400ABA30035E112 /* YuplooBackgroundView.m */,
+				E6948BC71401F4D000EC5974 /* YuplooPhotoBrowserView.h */,
+				E6948BC81401F4D000EC5974 /* YuplooPhotoBrowserView.m */,
 			);
 			name = Yuploo;
 			sourceTree = "<group>";
@@ -416,6 +421,7 @@
 				DC97980B0DC65AAE0059AC54 /* GDataProgressMonitorInputStream.m in Sources */,
 				DC1335140DD7A17600027D74 /* YuplooPreferencePanelController.m in Sources */,
 				E63AE1B71400ABA30035E112 /* YuplooBackgroundView.m in Sources */,
+				E6948BC91401F4D000EC5974 /* YuplooPhotoBrowserView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,7 +565,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx10.7;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
@@ -574,7 +580,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx10.7;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;

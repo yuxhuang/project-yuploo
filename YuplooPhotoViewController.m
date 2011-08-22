@@ -10,6 +10,7 @@
 #import "YuplooMainWindowController.h"
 #import "YuplooAttributeEditor.h"
 #import "PhotoItem.h"
+#import "YuplooPhotoBrowserView.h"
 
 @implementation YuplooPhotoViewController
 
@@ -222,10 +223,16 @@
 #pragma mark Browser Drag and Drop Methods
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender
 {
-    return NSDragOperationCopy;
+//    if ([sender draggingDestinationWindow] == [[NSApplication sharedApplication] keyWindow]) {
+//        return NSDragOperationCopy;
+//    }
+//    else {
+//        return NSDragOperationDelete;
+//    }
+    return NSDragOperationCopy | NSDragOperationLink | NSDragOperationGeneric | NSDragOperationPrivate;
 }
 
-- (NSUInteger)draggingUpdated:(id <NSDraggingInfo>)sender
+- (NSDragOperation)draggingUpdated:(id <NSDraggingInfo>)sender
 {
 	return NSDragOperationEvery;
 }
