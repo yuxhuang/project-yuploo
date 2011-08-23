@@ -17,8 +17,8 @@
 
 @implementation YuplooMainWindowController
 
-@synthesize windowTitle, photoStatus, loginStatus, loginProgressValue, loginProgressHidden,
-        ownerObjectController, targetScrollView, yupoo;
+@synthesize windowTitle, photoStatus, loginStatus, loginProgressValue, loginProgressHidden, uploadButtonEnabled,
+        targetScrollView, yupoo;
 
 @dynamic loginController, uploadController, photoViewController, attributeEditor, preferenceController;
 
@@ -37,6 +37,7 @@
         loginStatus = nil;
         loginProgressValue = 0.0;
         loginProgressHidden = YES;
+        uploadButtonEnabled = NO;
 		
 		loginController_ = nil;
 		uploadController_ = nil;
@@ -73,6 +74,7 @@
 
     targetScrollView.drawsBackground = NO;
     targetScrollView.hasVerticalScroller = YES;
+    [uploadButton setEnabled:NO];
     
     // register observer
     [[NSNotificationCenter defaultCenter] addObserverForName:YUPLOO_NOTIFICATION_UPDATE_DATA_SOURCE
@@ -99,14 +101,12 @@
 
 - (void)windowWillClose:(NSNotification *)notification
 {
-    [self.ownerObjectController setContent:nil];
     [NSApp terminate:self];
 }
 
 #pragma mark NIB-related Methods
 - (void) awakeFromNib
 {
-
 }
 
 #pragma mark Accessor Methods
@@ -139,7 +139,7 @@
 		
 		// add the photo view
 		[photoViewController_ loadNib];
-		[targetScrollView setDocumentView: photoViewController_.browserView];
+        targetScrollView.documentView = (NSView *) self.photoViewController.browserView;
 		
 		// make sure we have resized the photo view to match its 
 		[photoViewController_.browserView setFrame:targetScrollView.bounds];

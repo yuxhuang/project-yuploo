@@ -31,6 +31,7 @@
         authenticationNeeded = YES;
         yupoo = [[YuplooController sharedController] yupoo];
         mainWindowController = controller;
+        _numberOfAttempts = 0;
     }
     
     return self;
@@ -75,6 +76,7 @@
 - (IBAction)loginSheetCancel:(id)sender
 {
     [NSApp endSheet:loginSheet];
+    _numberOfAttempts = 0;
 }
 
 - (IBAction)loginSheetOK:(id)sender
@@ -89,6 +91,7 @@
 {
     [self setValue:nil forKey:@"result"];
     [NSApp endSheet:authenticationNeededSheet];
+    _numberOfAttempts = 0;
 }
 
 - (IBAction)authenticationNeededSheetOK:(id)sender
@@ -155,9 +158,12 @@
     if ([context isEqual:@"authenticateWithToken"]) {
         if ([[change objectForKey:NSKeyValueChangeNewKey] isEqual:[NSNumber numberWithBool:YES]]) {
             BOOL success = [object successful];
+            self.mainWindowController.uploadButtonEnabled = NO;
             if (success) {
                 [NSApp endSheet:authenticationNeededSheet];
                 self.mainWindowController.loginStatus = [result authUserName];
+                self.mainWindowController.uploadButtonEnabled = YES;
+                _numberOfAttempts = 0;
             }
         }
     }
@@ -171,10 +177,15 @@
                 // open the url
                 [[NSWorkspace sharedWorkspace] openURL:[result webAuthenticationURL]];
             }
-            else {
+            else if (_numberOfAttempts < 5) {
                 // close the sheet, then do again.
                 [NSApp endSheet:loginSheet];
+                _numberOfAttempts ++;
                 [self login];
+            }
+            else {
+                [NSApp endSheet:loginSheet];
+                _numberOfAttempts = 0;
             }
         }
     }
@@ -182,10 +193,14 @@
         // here we should automatically close the sheet
         if ([[change objectForKey:NSKeyValueChangeNewKey] isEqual:[NSNumber numberWithBool:YES]]) {
             BOOL success = [object successful];
+            self.mainWindowController.uploadButtonEnabled = NO;
+
             if (success) {
                 [NSApp endSheet:loginSheet];
                 self.mainWindowController.loginStatus = [result authUserName];
                 [[YuplooController sharedController] saveToken:[result authToken]];
+                self.mainWindowController.uploadButtonEnabled = YES;
+                _numberOfAttempts = 0;
             }
         }
     }

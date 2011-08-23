@@ -29,11 +29,13 @@
     NSString *loginStatus;
     CGFloat loginProgressValue;
     BOOL loginProgressHidden;
+    BOOL uploadButtonEnabled;
+    
     Yupoo *yupoo;
     
-    IBOutlet NSObjectController *ownerObjectController;
     IBOutlet NSScrollView *targetScrollView;
     IBOutlet YuplooBackgroundView *backgroundView;
+    IBOutlet NSButton *uploadButton;
 }
 
 // properties
@@ -43,12 +45,13 @@
 @property(readonly,nonatomic) YuplooAttributeEditor *attributeEditor;
 @property(readonly,nonatomic) YuplooPreferencePanelController *preferenceController;
 
+
 @property(copy) NSString *windowTitle;
 @property(copy) NSString *photoStatus;
 @property(copy) NSString *loginStatus;
 @property CGFloat loginProgressValue;
 @property BOOL loginProgressHidden;
-@property(retain) NSObjectController *ownerObjectController;
+@property BOOL uploadButtonEnabled;
 @property(retain) NSScrollView *targetScrollView;
 @property(readonly,retain) Yupoo *yupoo;
 

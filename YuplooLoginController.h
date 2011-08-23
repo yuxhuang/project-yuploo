@@ -21,6 +21,8 @@
     Yupoo *yupoo;
     NSString *_frob;
     BOOL authenticationNeeded;
+    
+    NSInteger _numberOfAttempts;
 }
 
 @property(retain) NSWindow *loginSheet;
