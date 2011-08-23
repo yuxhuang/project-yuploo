@@ -207,6 +207,8 @@
 	
     NSLog(status);
     
+    NSRunAlertPanel(@"Error", status, @"Oops!", nil, nil);
+    
     // we have changed these values
     [self setValue:[NSNumber numberWithBool:YES] forKey:@"completed"];
 }
@@ -222,6 +224,8 @@
 					[[error userInfo] objectForKey:NSErrorFailingURLStringKey]] forKey:@"status"];
 	
     NSLog(status);
+
+    NSRunAlertPanel(@"Error", status, @"Oops!", nil, nil);
     
     // we have changed these values
     [self setValue:[NSNumber numberWithBool:YES] forKey:@"completed"];
@@ -259,6 +263,9 @@
         status = [NSString stringWithFormat:@"XML Error: %@", [error localizedDescription]];
         [self didChangeValueForKey:@"status"];
         NSLog(status);
+
+        NSRunAlertPanel(@"Error", status, @"Oops!", nil, nil);
+        
         return nil;
     }
 

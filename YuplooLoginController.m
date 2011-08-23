@@ -177,7 +177,7 @@
                 // open the url
                 [[NSWorkspace sharedWorkspace] openURL:[result webAuthenticationURL]];
             }
-            else if (_numberOfAttempts < 5) {
+            else if (_numberOfAttempts < 0) {
                 // close the sheet, then do again.
                 [NSApp endSheet:loginSheet];
                 _numberOfAttempts ++;
