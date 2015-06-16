@@ -44,6 +44,7 @@
 		observers = [[NSMutableArray alloc] initWithCapacity:5];
 		
 		fetcher_ = [[GDataHTTPFetcher alloc] initWithRequest:request];
+
 		yupoo = [aYupoo retain];
 	}
 	

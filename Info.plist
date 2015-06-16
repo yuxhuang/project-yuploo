@@ -13,7 +13,7 @@
 	<key>CFBundleIconFile</key>
 	<string>Yuploo</string>
 	<key>CFBundleIdentifier</key>
-	<string>AYH234QJUH.org.webinit.Yuploo</string>
+	<string>org.webinit.Yuploo</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
